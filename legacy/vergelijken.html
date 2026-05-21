@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vergelijk onafhankelijk de beste thuisaccu's van 2026. Filter op merk, capaciteit (kWh) of prijs en vind de beste deal voor jouw zonnepanelen.">
+  <title>Thuisaccu's Vergelijken 2026 | ThuisaccuGids.nl</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>ThuisaccuGids.nl</span>
+      </a>
+      
+      <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="nav-menu" id="nav-links">
+        <a href="index.html" class="nav-link" id="link-home">Home</a>
+        <a href="vergelijken.html" class="nav-link active" id="link-compare">Thuisaccu's Vergelijken</a>
+        <a href="kennisbank.html" class="nav-link" id="link-blog">Kennisbank & Gidsen</a>
+        <a href="index.html#keuzehulp-box" class="nav-cta" id="cta-header-compare">Start Keuzehulp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== -->
+    <section class="hero" style="padding: 4rem 2rem 2rem 2rem;">
+      <div style="max-width: var(--max-width); margin: 0 auto; text-align: center;">
+        <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 1rem;">Onafhankelijke <span>Thuisaccu Vergelijker</span></h1>
+        <p class="hero-desc" style="margin: 0 auto 2rem auto; max-width: 650px;">
+          Filter en sorteer alle populaire thuisaccu's op basis van capaciteit, vermogen, batterijtype en prijs. Vind de perfecte match voor jouw energiebehoeften.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FILTER BAR
+         ========================================================================== -->
+    <section style="padding: 0 2rem 2rem 2rem;">
+      <div class="filter-bar">
+        <div class="filters-left">
+          <div class="filter-item">
+            <label for="filter-brand">Merk</label>
+            <select id="filter-brand" class="select-custom">
+              <option value="all">Alle merken</option>
+              <option value="ecoflow">EcoFlow</option>
+              <option value="anker">Anker Solix</option>
+              <option value="bluetti">Bluetti</option>
+            </select>
+          </div>
+          
+          <div class="filter-item">
+            <label for="filter-capacity">Capaciteit</label>
+            <select id="filter-capacity" class="select-custom">
+              <option value="all">Alle capaciteiten</option>
+              <option value="small">Klein (&lt; 2.5 kWh)</option>
+              <option value="mid">Middel (2.5 - 4.5 kWh)</option>
+              <option value="large">Groot (&gt; 4.5 kWh)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="filter-item">
+          <label for="sort-by">Sorteren op</label>
+          <select id="sort-by" class="select-custom">
+            <option value="rating_desc">Best beoordeeld</option>
+            <option value="price_asc">Prijs (laag - hoog)</option>
+            <option value="price_desc">Prijs (hoog - laag)</option>
+            <option value="capacity_desc">Capaciteit (hoog - laag)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRODUCT GRID
+         ========================================================================== -->
+    <section class="section-products" style="padding-top: 0;">
+      <div class="product-grid" id="compare-products-grid">
+        <!-- Dynamically populated via JS -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         DYNAMIC COMPARISON MATRIX SECTION
+         ========================================================================== -->
+    <section class="section-comparison" id="comparison-section" style="display: none;">
+      <div class="comparison-box">
+        <div class="comparison-header-row">
+          <h3>Producten Vergelijken</h3>
+          <button class="btn btn-secondary" id="btn-close-comparison" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Sluit Vergelijking</button>
+        </div>
+        <div class="comparison-table-wrapper" id="comparison-table-content">
+          <!-- Dynamically populated comparison table via JS -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SEO & E-E-A-T INFORMATION BLOCK
+         ========================================================================== -->
+    <section style="padding: 4rem 2rem; background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Waar moet je op letten bij het vergelijken van thuisaccu's?</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem;">
+          <div>
+            <h3 style="font-size: 1.25rem; color: var(--accent); margin-bottom: 0.5rem;">1. Capaciteit (kWh) vs. Continuvermogen (W)</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+              De <strong>capaciteit</strong> (uitgedrukt in kilowattuur, kWh) bepaalt hoeveel energie de batterij kan opslaan. Dit is de 'tankinhoud'. Het <strong>continuvermogen</strong> (in watt of kilowatt, W/kW) bepaalt hoeveel apparaten je tegelijkertijd kunt laten draaien. Een accu met 3 kWh capaciteit en 1500W vermogen kan geen inductiekookplaat (die vaak 3000W+ trekt) ondersteunen, zelfs niet als de batterij vol is.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.25rem; color: var(--accent); margin-bottom: 0.5rem;">2. Batterijchemie: LFP (LiFePO4) is de standaard</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+              Alle moderne plug-and-play thuisaccu's van topmerken zoals EcoFlow, Anker en Bluetti maken gebruik van <strong>Lithium-ijzerfosfaat (LiFePO4 of LFP)</strong>. Dit type batterij is aanzienlijk veiliger dan traditionele lithium-ion batterijen (geen risico op thermal runaway) en behoudt na 3000+ laadcycli nog minstens 80% van zijn oorspronkelijke capaciteit. Dit staat gelijk aan ruim 10 jaar dagelijks intensief gebruik.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.25rem; color: var(--accent); margin-bottom: 0.5rem;">3. Terugverdientijd & Saldering</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+              In Nederland verdwijnt de salderingsregeling vanaf 2027. Hierdoor krijg je voor teruggeleverde stroom bijna niets meer, terwijl energieleveranciers nu al 'terugleverboetes' opleggen aan zonnepaneelbezitters. Door een thuisaccu te integreren, sla je je overschot overdag op om 's avonds te verbruiken. Hiermee stijgt je eigen verbruik naar zo'n 70% en daalt de terugverdientijd van een thuisaccu naar circa 6 tot 8 jaar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" id="footer-logo">
+          <div class="logo-icon">⚡</div>
+          <span>ThuisaccuGids.nl</span>
+        </a>
+        <p class="footer-desc">
+          ThuisaccuGids.nl is jouw 100% onafhankelijke gids, testplatform en vergelijker voor thuisaccu's en slim energiebeheer in Nederland. Wij helpen consumenten de slimste groene keuze te maken.
+        </p>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-links-title">Navigatie</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="vergelijken.html" class="footer-link">Thuisaccu's Vergelijken</a></li>
+          <li><a href="kennisbank.html" class="footer-link">Kennisbank & Blogs</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-links-title">Affiliate Disclaimer</h4>
+        <p class="footer-desc" style="font-size: 0.8rem; line-height: 1.5; color: var(--text-muted);">
+          ThuisaccuGids.nl maakt gebruik van affiliate links. Als je via onze links een aankoop doet bij aangesloten shops (zoals Bol.com of Coolblue), ontvangen wij mogelijk een kleine commissie. Dit kost jou helemaal niets extra's en stelt ons in staat om gratis onafhankelijke content te blijven publiceren.
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ThuisaccuGids.nl. Alle rechten voorbehouden.</p>
+      <p>Gemaakt voor maximale energiebesparing en onafhankelijkheid.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Comparison Bar -->
+  <div class="compare-bar" id="floating-compare-bar">
+    <div class="compare-info">
+      <div class="compare-badge" id="compare-count-badge">0</div>
+      <span id="compare-bar-text">Selecteer accu's om te vergelijken</span>
+      <button class="compare-btn-clear" id="btn-clear-compare">Wissen</button>
+    </div>
+    <a href="#comparison-section" class="btn btn-primary" id="btn-trigger-compare" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; border-radius: 30px;">
+      Vergelijk nu
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

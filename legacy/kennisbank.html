@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kennisbank voor Thuisaccu's en Energiebesparing. Diepgaande gidsen over de salderingsregeling in 2027, geld verdienen met dynamische tarieven en de beste thuisaccu van 2026.">
+  <title>Kennisbank & Gidsen | ThuisaccuGids.nl</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Custom Article Styles -->
+  <style>
+    .article-container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .article-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      margin-bottom: 4rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+      scroll-margin-top: 100px; /* Zorgt dat de anchor links netjes uitlijnen onder de sticky navbar */
+    }
+    
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+    }
+    
+    .article-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    
+    .article-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .article-body {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .article-body h3, .article-body h4 {
+      color: var(--text-primary);
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .article-body ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      list-style-type: square;
+    }
+    
+    .article-body li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.25rem;
+    }
+    
+    .article-callout {
+      background: rgba(0, 200, 100, 0.08);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem 2rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 2.5rem 0;
+    }
+    
+    .article-callout p {
+      margin-bottom: 0;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-surface-elevated);
+      text-align: left;
+    }
+    
+    .article-table th {
+      background: var(--bg-surface-elevated);
+      padding: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    .article-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+    
+    .article-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .jump-nav {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 3rem;
+    }
+    
+    .jump-nav h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .jump-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .jump-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    
+    .jump-link:hover {
+      color: var(--accent);
+      padding-left: 6px;
+    }
+    
+    @media (max-width: 768px) {
+      .article-card {
+        padding: 2rem;
+      }
+      .article-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>ThuisaccuGids.nl</span>
+      </a>
+      
+      <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="nav-menu" id="nav-links">
+        <a href="index.html" class="nav-link" id="link-home">Home</a>
+        <a href="vergelijken.html" class="nav-link" id="link-compare">Thuisaccu's Vergelijken</a>
+        <a href="kennisbank.html" class="nav-link active" id="link-blog">Kennisbank & Gidsen</a>
+        <a href="index.html#keuzehulp-box" class="nav-cta" id="cta-header-compare">Start Keuzehulp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== -->
+    <section class="hero" style="padding: 4rem 2rem 2rem 2rem;">
+      <div style="max-width: var(--max-width); margin: 0 auto; text-align: center;">
+        <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 1rem;">Onafhankelijke <span>Kennisbank & Gidsen</span></h1>
+        <p class="hero-desc" style="margin: 0 auto; max-width: 650px;">
+          Alles wat je moet weten over thuisaccu's, zonnepanelen, wetgeving en hoe je maximaal rendement haalt uit jouw opgewekte stroom.
+        </p>
+      </div>
+    </section>
+
+    <div class="article-container">
+
+      <!-- Search & Filters Container -->
+      <div class="kb-search-container">
+        <div class="kb-search-wrapper">
+          <span class="kb-search-icon">🔍</span>
+          <input type="text" id="kb-search" class="kb-search-input" placeholder="Zoek in gidsen en artikelen...">
+        </div>
+        <div class="kb-filter-tabs">
+          <button class="kb-filter-tab active" data-category="all">Alle artikelen</button>
+          <button class="kb-filter-tab" data-category="salderen-wetgeving">Wetgeving & Salderen</button>
+          <button class="kb-filter-tab" data-category="dynamisch-energie">Dynamische Energie</button>
+          <button class="kb-filter-tab" data-category="aankoopadvies">Aankoopadvies</button>
+        </div>
+      </div>
+      
+      <!-- Quick Navigation Sidebar -->
+      <nav class="jump-nav">
+        <h2>Snel navigeren naar gids</h2>
+        <div class="jump-links">
+          <a href="#salderen" class="jump-link">⚡ 1. Salderingsregeling Afgeschaft: Wat nu? (2026/2027 update)</a>
+          <a href="#dynamisch" class="jump-link">📈 2. Dynamische Tarieven + Thuisaccu = Winst?</a>
+          <a href="#bestekoop" class="jump-link">🏆 3. Welke Thuisaccu is de Beste Koop?</a>
+        </div>
+      </nav>
+
+      <!-- ==========================================================================
+           ARTICLE 1: SALDERINGSREGELING
+           ========================================================================== -->
+      <article class="article-card" id="salderen" data-category="salderen-wetgeving">
+        <header class="article-header">
+          <span class="article-meta">Salderen &amp; Regels | Gepubliceerd op 21 mei 2026</span>
+          <h2 class="article-title">Salderingsregeling Afgeschaft vanaf 2027: Wat betekent dit en wat is de oplossing?</h2>
+        </header>
+        
+        <div class="article-body">
+          <p>
+            De kogel is door de kerk: na jaren van politieke discussie is besloten dat de <strong>salderingsregeling definitief wordt afgeschaft vanaf 1 januari 2027</strong>. Dit besluit heeft een gigantische impact op de ruim 2,5 miljoen huishoudens in Nederland met zonnepanelen. Waar je voorheen je overtollige stroom overdag gratis kon wegstrepen tegen je stroomverbruik in de avond of winter, verandert de markt nu in rap tempo.
+          </p>
+          
+          <p>
+            In deze gids leggen we uit waarom dit gebeurt, wat de financiële gevolgen zijn en hoe een thuisaccu de absolute sleutel is om je zonne-energie tóch rendabel te houden.
+          </p>
+
+          <h3>Waarom verdwijnt de salderingsregeling?</h3>
+          <p>
+            De salderingsregeling was oorspronkelijk bedoeld om de aanschaf van zonnepanelen te stimuleren. Nu zonnepanelen zo goedkoop en wijdverspreid zijn, leidt de regeling tot grote problemen. Het elektriciteitsnet raakt overbelast op zonnige middagen (netcongestie) omdat miljoenen panelen tegelijkertijd stroom terugleveren. 
+          </p>
+          <p>
+            Bovendien betalen huishoudens zonder zonnepanelen indirect mee aan de salderingsregeling van hun buren. Om dit te compenseren hebben vrijwel alle Nederlandse energieleveranciers <strong>terugleverkosten</strong> (boetes) ingevoerd. Je betaalt tegenwoordig dus geld om je gratis zonnestroom aan het net te mogen leveren!
+          </p>
+
+          <div class="article-callout">
+            <p>
+              Wist je dat: Door de terugleverboetes en het wegvallen van salderen de effectieve opbrengst van je zonnepanelen met wel 60% kan dalen als je geen maatregelen neemt?
+            </p>
+          </div>
+
+          <h3>De oplossing: Verhogen van je 'Eigen Verbruik'</h3>
+          <p>
+            Zonder saldering is er maar één gouden regel om geld te besparen met zonnepanelen: <strong>gebruik zoveel mogelijk van je opgewekte stroom zelf, op het moment dat het wordt opgewekt</strong>.
+          </p>
+          <p>
+            Gemiddeld verbruikt een huishouden direct slechts 30% van zijn eigen opgewekte zonnestroom (voor apparaten die overdag aanstaan). De overige 70% wordt teruggeleverd aan het net. 
+          </p>
+          <p>
+            Door een <strong>thuisaccu</strong> aan je systeem toe te voegen, verander je dit scenario volledig:
+          </p>
+          <ul>
+            <li><strong>Overdag (Overschot):</strong> Je zonnepanelen wekken stroom op. Wat je niet direct verbruikt, stroomt niet naar het net, maar laadt je thuisaccu op.</li>
+            <li><strong>Avond &amp; Nacht (Tekort):</strong> De zon gaat onder. In plaats van dure stroom in te kopen bij je leverancier, draait je huishouden op de gratis opgeslagen zonnestroom uit de accu.</li>
+            <li><strong>Resultaat:</strong> Je eigen verbruik stijgt direct van 30% naar <strong>70% tot 75%</strong>. Je koopt nauwelijks nog dure stroom in en vermijdt terugleverboetes.</li>
+          </ul>
+
+          <h3>De Rekensom</h3>
+          <p>
+            Laten we kijken naar een gemiddeld huishouden met een verbruik van 3500 kWh en 10 zonnepanelen:
+          </p>
+
+          <div class="table-responsive">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Situatie</th>
+                  <th>Eigen Verbruik</th>
+                  <th>Netinkoop</th>
+                  <th>Jaarkosten (Indicatie)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Zonder panelen</td>
+                  <td>0%</td>
+                  <td>3500 kWh</td>
+                  <td>€ 1.225,-</td>
+                </tr>
+                <tr>
+                  <td>Zonnepanelen (Zonder accu, na salderen)</td>
+                  <td>30% (1050 kWh)</td>
+                  <td>2450 kWh</td>
+                  <td>€ 850,- (incl. boetes)</td>
+                </tr>
+                <tr>
+                  <td><strong>Zonnepanelen + 5 kWh Thuisaccu</strong></td>
+                  <td><strong>72% (2520 kWh)</strong></td>
+                  <td><strong>980 kWh</strong></td>
+                  <td><strong>€ 340,-</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>Conclusie:</strong> Een thuisaccu is niet langer een luxe-gadget voor technologieliefhebbers, maar een essentieel financieel instrument geworden om de waarde van je zonnepanelen te beschermen.
+          </p>
+        </div>
+      </article>
+
+      <!-- ==========================================================================
+           ARTICLE 2: DYNAMISCHE TARIEVEN
+           ========================================================================== -->
+      <article class="article-card" id="dynamisch" data-category="dynamisch-energie">
+        <header class="article-header">
+          <span class="article-meta">Slimme Technologie | Gepubliceerd op 18 mei 2026</span>
+          <h2 class="article-title">Dynamische Tarieven + Thuisaccu: Hoe verdien je geld als de stroomprijs negatief is?</h2>
+        </header>
+        
+        <div class="article-body">
+          <p>
+            Heb je een dynamisch energiecontract bij een aanbieder zoals Tibber, NextEnergy, ANWB Energie of Zonneplan? Dan veranderen jouw stroomprijzen elk uur op basis van de spotmarkt (EPEX-beurs). Dit opent een extreem winstgevende nieuwe mogelijkheid: <strong>actief handelen op de energiemarkt met een thuisaccu</strong>.
+          </p>
+          <p>
+            In dit artikel leggen we uit hoe dit werkt en hoe je jouw thuisaccu kunt transformeren in een automatische geldmachine.
+          </p>
+
+          <h3>Wat zijn negatieve stroomprijzen?</h3>
+          <p>
+            Op zonnige lente- en zomerdagen (met name in het weekend) wekken alle zonnepanelen en windparken in Europa gigantisch veel stroom op. Omdat de vraag in het weekend laag is, ontstaat er een overschot aan elektriciteit op het net. Om te voorkomen dat het net bezwijkt, worden de stroomprijzen <strong>negatief</strong>. 
+          </p>
+          <p>
+            Dit betekent letterlijk dat je <strong>geld toe krijgt om stroom te verbruiken</strong>. Bijvoorbeeld -€ 0,10 per kWh. Normaliter kun je op dat moment snel je wasmachine en vaatwasser aanzetten. Maar er is een slimmere manier.
+          </p>
+
+          <h3>Het principe: Laag inkopen, hoog verkopen</h3>
+          <p>
+            Met een slim aangestuurde thuisaccu en een dynamisch contract kun je dit proces volledig automatiseren:
+          </p>
+          
+          <div class="table-responsive">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Fase</th>
+                  <th>Tijdstip (Voorbeeld)</th>
+                  <th>Actie Thuisaccu</th>
+                  <th>Stroomprijs</th>
+                  <th>Financieel Resultaat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Laden</strong></td>
+                  <td>13:00 - 15:00 (Middag)</td>
+                  <td>Laadt op volle snelheid vanaf het net</td>
+                  <td>Negative prijs (-€ 0,05 / kWh)</td>
+                  <td>Je krijgt geld toe om je accu te vullen!</td>
+                </tr>
+                <tr>
+                  <td><strong>Standby</strong></td>
+                  <td>15:00 - 18:00</td>
+                  <td>Houdt stroom vast</td>
+                  <td>Normaal tarief</td>
+                  <td>Geen kosten</td>
+                </tr>
+                <tr>
+                  <td><strong>Ontladen</strong></td>
+                  <td>18:00 - 20:00 (Avondpiek)</td>
+                  <td>Levert stroom aan je huis (of levert terug)</td>
+                  <td>Piek tarief (+€ 0,35 / kWh)</td>
+                  <td>Je vermijdt de duurste stroom of verkoopt met winst!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Hoeveel levert dit op?</h3>
+          <p>
+            Als je dit handmatig zou moeten doen, is het onbegonnen werk. Gelukkig leveren fabrikanten zoals EcoFlow en Anker, evenals onafhankelijke softwarepartijen (zoals Bliq of SmartEnergy), slimme integraties. De software leest elk uur de tarieven in, voorspelt het weer en stuurt je accu automatisch aan.
+          </p>
+          <p>
+            Een gemiddeld huishouden met een 5 kWh tot 10 kWh accu dat actief handelt op dynamische tarieven, kan hiermee <strong>€ 400,- tot € 800,- per jaar extra verdienen of besparen</strong>. Dit verkort de terugverdientijd van je thuisaccu aanzienlijk, vaak tot minder dan 5 jaar!
+          </p>
+
+          <h3>Heb je zonnepanelen nodig om dit te doen?</h3>
+          <p>
+            <strong>Nee!</strong> Dit is het meest verrassende aspect van dynamic energy trading. Zelfs als je in een appartement woont of geen geschikt dak hebt voor zonnepanelen, kun je een plug-and-play thuisaccu in het stopcontact steken. Je laadt hem simpelweg 's nachts of 's middags op wanneer stroom goedkoop (of gratis) is, en gebruikt die stroom tijdens de dure avonduren.
+          </p>
+        </div>
+      </article>
+
+      <!-- ==========================================================================
+           ARTICLE 3: BESTE KOOP THUISACCU
+           ========================================================================== -->
+      <article class="article-card" id="bestekoop" data-category="aankoopadvies">
+        <header class="article-header">
+          <span class="article-meta">Aankoopadvies | Gepubliceerd op 15 mei 2026</span>
+          <h2 class="article-title">Beste Thuisaccu 2026: EcoFlow vs. Bluetti vs. Anker Solix</h2>
+        </header>
+        
+        <div class="article-body">
+          <p>
+            De markt voor thuisbatterijen is geëxplodeerd. Waar je vroeger een installateur moest inhuren om een complexe, dure installatie in je meterkast op te hangen (zoals de Tesla Powerwall), domineert vandaag de dag een nieuwe categorie de markt: <strong>Plug &amp; Play mobiele en modulaire thuisaccu's</strong>.
+          </p>
+          <p>
+            Merken als EcoFlow, Anker Solix en Bluetti maken systemen die je simpelweg in het stopcontact steekt, zelf installeert en direct kunt gebruiken. Maar welke is de beste koop voor jouw situatie? Wij hebben de drie topmodellen uitgebreid vergeleken.
+          </p>
+
+          <h3>De Kandidaten</h3>
+          <ul>
+            <li><strong>EcoFlow DELTA Pro:</strong> De betrouwbare alleskunner die al jaren de standaard zet op het gebied van mobiele stroomvoorziening.</li>
+            <li><strong>Anker Solix F3800:</strong> De nieuwkomer met een gigantisch vermogen (6000W) en een extreem strak design.</li>
+            <li><strong>Bluetti AC500 + B300S:</strong> Het modulaire zwaargewicht dat uitblinkt in flexibiliteit.</li>
+          </ul>
+
+          <h3>Directe Vergelijking</h3>
+          <div class="table-responsive">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Specificatie</th>
+                  <th>EcoFlow DELTA Pro</th>
+                  <th>Anker Solix F3800</th>
+                  <th>Bluetti AC500 + B300S</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Capaciteit (Basis)</strong></td>
+                  <td>3.60 kWh</td>
+                  <td>3.84 kWh</td>
+                  <td>3.07 kWh</td>
+                </tr>
+                <tr>
+                  <td><strong>Continuvermogen</strong></td>
+                  <td>3600 W</td>
+                  <td>6000 W</td>
+                  <td>5000 W</td>
+                </tr>
+                <tr>
+                  <td><strong>Batterijtype</strong></td>
+                  <td>LFP (3000+ cycli)</td>
+                  <td>LFP (3000+ cycli)</td>
+                  <td>LFP (3500+ cycli)</td>
+                </tr>
+                <tr>
+                  <td><strong>Gewicht &amp; Mobiliteit</strong></td>
+                  <td>45 kg (Wielen + Handvat)</td>
+                  <td>60 kg (Wielen, zeer mobiel)</td>
+                  <td>Modulair (30kg + 36kg afzonderlijk)</td>
+                </tr>
+                <tr>
+                  <td><strong>Richtprijs</strong></td>
+                  <td>€ 2.999,-</td>
+                  <td>€ 3.499,-</td>
+                  <td>€ 2.799,-</td>
+                </tr>
+                <tr>
+                  <td><strong>Onze Score</strong></td>
+                  <td>⭐ 4.9 / 5.0</td>
+                  <td>⭐ 4.8 / 5.0</td>
+                  <td>⭐ 4.7 / 5.0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>De Winnaar: EcoFlow DELTA Pro (Beste Allrounder)</h3>
+          <p>
+            Voor 90% van de huishoudens is de <strong>EcoFlow DELTA Pro de Beste Koop</strong>. Hoewel hij al even op de markt is, blijft de software-ondersteuning ongeëvenaard. De EcoFlow-app is veruit de meest stabiele en intuïtieve app op de markt, waarmee je heel eenvoudig laadsessies kunt inplannen op basis van dynamische tarieven. Dankzij de ingebouwde wielen verplaats je hem eenvoudig binnenshuis. De prijs-kwaliteitverhouding is momenteel uitstekend.
+          </p>
+
+          <h3>Het Alternatief voor Zware Belasting: Anker Solix F3800</h3>
+          <p>
+            Heb je een inductiekookplaat, laadpaal of een warmtepomp die je direct vanuit de accu wil voeden? Dan is de <strong>Anker Solix F3800</strong> de beste keuze. Met zijn continuvermogen van maar liefst <strong>6000W</strong> kan dit apparaat moeiteloos zware 230V én zelfs 400V (krachtstroom) apparaten tegelijk aansturen. Het strakke design met geïntegreerde wielen is een lust voor het oog.
+          </p>
+
+          <h3>Het Alternatief voor Modulaire Groei: Bluetti AC500</h3>
+          <p>
+            Wil je nu klein beginnen met een investering van onder de € 3000,-, maar in de toekomst kunnen uitbreiden naar 10 kWh of meer? Dan is de <strong>Bluetti AC500 + B300S</strong> ideaal. Omdat de omvormer en de batterij volledig gescheiden modules zijn, til je de componenten makkelijk apart de trap op en koppel je in de toekomst eenvoudig een extra batterijmodule aan het systeem zonder een nieuwe omvormer te hoeven kopen.
+          </p>
+
+          <div class="article-callout" style="background: rgba(30, 144, 255, 0.08); border-left-color: var(--accent);">
+            <p>
+              💡 Advies nodig? Gebruik onze gratis <a href="index.html#keuzehulp-box" style="color: var(--accent); text-decoration: underline; font-weight: 700;">Thuisaccu Keuzehulp</a> op de homepage om te berekenen welk van deze drie systemen het best past bij jouw zonnepanelen en stroomverbruik!
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- No Results Message -->
+      <div id="kb-no-results" class="kb-no-results" style="display: none; margin-top: 2rem;">
+        <h3>Geen gidsen of artikelen gevonden</h3>
+        <p>Probeer een andere zoekterm of selecteer een andere categorie.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" id="footer-logo">
+          <div class="logo-icon">⚡</div>
+          <span>ThuisaccuGids.nl</span>
+        </a>
+        <p class="footer-desc">
+          ThuisaccuGids.nl is jouw 100% onafhankelijke gids, testplatform en vergelijker voor thuisaccu's en slim energiebeheer in Nederland. Wij helpen consumenten de slimste groene keuze te maken.
+        </p>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-links-title">Navigatie</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="vergelijken.html" class="footer-link">Thuisaccu's Vergelijken</a></li>
+          <li><a href="kennisbank.html" class="footer-link">Kennisbank & Blogs</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-links-title">Affiliate Disclaimer</h4>
+        <p class="footer-desc" style="font-size: 0.8rem; line-height: 1.5; color: var(--text-muted);">
+          ThuisaccuGids.nl maakt gebruik van affiliate links. Als je via onze links een aankoop doet bij aangesloten shops (zoals Bol.com of Coolblue), ontvangen wij mogelijk een kleine commissie. Dit kost jou helemaal niets extra's en stelt ons in staat om gratis onafhankelijke content te blijven publiceren.
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ThuisaccuGids.nl. Alle rechten voorbehouden.</p>
+      <p>Gemaakt voor maximale energiebesparing en onafhankelijkheid.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

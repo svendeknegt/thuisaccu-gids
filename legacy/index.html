@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Onafhankelijke vergelijking en aankoopadvies voor thuisaccu's in Nederland. Bereken met de Thuisaccu Keuzehulp binnen 1 minuut welke opslagcapaciteit je nodig hebt.">
+  <title>ThuisaccuGids.nl | Onafhankelijk Vergelijken & Besparingsadvies</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>ThuisaccuGids.nl</span>
+      </a>
+      
+      <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="nav-menu" id="nav-links">
+        <a href="index.html" class="nav-link active" id="link-home">Home</a>
+        <a href="vergelijken.html" class="nav-link" id="link-compare">Thuisaccu's Vergelijken</a>
+        <a href="kennisbank.html" class="nav-link" id="link-blog">Kennisbank & Gidsen</a>
+        <a href="vergelijken.html" class="nav-cta" id="cta-header-compare">Start Keuzehulp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="hero-section">
+      <div class="hero-container">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="hero-badge-icon"></span>
+            <span>Volledig geactualiseerd voor salderingsregels 2026/2027</span>
+          </div>
+          <h1 class="hero-title">Sla je zonne-energie op en <span>stop terugleverboetes</span></h1>
+          <p class="hero-desc">
+            Met het afbouwen van de salderingsregeling en stijgende stroomtarieven is een thuisaccu de slimste investering van nu. Ontdek direct wat je kunt besparen.
+          </p>
+          <div class="hero-actions">
+            <a href="#keuzehulp-box" class="btn btn-primary" id="btn-hero-calc">Start Gratis Keuzehulp</a>
+            <a href="vergelijken.html" class="btn btn-secondary" id="btn-hero-all">Bekijk Alle Accu's</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="hero-glow-card">
+            <h3>Waarom een thuisaccu?</h3>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-num" id="stat-save-pct">75%</div>
+                <div class="stat-lbl">Minder stroom inkopen</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num" id="stat-payback">6-8 jr</div>
+                <div class="stat-lbl">Gemiddelde terugverdientijd</div>
+              </div>
+            </div>
+            <div class="hero-stats" style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <div style="grid-column: span 2;">
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                  ✔ <strong>Onafhankelijk advies:</strong> Wij verkopen zelf geen accu's, we helpen je puur de beste deal te vinden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE CALCULATOR (KEUZEHULP)
+         ========================================================================== -->
+    <section class="section-calculator" id="calculator-section">
+      <div class="section-header">
+        <h2>Interactieve Thuisaccu Keuzehulp</h2>
+        <p>Vul je stroomgegevens in en zie direct welke accucapaciteit het meest rendabel is voor jouw huishouden.</p>
+      </div>
+      
+      <div class="calc-box" id="keuzehulp-box">
+        <!-- Inputs Column -->
+        <div class="calc-inputs">
+          <div class="input-group">
+            <label class="input-label" for="solar-panels">
+              Aantal zonnepanelen
+              <span class="input-val" id="val-solar-panels">10 panelen</span>
+            </label>
+            <input type="range" id="solar-panels" class="slider-input" min="0" max="30" value="10" step="1">
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label" for="power-usage">
+              Jaarlijks stroomverbruik
+              <span class="input-val" id="val-power-usage">3500 kWh</span>
+            </label>
+            <input type="range" id="power-usage" class="slider-input" min="1000" max="10000" value="3500" step="250">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="electricity-rate">
+              Stroomtarief (gemiddeld)
+              <span class="input-val" id="val-electricity-rate">€0,30 / kWh</span>
+            </label>
+            <input type="range" id="electricity-rate" class="slider-input" min="0.15" max="0.60" value="0.30" step="0.01">
+          </div>
+
+          <div class="input-group" id="group-feed-in-penalty">
+            <label class="input-label" for="feed-in-penalty">
+              Terugleverboete leverancier
+              <span class="input-val" id="val-feed-in-penalty">€0,08 / kWh</span>
+            </label>
+            <input type="range" id="feed-in-penalty" class="slider-input" min="0.00" max="0.20" value="0.08" step="0.01">
+          </div>
+          
+          <div class="input-group">
+            <span class="input-label">Wat is je voornaamste doel?</span>
+            <div class="goal-options">
+              <div class="goal-option active" data-goal="savings" id="goal-btn-savings">
+                <input type="radio" name="goal" id="goal-savings" class="goal-radio" checked>
+                <div class="goal-txt">
+                  <h4>Besparen op terugleverkosten</h4>
+                  <p>Sla overtollige zonnestroom overdag op om 's avonds gratis te verbruiken.</p>
+                </div>
+              </div>
+              
+              <div class="goal-option" data-goal="trading" id="goal-btn-trading">
+                <input type="radio" name="goal" id="goal-trading" class="goal-radio">
+                <div class="goal-txt">
+                  <h4>Handelen op dynamische tarieven</h4>
+                  <p>Stroom goedkoop laden bij overschot op het net, en verkopen tijdens piekuren.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Results Column -->
+        <div class="calc-results" id="calc-results-box">
+          <h3 class="result-heading">Geadviseerde capaciteit</h3>
+          <div class="result-capacity" id="recommended-capacity">5.2 kWh</div>
+          <p class="result-explanation" id="result-text">
+            Op basis van 10 zonnepanelen en een gemiddeld stroomverbruik raden we een batterij aan met circa 5 kWh aan opslag. Dit optimaliseert je eigen verbruik tot wel 70%.
+          </p>
+
+          <div class="roi-dashboard" id="roi-dashboard-box">
+            <div class="roi-item">
+              <div class="roi-num" id="est-savings">€ 0,-</div>
+              <div class="roi-lbl">Besparing / jaar</div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-num" id="est-payback">- jaar</div>
+              <div class="roi-lbl">Terugverdientijd</div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-num" id="est-roi">-%</div>
+              <div class="roi-lbl">Rendement (ROI)</div>
+            </div>
+          </div>
+          
+          <div class="result-products-box">
+            <h4 class="result-products-title">Beste 3 opties voor jou:</h4>
+            <div id="recommended-products-list">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PRODUCT HIGHLIGHTS
+         ========================================================================== -->
+    <section class="section-products" id="featured-products-section">
+      <div class="section-header">
+        <h2>Populaire Thuisaccu's Vergelijken</h2>
+        <p>De best beoordeelde en meest betrouwbare plug-and-play accu's op de Nederlandse markt.</p>
+      </div>
+      
+      <div class="product-grid" id="featured-products-grid">
+        <!-- Dynamically populated top 3 best-rated products -->
+      </div>
+      
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="vergelijken.html" class="btn btn-secondary" id="btn-see-all-products">Bekijk Alle Modellen & Sorteringen →</a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         KNOWLEDGE BASE PREVIEW
+         ========================================================================== -->
+    <section class="section-kennisbank" id="kennisbank-preview-section">
+      <div class="section-header">
+        <h2>Laatste Gidsen & SEO Artikelen</h2>
+        <p>Leer alles over zonne-energie opslaan, de afschaffing van salderen en geld verdienen met dynamische contracten.</p>
+      </div>
+      
+      <div class="blog-grid" id="kb-preview-grid">
+        <!-- Card 1 -->
+        <article class="blog-card" id="blog-card-1">
+          <div class="blog-img-wrapper">
+            <img class="blog-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=400&q=80" alt="Zonnepanelen op een dak">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">Salderen & Regels</div>
+            <h3 class="blog-title">Salderingsregeling Afgeschaft: Wat nu?</h3>
+            <p class="blog-desc">Vanaf 2027 stopt het salderen volledig. Ontdek waarom een thuisaccu dé enige manier is om je opgewekte energie rendabel te houden.</p>
+            <a href="kennisbank.html#salderen" class="blog-link" id="link-blog-1">Lees complete gids →</a>
+          </div>
+        </article>
+        
+        <!-- Card 2 -->
+        <article class="blog-card" id="blog-card-2">
+          <div class="blog-img-wrapper">
+            <img class="blog-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400&q=80" alt="Gloeilamp met groene plant">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">Onafhankelijkheid</div>
+            <h3 class="blog-title">Dynamische Tarieven + Thuisaccu = Winst?</h3>
+            <p class="blog-desc">Hoe je slim kunt handelen op de stroommarkt door je accu op te laden als de stroomprijs negatief is, en te ontladen tijdens dure uren.</p>
+            <a href="kennisbank.html#dynamisch" class="blog-link" id="link-blog-2">Lees complete gids →</a>
+          </div>
+        </article>
+        
+        <!-- Card 3 -->
+        <article class="blog-card" id="blog-card-3">
+          <div class="blog-img-wrapper">
+            <img class="blog-img" src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" alt="Technicus die zonnestroom inspecteert">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">Aankoopadvies</div>
+            <h3 class="blog-title">Welke Thuisaccu is de Beste Koop?</h3>
+            <p class="blog-desc">Een complete vergelijking van de topmerken EcoFlow, Bluetti en Anker op basis van prijs per kWh en levensduur.</p>
+            <a href="kennisbank.html#bestekoop" class="blog-link" id="link-blog-3">Lees complete gids →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" id="footer-logo">
+          <div class="logo-icon">⚡</div>
+          <span>ThuisaccuGids.nl</span>
+        </a>
+        <p class="footer-desc">
+          ThuisaccuGids.nl is jouw 100% onafhankelijke gids, testplatform en vergelijker voor thuisaccu's en slim energiebeheer in Nederland. Wij helpen consumenten de slimste groene keuze te maken.
+        </p>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-links-title">Navigatie</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="vergelijken.html" class="footer-link">Thuisaccu's Vergelijken</a></li>
+          <li><a href="kennisbank.html" class="footer-link">Kennisbank & Blogs</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-links-title">Affiliate Disclaimer</h4>
+        <p class="footer-desc" style="font-size: 0.8rem; line-height: 1.5; color: var(--text-muted);">
+          ThuisaccuGids.nl maakt gebruik van affiliate links. Als je via onze links een aankoop doet bij aangesloten shops (zoals Bol.com of Coolblue), ontvangen wij mogelijk een kleine commissie. Dit kost jou helemaal niets extra's en stelt ons in staat om gratis onafhankelijke content te blijven publiceren.
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ThuisaccuGids.nl. Alle rechten voorbehouden.</p>
+      <p>Gemaakt voor maximale energiebesparing en onafhankelijkheid.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

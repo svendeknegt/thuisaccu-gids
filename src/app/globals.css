@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-muted text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-light text-ink;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-surface-border bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-ink-muted hover:bg-surface-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+
+  .card {
+    @apply rounded-xl border border-surface-border bg-white shadow-card;
+  }
+
+  .chip {
+    @apply rounded-lg border border-surface-border bg-white px-3 py-2 text-sm font-medium text-ink-secondary transition hover:border-brand/40;
+  }
+
+  .chip-active {
+    @apply border-brand bg-brand-light text-brand-dark;
+  }
+
+  .section-title {
+    @apply font-semibold tracking-tight text-ink text-2xl sm:text-3xl;
+  }
+
+  .section-lead {
+    @apply mt-2 max-w-2xl text-ink-secondary text-base leading-relaxed;
+  }
+}
