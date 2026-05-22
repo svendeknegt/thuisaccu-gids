@@ -11,6 +11,13 @@ export function SiteConsent() {
 
   useEffect(() => {
     if (!hasSiteConsent()) setVisible(true);
+
+    function onReset() {
+      setAgreed(false);
+      setVisible(true);
+    }
+    window.addEventListener("site-consent-reset", onReset);
+    return () => window.removeEventListener("site-consent-reset", onReset);
   }, []);
 
   useEffect(() => {
@@ -31,12 +38,12 @@ export function SiteConsent() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/50 p-4 sm:items-center"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="consent-title"
     >
-      <div className="card max-h-[90vh] w-full max-w-lg overflow-y-auto p-6 shadow-cardHover sm:p-8">
+      <div className="card max-h-[90vh] w-full max-w-lg overflow-y-auto border-2 border-brand/20 p-6 shadow-cardHover sm:p-8">
         <h2 id="consent-title" className="text-xl font-semibold text-ink">
           Belangrijke informatie
         </h2>
@@ -134,7 +141,7 @@ export function SiteConsent() {
         <p className="mt-4 text-xs leading-relaxed text-ink-muted">
           Door verder te gaan bevestig je dat je 18 jaar of ouder bent of
           toestemming hebt van een ouder/verzorger. Je kunt je keuze later
-          wijzigen door sitegegevens in je browser te wissen.
+          wijzigen via &quot;Privacyvoorkeuren&quot; in de footer.
         </p>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PrivacyPreferencesButton } from "@/components/PrivacyPreferencesButton";
 import { site } from "@/lib/site";
 
 const legalLinks = [
@@ -86,6 +87,8 @@ export function Footer() {
           <Link href="/disclaimer" className="hover:text-brand">
             Disclaimer
           </Link>
+          {" · "}
+          <PrivacyPreferencesButton />
         </p>
       </div>
     </footer>

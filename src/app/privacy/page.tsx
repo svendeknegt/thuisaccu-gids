@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               </thead>
               <tbody>
                 <tr className="border-t border-surface-border">
-                  <td className="px-3 py-2">site-consent-v2 (localStorage)</td>
+                  <td className="px-3 py-2">site-consent-v3 (localStorage)</td>
                   <td className="px-3 py-2">Onthouden van je toestemming</td>
                   <td className="px-3 py-2">Tot je browsergegevens wist</td>
                 </tr>
