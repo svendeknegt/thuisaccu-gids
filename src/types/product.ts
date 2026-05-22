@@ -3,6 +3,16 @@ import type { Retailer } from "@/lib/affiliate";
 export type Goal = "savings" | "trading" | "budget";
 export type CapacityCategory = "small" | "mid" | "large";
 
+/** Zelfde model ook op Amazon.nl (affiliate via tag) */
+export interface AmazonOffer {
+  shopUrl: string;
+  price: number;
+  image: string;
+  asin: string;
+  /** Korte noot bij afwijkende Amazon-versie */
+  variantNote?: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -18,6 +28,8 @@ export interface Product {
   shopUrl: string;
   /** Optioneel: korte toelichting bij affiliate-knop (bijv. vergelijkbaar model) */
   shopLinkHint?: string;
+  /** Zelfde of vergelijkbaar model op Amazon.nl */
+  amazonOffer?: AmazonOffer;
   pros: string[];
   cons: string[];
   bestFor: Goal;

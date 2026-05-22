@@ -6,7 +6,7 @@ import { ProductImage } from "@/components/ProductImage";
 import { useCompare } from "@/components/compare/CompareContext";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getRetailerLabel } from "@/lib/affiliate";
-import { getAffiliateUrl } from "@/lib/products";
+import { getAffiliateUrl, getAmazonOfferUrl } from "@/lib/products";
 import { site } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -112,6 +112,14 @@ export function ProductCard({
               retailer={getRetailerLabel(product.retailer)}
               className="text-sm"
             />
+            {getAmazonOfferUrl(product) && product.amazonOffer && product.retailer !== "amazon" && (
+              <AffiliateButton
+                href={getAmazonOfferUrl(product)!}
+                retailer="Amazon.nl"
+                price={product.amazonOffer.price}
+                className="mt-2 text-sm"
+              />
+            )}
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ const productArticleMap: Record<string, string[]> = {
   "anker-solix-f3800": ["dynamisch", "bestekoop", "kwh-berekenen"],
   "bluetti-ac500-b300s": ["bestekoop", "kwh-berekenen", "thuisaccu-kopen"],
   "bluetti-ep500-pro": ["salderen", "kwh-berekenen", "bestekoop"],
+  "ecoflow-delta-3-plus": ["thuisaccu-kopen", "dynamisch", "kwh-berekenen"],
 };
 
 export function getRelatedArticleSlugs(productId: string): string[] {

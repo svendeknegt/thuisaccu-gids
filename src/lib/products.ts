@@ -1,4 +1,5 @@
 import { buildAffiliateUrl } from "@/lib/affiliate";
+import { AMAZON_URLS } from "@/lib/amazon-urls";
 import { BOL_URLS } from "@/lib/bol-urls";
 import type { Product, ProductFilters } from "@/types/product";
 
@@ -83,9 +84,11 @@ export const products: Product[] = [
     price: 2799,
     rating: 4.7,
     image: PLACEHOLDER_IMAGE,
-    retailer: "amazon",
+    retailer: "coolblue",
     shopUrl:
-      "https://www.amazon.nl/s?k=bluetti+ac500+b300s",
+      "https://www.coolblue.nl/zoeken?query=bluetti+ac500+b300s",
+    shopLinkHint:
+      "Niet verkrijgbaar op Amazon.nl — koop via Coolblue of andere EU-winkel.",
     pros: [
       "Modulair uitbreidbaar",
       "5000W zuivere sinusomvormer",
@@ -104,10 +107,10 @@ export const products: Product[] = [
     suitableFor: [
       "Wie modulair wil starten en later kWh wil toevoegen",
       "Technisch ingestelde gebruikers",
-      "Amazon-shoppers die modulaire Bluetti zoeken",
+      "Grotere huishoudens met zware lasten",
     ],
     buyingGuide:
-      "Modulair betekent flexibiliteit: je koopt een omvormer (AC500) en batterijmodules (B300S) die je later uitbreidt. Handig als je verbruik de komende jaren stijgt (warmtepomp, EV). Nadeel: meer kabels en setup dan één kast. Via Amazon let je op verkoper, garantie in EU en of onderdelen los verkrijgbaar zijn.",
+      "Modulair betekent flexibiliteit: je koopt een omvormer (AC500) en batterijmodules (B300S) die je later uitbreidt. Dit model staat niet op Amazon.nl; via Coolblue of gespecialiseerde winkels bestellen. Let op garantie in de EU en of modules los verkrijgbaar zijn.",
   },
   {
     id: "ecoflow-delta-2-max",
@@ -144,7 +147,13 @@ export const products: Product[] = [
       "Bol.com-klanten die EcoFlow willen vergelijken",
     ],
     buyingGuide:
-      "De DELTA 2 Max is de middenmoot: 2 kWh is niet genoeg voor een hele avond grote lasten, wel voor basiscomfort en betere benutting van zonne-overschot. Op Bol.com zoek je het exacte model met juiste capaciteit — zoekpagina's wijzigen vaak. Snel laden (0–80% in onder een uur) helpt op bewolkte dagen als je toch netstroom wilt bijladen.",
+      "De DELTA 2 Max is de middenmoot: 2 kWh is niet genoeg voor een hele avond grote lasten, wel voor basiscomfort en betere benutting van zonne-overschot. Op Bol.com zoek je het exacte model met juiste capaciteit. Op Amazon.nl staat hetzelfde model vaak tegen andere prijs — vergelijk beide knoppen.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.ecoflowDelta2Max.url,
+      price: AMAZON_URLS.ecoflowDelta2Max.price,
+      image: AMAZON_URLS.ecoflowDelta2Max.image,
+      asin: AMAZON_URLS.ecoflowDelta2Max.asin,
+    },
   },
   {
     id: "bluetti-ep500-pro",
@@ -213,13 +222,63 @@ export const products: Product[] = [
       "Bol.com-klanten met beperkt budget",
     ],
     buyingGuide:
-      "De C1000 is bewust klein: ideaal om te testen of je gedrag past bij opslag (laden overdag, verbruiken 's avonds). Niet geschikt voor inductie of grote warmtepompen. Op Bol.com is dit een populaire instapper — let op actuele prijs en of accessoires (kabels, zonnepaneeladapter) inbegrepen zijn.",
+      "De C1000 is bewust klein: ideaal om te testen of je gedrag past bij opslag (laden overdag, verbruiken 's avonds). Niet geschikt voor inductie of grote warmtepompen. Op Bol.com is de C1000X-variant; op Amazon.nl het SOLIX C1000-model.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.ankerSolixC1000.url,
+      price: AMAZON_URLS.ankerSolixC1000.price,
+      image: AMAZON_URLS.ankerSolixC1000.image,
+      asin: AMAZON_URLS.ankerSolixC1000.asin,
+      variantNote: "Amazon: Anker SOLIX C1000 (Bol: C1000X)",
+    },
+  },
+  {
+    id: "ecoflow-delta-3-plus",
+    name: "EcoFlow DELTA 3 Plus",
+    brand: "EcoFlow",
+    capacity: 1.024,
+    power: 1800,
+    price: AMAZON_URLS.ecoflowDelta3Plus.price,
+    rating: AMAZON_URLS.ecoflowDelta3Plus.rating,
+    image: AMAZON_URLS.ecoflowDelta3Plus.image,
+    retailer: "amazon",
+    shopUrl: AMAZON_URLS.ecoflowDelta3Plus.url,
+    pros: [
+      "Snel laden (0–100% in ~56 min)",
+      "1800 W output (3600 W piek)",
+      "Uitbreidbaar tot 5 kWh",
+    ],
+    cons: ["Kleinere basiscapaciteit (1 kWh)", "Niet voor zware inductie"],
+    bestFor: "budget",
+    capacityCategory: "small",
+    type: "Plug & Play",
+    chemistry: "LFP (LiFePO4)",
+    cycles: "4000+",
+    warranty: "5 jaar",
+    weight: AMAZON_URLS.ecoflowDelta3Plus.weight,
+    description:
+      "Compacte EcoFlow met snelle X-Stream oplading en UPS-modus — populair instapmodel op Amazon.nl.",
+    suitableFor: [
+      "Starters via Amazon.nl",
+      "Camping en noodstroom",
+      "Dynamisch tarief met app-sturing",
+    ],
+    buyingGuide:
+      "De DELTA 3 Plus op Amazon.nl (ASIN B0DFPW2Y2C) is een compact 1024 Wh model met hoge laadsnelheid. Controleer op Amazon of je de EU-versie bestelt en welke kabels inbegrepen zijn. Prijs op Amazon wijzigt regelmatig.",
   },
 ];
 
 /** Tracking-link voor knoppen (affiliate als ID's zijn ingevuld, anders winkel-URL + UTM) */
 export function getAffiliateUrl(product: Product): string {
   return buildAffiliateUrl(product.shopUrl, product.retailer, product.id);
+}
+
+export function getAmazonOfferUrl(product: Product): string | undefined {
+  if (!product.amazonOffer) return undefined;
+  return buildAffiliateUrl(
+    product.amazonOffer.shopUrl,
+    "amazon",
+    `${product.id}-amazon`,
+  );
 }
 
 export function getProductById(id: string): Product | undefined {

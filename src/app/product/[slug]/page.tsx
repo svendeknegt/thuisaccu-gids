@@ -8,7 +8,7 @@ import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getRetailerLabel } from "@/lib/affiliate";
 import { getArticleBySlug } from "@/lib/articles";
 import { getRelatedArticleSlugs } from "@/lib/product-articles";
-import { getAffiliateUrl, getProductById, products } from "@/lib/products";
+import { getAffiliateUrl, getAmazonOfferUrl, getProductById, products } from "@/lib/products";
 import { productJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 
@@ -44,6 +44,9 @@ export default async function ProductPage({ params }: PageProps) {
   const relatedArticles = getRelatedArticleSlugs(slug)
     .map((s) => getArticleBySlug(s))
     .filter(Boolean);
+
+  const amazonUrl = getAmazonOfferUrl(product);
+  const amazonOffer = product.amazonOffer;
 
   return (
     <div className="py-10 sm:py-14">
@@ -100,13 +103,32 @@ export default async function ProductPage({ params }: PageProps) {
             </p>
             <p className="text-sm text-ink-muted">
               {formatPricePerKwh(product.price, product.capacity)} per kWh capaciteit
+              {product.retailer === "amazon" && " · prijs Amazon.nl"}
             </p>
+            {amazonOffer && product.retailer !== "amazon" && (
+              <p className="mt-2 text-sm text-ink-secondary">
+                Ook op Amazon.nl vanaf{" "}
+                <strong>{formatPrice(amazonOffer.price)}</strong>
+                {amazonOffer.variantNote ? ` (${amazonOffer.variantNote})` : ""}
+              </p>
+            )}
             <AffiliateButton
               href={getAffiliateUrl(product)}
               retailer={getRetailerLabel(product.retailer)}
               price={product.price}
               className="mt-4"
             />
+            {amazonUrl && amazonOffer && product.retailer !== "amazon" && (
+              <AffiliateButton
+                href={amazonUrl}
+                retailer="Amazon.nl"
+                price={amazonOffer.price}
+                className="mt-3"
+              />
+            )}
+            {product.shopLinkHint && (
+              <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
+            )}
             <AffiliateDisclosure
               retailer={getRetailerLabel(product.retailer)}
               className="mt-4"
