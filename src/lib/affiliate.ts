@@ -12,7 +12,7 @@ export const affiliateConfig = {
   bolSiteId:
     process.env.NEXT_PUBLIC_BOL_PARTNER_ID?.trim() || "1522053",
   amazonTag:
-    process.env.NEXT_PUBLIC_AMAZON_ASSOCIATES_TAG?.trim() || "",
+    process.env.NEXT_PUBLIC_AMAZON_ASSOCIATES_TAG?.trim() || "thuisaccugids-21",
   /** Volledige tracking-URL van Awin/Daisycon voor Coolblue, indien van toepassing */
   coolblueTrackingTemplate:
     process.env.NEXT_PUBLIC_COOLBLUE_AFFILIATE_URL?.trim() || "",
