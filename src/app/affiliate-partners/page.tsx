@@ -54,6 +54,12 @@ export default function AffiliatePartnersPage() {
         </ul>
 
         <p className="mt-10 text-sm leading-relaxed text-ink-secondary">
+          <strong className="text-ink">Status:</strong> Amazon Associates is actief op
+          deze site. Bol Partner wacht op goedkeuring. Coolblue volgt zodra Awin of
+          Daisycon is gekoppeld.
+        </p>
+
+        <p className="mt-6 text-sm leading-relaxed text-ink-secondary">
           Beheerders: zie{" "}
           <code className="rounded bg-surface-muted px-1 text-xs">
             .env.example

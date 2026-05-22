@@ -6,6 +6,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProductImage } from "@/components/ProductImage";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getRetailerLabel } from "@/lib/affiliate";
+import { getArticleBySlug } from "@/lib/articles";
+import { getRelatedArticleSlugs } from "@/lib/product-articles";
 import { getAffiliateUrl, getProductById, products } from "@/lib/products";
 import { productJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
@@ -38,6 +40,10 @@ export default async function ProductPage({ params }: PageProps) {
   const { slug } = await params;
   const product = getProductById(slug);
   if (!product) notFound();
+
+  const relatedArticles = getRelatedArticleSlugs(slug)
+    .map((s) => getArticleBySlug(s))
+    .filter(Boolean);
 
   return (
     <div className="py-10 sm:py-14">
@@ -160,6 +166,27 @@ export default async function ProductPage({ params }: PageProps) {
             </ul>
           </div>
         </div>
+
+        {relatedArticles.length > 0 && (
+          <section className="mt-12 border-t border-surface-border pt-10">
+            <h2 className="text-xl font-semibold text-ink">Gerelateerde gidsen</h2>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedArticles.map((article) => (
+                <li key={article!.slug}>
+                  <Link
+                    href={`/kennisbank/${article!.slug}`}
+                    className="card block p-4 text-sm transition hover:shadow-cardHover"
+                  >
+                    <p className="font-medium text-ink">{article!.title}</p>
+                    <p className="mt-1 text-ink-secondary line-clamp-2">
+                      {article!.excerpt}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </div>
     </div>
   );

@@ -25,6 +25,18 @@ De site levert automatisch:
 
 In Search Console: **Sitemaps** → voeg toe: `sitemap.xml`.
 
+### Indexering versnellen (optioneel)
+
+Menu **URL-inspectie** → plak URL → **Indexering aanvragen** voor:
+
+- `https://thuisaccu-gids.nl/vergelijken`
+- `https://thuisaccu-gids.nl/kennisbank/thuisaccu-kopen`
+- `https://thuisaccu-gids.nl/product/ecoflow-delta-pro`
+
+## 2b. Verdienen & partners
+
+Zie `docs/VERDIENEN.md`, `docs/COOLBLUE-AWIN.md` en `/affiliate-partners` op de site.
+
 ## 3. Zoekwoorden monitoren (wekelijks)
 
 | Query | Pagina die je optimaliseert |
