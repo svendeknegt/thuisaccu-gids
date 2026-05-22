@@ -42,6 +42,30 @@ export const AMAZON_URLS = {
     weight: "12 kg",
     name: "EcoFlow DELTA 3 Plus",
   },
+  ecoflowRiver2Pro: {
+    asin: "B0BFQD5RMJ",
+    url: "https://www.amazon.nl/dp/B0BFQD5RMJ",
+    image: "https://m.media-amazon.com/images/I/5196yGqksNL._AC_SX679_.jpg",
+    price: 549,
+    rating: 4.5,
+    reviewCount: 120,
+    capacityKwh: 0.768,
+    powerW: 800,
+    weight: "7,8 kg",
+    name: "EcoFlow RIVER 2 Pro",
+  },
+  ankerSolixC300: {
+    asin: "B0D62GMQ3F",
+    url: "https://www.amazon.nl/dp/B0D62GMQ3F",
+    image: "https://m.media-amazon.com/images/I/719Cax9utKL._AC_SX679_.jpg",
+    price: 269.99,
+    rating: 4.6,
+    reviewCount: 85,
+    capacityKwh: 0.288,
+    powerW: 300,
+    weight: "4,1 kg",
+    name: "Anker Solix C300",
+  },
 } as const;
 
 export type AmazonListingKey = keyof typeof AMAZON_URLS;

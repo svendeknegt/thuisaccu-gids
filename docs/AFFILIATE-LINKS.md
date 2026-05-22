@@ -57,8 +57,8 @@ Hoe vind je die URL?
 
 | Product | retailer in code |
 |---------|-----------------|
-| EcoFlow (meeste) | `bol` |
-| Anker F3800, Bluetti EP500 | `coolblue` |
-| Bluetti AC500 | `amazon` |
+| Meeste EcoFlow, Anker, Jackery, Bluetti | `bol` |
+| EcoFlow DELTA 3 Plus, RIVER 2 Pro, Anker C300 | `amazon` |
+| Modellen met dubbele listing | `bol` + `amazonOffer` |
 
 Pas `retailer` aan als jij andere winkels gebruikt.

@@ -23,8 +23,9 @@ NEXT_PUBLIC_COOLBLUE_AFFILIATE_URL=https://...jouw-awin-link...&ued={url}
 
 Producten op de site met `retailer: "coolblue"`:
 
-- Anker Solix F3800
-- Bluetti EP500 Pro
+_(momenteel geen — alle modellen staan op Bol.com of Amazon.nl)_
+
+Als je later Coolblue-producten toevoegt, zet `retailer: "coolblue"` in `src/lib/products.ts`.
 
 ## Test
 
