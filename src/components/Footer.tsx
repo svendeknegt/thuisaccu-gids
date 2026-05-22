@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 const legalLinks = [
   { href: "/over-ons", label: "Over ons" },
   { href: "/faq", label: "Veelgestelde vragen" },
+  { href: "/affiliate-partners", label: "Affiliate-partners" },
   { href: "/voorwaarden", label: "Servicevoorwaarden" },
   { href: "/privacy", label: "Privacybeleid" },
 ];

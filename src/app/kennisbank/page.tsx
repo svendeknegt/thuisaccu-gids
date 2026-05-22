@@ -1,9 +1,9 @@
 import { KennisbankClient } from "@/components/KennisbankClient";
 
 export const metadata = {
-  title: "Kennisbank",
+  title: "Kennisbank thuisaccu",
   description:
-    "Gidsen over salderen, dynamische tarieven en het kiezen van een thuisaccu.",
+    "Gidsen over thuisaccu kopen, kWh berekenen, salderen, dynamische tarieven en de beste koop.",
 };
 
 export default function KennisbankPage() {

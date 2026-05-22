@@ -5,7 +5,9 @@ import { CompareProvider } from "@/components/compare/CompareContext";
 import { CookieNotice } from "@/components/CookieNotice";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { TrustStrip } from "@/components/TrustStrip";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -15,13 +17,42 @@ const sans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const googleVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Onafhankelijk vergelijken`,
+    default: `${site.name} | Thuisaccu vergelijken`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  keywords: [
+    "thuisaccu",
+    "thuisbatterij",
+    "thuisaccu vergelijken",
+    "thuisaccu kopen",
+    "zonnepanelen batterij",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    url: site.url,
+    siteName: site.name,
+    title: `${site.name} | Thuisaccu vergelijken`,
+    description: site.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+  },
+  alternates: {
+    canonical: site.url,
+  },
+  ...(googleVerification
+    ? { verification: { google: googleVerification } }
+    : {}),
 };
 
 export default function RootLayout({
@@ -32,6 +63,8 @@ export default function RootLayout({
   return (
     <html lang="nl" className={sans.variable}>
       <body className="flex min-h-screen flex-col font-sans">
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
         <CompareProvider>
           <TrustStrip />
           <Header />

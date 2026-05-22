@@ -2,8 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { ArticleBody } from "@/components/ArticleBody";
+import { JsonLd } from "@/components/JsonLd";
 import { articleBodies } from "@/lib/article-content";
 import { articles, getArticleBySlug } from "@/lib/articles";
+import { articleJsonLd } from "@/lib/structured-data";
+import { site } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,6 +23,12 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: { canonical: `${site.url}/kennisbank/${slug}` },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `${site.url}/kennisbank/${slug}`,
+    },
   };
 }
 
@@ -30,8 +39,11 @@ export default async function ArticlePage({ params }: PageProps) {
 
   if (!article || !body) notFound();
 
+  const jsonLd = articleJsonLd(slug);
+
   return (
     <div className="py-10 sm:py-14">
+      {jsonLd && <JsonLd data={jsonLd} />}
       <article className="container-page max-w-3xl">
         <Link
           href="/kennisbank"

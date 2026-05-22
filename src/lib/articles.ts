@@ -47,4 +47,26 @@ export const articles: Article[] = [
     readMinutes: 10,
     publishedAt: "2026-01-10",
   },
+  {
+    id: "4",
+    slug: "thuisaccu-kopen",
+    category: "advies",
+    categoryLabel: "Aankoopadvies",
+    title: "Thuisaccu kopen in 2026: stappenplan en valkuilen",
+    excerpt:
+      "Van kWh-behoefte tot budget en winkelkeuze — zo koop je een thuisbatterij zonder spijt.",
+    readMinutes: 12,
+    publishedAt: "2026-05-01",
+  },
+  {
+    id: "5",
+    slug: "kwh-berekenen",
+    category: "advies",
+    categoryLabel: "Berekenen",
+    title: "Hoeveel kWh thuisaccu heb je nodig?",
+    excerpt:
+      "Bereken je benodigde capaciteit op basis van zonnepanelen, verbruik en wat je wilt opslaan.",
+    readMinutes: 9,
+    publishedAt: "2026-04-12",
+  },
 ];

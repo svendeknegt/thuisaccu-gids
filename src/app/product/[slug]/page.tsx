@@ -2,10 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { JsonLd } from "@/components/JsonLd";
 import { ProductImage } from "@/components/ProductImage";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getRetailerLabel } from "@/lib/affiliate";
 import { getAffiliateUrl, getProductById, products } from "@/lib/products";
+import { productJsonLd } from "@/lib/structured-data";
+import { site } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,6 +25,12 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: product.name,
     description: product.description,
+    alternates: { canonical: `${site.url}/product/${slug}` },
+    openGraph: {
+      title: product.name,
+      description: product.description,
+      url: `${site.url}/product/${slug}`,
+    },
   };
 }
 
@@ -32,6 +41,7 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <div className="py-10 sm:py-14">
+      <JsonLd data={productJsonLd(product)} />
       <div className="container-page">
         <Link
           href="/vergelijken"

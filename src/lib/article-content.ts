@@ -312,4 +312,156 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       ],
     },
   ],
+  "thuisaccu-kopen": [
+    {
+      type: "p",
+      text: "Een thuisaccu (thuisbatterij) is een flinke investering. In 2026 kijken steeds meer huiseigenaren ernaar vanwege het einde van salderen en stijgende nettarieven. In dit stappenplan lees je hoe je van oriëntatie naar aankoop gaat — zonder verkooppraat, met links naar onze vergelijker en winkels zoals Bol.com, Coolblue en Amazon.",
+    },
+    {
+      type: "h2",
+      text: "Stap 1: Bepaal je doel",
+    },
+    {
+      type: "p",
+      text: "Wil je vooral eigen zonnestroom 's avonds gebruiken (besparen)? Of wil je actief profiteren van goedkope uurprijzen met een dynamisch contract (handelen)? Dat bepaalt hoeveel kWh en Watt je nodig hebt. Gebruik onze keuzehulp op de homepage voor een eerste indicatie.",
+    },
+    {
+      type: "h2",
+      text: "Stap 2: Capaciteit en vermogen",
+    },
+    {
+      type: "p",
+      text: "Capaciteit (kWh) is hoeveel energie je kunt opslaan. Vermogen (W) is hoeveel je tegelijk kunt leveren aan apparaten. Een accu van 2 kWh met 2400 W is prima voor basislast; voor inductie of een warmtepomp heb je vaak 3000 W+ en 4–5 kWh nodig. Lees ook ons artikel over kWh berekenen in de kennisbank.",
+    },
+    {
+      type: "h2",
+      text: "Stap 3: Plug-and-play of installateur",
+    },
+    {
+      type: "p",
+      text: "Onze vergelijking richt zich op plug-and-play en modulaire systemen die je via stopcontact of een aparte groep kunt gebruiken. Vaste thuisbatterijen achter de meterkast vereisen vaak een installateur en andere regels — die vallen buiten onze selectie.",
+    },
+    {
+      type: "h2",
+      text: "Stap 4: Budget en prijs per kWh",
+    },
+    {
+      type: "p",
+      text: "Vergelijk niet alleen de catalogusprijs. Deel de prijs door het aantal kWh: dat geeft prijs per kWh capaciteit. Een goedkope kleine accu kan per opgeslagen kWh duurder zijn dan een grotere. Tel accessoires (kabels, zonnepaneeladapter) en eventuele uitbreidingsmodules mee.",
+    },
+    {
+      type: "h2",
+      text: "Stap 5: Waar koop je?",
+    },
+    {
+      type: "ul",
+      items: [
+        "Bol.com — breed assortiment EcoFlow en Anker (controleer productpagina, geen zoekresultaat).",
+        "Coolblue — vaak Anker en Bluetti met snelle levering.",
+        "Amazon.nl — modulaire Bluetti en andere merken.",
+      ],
+    },
+    {
+      type: "p",
+      text: "Via onze productpagina's ga je naar de winkel met tracking; wij zijn geen webshop. Prijzen op Thuisaccu-Gids.nl zijn indicatief.",
+    },
+    {
+      type: "h2",
+      text: "Veelgemaakte fouten",
+    },
+    {
+      type: "ul",
+      items: [
+        "Te kleine accu kopen — avondverbruik blijft uit het net komen.",
+        "Alleen naar kWh kijken en vermogen (W) vergeten.",
+        "Retourvoorwaarden en garantie niet checken vóór aankoop.",
+        "Verwachten dat salderen blijft — reken op lagere waarde teruglevering.",
+      ],
+    },
+    {
+      type: "callout",
+      title: "Tip",
+      text: "Vergelijk maximaal drie modellen naast elkaar op onze vergelijkpagina voordat je bestelt.",
+    },
+    {
+      type: "h2",
+      text: "Samenvatting",
+    },
+    {
+      type: "ul",
+      items: [
+        "Start met doel: besparen of dynamisch handelen.",
+        "Match kWh en W aan je verbruik.",
+        "Vergelijk prijs per kWh en lees voor-/nadelen.",
+        "Koop bij een erkende winkel via onze links.",
+      ],
+    },
+  ],
+  "kwh-berekenen": [
+    {
+      type: "p",
+      text: "Hoeveel kilowattuur (kWh) capaciteit heb je nodig in een thuisaccu? Er is geen enkel magic number — het hangt af van je zonnepanelen, jaarverbruik, verbruiksmomenten en budget. Met onderstaande vuistregels en onze keuzehulp kom je in de buurt van een realistische maat.",
+    },
+    {
+      type: "h2",
+      text: "Wat betekent kWh bij een thuisaccu?",
+    },
+    {
+      type: "p",
+      text: "1 kWh is genoeg om bijvoorbeeld een koelkast een paar uur te laten draaien, of een tv meerdere uren. Een accu van 3 kWh kan in the praktijk niet altijd 3 kWh 's avonds leveren: je verliest wat energie bij omzetting (efficiency ~85–92%) en je laadt zelden tot 100% elke dag.",
+    },
+    {
+      type: "h2",
+      text: "Vuistregel op basis van zonnepanelen",
+    },
+    {
+      type: "p",
+      text: "Heb je een gemiddeld overschot op zonnige dagen? Kijk in je omvormer-app naar teruglevering. Veel huishoudens met 10–16 panelen hebben 3–8 kWh overschot op goede dagen. Een accu van 2–5 kWh vangt een deel daarvan op voor de avond.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Klein overschot (< 2 kWh/dag gemiddeld): 1–2 kWh accu.",
+        "Middel (2–5 kWh/dag): 2–4 kWh accu.",
+        "Groot (> 5 kWh/dag): 4–10 kWh (eventueel uitbreidbaar).",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Vuistregel op basis van avondverbruik",
+    },
+    {
+      type: "p",
+      text: "Tel je verbruik tussen 18:00 en 23:00 op een gemiddelde dag (kWh). Wil je dat deels uit de accu komen? Dan is je minimale nuttige capaciteit ongeveer dat avondverbruik × 0,7 (rekening houdend met efficiency). Voorbeeld: 4 kWh avondverbruik → richt op minstens 3 kWh bruikbare accucapaciteit.",
+    },
+    {
+      type: "h2",
+      text: "Vermogen (W) niet vergeten",
+    },
+    {
+      type: "p",
+      text: "Capaciteit zonder vermogen helpt niet als je inductie en oven tegelijk aanzet. Check het continu vermogen (W) van de accu. Onder 2000 W: lichte lasten. 2400–3600 W: normaal huishouden. 5000 W+: zware pieken of dynamisch snel laden/ontladen.",
+    },
+    {
+      type: "h2",
+      text: "Gebruik onze keuzehulp",
+    },
+    {
+      type: "p",
+      text: "Op de homepage vul je aantal panelen, geschat jaarverbruik en je doel in. Je krijgt een aanbevolen capaciteit in kWh en passende modellen. Combineer dat met de vergelijker voor prijs per kWh en reviews in de vorm van voor- en nadelen per product.",
+    },
+    {
+      type: "h2",
+      text: "Samenvatting",
+    },
+    {
+      type: "ul",
+      items: [
+        "kWh = hoeveel je kunt opslaan; W = hoeveel je tegelijk kunt voeden.",
+        "Kijk naar zonne-overschot én avondverbruik.",
+        "Reken met ~85–92% round-trip efficiency.",
+        "Vergelijk concrete modellen op /vergelijken.",
+      ],
+    },
+  ],
 };

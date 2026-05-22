@@ -1,9 +1,16 @@
 import Link from "next/link";
 import { Finder } from "@/components/Finder";
 import { ProductCard } from "@/components/ProductCard";
+import { articles } from "@/lib/articles";
 import { products } from "@/lib/products";
 import { getFeaturedProducts } from "@/lib/recommend";
 import { site } from "@/lib/site";
+
+export const metadata = {
+  title: "Thuisaccu vergelijken",
+  description:
+    "Vergelijk thuisaccu's en thuisbatterijen onafhankelijk. Keuzehulp, specificaties en links naar Bol, Coolblue en Amazon.",
+};
 
 export default function HomePage() {
   const featured = getFeaturedProducts(3);
@@ -83,9 +90,27 @@ export default function HomePage() {
             Achtergrond bij salderen, dynamische tarieven en aankoop — zonder
             verkooppraat.
           </p>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            {articles.slice(0, 4).map((a) => (
+              <li key={a.slug}>
+                <Link
+                  href={`/kennisbank/${a.slug}`}
+                  className="card block p-4 transition hover:shadow-cardHover"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wide text-brand">
+                    {a.categoryLabel}
+                  </p>
+                  <p className="mt-1 font-semibold text-ink">{a.title}</p>
+                  <p className="mt-1 text-sm text-ink-secondary line-clamp-2">
+                    {a.excerpt}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/kennisbank" className="btn-secondary inline-flex">
-              Naar artikelen
+              Alle artikelen
             </Link>
             <Link href="/faq" className="btn-secondary inline-flex">
               Veelgestelde vragen
