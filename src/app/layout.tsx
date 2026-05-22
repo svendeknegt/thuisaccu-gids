@@ -18,7 +18,8 @@ const sans = Plus_Jakarta_Sans({
 });
 
 const googleVerification =
-  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ||
+  site.googleSiteVerification;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
