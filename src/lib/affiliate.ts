@@ -1,0 +1,118 @@
+import { site } from "@/lib/site";
+
+/** Netwerk waar het product verkocht wordt */
+export type Retailer = "bol" | "coolblue" | "amazon" | "direct";
+
+/**
+ * Vul dit in zodra je partnerprogramma's goedkeuren.
+ * Of zet dezelfde waarden in .env.local (zie .env.example).
+ */
+export const affiliateConfig = {
+  /** Site-ID / website code uit partner.bol.com (Account → websitegegevens) */
+  bolSiteId:
+    process.env.NEXT_PUBLIC_BOL_PARTNER_ID?.trim() || "1522053",
+  amazonTag:
+    process.env.NEXT_PUBLIC_AMAZON_ASSOCIATES_TAG?.trim() || "",
+  /** Volledige tracking-URL van Awin/Daisycon voor Coolblue, indien van toepassing */
+  coolblueTrackingTemplate:
+    process.env.NEXT_PUBLIC_COOLBLUE_AFFILIATE_URL?.trim() || "",
+} as const;
+
+export function isAffiliateConfigured(retailer: Retailer): boolean {
+  switch (retailer) {
+    case "bol":
+      return Boolean(affiliateConfig.bolSiteId);
+    case "amazon":
+      return Boolean(affiliateConfig.amazonTag);
+    case "coolblue":
+      return Boolean(affiliateConfig.coolblueTrackingTemplate);
+    default:
+      return false;
+  }
+}
+
+function appendUtm(url: string, productId: string): string {
+  try {
+    const parsed = new URL(url);
+    parsed.searchParams.set("utm_source", site.domain);
+    parsed.searchParams.set("utm_medium", "referral");
+    parsed.searchParams.set("utm_campaign", productId);
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
+
+/** Bol Partner — link generator (site ID + name voor rapportage in Bol-dashboard) */
+function buildBolLink(shopUrl: string, productId: string): string {
+  const { bolSiteId } = affiliateConfig;
+  if (!bolSiteId) return appendUtm(shopUrl, productId);
+
+  const encoded = encodeURIComponent(shopUrl);
+  const name = encodeURIComponent(productId);
+  return `https://partner.bol.com/click/click?p=2&t=url&s=${bolSiteId}&f=TXL&url=${encoded}&name=${name}`;
+}
+
+export const retailerLabels: Record<Retailer, string> = {
+  bol: "Bol.com",
+  coolblue: "Coolblue",
+  amazon: "Amazon.nl",
+  direct: "Winkel",
+};
+
+export function getRetailerLabel(retailer: Retailer): string {
+  return retailerLabels[retailer];
+}
+
+/** Amazon Associates — tag toevoegen aan product-URL */
+function buildAmazonLink(shopUrl: string): string {
+  const { amazonTag } = affiliateConfig;
+  if (!amazonTag) return appendUtm(shopUrl, "amazon");
+
+  try {
+    const parsed = new URL(shopUrl);
+    parsed.searchParams.set("tag", amazonTag);
+    return parsed.toString();
+  } catch {
+    return shopUrl;
+  }
+}
+
+/**
+ * Coolblue loopt vaak via Awin/Daisycon: plak daar je gegenereerde deeplink-template.
+ * Template kan {url} bevatten voor de doel-URL, anders wordt shopUrl achter de link geplakt.
+ */
+function buildCoolblueLink(shopUrl: string): string {
+  const template = affiliateConfig.coolblueTrackingTemplate;
+  if (!template) return appendUtm(shopUrl, "coolblue");
+
+  if (template.includes("{url}")) {
+    return template.replace("{url}", encodeURIComponent(shopUrl));
+  }
+  const separator = template.includes("?") ? "&" : "?";
+  return `${template}${separator}u=${encodeURIComponent(shopUrl)}`;
+}
+
+export function buildAffiliateUrl(
+  shopUrl: string,
+  retailer: Retailer,
+  productId: string,
+): string {
+  let href: string;
+
+  switch (retailer) {
+    case "bol":
+      href = buildBolLink(shopUrl, productId);
+      break;
+    case "amazon":
+      href = buildAmazonLink(shopUrl);
+      break;
+    case "coolblue":
+      href = buildCoolblueLink(shopUrl);
+      break;
+    default:
+      href = appendUtm(shopUrl, productId);
+  }
+
+  return href;
+}

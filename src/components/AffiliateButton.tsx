@@ -4,15 +4,20 @@ interface AffiliateButtonProps {
   href: string;
   price?: number;
   label?: string;
+  retailer?: string;
   className?: string;
 }
 
 export function AffiliateButton({
   href,
   price,
-  label = "Bekijk bij winkel",
+  label,
+  retailer,
   className = "",
 }: AffiliateButtonProps) {
+  const text =
+    label ?? (retailer ? `Bekijk op ${retailer}` : "Bekijk bij winkel");
+
   return (
     <a
       href={href}
@@ -20,7 +25,7 @@ export function AffiliateButton({
       rel="noopener noreferrer sponsored"
       className={`btn-primary w-full sm:w-auto ${className}`}
     >
-      {label}
+      {text}
       {price != null && (
         <span className="ml-2 opacity-90">· {formatPrice(price)}</span>
       )}

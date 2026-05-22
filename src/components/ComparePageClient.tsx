@@ -4,6 +4,10 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { ProductCard } from "@/components/ProductCard";
+import {
+  PRODUCT_SORT_OPTIONS,
+  SearchSortBar,
+} from "@/components/SearchSortBar";
 import { useCompare } from "@/components/compare/CompareContext";
 import { filterProducts, getBrands } from "@/lib/products";
 import type { SortOption } from "@/types/product";
@@ -14,6 +18,7 @@ export function ComparePageClient() {
   const [brand, setBrand] = useState("all");
   const [capacity, setCapacity] = useState("all");
   const [sortBy, setSortBy] = useState<SortOption>("rating_desc");
+  const [search, setSearch] = useState("");
   const [showMatrix, setShowMatrix] = useState(false);
 
   useEffect(() => {
@@ -29,15 +34,26 @@ export function ComparePageClient() {
   }, [searchParams, setSelection]);
 
   const products = useMemo(
-    () => filterProducts({ brand, capacity, sortBy }),
-    [brand, capacity, sortBy],
+    () => filterProducts({ brand, capacity, sortBy, search }),
+    [brand, capacity, sortBy, search],
   );
 
   const brands = getBrands();
 
   return (
     <>
-      <div className="card mt-8 flex flex-wrap items-end gap-4 p-4">
+      <SearchSortBar
+        search={search}
+        onSearchChange={setSearch}
+        sortBy={sortBy}
+        onSortChange={(v) => setSortBy(v as SortOption)}
+        sortOptions={[...PRODUCT_SORT_OPTIONS]}
+        searchPlaceholder="Zoek op merk, model of type…"
+        resultCount={products.length}
+        resultLabel={products.length === 1 ? "model" : "modellen"}
+      />
+
+      <div className="card mt-4 flex flex-wrap items-end gap-4 p-4">
         <div>
           <label htmlFor="filter-brand" className="text-xs font-medium text-ink-muted">
             Merk
@@ -74,23 +90,6 @@ export function ComparePageClient() {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="sort-by" className="text-xs font-medium text-ink-muted">
-            Sorteren
-          </label>
-          <select
-            id="sort-by"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="mt-1 block w-full min-w-[160px] rounded-lg border border-surface-border bg-white px-3 py-2 text-sm"
-          >
-            <option value="rating_desc">Beste beoordeling</option>
-            <option value="price_asc">Laagste prijs</option>
-            <option value="price_desc">Hoogste prijs</option>
-            <option value="capacity_desc">Grootste capaciteit</option>
-          </select>
-        </div>
-
         {ids.length > 0 && (
           <button
             type="button"
@@ -102,6 +101,18 @@ export function ComparePageClient() {
         )}
       </div>
 
+      <details className="mt-6 rounded-xl border border-surface-border bg-surface-muted/40 px-4 py-3 text-sm text-ink-secondary">
+        <summary className="cursor-pointer font-medium text-ink">
+          Hoe wij vergelijken
+        </summary>
+        <ul className="mt-3 list-inside list-disc space-y-1">
+          <li>Objectieve criteria: capaciteit, vermogen, prijs per kWh, garantie</li>
+          <li>Geen betaalde “top-positie” — sortering kies jij zelf</li>
+          <li>Prijzen zijn richtprijzen; controleer altijd bij de winkel</li>
+          <li>Installatiekosten vallen buiten onze plug-and-play selectie</li>
+        </ul>
+      </details>
+
       {showMatrix && ids.length > 0 && (
         <div className="mt-10">
           <ComparisonTable ids={ids} onClose={() => setShowMatrix(false)} />
@@ -111,7 +122,7 @@ export function ComparePageClient() {
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {products.length === 0 ? (
           <p className="col-span-full text-center text-ink-secondary py-12">
-            Geen modellen met deze filters. Pas je keuze aan.
+            Geen modellen gevonden. Pas zoekterm of filters aan.
           </p>
         ) : (
           products.map((p) => <ProductCard key={p.id} product={p} />)

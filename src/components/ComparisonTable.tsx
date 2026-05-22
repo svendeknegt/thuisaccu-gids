@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { ProductImage } from "@/components/ProductImage";
 import { formatPrice } from "@/lib/format";
-import { getProductById } from "@/lib/products";
+import { getRetailerLabel } from "@/lib/affiliate";
+import { getAffiliateUrl, getProductById } from "@/lib/products";
 
 interface ComparisonTableProps {
   ids: string[];
@@ -52,11 +53,9 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               {products.map((p) => (
                 <th key={p.id} className="p-4 text-left align-top">
                   <div className="relative mb-2 h-16 w-20 overflow-hidden rounded-lg bg-surface-muted">
-                    <Image
+                    <ProductImage
                       src={p.image}
-                      alt=""
-                      fill
-                      className="object-cover"
+                      alt={p.name}
                       sizes="80px"
                     />
                   </div>
@@ -86,7 +85,11 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               <td className="p-4 font-medium text-ink-secondary">Deal</td>
               {products.map((p) => (
                 <td key={p.id} className="p-4">
-                  <AffiliateButton href={p.affiliateUrl} className="text-xs py-2" />
+                  <AffiliateButton
+                    href={getAffiliateUrl(p)}
+                    retailer={getRetailerLabel(p.retailer)}
+                    className="text-xs py-2"
+                  />
                 </td>
               ))}
             </tr>

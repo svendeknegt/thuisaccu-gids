@@ -1,4 +1,6 @@
-# ThuisaccuGids.nl (Next.js)
+# Thuisaccu-Gids.nl (Next.js)
+
+Live domein: **https://thuisaccu-gids.nl**
 
 Onafhankelijke vergelijkingssite voor thuisaccu's — overzichtelijk, vertrouwd, klaar voor hosting op **Vercel** of elke Node-host.
 
@@ -19,7 +21,17 @@ Open [http://localhost:3000](http://localhost:3000).
 1. Push het project naar GitHub.
 2. Ga naar [vercel.com](https://vercel.com) → **Add New Project** → importeer de repo.
 3. Framework: **Next.js** (automatisch herkend).
-4. Deploy — klaar.
+4. **Output Directory:** leeg laten (niet `public` — dat veroorzaakt build-fouten).
+5. Deploy — klaar.
+6. **Domein:** Vercel → Settings → Domains → `thuisaccu-gids.nl` → DNS bij je registrar instellen.
+
+### Build-fout "No Output Directory named public"
+
+In Vercel: **Project → Settings → Build & Development Settings**
+
+- **Framework Preset:** Next.js  
+- **Output Directory:** override **uit** / veld **leeg**  
+- Opslaan → **Deployments → Redeploy**
 
 Of via CLI:
 

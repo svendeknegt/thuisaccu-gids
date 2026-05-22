@@ -1,9 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AffiliateButton } from "@/components/AffiliateButton";
-import { formatPrice, formatRating } from "@/lib/format";
-import { getProductById, products } from "@/lib/products";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ProductImage } from "@/components/ProductImage";
+import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
+import { getRetailerLabel } from "@/lib/affiliate";
+import { getAffiliateUrl, getProductById, products } from "@/lib/products";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,11 +42,9 @@ export default async function ProductPage({ params }: PageProps) {
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
           <div className="relative aspect-square max-h-[420px] overflow-hidden rounded-xl border border-surface-border bg-surface-muted">
-            <Image
+            <ProductImage
               src={product.image}
               alt={product.name}
-              fill
-              className="object-cover"
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -82,17 +82,49 @@ export default async function ProductPage({ params }: PageProps) {
             <p className="mt-8 text-2xl font-bold text-ink">
               {formatPrice(product.price)}
             </p>
+            <p className="text-sm text-ink-muted">
+              {formatPricePerKwh(product.price, product.capacity)} per kWh capaciteit
+            </p>
             <AffiliateButton
-              href={product.affiliateUrl}
+              href={getAffiliateUrl(product)}
+              retailer={getRetailerLabel(product.retailer)}
               price={product.price}
               className="mt-4"
             />
-            <p className="mt-3 text-xs text-ink-muted">
-              Je verlaat onze site en gaat naar een partnerwinkel. Prijzen kunnen
-              afwijken.
-            </p>
+            <AffiliateDisclosure
+              retailer={getRetailerLabel(product.retailer)}
+              className="mt-4"
+            />
           </div>
         </div>
+
+        {(product.buyingGuide || product.suitableFor) && (
+          <section className="mt-12 max-w-3xl">
+            <h2 className="text-xl font-semibold text-ink">Koopgids</h2>
+            {product.suitableFor && product.suitableFor.length > 0 && (
+              <>
+                <p className="mt-3 text-sm font-medium text-ink">
+                  Geschikt voor
+                </p>
+                <ul className="mt-2 space-y-2 text-sm text-ink-secondary">
+                  {product.suitableFor.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="text-brand" aria-hidden>
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {product.buyingGuide && (
+              <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
+                {product.buyingGuide}
+              </p>
+            )}
+          </section>
+        )}
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           <div className="card p-6">

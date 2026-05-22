@@ -83,9 +83,14 @@ export default function HomePage() {
             Achtergrond bij salderen, dynamische tarieven en aankoop — zonder
             verkooppraat.
           </p>
-          <Link href="/kennisbank" className="btn-secondary mt-6 inline-flex">
-            Naar artikelen
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/kennisbank" className="btn-secondary inline-flex">
+              Naar artikelen
+            </Link>
+            <Link href="/faq" className="btn-secondary inline-flex">
+              Veelgestelde vragen
+            </Link>
+          </div>
         </div>
       </section>
     </>

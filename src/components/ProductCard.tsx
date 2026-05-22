@@ -1,10 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { ProductImage } from "@/components/ProductImage";
 import { useCompare } from "@/components/compare/CompareContext";
-import { formatPrice, formatRating } from "@/lib/format";
+import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
+import { getRetailerLabel } from "@/lib/affiliate";
+import { getAffiliateUrl } from "@/lib/products";
 import { site } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -27,11 +29,9 @@ export function ProductCard({
     <article className="card flex flex-col overflow-hidden transition hover:shadow-cardHover">
       <Link href={`/product/${product.id}`} className="block">
         <div className="relative aspect-[4/3] bg-surface-muted">
-          <Image
+          <ProductImage
             src={product.image}
             alt={product.name}
-            fill
-            className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           <span className="absolute left-3 top-3 rounded-md bg-white/95 px-2 py-1 text-xs font-medium text-ink-secondary">
@@ -103,9 +103,13 @@ export function ProductCard({
               <p className="text-lg font-bold text-ink">
                 {formatPrice(product.price)}
               </p>
+              <p className="text-xs text-ink-muted">
+                {formatPricePerKwh(product.price, product.capacity)} / kWh
+              </p>
             </div>
             <AffiliateButton
-              href={product.affiliateUrl}
+              href={getAffiliateUrl(product)}
+              retailer={getRetailerLabel(product.retailer)}
               className="text-sm"
             />
           </div>

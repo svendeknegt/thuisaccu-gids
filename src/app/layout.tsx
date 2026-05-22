@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { CompareBar } from "@/components/compare/CompareBar";
 import { CompareProvider } from "@/components/compare/CompareContext";
+import { CookieNotice } from "@/components/CookieNotice";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { TrustStrip } from "@/components/TrustStrip";
@@ -15,6 +16,7 @@ const sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} | Onafhankelijk vergelijken`,
     template: `%s | ${site.name}`,
@@ -36,6 +38,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CompareBar />
+          <CookieNotice />
           <div className="h-16 md:h-0" aria-hidden />
         </CompareProvider>
       </body>

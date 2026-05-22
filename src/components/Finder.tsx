@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { formatPrice } from "@/lib/format";
+import { getRetailerLabel } from "@/lib/affiliate";
+import { getAffiliateUrl } from "@/lib/products";
 import { runFinder } from "@/lib/recommend";
 import type { FinderInput } from "@/types/product";
 
@@ -181,8 +183,8 @@ export function Finder() {
                     </p>
                   </div>
                   <AffiliateButton
-                    href={p.affiliateUrl}
-                    label="Deal"
+                    href={getAffiliateUrl(p)}
+                    retailer={getRetailerLabel(p.retailer)}
                     className="py-2 text-xs"
                   />
                 </li>

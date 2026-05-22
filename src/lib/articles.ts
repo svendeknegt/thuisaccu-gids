@@ -6,6 +6,11 @@ export interface Article {
   title: string;
   excerpt: string;
   readMinutes: number;
+  publishedAt: string;
+}
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return articles.find((a) => a.slug === slug);
 }
 
 export const articles: Article[] = [
@@ -18,6 +23,7 @@ export const articles: Article[] = [
     excerpt:
       "Vanaf 2027 stopt het salderen volledig. Waarom een thuisaccu je opgewekte energie rendabel houdt.",
     readMinutes: 8,
+    publishedAt: "2026-03-15",
   },
   {
     id: "2",
@@ -28,6 +34,7 @@ export const articles: Article[] = [
     excerpt:
       "Laden als stroom goedkoop is en ontladen tijdens piekuren — wanneer dat de moeite waard is.",
     readMinutes: 6,
+    publishedAt: "2026-02-20",
   },
   {
     id: "3",
@@ -38,5 +45,6 @@ export const articles: Article[] = [
     excerpt:
       "EcoFlow, Bluetti en Anker vergeleken op prijs per kWh, levensduur en gebruiksgemak.",
     readMinutes: 10,
+    publishedAt: "2026-01-10",
   },
 ];
