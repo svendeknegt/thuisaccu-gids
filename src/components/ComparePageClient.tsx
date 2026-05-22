@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { ProductCard } from "@/components/ProductCard";
 import {
@@ -128,6 +129,8 @@ export function ComparePageClient() {
           products.map((p) => <ProductCard key={p.id} product={p} />)
         )}
       </div>
+
+      <AffiliateDisclosure className="mt-10" />
     </>
   );
 }

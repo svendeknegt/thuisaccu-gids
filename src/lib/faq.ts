@@ -24,7 +24,15 @@ export const faqs = [
     a: "Onze selectie richt zich op plug-and-play en modulaire systemen. Vaste installatie met meterkast valt buiten deze vergelijking.",
   },
   {
-    q: "Hoe vaak wordt de site bijgewerkt?",
-    a: `Wij werken content en prijzen regelmatig bij. De laatste review staat vermeld als ${site.lastUpdated}.`,
+    q: "Is Thuisaccu-Gids.nl aansprakelijk voor mijn aankoop?",
+    a: "Nee. Wij zijn alleen een vergelijkplatform. Aankopen, garantie en levering regel je met de verkoper. Zie onze disclaimer voor de volledige aansprakelijkheidsbepaling.",
+  },
+  {
+    q: "Geven jullie installatie- of veiligheidsadvies?",
+    a: "Nee. Onze content is algemene informatie. Voor elektrische veiligheid, netaansluiting en plaatsing raadpleeg je de fabrikant en een erkende installateur.",
+  },
+  {
+    q: "Hoe gaan jullie om met cookies?",
+    a: "Alleen functionele opslag (o.a. je toestemming) en technische serverlogs. Geen advertentiecookies op onze site. Externe winkels kunnen wel cookies plaatsen als je doorklikt.",
   },
 ] as const;

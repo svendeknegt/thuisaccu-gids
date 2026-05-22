@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { CompareBar } from "@/components/compare/CompareBar";
 import { CompareProvider } from "@/components/compare/CompareContext";
-import { CookieNotice } from "@/components/CookieNotice";
+import { SiteConsent } from "@/components/SiteConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -72,7 +72,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CompareBar />
-          <CookieNotice />
+          <SiteConsent />
           <div className="h-16 md:h-0" aria-hidden />
         </CompareProvider>
       </body>

@@ -58,6 +58,12 @@ export default function HomePage() {
               Affiliate-links altijd duidelijk gemarkeerd
             </li>
           </ul>
+          <p className="mt-6 text-xs text-ink-muted">
+            Geen koopadvies · prijzen indicatief ·{" "}
+            <Link href="/disclaimer" className="text-brand hover:underline">
+              disclaimer
+            </Link>
+          </p>
         </div>
       </section>
 

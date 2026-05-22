@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/over-ons",
     "/privacy",
     "/voorwaarden",
+    "/disclaimer",
     "/affiliate-partners",
   ].map((path) => ({
     url: `${base}${path}`,

@@ -7,6 +7,7 @@ const legalLinks = [
   { href: "/affiliate-partners", label: "Affiliate-partners" },
   { href: "/voorwaarden", label: "Servicevoorwaarden" },
   { href: "/privacy", label: "Privacybeleid" },
+  { href: "/disclaimer", label: "Disclaimer" },
 ];
 
 export function Footer() {
@@ -55,12 +56,18 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-ink">Affiliate disclaimer</p>
+          <p className="text-sm font-semibold text-ink">Juridisch & affiliate</p>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            {site.name} is geen webshop. Via links (o.a. Bol.com, Coolblue,
-            Amazon) kun je bij verkopers kopen. Wij ontvangen soms commissie via
-            het affiliate-programma; dat kost jou niets extra. Bol.com is niet
-            verantwoordelijk voor deze site. Prijzen zijn indicatief.
+            {site.name} is geen webshop en geeft geen persoonlijk koop- of
+            installatieadvies. Via links (o.a. Bol.com, Coolblue, Amazon) kun
+            je bij verkopers kopen; wij kunnen commissie ontvangen zonder extra
+            kosten voor jou. Prijzen en specificaties zijn indicatief.
+            Bol.com, Coolblue en Amazon zijn niet verantwoordelijk voor deze
+            site. Gebruik op eigen risico — zie{" "}
+            <Link href="/disclaimer" className="text-brand hover:underline">
+              disclaimer
+            </Link>
+            .
           </p>
         </div>
       </div>
@@ -74,6 +81,10 @@ export function Footer() {
           {" · "}
           <Link href="/privacy" className="hover:text-brand">
             Privacy
+          </Link>
+          {" · "}
+          <Link href="/disclaimer" className="hover:text-brand">
+            Disclaimer
           </Link>
         </p>
       </div>
