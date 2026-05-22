@@ -1,9 +1,8 @@
 import { buildAffiliateUrl } from "@/lib/affiliate";
 import { AMAZON_URLS } from "@/lib/amazon-urls";
 import { BOL_URLS } from "@/lib/bol-urls";
+import { VENDOR_IMAGES } from "@/lib/vendor-images";
 import type { Product, ProductFilters } from "@/types/product";
-
-const PLACEHOLDER_IMAGE = "/images/product-placeholder.svg";
 
 export const products: Product[] = [
   {
@@ -12,7 +11,7 @@ export const products: Product[] = [
     brand: "EcoFlow",
     capacity: 3.6,
     power: 3600,
-    price: 2999,
+    price: BOL_URLS.ecoflowDeltaPro.price,
     rating: 4.9,
     image: BOL_URLS.ecoflowDeltaPro.image,
     retailer: "bol",
@@ -46,12 +45,11 @@ export const products: Product[] = [
     brand: "Anker",
     capacity: 3.84,
     power: 6000,
-    price: 3499,
+    price: BOL_URLS.ankerSolixF3800.price,
     rating: 4.8,
-    image: PLACEHOLDER_IMAGE,
-    retailer: "coolblue",
-    shopUrl:
-      "https://www.coolblue.nl/zoeken?query=anker+solix+f3800",
+    image: BOL_URLS.ankerSolixF3800.image,
+    retailer: "bol",
+    shopUrl: BOL_URLS.ankerSolixF3800.url,
     pros: [
       "Hoog continuvermogen (6000W)",
       "Geschikt voor heel-huis aansluiting",
@@ -70,10 +68,10 @@ export const products: Product[] = [
     suitableFor: [
       "Dynamisch energiecontract met uurprijzen",
       "Huishoudens met hoog piekverbruik (6 kW)",
-      "Wie een premium all-in-one zoekt bij Coolblue",
+      "Wie een premium all-in-one zoekt op Bol.com",
     ],
     buyingGuide:
-      "Met 6000 W piekvermogen past de F3800 bij huishoudens die actief willen sturen op goedkope uurprijzen. Je hebt wel een leverancier en app nodig die dat ondersteunen. De prijs ligt hoger dan compacte modellen; reken daarom niet alleen op kWh maar op vermogen en automatisering. Coolblue levert vaak snel; controleer levertijd en retourvoorwaarden vóór aankoop.",
+      "Met 6000 W piekvermogen past de F3800 bij huishoudens die actief willen sturen op goedkope uurprijzen. Je hebt wel een leverancier en app nodig die dat ondersteunen. De prijs ligt hoger dan compacte modellen; reken daarom niet alleen op kWh maar op vermogen en automatisering. Op Bol.com staat het model met directe productpagina; controleer levertijd en retourvoorwaarden vóór aankoop.",
   },
   {
     id: "bluetti-ac500-b300s",
@@ -83,7 +81,7 @@ export const products: Product[] = [
     power: 5000,
     price: 2799,
     rating: 4.7,
-    image: PLACEHOLDER_IMAGE,
+    image: VENDOR_IMAGES.bluettiAc500B300s,
     retailer: "coolblue",
     shopUrl:
       "https://www.coolblue.nl/zoeken?query=bluetti+ac500+b300s",
@@ -118,7 +116,7 @@ export const products: Product[] = [
     brand: "EcoFlow",
     capacity: 2.04,
     power: 2400,
-    price: 1599,
+    price: BOL_URLS.ecoflowDelta2Max.price,
     rating: 4.8,
     image: BOL_URLS.ecoflowDelta2Max.image,
     retailer: "bol",
@@ -163,7 +161,7 @@ export const products: Product[] = [
     power: 3000,
     price: 3999,
     rating: 4.6,
-    image: PLACEHOLDER_IMAGE,
+    image: VENDOR_IMAGES.bluettiEp500Pro,
     retailer: "coolblue",
     shopUrl:
       "https://www.coolblue.nl/zoeken?query=bluetti+ep500+pro",
@@ -196,7 +194,7 @@ export const products: Product[] = [
     brand: "Anker",
     capacity: 1.056,
     power: 1800,
-    price: 899,
+    price: BOL_URLS.ankerSolixC1000.price,
     rating: 4.5,
     image: BOL_URLS.ankerSolixC1000.image,
     retailer: "bol",
