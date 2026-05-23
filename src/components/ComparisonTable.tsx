@@ -1,10 +1,9 @@
 "use client";
 
-import { AffiliateButton } from "@/components/AffiliateButton";
+import { ProductOffers } from "@/components/ProductOffers";
 import { ProductImage } from "@/components/ProductImage";
 import { formatPrice } from "@/lib/format";
-import { getRetailerLabel } from "@/lib/affiliate";
-import { getAffiliateUrl, getProductById } from "@/lib/products";
+import { getDisplayPrice, getProductById } from "@/lib/products";
 
 interface ComparisonTableProps {
   ids: string[];
@@ -19,7 +18,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
   if (products.length === 0) return null;
 
   const rows: { label: string; values: (string | number)[] }[] = [
-    { label: "Prijs", values: products.map((p) => formatPrice(p.price)) },
+    { label: "Prijs (vanaf)", values: products.map((p) => formatPrice(getDisplayPrice(p))) },
     { label: "Capaciteit", values: products.map((p) => `${p.capacity} kWh`) },
     { label: "Vermogen", values: products.map((p) => `${p.power} W`) },
     { label: "Chemie", values: products.map((p) => p.chemistry) },
@@ -85,11 +84,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               <td className="p-4 font-medium text-ink-secondary">Deal</td>
               {products.map((p) => (
                 <td key={p.id} className="p-4">
-                  <AffiliateButton
-                    href={getAffiliateUrl(p)}
-                    retailer={getRetailerLabel(p.retailer)}
-                    className="text-xs py-2"
-                  />
+                  <ProductOffers product={p} compact showPrices />
                 </td>
               ))}
             </tr>

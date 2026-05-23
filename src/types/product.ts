@@ -13,6 +13,14 @@ export interface AmazonOffer {
   variantNote?: string;
 }
 
+/** Koopoptie bij een andere winkel (zelfde of vergelijkbaar model) */
+export interface ShopOffer {
+  retailer: Retailer;
+  shopUrl: string;
+  price: number;
+  variantNote?: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -30,6 +38,8 @@ export interface Product {
   shopLinkHint?: string;
   /** Zelfde of vergelijkbaar model op Amazon.nl */
   amazonOffer?: AmazonOffer;
+  /** Extra winkels voor prijsvergelijking (Coolblue, MediaMarkt, …) */
+  extraOffers?: ShopOffer[];
   pros: string[];
   cons: string[];
   bestFor: Goal;

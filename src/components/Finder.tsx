@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { AffiliateButton } from "@/components/AffiliateButton";
+import { ProductOffers } from "@/components/ProductOffers";
 import { formatPrice } from "@/lib/format";
-import { getRetailerLabel } from "@/lib/affiliate";
-import { getAffiliateUrl } from "@/lib/products";
+import { getDisplayPrice } from "@/lib/products";
 import { runFinder } from "@/lib/recommend";
 import type { FinderInput } from "@/types/product";
 
@@ -179,14 +178,10 @@ export function Finder() {
                   <div>
                     <p className="font-medium text-ink">{p.name}</p>
                     <p className="text-xs text-ink-muted">
-                      {p.capacity} kWh · {formatPrice(p.price)}
+                      {p.capacity} kWh · vanaf {formatPrice(getDisplayPrice(p))}
                     </p>
                   </div>
-                  <AffiliateButton
-                    href={getAffiliateUrl(p)}
-                    retailer={getRetailerLabel(p.retailer)}
-                    className="py-2 text-xs"
-                  />
+                  <ProductOffers product={p} compact showPrices={false} className="shrink-0" />
                 </li>
               ))}
             </ul>

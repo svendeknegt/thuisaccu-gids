@@ -1,7 +1,8 @@
 import { buildAffiliateUrl } from "@/lib/affiliate";
 import { AMAZON_URLS } from "@/lib/amazon-urls";
 import { BOL_URLS } from "@/lib/bol-urls";
-import type { Product, ProductFilters } from "@/types/product";
+import { getLowestOffer } from "@/lib/shop-offers";
+import type { Product, ProductFilters, ShopOffer } from "@/types/product";
 
 export const products: Product[] = [
   {
@@ -537,13 +538,26 @@ export function getAffiliateUrl(product: Product): string {
   return buildAffiliateUrl(product.shopUrl, product.retailer, product.id);
 }
 
+export function getShopOfferAffiliateUrl(
+  productId: string,
+  offer: ShopOffer,
+): string {
+  const suffix = offer.retailer === "amazon" ? "-amazon" : `-${offer.retailer}`;
+  return buildAffiliateUrl(offer.shopUrl, offer.retailer, `${productId}${suffix}`);
+}
+
 export function getAmazonOfferUrl(product: Product): string | undefined {
   if (!product.amazonOffer) return undefined;
-  return buildAffiliateUrl(
-    product.amazonOffer.shopUrl,
-    "amazon",
-    `${product.id}-amazon`,
-  );
+  return getShopOfferAffiliateUrl(product.id, {
+    retailer: "amazon",
+    shopUrl: product.amazonOffer.shopUrl,
+    price: product.amazonOffer.price,
+  });
+}
+
+/** Laagste prijs over alle gekoppelde winkels */
+export function getDisplayPrice(product: Product): number {
+  return getLowestOffer(product).price;
 }
 
 export function getProductById(id: string): Product | undefined {
@@ -580,14 +594,15 @@ export function filterProducts(filters: ProductFilters = {}): Product[] {
 
   switch (filters.sortBy) {
     case "price_asc":
-      result.sort((a, b) => a.price - b.price);
+      result.sort((a, b) => getDisplayPrice(a) - getDisplayPrice(b));
       break;
     case "price_desc":
-      result.sort((a, b) => b.price - a.price);
+      result.sort((a, b) => getDisplayPrice(b) - getDisplayPrice(a));
       break;
     case "price_per_kwh_asc":
       result.sort(
-        (a, b) => a.price / a.capacity - b.price / b.capacity,
+        (a, b) =>
+          getDisplayPrice(a) / a.capacity - getDisplayPrice(b) / b.capacity,
       );
       break;
     case "capacity_desc":

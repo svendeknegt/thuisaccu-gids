@@ -37,7 +37,23 @@ export const partnerPrograms: PartnerProgramInfo[] = [
     signupUrl: "https://www.awin.com",
     envKey: "NEXT_PUBLIC_COOLBLUE_AFFILIATE_URL",
     configured: isAffiliateConfigured("coolblue"),
-    note: "Deeplink-template van Awin of Daisycon met {url} placeholder.",
+    note: "Awin → Coolblue NL → Link Builder → template met {url}.",
+  },
+  {
+    retailer: "mediamarkt",
+    label: retailerLabels.mediamarkt,
+    signupUrl: "https://www.awin.com",
+    envKey: "NEXT_PUBLIC_MEDIAMARKT_AFFILIATE_URL",
+    configured: isAffiliateConfigured("mediamarkt"),
+    note: "Awin → MediaMarkt NL joinen → deeplink-template met {url}.",
+  },
+  {
+    retailer: "conrad",
+    label: retailerLabels.conrad,
+    signupUrl: "https://www.awin.com",
+    envKey: "NEXT_PUBLIC_CONRAD_AFFILIATE_URL",
+    configured: isAffiliateConfigured("conrad"),
+    note: "Awin → Conrad NL joinen → deeplink-template met {url}.",
   },
 ];
 

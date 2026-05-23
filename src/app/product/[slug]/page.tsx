@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductImage } from "@/components/ProductImage";
+import { ProductOffers } from "@/components/ProductOffers";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
-import { getRetailerLabel } from "@/lib/affiliate";
 import { getArticleBySlug } from "@/lib/articles";
 import { getRelatedArticleSlugs } from "@/lib/product-articles";
-import { getAffiliateUrl, getAmazonOfferUrl, getProductById, products } from "@/lib/products";
+import { getDisplayPrice, getProductById, products } from "@/lib/products";
+import { getProductShopOffers } from "@/lib/shop-offers";
 import { productJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 
@@ -45,8 +45,8 @@ export default async function ProductPage({ params }: PageProps) {
     .map((s) => getArticleBySlug(s))
     .filter(Boolean);
 
-  const amazonUrl = getAmazonOfferUrl(product);
-  const amazonOffer = product.amazonOffer;
+  const displayPrice = getDisplayPrice(product);
+  const offers = getProductShopOffers(product);
 
   return (
     <div className="py-10 sm:py-14">
@@ -99,40 +99,18 @@ export default async function ProductPage({ params }: PageProps) {
             </dl>
 
             <p className="mt-8 text-2xl font-bold text-ink">
-              {formatPrice(product.price)}
+              {offers.length > 1 ? "Vanaf " : ""}
+              {formatPrice(displayPrice)}
             </p>
             <p className="text-sm text-ink-muted">
-              {formatPricePerKwh(product.price, product.capacity)} per kWh capaciteit
-              {product.retailer === "amazon" && " · prijs Amazon.nl"}
+              {formatPricePerKwh(displayPrice, product.capacity)} per kWh capaciteit
+              {offers.length > 1 && ` · ${offers.length} winkels`}
             </p>
-            {amazonOffer && product.retailer !== "amazon" && (
-              <p className="mt-2 text-sm text-ink-secondary">
-                Ook op Amazon.nl vanaf{" "}
-                <strong>{formatPrice(amazonOffer.price)}</strong>
-                {amazonOffer.variantNote ? ` (${amazonOffer.variantNote})` : ""}
-              </p>
-            )}
-            <AffiliateButton
-              href={getAffiliateUrl(product)}
-              retailer={getRetailerLabel(product.retailer)}
-              price={product.price}
-              className="mt-4"
-            />
-            {amazonUrl && amazonOffer && product.retailer !== "amazon" && (
-              <AffiliateButton
-                href={amazonUrl}
-                retailer="Amazon.nl"
-                price={amazonOffer.price}
-                className="mt-3"
-              />
-            )}
+            <ProductOffers product={product} className="mt-4" />
             {product.shopLinkHint && (
               <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
             )}
-            <AffiliateDisclosure
-              retailer={getRetailerLabel(product.retailer)}
-              className="mt-4"
-            />
+            <AffiliateDisclosure className="mt-4" />
           </div>
         </div>
 

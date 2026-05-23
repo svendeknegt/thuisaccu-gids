@@ -1,7 +1,13 @@
 import { site } from "@/lib/site";
 
 /** Netwerk waar het product verkocht wordt */
-export type Retailer = "bol" | "coolblue" | "amazon" | "direct";
+export type Retailer =
+  | "bol"
+  | "coolblue"
+  | "amazon"
+  | "mediamarkt"
+  | "conrad"
+  | "direct";
 
 /**
  * Vul dit in zodra je partnerprogramma's goedkeuren.
@@ -13,10 +19,20 @@ export const affiliateConfig = {
     process.env.NEXT_PUBLIC_BOL_PARTNER_ID?.trim() || "1522053",
   amazonTag:
     process.env.NEXT_PUBLIC_AMAZON_ASSOCIATES_TAG?.trim() || "thuisaccugids-21",
-  /** Volledige tracking-URL van Awin/Daisycon voor Coolblue, indien van toepassing */
+  /** Awin deeplink-templates — {url} = encoded product-URL */
   coolblueTrackingTemplate:
     process.env.NEXT_PUBLIC_COOLBLUE_AFFILIATE_URL?.trim() || "",
+  mediamarktTrackingTemplate:
+    process.env.NEXT_PUBLIC_MEDIAMARKT_AFFILIATE_URL?.trim() || "",
+  conradTrackingTemplate:
+    process.env.NEXT_PUBLIC_CONRAD_AFFILIATE_URL?.trim() || "",
 } as const;
+
+const awinTemplates: Partial<Record<Retailer, string>> = {
+  coolblue: affiliateConfig.coolblueTrackingTemplate,
+  mediamarkt: affiliateConfig.mediamarktTrackingTemplate,
+  conrad: affiliateConfig.conradTrackingTemplate,
+};
 
 export function isAffiliateConfigured(retailer: Retailer): boolean {
   switch (retailer) {
@@ -25,7 +41,9 @@ export function isAffiliateConfigured(retailer: Retailer): boolean {
     case "amazon":
       return Boolean(affiliateConfig.amazonTag);
     case "coolblue":
-      return Boolean(affiliateConfig.coolblueTrackingTemplate);
+    case "mediamarkt":
+    case "conrad":
+      return Boolean(awinTemplates[retailer]);
     default:
       return false;
   }
@@ -57,6 +75,8 @@ export const retailerLabels: Record<Retailer, string> = {
   bol: "Bol.com",
   coolblue: "Coolblue",
   amazon: "Amazon.nl",
+  mediamarkt: "MediaMarkt",
+  conrad: "Conrad",
   direct: "Winkel",
 };
 
@@ -78,19 +98,13 @@ function buildAmazonLink(shopUrl: string): string {
   }
 }
 
-/**
- * Coolblue loopt vaak via Awin/Daisycon: plak daar je gegenereerde deeplink-template.
- * Template kan {url} bevatten voor de doel-URL, anders wordt shopUrl achter de link geplakt.
- */
-function buildCoolblueLink(shopUrl: string): string {
-  const template = affiliateConfig.coolblueTrackingTemplate;
-  if (!template) return appendUtm(shopUrl, "coolblue");
-
+/** Awin/Daisycon deeplink-template met {url} placeholder */
+function buildAwinTemplateLink(shopUrl: string, template: string): string {
   if (template.includes("{url}")) {
     return template.replace("{url}", encodeURIComponent(shopUrl));
   }
   const separator = template.includes("?") ? "&" : "?";
-  return `${template}${separator}u=${encodeURIComponent(shopUrl)}`;
+  return `${template}${separator}ued=${encodeURIComponent(shopUrl)}`;
 }
 
 export function buildAffiliateUrl(
@@ -98,21 +112,19 @@ export function buildAffiliateUrl(
   retailer: Retailer,
   productId: string,
 ): string {
-  let href: string;
-
   switch (retailer) {
     case "bol":
-      href = buildBolLink(shopUrl, productId);
-      break;
+      return buildBolLink(shopUrl, productId);
     case "amazon":
-      href = buildAmazonLink(shopUrl);
-      break;
+      return buildAmazonLink(shopUrl);
     case "coolblue":
-      href = buildCoolblueLink(shopUrl);
-      break;
+    case "mediamarkt":
+    case "conrad": {
+      const template = awinTemplates[retailer];
+      if (!template) return appendUtm(shopUrl, productId);
+      return buildAwinTemplateLink(shopUrl, template);
+    }
     default:
-      href = appendUtm(shopUrl, productId);
+      return appendUtm(shopUrl, productId);
   }
-
-  return href;
 }

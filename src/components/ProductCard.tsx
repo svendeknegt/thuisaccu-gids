@@ -1,12 +1,14 @@
 "use client";
 
+"use client";
+
 import Link from "next/link";
-import { AffiliateButton } from "@/components/AffiliateButton";
+import { ProductOffers } from "@/components/ProductOffers";
 import { ProductImage } from "@/components/ProductImage";
 import { useCompare } from "@/components/compare/CompareContext";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
-import { getRetailerLabel } from "@/lib/affiliate";
-import { getAffiliateUrl, getAmazonOfferUrl } from "@/lib/products";
+import { getDisplayPrice } from "@/lib/products";
+import { getProductShopOffers } from "@/lib/shop-offers";
 import { site } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -24,6 +26,8 @@ export function ProductCard({
   const { toggle, isSelected, canAdd } = useCompare();
   const selected = isSelected(product.id);
   const atLimit = !canAdd && !selected;
+  const displayPrice = getDisplayPrice(product);
+  const offerCount = getProductShopOffers(product).length;
 
   return (
     <article className="card flex flex-col overflow-hidden transition hover:shadow-cardHover">
@@ -99,27 +103,17 @@ export function ProductCard({
 
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="text-xs text-ink-muted">Vanaf</p>
+              <p className="text-xs text-ink-muted">
+                Vanaf{offerCount > 1 ? ` · ${offerCount} winkels` : ""}
+              </p>
               <p className="text-lg font-bold text-ink">
-                {formatPrice(product.price)}
+                {formatPrice(displayPrice)}
               </p>
               <p className="text-xs text-ink-muted">
-                {formatPricePerKwh(product.price, product.capacity)} / kWh
+                {formatPricePerKwh(displayPrice, product.capacity)} / kWh
               </p>
             </div>
-            <AffiliateButton
-              href={getAffiliateUrl(product)}
-              retailer={getRetailerLabel(product.retailer)}
-              className="text-sm"
-            />
-            {getAmazonOfferUrl(product) && product.amazonOffer && product.retailer !== "amazon" && (
-              <AffiliateButton
-                href={getAmazonOfferUrl(product)!}
-                retailer="Amazon.nl"
-                price={product.amazonOffer.price}
-                className="mt-2 text-sm"
-              />
-            )}
+            <ProductOffers product={product} compact showPrices={false} />
           </div>
         </div>
       </div>
