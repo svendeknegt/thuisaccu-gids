@@ -1,16 +1,30 @@
 import Link from "next/link";
-import {
-  affiliateNetworks,
-  affiliateSignupSteps,
-} from "@/lib/affiliate-networks";
-import { getAffiliateSummary, partnerPrograms } from "@/lib/affiliate-status";
 import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Affiliate-partners",
   description:
-    "Overzicht van winkelpartners en affiliate-programma's op Thuisaccu-Gids.nl.",
+    "Transparantie over winkelpartners en affiliate-links op Thuisaccu-Gids.nl.",
 };
+
+const partners = [
+  {
+    name: "Bol.com",
+    text: "Sommige links leiden naar productpagina's op Bol.com. Wij zijn geen onderdeel van Bol.com.",
+  },
+  {
+    name: "Amazon.nl",
+    text: "Voor geselecteerde modellen tonen wij ook een link naar Amazon.nl.",
+  },
+  {
+    name: "Coolblue",
+    text: "Waar beschikbaar verwijzen wij ook naar Coolblue. Wij zijn geen onderdeel van Coolblue.",
+  },
+  {
+    name: "Overige winkels",
+    text: "In de toekomst kunnen links naar andere betrouwbare Nederlandse winkels worden toegevoegd, steeds met duidelijke disclosure.",
+  },
+];
 
 export default function AffiliatePartnersPage() {
   return (
@@ -18,134 +32,65 @@ export default function AffiliatePartnersPage() {
       <div className="container-page max-w-3xl">
         <h1 className="section-title">Affiliate-partners</h1>
         <p className="section-lead mt-2">
-          {site.name} is een onafhankelijk vergelijkplatform. Meer winkels =
-          betere prijsvergelijking voor bezoekers en meer affiliate-kansen voor
-          jou. Onderstaand waar je je aanmeldt en wat al actief is.
+          {site.name} is een onafhankelijk vergelijkplatform. Wij verkopen geen
+          accu&apos;s zelf. Via links op deze site kun je doorklikken naar
+          externe winkels om een product te bekijken of te kopen.
         </p>
-        <p className="mt-4 text-sm text-ink-muted">{getAffiliateSummary()}</p>
 
-        <section className="mt-10">
-          <h2 className="text-lg font-semibold text-ink">Tracking op de site</h2>
-          <ul className="mt-4 space-y-4">
-            {partnerPrograms.map((p) => (
-              <li key={p.retailer} className="card p-5">
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h3 className="font-semibold text-ink">{p.label}</h3>
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                      p.configured
-                        ? "bg-brand-light text-brand-dark"
-                        : "bg-surface-muted text-ink-muted"
-                    }`}
-                  >
-                    {p.configured ? "Tracking actief" : "Nog niet ingesteld"}
-                  </span>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
-                  {p.note}
-                </p>
-                <p className="mt-2 font-mono text-xs text-ink-muted">
-                  Env: {p.envKey}
-                </p>
-                <a
-                  href={p.signupUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm font-medium text-brand hover:underline"
-                >
-                  Naar aanmeldpagina ↗
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="mt-12">
+        <section className="mt-10 space-y-4 text-sm leading-relaxed text-ink-secondary">
           <h2 className="text-lg font-semibold text-ink">
-            Netwerken & winkels om aan te melden
+            Hoe affiliate-links werken
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
-            Prioriteit: eerst Awin-winkels met powerstations (Coolblue,
-            MediaMarkt), daarna Bol-goedkeuring afwachten, daarna Daisycon of
-            TradeTracker als backup.
+          <p>
+            Als je via een link op onze site koopt bij een partnerwinkel, kunnen
+            wij soms een commissie ontvangen. Dat kost jou niets extra en
+            verandert de prijs bij de winkel niet. Onze vergelijkingen worden
+            hierdoor niet anders gesorteerd.
           </p>
-          <ul className="mt-6 space-y-6">
-            {affiliateNetworks.map((network) => (
-              <li key={network.id} className="card p-5">
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h3 className="font-semibold text-ink">{network.name}</h3>
-                  <a
-                    href={network.signupUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-brand hover:underline"
-                  >
-                    Aanmelden ↗
-                  </a>
-                </div>
-                <p className="mt-2 text-sm text-ink-secondary">{network.note}</p>
-                <ul className="mt-4 space-y-2 text-sm text-ink-secondary">
-                  {network.merchants
-                    .filter((m) => m.sellsPowerstations)
-                    .map((merchant) => (
-                      <li key={merchant.name} className="flex gap-2">
-                        <span
-                          className={
-                            merchant.priority === "hoog"
-                              ? "text-brand"
-                              : "text-ink-muted"
-                          }
-                          aria-hidden
-                        >
-                          •
-                        </span>
-                        <span>
-                          <strong className="font-medium text-ink">
-                            {merchant.name}
-                          </strong>
-                          {merchant.envKey && (
-                            <span className="block font-mono text-xs text-ink-muted">
-                              {merchant.envKey}
-                            </span>
-                          )}
-                          {merchant.priority === "hoog" && (
-                            <span className="ml-1 text-xs text-brand-dark">
-                              (prioriteit)
-                            </span>
-                          )}
-                        </span>
-                      </li>
-                    ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+          <p>
+            Getoonde prijzen zijn indicatief. De prijs en voorwaarden bij de
+            verkoper zijn leidend op het moment van aankoop.
+          </p>
         </section>
 
-        <section className="mt-12 rounded-xl border border-surface-border bg-surface-muted/50 p-5">
-          <h2 className="font-semibold text-ink">Stappenplan na goedkeuring</h2>
-          <ol className="mt-3 list-inside list-decimal space-y-2 text-sm text-ink-secondary">
-            {affiliateSignupSteps.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ol>
-        </section>
+        <ul className="mt-10 space-y-4">
+          {partners.map((partner) => (
+            <li key={partner.name} className="card p-5">
+              <h2 className="font-semibold text-ink">{partner.name}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
+                {partner.text}
+              </p>
+            </li>
+          ))}
+        </ul>
 
-        <p className="mt-10 text-sm leading-relaxed text-ink-secondary">
-          <strong className="text-ink">Status:</strong> Amazon actief. Awin-account
-          actief — Coolblue/MediaMarkt joinen en env-vars instellen. Bol wacht op
-          goedkeuring.
-        </p>
+        <section className="mt-10 rounded-xl border border-surface-border bg-surface-muted/50 p-5 text-sm leading-relaxed text-ink-secondary">
+          <p>
+            Meer juridische achtergrond:{" "}
+            <Link href="/disclaimer" className="text-brand hover:underline">
+              disclaimer
+            </Link>
+            ,{" "}
+            <Link href="/voorwaarden" className="text-brand hover:underline">
+              servicevoorwaarden
+            </Link>{" "}
+            en{" "}
+            <Link href="/privacy" className="text-brand hover:underline">
+              privacybeleid
+            </Link>
+            .
+          </p>
+        </section>
 
         <div className="mt-8 flex flex-wrap gap-4 text-sm">
           <Link href="/vergelijken" className="text-brand hover:underline">
             Vergelijken
           </Link>
-          <Link href="/voorwaarden" className="text-brand hover:underline">
-            Servicevoorwaarden
-          </Link>
           <Link href="/faq" className="text-brand hover:underline">
-            FAQ
+            Veelgestelde vragen
+          </Link>
+          <Link href="/over-ons" className="text-brand hover:underline">
+            Over ons
           </Link>
         </div>
       </div>
