@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { articles } from "@/lib/articles";
 import { products } from "@/lib/products";
 import { getFeaturedProducts } from "@/lib/recommend";
+import { countProductsWithRetailer } from "@/lib/retailers";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -14,6 +15,8 @@ export const metadata = {
 
 export default function HomePage() {
   const featured = getFeaturedProducts(3);
+  const bolCount = countProductsWithRetailer("bol");
+  const amazonCount = countProductsWithRetailer("amazon");
 
   return (
     <>
@@ -126,6 +129,54 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-surface-border bg-white py-14">
+        <div className="container-page">
+          <div className="grid gap-8 rounded-2xl border border-surface-border bg-surface-muted/40 p-6 sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-brand">
+                Winkels &amp; transparantie
+              </p>
+              <h2 className="mt-2 section-title">
+                Duidelijk waar je naartoe klikt
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-secondary">
+                We tonen alleen winkel- of advieslinks waar een concrete
+                productpagina of relevante installateur-route bestaat. Affiliate
+                links zijn herkenbaar en veranderen onze ranking niet.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/winkels" className="btn-primary">
+                  Bekijk winkels
+                </Link>
+                <Link href="/affiliate-partners" className="btn-secondary">
+                  Affiliate-uitleg
+                </Link>
+              </div>
+            </div>
+            <dl className="grid gap-3 text-sm sm:grid-cols-3 lg:grid-cols-1">
+              <div className="rounded-xl border border-surface-border bg-white p-4">
+                <dt className="font-semibold text-ink">Bol.com</dt>
+                <dd className="mt-1 text-ink-secondary">
+                  {bolCount} modellen met productlink
+                </dd>
+              </div>
+              <div className="rounded-xl border border-surface-border bg-white p-4">
+                <dt className="font-semibold text-ink">Amazon.nl</dt>
+                <dd className="mt-1 text-ink-secondary">
+                  {amazonCount} modellen als extra winkel
+                </dd>
+              </div>
+              <div className="rounded-xl border border-surface-border bg-white p-4">
+                <dt className="font-semibold text-ink">Coolblue Energie</dt>
+                <dd className="mt-1 text-ink-secondary">
+                  Advieslink voor vaste thuisbatterijen
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
