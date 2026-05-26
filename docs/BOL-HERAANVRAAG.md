@@ -7,7 +7,9 @@ Interne gids na afwijzing wegens onvoldoende toegevoegde waarde.
 | | |
 |---|---|
 | **Eerste aanvraag** | Afgewezen — te weinig toegevoegde waarde klantreis |
+| **Heraanvraag** | Verzonden op 26 mei 2026 — wachten op beoordeling |
 | **Mail** | Affiliate@bol.com |
+| **Volgende actie** | Mailbox controleren op reactie van Bol Partner |
 | **Site** | https://www.thuisaccu-gids.nl |
 
 ## Wanneer opnieuw aanvragen?
@@ -37,6 +39,8 @@ Concrete punten om te noemen:
 5. **Transparantie** — methodologie, disclaimer, affiliate-disclosure
 
 ## Herbeoordelingsmail
+
+Status: **verzonden op 26 mei 2026**. Onderstaande tekst blijft bewaard als referentie voor eventuele opvolging.
 
 **Naar:** Affiliate@bol.com  
 **Onderwerp:** Herbeoordeling affiliate-aanvraag — thuisaccu-gids.nl
@@ -71,12 +75,18 @@ doorlinken naar productpagina's.
 Website: https://www.thuisaccu-gids.nl
 Contact: info@thuisaccu-gids.nl
 
-Graag verzoek ik jullie mijn aanvraag opnieuw te beoordeelen.
+Graag verzoek ik jullie mijn aanvraag opnieuw te beoordelen.
 
 Met vriendelijke groet,
 Sven Deknegt
 Thuisaccu-Gids
 ```
+
+## Na verzending
+
+1. Mailbox controleren op reactie van Bol Partner.
+2. Bij aanvullende vragen verwijzen naar `/keuzehulp`, `/vergelijken`, `/kennisbank`, `/methodologie` en `/affiliate-partners`.
+3. Status pas publiek/operationeel wijzigen na officiële goedkeuring.
 
 ## Na goedkeuring
 

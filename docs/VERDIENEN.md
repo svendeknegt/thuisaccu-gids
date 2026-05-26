@@ -5,7 +5,7 @@
 | Partner | Status | Actie |
 |---------|--------|--------|
 | **Amazon** | Tag `thuisaccugids-21` in links | Verkeer → clicks → verkopen |
-| **Bol** | Wacht op goedkeuring affiliate@bol.com | Mailbox checken |
+| **Bol** | Heraanvraag verzonden naar affiliate@bol.com | Mailbox checken op beoordeling |
 | **Coolblue** | Nog geen tracking | Zie `docs/COOLBLUE-AWIN.md` |
 
 ## Regels
