@@ -113,7 +113,12 @@ export function ProductCard({
                 {formatPricePerKwh(displayPrice, product.capacity)} / kWh
               </p>
             </div>
-            <ProductOffers product={product} compact showPrices={false} />
+            <ProductOffers
+              product={product}
+              compact
+              showPrices={false}
+              source="product_card"
+            />
           </div>
         </div>
       </div>

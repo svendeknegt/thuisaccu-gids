@@ -200,7 +200,13 @@ export function Finder({
                       {p.capacity} kWh · vanaf {formatPrice(getDisplayPrice(p))}
                     </p>
                   </div>
-                  <ProductOffers product={p} compact showPrices={false} className="shrink-0" />
+                  <ProductOffers
+                    product={p}
+                    compact
+                    showPrices={false}
+                    className="shrink-0"
+                    source="finder_result"
+                  />
                 </li>
               ))}
             </ul>

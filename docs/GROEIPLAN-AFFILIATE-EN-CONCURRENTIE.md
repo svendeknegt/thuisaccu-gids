@@ -160,8 +160,13 @@ Acties:
 
 - [x] Homepage-sectie toegevoegd met snelle 4-stappen route.
 - [x] Profielroutes toegevoegd (besparen, dynamisch, plug-and-play vs vast).
-- [ ] Outbound click tracking toevoegen op alle affiliate-knoppen.
+- [x] Outbound click tracking toegevoegd op affiliate-knoppen (first-party endpoint).
 - [ ] Rapportage-overzicht maken: clicks per retailer, per pagina, per product.
+
+Implementatienoot:
+- Endpoint: `POST /api/affiliate-click`
+- Loglabel: `[affiliate-click]` in serverlogs
+- Optionele forwarding: `AFFILIATE_CLICK_WEBHOOK_URL` (server env)
 
 ## Fase 2 - Content met koopintentie uitbreiden
 

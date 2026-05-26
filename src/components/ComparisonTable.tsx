@@ -84,7 +84,12 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               <td className="p-4 font-medium text-ink-secondary">Deal</td>
               {products.map((p) => (
                 <td key={p.id} className="p-4">
-                  <ProductOffers product={p} compact showPrices />
+                  <ProductOffers
+                    product={p}
+                    compact
+                    showPrices
+                    source="comparison_table"
+                  />
                 </td>
               ))}
             </tr>

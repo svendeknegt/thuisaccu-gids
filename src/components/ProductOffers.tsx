@@ -12,6 +12,7 @@ interface ProductOffersProps {
   className?: string;
   showPrices?: boolean;
   compact?: boolean;
+  source?: string;
 }
 
 export function ProductOffers({
@@ -19,6 +20,7 @@ export function ProductOffers({
   className = "",
   showPrices = true,
   compact = false,
+  source = "unknown",
 }: ProductOffersProps) {
   const offers = getProductShopOffers(product);
 
@@ -28,6 +30,9 @@ export function ProductOffers({
       <AffiliateButton
         href={getShopOfferAffiliateUrl(product.id, offer)}
         retailer={getRetailerLabel(offer.retailer)}
+        retailerId={offer.retailer}
+        productId={product.id}
+        source={source}
         price={showPrices ? offer.price : undefined}
         className={className}
       />
@@ -46,6 +51,9 @@ export function ProductOffers({
           key={`${product.id}-${offer.retailer}`}
           href={getShopOfferAffiliateUrl(product.id, offer)}
           retailer={getRetailerLabel(offer.retailer)}
+          retailerId={offer.retailer}
+          productId={product.id}
+          source={source}
           price={showPrices ? offer.price : undefined}
           className={compact ? "text-sm" : ""}
         />

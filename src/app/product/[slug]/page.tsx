@@ -120,7 +120,11 @@ export default async function ProductPage({ params }: PageProps) {
               {formatPricePerKwh(displayPrice, product.capacity)} per kWh capaciteit
               {offers.length > 1 && ` · ${offers.length} winkels`}
             </p>
-            <ProductOffers product={product} className="mt-4" />
+            <ProductOffers
+              product={product}
+              className="mt-4"
+              source="product_page"
+            />
             {product.shopLinkHint && (
               <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
             )}

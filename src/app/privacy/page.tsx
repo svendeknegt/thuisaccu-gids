@@ -43,6 +43,12 @@ export default function PrivacyPage() {
               technische werking, beveiliging en foutopsporing.
             </li>
             <li>
+              <strong className="font-medium text-ink">Affiliate klik-events (first-party)</strong>:
+              bij klik op een partnerknop registreren wij retailer, product-id,
+              paginapad, klikmoment en technische requestinformatie. Dit gebeurt
+              zonder advertentie- of trackingcookies van derden.
+            </li>
+            <li>
               <strong className="font-medium text-ink">Lokale opslag</strong> in
               je browser (localStorage): je keuze over cookies en juridische
               toestemming, zodat wij de melding niet telkens opnieuw tonen.
@@ -87,7 +93,8 @@ export default function PrivacyPage() {
           <ul className="list-inside list-disc space-y-1 pl-2">
             <li>
               <strong className="font-medium text-ink">Gerechtvaardigd belang</strong>:
-              serverlogs voor beveiliging en werking van de site.
+              serverlogs en affiliate klik-events voor beveiliging, werking en
+              verbetering van de site.
             </li>
             <li>
               <strong className="font-medium text-ink">Toestemming</strong>: het
