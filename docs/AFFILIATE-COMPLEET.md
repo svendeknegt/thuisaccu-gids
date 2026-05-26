@@ -7,7 +7,7 @@ Interne checklist. Publieke info: `/affiliate-partners`, `/winkels`, `/methodolo
 | Programma | Acceptatie via site? | Opmerking |
 |-----------|----------------------|-----------|
 | **Amazon** | ✓ Al actief | Disclosure in footer + productpagina's |
-| **Bol** | Her aanvragen over 4–6 weken | Toegevoegde waarde: keuzehulp, kennisbank, vergelijker |
+| **Bol** | Heraanvraag verzonden — wachten op beoordeling | Toegevoegde waarde: keuzehulp, kennisbank, vergelijker |
 | **Coolblue** | **Niet via plug-and-play links** | Afgewezen: verkopen deze producten niet in affiliate-shop. Wel: installateur-route (Coolblue Energie) op site |
 
 Coolblue affiliate accepteert waarschijnlijk **pas** als Coolblue weer powerstations in de webshop heeft, of als je site primair gaat over producten die zij wél verkopen (nu: powerbanks — past niet bij niche).
@@ -29,7 +29,7 @@ Coolblue affiliate accepteert waarschijnlijk **pas** als Coolblue weer powerstat
 
 ## Bol — heraanvraag
 
-Zie `docs/BOL-HERAANVRAAG.md`. Mail **Affiliate@bol.com** na 4–6 weken.
+Zie `docs/BOL-HERAANVRAAG.md`. De mail naar **Affiliate@bol.com** is verzonden op 26 mei 2026; vervolgactie is mailbox controleren op reactie.
 
 Benadruk:
 
@@ -78,5 +78,5 @@ We do not link to Coolblue product pages for items you do not sell.
 - [ ] Push + Vercel deploy
 - [ ] Search Console: sitemap `https://www.thuisaccu-gids.nl/sitemap.xml`
 - [ ] Handmatig testen: Bol-link, Amazon-link (tag in URL), keuzehulp
-- [ ] Bol-mail na wachttijd
+- [x] Bol-mail na wachttijd
 - [ ] Coolblue: geen actie tot assortiment wijzigt

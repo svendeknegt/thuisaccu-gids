@@ -18,7 +18,7 @@ export const retailerInfo: RetailerInfo[] = [
     label: "Bol.com",
     role: "Primair — breed assortiment plug-and-play thuisaccu's",
     affiliateStatus: "pending",
-    note: "Partnerprogramma: heraanvraag na site-uitbreiding (keuzehulp, methodologie).",
+    note: "Partnerprogramma: heraanvraag verzonden 26 mei 2026 — wachten op beoordeling door Bol.",
     signupUrl: "https://partner.bol.com",
   },
   {

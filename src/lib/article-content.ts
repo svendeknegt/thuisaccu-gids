@@ -695,4 +695,130 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       ],
     },
   ],
+
+  "zonnepanelen-thuisaccu-combinatie": [
+    {
+      type: "p",
+      text: "Zonnepanelen wekken overdag stroom op — maar je verbruikt het grootste deel juist 's avonds. Een thuisaccu lost dat tijdsverschil op: je slaat het overschot op tijdens piekopwek en benut het wanneer het net duur is. Toch is de combinatie niet altijd even lucratief. In dit artikel lees je wanneer de combinatie wél loont, hoe je accu en panelen op elkaar afstemt en wat je verwacht rendement is.",
+    },
+    {
+      type: "h2",
+      text: "Waarom zonnepanelen alleen niet genoeg zijn",
+    },
+    {
+      type: "p",
+      text: "Een gemiddeld huishouden met 10 zonnepanelen wekt op een zonnige dag 30–40 kWh op. Het dagelijkse verbruik ligt op 8–12 kWh. Zonder opslag gaat het grootste deel van dat overschot naar het net — en met de afbouw van de salderingsregeling ontvang je daarvoor steeds minder. Terwijl je diezelfde stroom 's avonds terugkoopt voor het volle leveringstarief.",
+    },
+    {
+      type: "callout",
+      title: "Salderingsafbouw in 2026",
+      text: "Vanaf 2025 bouwt de salderingsvergoeding stapsgewijs af. In 2027 vervalt de regeling grotendeels. Eigen stroom die je 's avonds zelf benut, is tot drie keer meer waard dan teruggeleverde stroom.",
+    },
+    {
+      type: "h2",
+      text: "Hoe werkt laden op zonne-energie?",
+    },
+    {
+      type: "p",
+      text: "Een plug-and-play thuisaccu laad je via een normaal stopcontact of een vaste aansluiting. De meeste powerstations (EcoFlow, Bluetti, Anker) kunnen worden gekoppeld aan je omvormer of een slimme stekker, zodat de accu automatisch laadt zodra de opwek hoger is dan je directe verbruik. Sommige modellen beschikken over een eigen zonnepaneelingang (MPPT) voor directe zonnelading.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Via stopcontact: eenvoudigst — accu laadt op huishoudstroom die deels van uw panelen komt.",
+        "Via omvormer-koppeling: efficiënter — accu laadt alleen bij overschot.",
+        "Via MPPT-ingang: directe zonnelading, meest onafhankelijk van net en omvormer.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "De juiste capaciteit kiezen",
+    },
+    {
+      type: "p",
+      text: "Een vuistregel: een accu van 2–3 kWh dekt het avondverbruik van een klein huishouden; 4–5 kWh past bij een gemiddeld gezin. Heb je een elektrische auto of warmtepomp, dan kan 7–10 kWh interessant zijn. Vergelijk altijd de bruikbare capaciteit (DoD) — een 5 kWh-accu met 80% DoD geeft slechts 4 kWh bruikbaar.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Klein huishouden (1–2 personen, 6–8 panelen): 2–3 kWh volstaat voor de avondpiek.",
+        "Gemiddeld gezin (3–4 personen, 10–14 panelen): 4–5 kWh dekt het meeste avondverbruik.",
+        "Intensief verbruik (EV, warmtepomp, 15+ panelen): overweeg 7–10 kWh.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Eigen verbruik: de sleutel tot rendement",
+    },
+    {
+      type: "p",
+      text: "Het rendement van de combinatie hangt af van één getal: het percentage eigen verbruik. Zonder accu is dat voor de meeste huishoudens 30–40%. Met een goed gedimensioneerde accu stijgt dat naar 60–80%. Elk extra procent eigen verbruik bespaart je het verschil tussen terugleverprijzen (€0,08–0,12/kWh) en nettarieven (€0,25–0,40/kWh).",
+    },
+    {
+      type: "callout",
+      title: "Rekenvoorbeeld",
+      text: "Stel: je wekt 3.500 kWh/jaar op. Zonder accu benut je 35% zelf (1.225 kWh). Met een 4 kWh-accu stijgt dit naar 65% (2.275 kWh). Dat is 1.050 kWh meer eigen verbruik × €0,30 besparing = €315/jaar extra rendement.",
+    },
+    {
+      type: "h2",
+      text: "Dynamische tarieven en slim laden",
+    },
+    {
+      type: "p",
+      text: "Heb je een dynamisch energiecontract, dan kun je de accu ook inzetten als arbitrage-instrument: laden wanneer de stroomprijs laag is (nacht, weekend, veel wind), ontladen tijdens piekuren. Dit vereist wel een slimme meter, een thuisaccu met laadplanning-functie en discipline in monitoring.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Beste resultaat: combineer zonnelading overdag + goedkope netstroom 's nachts.",
+        "Vereiste: app-sturing of thuisautomatisering (bijv. Home Assistant).",
+        "Risico: tarieven zijn volatiel — besparing varieert per jaar.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Welk merk past bij jouw installatie?",
+    },
+    {
+      type: "p",
+      text: "Niet elk powerstation werkt even goed samen met zonnepanelen. EcoFlow en Bluetti bieden speciale zonneladingscombinaties aan. Anker Solix heeft app-gestuurde laadplanning. Voor installaties waarbij je de accu direct wilt koppelen aan je omvormer, zijn modellen met een MPPT-zonnelading-ingang en hoge DC-oplaadcapaciteit het meest geschikt.",
+    },
+    {
+      type: "h3",
+      text: "Checkpunten bij je keuze",
+    },
+    {
+      type: "ul",
+      items: [
+        "Zonne-ingang (MPPT): maximale spanning en wattage die de accu accepteert.",
+        "AC-laadvermogen: hoe snel laadt de accu via stopcontact (bijv. 1.800 W = vol in 2 uur bij 3,6 kWh).",
+        "App-integratie: automatische ladingsplanning op basis van tarieven of opwekprognose.",
+        "Uitbreidbaar: kun je later extra batterijpacks toevoegen als je verbruik toeneemt?",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Is de combinatie voor jou rendabel?",
+    },
+    {
+      type: "p",
+      text: "Een thuisaccu is geen garantie op rendement. Bij lage stroomtarieven, weinig panelen of al hoog eigen verbruik (bijv. warmtepomp overdag) is de terugverdientijd lang. Bereken je situatie altijd met actuele tarieven. Gebruik de keuzehulp op onze homepage voor een persoonlijke indicatie.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Rendabel: 10+ panelen, hoog avondverbruik, nettarief > €0,28/kWh.",
+        "Twijfelgeval: 6–9 panelen, gemiddeld verbruik — vergelijk terugverdientijd nauwkeurig.",
+        "Minder interessant: < 6 panelen of al hoog eigen verbruik overdag.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Conclusie",
+    },
+    {
+      type: "p",
+      text: "Zonnepanelen en een thuisaccu vullen elkaar aan — maar alleen als je installatie en verbruiksprofiel er klaar voor zijn. De kern: een accu verhoogt je eigen verbruik en verkleint de afhankelijkheid van dure netstroom. Met de afbouw van salderen neemt de meerwaarde toe voor wie overdag overschot produceert. Vergelijk modellen op kWh, laadvermogen en compatibiliteit met je zonne-installatie voordat je beslist.",
+    },
+  ],
 };

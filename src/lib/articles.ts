@@ -113,4 +113,15 @@ export const articles: Article[] = [
     readMinutes: 9,
     publishedAt: "2026-05-20",
   },
+  {
+    id: "10",
+    slug: "zonnepanelen-thuisaccu-combinatie",
+    category: "advies",
+    categoryLabel: "Aankoopadvies",
+    title: "Zonnepanelen + thuisaccu: zo haal je er het meeste uit",
+    excerpt:
+      "Hoe combineer je zonnepanelen optimaal met een thuisaccu? Van laden op overschot tot dynamisch tarieven benutten.",
+    readMinutes: 11,
+    publishedAt: "2026-05-26",
+  },
 ];
