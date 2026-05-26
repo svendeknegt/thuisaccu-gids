@@ -30,7 +30,7 @@ export default function HomePage() {
             directe links naar winkels — zodat je rustig een goede keuze kunt maken.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="#keuzehulp" className="btn-primary">
+            <Link href="/keuzehulp" className="btn-primary">
               Start keuzehulp
             </Link>
             <Link href="/vergelijken" className="btn-secondary">
@@ -43,7 +43,7 @@ export default function HomePage() {
               <span className="text-brand" aria-hidden>
                 ✓
               </span>
-              Geen eigen webshop — alleen vergelijken
+              Gratis capaciteits- &amp; besparingsadvies
             </li>
             <li className="flex gap-2 rounded-lg border border-surface-border bg-surface-muted/50 p-4">
               <span className="text-brand" aria-hidden>
@@ -67,7 +67,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Finder />
+      <Finder compactTitle savingsExpandedDefault />
 
       <section className="py-14 sm:py-16">
         <div className="container-page">
@@ -85,6 +85,47 @@ export default function HomePage() {
             <Link href="/vergelijken" className="btn-secondary">
               Bekijk alle {products.length} modellen →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-surface-border bg-surface-muted/30 py-14">
+        <div className="container-page">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="section-title">Eerst kiezen, dan kopen</h2>
+              <p className="section-lead">
+                Onze keuzehulp en kennisbank helpen je bepalen welke capaciteit
+                past — vóór je een winkel bezoekt. Transparante methodologie,
+                geen webshop.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/keuzehulp" className="btn-primary">
+                  Open keuzehulp
+                </Link>
+                <Link href="/methodologie" className="btn-secondary">
+                  Onze methodologie
+                </Link>
+              </div>
+            </div>
+            <ul className="grid gap-3 text-sm text-ink-secondary">
+              {[
+                "Capaciteitsadvies op basis van panelen en verbruik",
+                "Indicatie besparing en terugverdientijd",
+                "8+ redactionele gidsen in de kennisbank",
+                "Onafhankelijke vergelijking — geen betaalde ranking",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-2 rounded-lg border border-surface-border bg-white p-3"
+                >
+                  <span className="text-brand" aria-hidden>
+                    ✓
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

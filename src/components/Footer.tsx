@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AmazonAssociatesNotice } from "@/components/AmazonAssociatesNotice";
 import { PrivacyPreferencesButton } from "@/components/PrivacyPreferencesButton";
 import { site } from "@/lib/site";
 
@@ -28,6 +29,21 @@ export function Footer() {
             <li>
               <Link href="/" className="hover:text-brand">
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/winkels" className="hover:text-brand">
+                Winkels
+              </Link>
+            </li>
+            <li>
+              <Link href="/keuzehulp" className="hover:text-brand">
+                Keuzehulp
+              </Link>
+            </li>
+            <li>
+              <Link href="/methodologie" className="hover:text-brand">
+                Methodologie
               </Link>
             </li>
             <li>
@@ -70,6 +86,12 @@ export function Footer() {
             </Link>
             .
           </p>
+        </div>
+      </div>
+
+      <div className="border-t border-surface-border bg-surface-muted/30 px-4 py-4">
+        <div className="container-page">
+          <AmazonAssociatesNotice />
         </div>
       </div>
 

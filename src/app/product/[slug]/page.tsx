@@ -4,6 +4,8 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductImage } from "@/components/ProductImage";
 import { ProductOffers } from "@/components/ProductOffers";
+import { RetailerBadges } from "@/components/RetailerBadges";
+import { AmazonAssociatesNotice } from "@/components/AmazonAssociatesNotice";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getArticleBySlug } from "@/lib/articles";
 import { getRelatedArticleSlugs } from "@/lib/product-articles";
@@ -59,6 +61,17 @@ export default async function ProductPage({ params }: PageProps) {
           ← Terug naar vergelijker
         </Link>
 
+        <div className="mt-4 rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
+          <p className="font-medium text-ink">Twijfel over de maat?</p>
+          <p className="mt-1">
+            Gebruik onze{" "}
+            <Link href="/keuzehulp" className="text-brand hover:underline">
+              keuzehulp
+            </Link>{" "}
+            voor capaciteitsadvies op basis van jouw panelen en verbruik.
+          </p>
+        </div>
+
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
           <div className="relative aspect-square max-h-[420px] overflow-hidden rounded-xl border border-surface-border bg-surface-muted">
             <ProductImage
@@ -72,6 +85,7 @@ export default async function ProductPage({ params }: PageProps) {
           <div>
             <p className="text-sm font-medium text-ink-muted">{product.brand}</p>
             <h1 className="mt-1 text-3xl font-bold text-ink">{product.name}</h1>
+            <RetailerBadges product={product} className="mt-2" />
             <p className="mt-2 text-ink-secondary">
               ★ {formatRating(product.rating)} · {product.type}
             </p>
@@ -111,8 +125,28 @@ export default async function ProductPage({ params }: PageProps) {
               <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
             )}
             <AffiliateDisclosure className="mt-4" />
+            {offers.some((o) => o.retailer === "amazon") && (
+              <AmazonAssociatesNotice className="mt-3" />
+            )}
           </div>
         </div>
+
+        {!offers.some((o) => o.retailer === "coolblue") && (
+          <aside className="mt-8 max-w-3xl rounded-xl border border-surface-border bg-surface-muted/40 p-4 text-sm text-ink-secondary">
+            <p className="font-medium text-ink">Vaste thuisbatterij nodig?</p>
+            <p className="mt-1 leading-relaxed">
+              Dit plug-and-play model staat niet in Coolblue&apos;s webshop. Voor
+              een geïnstalleerde thuisbatterij via Coolblue Energie:{" "}
+              <Link
+                href="/kennisbank/plug-and-play-vs-installateur"
+                className="text-brand hover:underline"
+              >
+                lees plug-and-play vs installateur
+              </Link>
+              .
+            </p>
+          </aside>
+        )}
 
         {(product.buyingGuide || product.suitableFor) && (
           <section className="mt-12 max-w-3xl">

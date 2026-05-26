@@ -451,6 +451,10 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       text: "Op de homepage vul je aantal panelen, geschat jaarverbruik en je doel in. Je krijgt een aanbevolen capaciteit in kWh en passende modellen. Combineer dat met de vergelijker voor prijs per kWh en reviews in de vorm van voor- en nadelen per product.",
     },
     {
+      type: "p",
+      text: "Of gebruik direct onze volledige keuzehulp op /keuzehulp — daar zie je ook een indicatie van jaarbesparing en terugverdientijd.",
+    },
+    {
       type: "h2",
       text: "Samenvatting",
     },
@@ -461,6 +465,233 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
         "Kijk naar zonne-overschot én avondverbruik.",
         "Reken met ~85–92% round-trip efficiency.",
         "Vergelijk concrete modellen op /vergelijken.",
+      ],
+    },
+  ],
+  "lfp-vs-nmc": [
+    {
+      type: "p",
+      text: "Bij thuisaccu's zie je vooral LFP (LiFePO4) en soms NMC (lithium-ion met nikkel-mangaan-kobalt). De chemie bepaalt levensduur, gewicht, prijs en veiligheid. In dit artikel leg je het verschil uit zodat je niet alleen naar kWh en euro's kijkt.",
+    },
+    {
+      type: "h2",
+      text: "Wat is LFP (LiFePO4)?",
+    },
+    {
+      type: "p",
+      text: "LFP is de gangbare keuze voor moderne thuisaccu's en powerstations. Voordelen: lange levensduur (vaak 3000+ cycli), stabiele werking en minder brandgevaar dan oudere chemieën. Nadelen: iets zwaarder per kWh en soms iets duurder per opgeslagen kilowattuur.",
+    },
+    {
+      type: "h2",
+      text: "Wat is NMC?",
+    },
+    {
+      type: "p",
+      text: "NMC packs meer energie in minder gewicht — handig voor draagbare accu's. Bij dagelijks thuisgebruik slijt NMC vaak sneller dan LFP. Voor een vaste thuisaccu die jarenlang elke dag laadt en ontlaadt, kiezen de meeste fabrikanten in 2026 voor LFP.",
+    },
+    {
+      type: "h2",
+      text: "Waar let je op in de specificaties?",
+    },
+    {
+      type: "ul",
+      items: [
+        "Aantal laadcycli bij 80% restcapaciteit (fabrieksgarantie).",
+        "Garantie in jaren — vaak 5 jaar bij LFP-thuisaccu's.",
+        "Continu ontlaadvermogen (W) naast capaciteit (kWh).",
+        "Temperatuurbereik als je de accu in een onverwarmde schuur zet.",
+      ],
+    },
+    {
+      type: "callout",
+      title: "Praktisch",
+      text: "Kies LFP tenzij je expliciet een compact, licht model nodig hebt en je de kortere levensduur accepteert.",
+    },
+    {
+      type: "h2",
+      text: "Samenvatting",
+    },
+    {
+      type: "ul",
+      items: [
+        "LFP: langer mee, gangbaar voor thuisaccu's.",
+        "NMC: compacter, minder ideaal voor dagelijks cyclen thuis.",
+        "Vergelijk cycli en garantie op onze productpagina's.",
+      ],
+    },
+  ],
+  "eigen-verbruik": [
+    {
+      type: "p",
+      text: "Eigen verbruik betekent: stroom die je zelf opwekt (zon) of goedkoop inslaat, direct of later in huis gebruiken — in plaats van terugleveren tegen lage vergoeding en 's avonds dure netstroom kopen. Een thuisaccu helpt, maar je kunt al veel winnen zonder extra hardware.",
+    },
+    {
+      type: "h2",
+      text: "Zonder accu: verbruik verschuiven",
+    },
+    {
+      type: "ul",
+      items: [
+        "Wasmachine en vaatwasser overdag draaien bij zon.",
+        "EV laden wanneer je panelen overschot hebben (via app of timer).",
+        "Boiler of warmtepomp op zonnige uren plannen als je EMS dat ondersteunt.",
+        "Inzicht: omvormer-app of P1-meter om teruglevering te zien.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Met accu: overschot bufferen",
+    },
+    {
+      type: "p",
+      text: "Als je overdag structureel meer opwekt dan verbruikt, vangt een accu van 2–5 kWh een deel van dat overschot op voor de avond. Hoe groter het verschil tussen middag-opwek en avond-verbruik, hoe meer een accu kan bijdragen. Gebruik onze keuzehulp om te schatten welke capaciteit past.",
+    },
+    {
+      type: "h2",
+      text: "Salderen en terugleververgoeding",
+    },
+    {
+      type: "p",
+      text: "Naarmate salderen verdwijnt, daalt de financiële waarde van terugleveren. Eigen verbruik wordt relatief waardevoller. Dat maakt zowel gedrag (verschuiven) als opslag (accu) interessanter — maar alleen als je werkelijk overschot hebt.",
+    },
+    {
+      type: "h2",
+      text: "Samenvatting",
+    },
+    {
+      type: "ul",
+      items: [
+        "Begin met inzicht in opwek en verbruik per uur.",
+        "Verschuif verbruik naar zonnige uren waar mogelijk.",
+        "Accu loont vooral bij structureel overschot en avondpiek.",
+      ],
+    },
+  ],
+  terugverdientijd: [
+    {
+      type: "p",
+      text: "Fabrikanten en winkels roepen soms korte terugverdientijden. Realistisch rekenen vraagt om je eigen verbruik, tarief, accuprijs en hoe lang je in hetzelfde huis woont. Dit artikel legt de formule uit — en waarom onze keuzehulp slechts een indicatie geeft.",
+    },
+    {
+      type: "h2",
+      text: "Basisformule",
+    },
+    {
+      type: "p",
+      text: "Terugverdientijd (jaren) ≈ totale aanschafkosten ÷ jaarlijkse besparing (€). Totale kosten = accu + kabels + eventuele modules. Jaarbesparing = extra eigen verbruik × verschil tussen nettarief en terugleververgoeding, plus eventueel voordeel uit dynamische tarieven.",
+    },
+    {
+      type: "h2",
+      text: "Wat vaak wordt vergeten",
+    },
+    {
+      type: "ul",
+      items: [
+        "Round-trip efficiency (~85–92%): je verliest energie bij laden/ontladen.",
+        "Winter: minder zon, accu vult niet elke dag.",
+        "Accuslijtage: na 8–10 jaar minder bruikbare kWh.",
+        "Vaste kosten energiecontract en netbeheer blijven.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Rekenvoorbeeld",
+    },
+    {
+      type: "p",
+      text: "Stel: accu €2.500 all-in, 3,6 kWh. Je bespaart €200 per jaar door minder netafname en betere benutting van zon. Terugverdientijd ≈ 12,5 jaar. Koop je vooral comfort en blackout-back-up, dan is 'break-even' minder relevant — dat mag, zolang je het eerlijk benoemt.",
+    },
+    {
+      type: "h2",
+      text: "Gebruik onze keuzehulp",
+    },
+    {
+      type: "p",
+      text: "Op /keuzehulp vul je panelen, verbruik en doel in. Je ziet een indicatie van jaarbesparing en terugverdientijd op basis van gemiddelde aannames. Lees /methodologie voor de exacte criteria en beperkingen.",
+    },
+    {
+      type: "callout",
+      title: "Geen garantie",
+      text: "Wij garanderen geen terugverdientijd. Vergelijk altijd meerdere modellen op prijs per kWh en lees voor- en nadelen.",
+    },
+    {
+      type: "h2",
+      text: "Samenvatting",
+    },
+    {
+      type: "ul",
+      items: [
+        "Deel totale kosten door realistische jaarbesparing.",
+        "Tel efficiency, seizoen en slijtage mee.",
+        "Gebruik keuzehulp + vergelijker vóór aankoop.",
+      ],
+    },
+  ],
+  "plug-and-play-vs-installateur": [
+    {
+      type: "p",
+      text: "Niet elke thuisaccu koop je als powerstation op Bol.com of Amazon.nl. Sommige huishoudens hebben een vaste thuisbatterij achter de meterkast nodig — vaak via een installateur en energieleverancier. In dit artikel leg je het verschil uit, zodat je de juiste route kiest vóór je bestelt.",
+    },
+    {
+      type: "h2",
+      text: "Plug-and-play (onze vergelijking)",
+    },
+    {
+      type: "p",
+      text: "Powerstations zoals EcoFlow, Anker Solix, Jackery en Bluetti koop je als los apparaat: stopcontact of aparte groep, verplaatsbaar, geen meterkast-ingreep. Wij vergelijken deze modellen op capaciteit, vermogen en prijs per kWh. Primair via Bol.com en Amazon.nl — met keuzehulp en side-by-side vergelijking op onze site.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Sneller leverbaar, zelf te plaatsen",
+        "Ideaal om te testen of opslag bij jouw verbruik past",
+        "Beperkt vermogen vs. vaste systemen (vaak 1,5–4 kW)",
+        "Geen officiële saldering-koppeling aan meterkast",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Vaste thuisbatterij (installateur)",
+    },
+    {
+      type: "p",
+      text: "Een vaste thuisbatterij wordt geïnstalleerd achter je meterkast, gekoppeld aan zonnepanelen en soms aan een dynamisch energiecontract. Dit pad loopt vaak via een installateur en energieleverancier — niet als los product in een webshop.",
+    },
+    {
+      type: "h2",
+      text: "Coolblue Energie",
+    },
+    {
+      type: "p",
+      text: "Coolblue verkoopt via Coolblue Energie vooral zonnepanelen en advies over vaste thuisbatterijen (Enphase, Growatt). Dat is een andere klantreis dan onze plug-and-play vergelijking. Coolblue's webshop-affiliate-programma richt zich niet op de powerstations die wij vergelijken — vandaar linken wij voor Coolblue naar informatie, niet naar nep-productpagina's.",
+    },
+    {
+      type: "callout",
+      title: "Extern advies",
+      text: "Meer over vaste thuisbatterijen via installateur: coolblue.nl/zonnepanelen/advies (Coolblue Energie). Wij ontvangen daar geen commissie; het is puur extra context voor je keuze.",
+    },
+    {
+      type: "h2",
+      text: "Welke route past bij jou?",
+    },
+    {
+      type: "ul",
+      items: [
+        "Plug-and-play: budget, flexibiliteit, geen installateur — gebruik onze keuzehulp.",
+        "Vaste batterij: grote capaciteit, meterkast, langetermijn woning — zoek installateur/Energie-partner.",
+        "Twijfel: begin met onze vergelijker; schakel installateur in als 2 kWh niet genoeg is.",
+      ],
+    },
+    {
+      type: "h2",
+      text: "Samenvatting",
+    },
+    {
+      type: "ul",
+      items: [
+        "Wij vergelijken plug-and-play via Bol en Amazon.",
+        "Coolblue Energie = installateur-route, geen webshop-affiliate voor onze modellen.",
+        "Zie /winkels voor beschikbaarheid per winkel.",
       ],
     },
   ],

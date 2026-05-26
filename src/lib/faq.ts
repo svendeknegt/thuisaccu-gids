@@ -35,4 +35,20 @@ export const faqs = [
     q: "Hoe gaan jullie om met cookies?",
     a: "Alleen functionele opslag (o.a. je toestemming) en technische serverlogs. Geen advertentiecookies op onze site. Externe winkels kunnen wel cookies plaatsen als je doorklikt.",
   },
+  {
+    q: "Wat is de toegevoegde waarde ten opzichte van een webshop?",
+    a: "Wij helpen je kiezen vóór je koopt: keuzehulp voor capaciteit en terugverdientijd, objectieve vergelijking, kennisbank en koopgidsen per model. Webshops tonen producten; wij helpen de klantreis van oriëntatie naar een passende keuze.",
+  },
+  {
+    q: "Hoe werkt jullie keuzehulp?",
+    a: "Je vult zonnepanelen, jaarverbruik en je doel in (besparen of dynamisch handelen). Je krijgt een capaciteitsadvies in kWh, een indicatie van besparing en passende modellen. Zie /methodologie voor de rekenmethode.",
+  },
+  {
+    q: "Zijn jullie onafhankelijk van Bol.com?",
+    a: "Ja. Wij zijn geen Bol-webshop. Bol.com is één van de retailers waarnaar we kunnen doorlinken. Onze vergelijking en sortering worden niet verkocht; zie /methodologie en /affiliate-partners.",
+  },
+  {
+    q: "Waarom geen Coolblue-knop op elk product?",
+    a: "Coolblue's webshop verkoopt onze plug-and-play modellen niet (of niet meer). Voor een vaste thuisbatterij via installateur verwijzen we naar uitleg en Coolblue Energie. Zie /winkels.",
+  },
 ] as const;

@@ -7,9 +7,9 @@ Interne gids — **niet** bedoeld voor bezoekers van de site. Publieke disclosur
 | Programma | Status | Actie |
 |-----------|--------|--------|
 | Amazon Associates NL | Actief | Tag in Vercel |
-| Bol Partner | Wacht op goedkeuring | Geduld / status checken |
+| Bol Partner | Afgewezen — heraanvraag na site-verbetering | Zie `docs/BOL-HERAANVRAAG.md` |
 | Awin (account) | Actief | Coolblue + MediaMarkt Join |
-| Coolblue NL | Aanvragen / pending | Wachten op Accepted |
+| Coolblue NL | **Afgewezen** — verkopen (nog) niet deze producten via affiliate | Geen heraanvraag; zie `docs/COOLBLUE-AWIN.md` |
 | MediaMarkt NL | Nog joinen | Awin → Join |
 | Conrad NL | Optioneel | Awin → Join |
 

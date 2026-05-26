@@ -69,4 +69,48 @@ export const articles: Article[] = [
     readMinutes: 9,
     publishedAt: "2026-04-12",
   },
+  {
+    id: "6",
+    slug: "lfp-vs-nmc",
+    category: "advies",
+    categoryLabel: "Techniek",
+    title: "LFP vs NMC: welke batterijchemie kies je?",
+    excerpt:
+      "LiFePO4 (LFP) en NMC verschillen in levensduur, gewicht en prijs — wat past bij een thuisaccu?",
+    readMinutes: 7,
+    publishedAt: "2026-05-10",
+  },
+  {
+    id: "7",
+    slug: "eigen-verbruik",
+    category: "regels",
+    categoryLabel: "Besparen",
+    title: "Eigen verbruik verhogen: met en zonder thuisaccu",
+    excerpt:
+      "Van slim verbruiken tot opslag — praktische stappen om minder dure netstroom te kopen.",
+    readMinutes: 8,
+    publishedAt: "2026-05-15",
+  },
+  {
+    id: "8",
+    slug: "terugverdientijd",
+    category: "advies",
+    categoryLabel: "Berekenen",
+    title: "Terugverdientijd thuisaccu: realistisch rekenen",
+    excerpt:
+      "Hoe lang duurt het voordat een thuisaccu zich terugverdient? Factoren, valkuilen en een voorbeeld.",
+    readMinutes: 10,
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "9",
+    slug: "plug-and-play-vs-installateur",
+    category: "advies",
+    categoryLabel: "Aankoopadvies",
+    title: "Plug-and-play vs vaste thuisbatterij (Coolblue Energie)",
+    excerpt:
+      "Wanneer kies je een powerstation via Bol/Amazon — en wanneer een installateur via Coolblue Energie?",
+    readMinutes: 9,
+    publishedAt: "2026-05-20",
+  },
 ];

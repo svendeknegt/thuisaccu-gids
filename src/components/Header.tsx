@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/keuzehulp", label: "Keuzehulp" },
   { href: "/vergelijken", label: "Vergelijken" },
   { href: "/kennisbank", label: "Kennisbank" },
 ];
@@ -60,11 +61,11 @@ export function Header() {
             );
           })}
           <Link
-            href="/#keuzehulp"
+            href="/keuzehulp"
             onClick={() => setOpen(false)}
             className="btn-primary mt-2 md:mt-0 md:ml-2"
           >
-            Keuzehulp
+            Start keuzehulp
           </Link>
         </nav>
 

@@ -1,7 +1,7 @@
 export const site = {
   name: "Thuisaccu-Gids.nl",
   domain: "thuisaccu-gids.nl",
-  url: "https://thuisaccu-gids.nl",
+  url: "https://www.thuisaccu-gids.nl",
   contactEmail: "info@thuisaccu-gids.nl",
   tagline: "Onafhankelijk vergelijken, rustig kiezen",
   description:

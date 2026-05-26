@@ -21,11 +21,17 @@ const USAGE_OPTIONS = [
   { value: 5000, label: "Hoog (~5000 kWh)" },
 ];
 
-export function Finder() {
+export function Finder({
+  savingsExpandedDefault = false,
+  compactTitle = false,
+}: {
+  savingsExpandedDefault?: boolean;
+  compactTitle?: boolean;
+}) {
   const [panels, setPanels] = useState(10);
   const [usageKwh, setUsageKwh] = useState(3500);
   const [goal, setGoal] = useState<"savings" | "trading">("savings");
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(savingsExpandedDefault);
 
   const result = useMemo(() => {
     const input: FinderInput = { panels, usageKwh, goal };
@@ -38,10 +44,13 @@ export function Finder() {
       className="scroll-mt-24 border-y border-surface-border bg-white py-14 sm:py-16"
     >
       <div className="container-page">
-        <h2 className="section-title">Korte keuzehulp</h2>
+        <h2 className="section-title">
+          {compactTitle ? "Korte keuzehulp" : "Thuisaccu keuzehulp"}
+        </h2>
         <p className="section-lead">
-          Drie keuzes — geen ingewikkelde rekenmachine. Je ziet direct een
-          richting en passende modellen.
+          {compactTitle
+            ? "Drie keuzes — geen ingewikkelde rekenmachine. Je ziet direct een richting en passende modellen."
+            : "Vul je situatie in en ontvang een capaciteitsadvies in kWh, een indicatie van besparing en passende modellen — vóór je naar een winkel gaat."}
         </p>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
@@ -128,29 +137,39 @@ export function Finder() {
             </button>
 
             {expanded && (
-              <div className="grid grid-cols-3 gap-3 rounded-xl border border-surface-border bg-surface-muted p-4 text-center text-sm">
-                <div>
-                  <p className="text-ink-muted">Per jaar</p>
-                  <p className="font-semibold text-ink">
-                    {formatPrice(result.annualSavingsEur)}
-                  </p>
+              <div className="space-y-3">
+                <div className="grid grid-cols-3 gap-3 rounded-xl border border-surface-border bg-surface-muted p-4 text-center text-sm">
+                  <div>
+                    <p className="text-ink-muted">Geschatte besparing</p>
+                    <p className="font-semibold text-ink">
+                      {formatPrice(result.annualSavingsEur)}/jr
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-ink-muted">Terugverdientijd</p>
+                    <p className="font-semibold text-ink">
+                      {result.paybackYears > 0
+                        ? `${result.paybackYears.toFixed(1).replace(".", ",")} jr`
+                        : "—"}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-ink-muted">ROI (indicatie)</p>
+                    <p className="font-semibold text-ink">
+                      {result.roiPercent > 0
+                        ? `${result.roiPercent.toFixed(1).replace(".", ",")}%`
+                        : "—"}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-ink-muted">Terugverdientijd</p>
-                  <p className="font-semibold text-ink">
-                    {result.paybackYears > 0
-                      ? `${result.paybackYears.toFixed(1).replace(".", ",")} jr`
-                      : "—"}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-ink-muted">ROI</p>
-                  <p className="font-semibold text-ink">
-                    {result.roiPercent > 0
-                      ? `${result.roiPercent.toFixed(1).replace(".", ",")}%`
-                      : "—"}
-                  </p>
-                </div>
+                <p className="text-xs text-ink-muted leading-relaxed">
+                  Indicatief op basis van gemiddelde tarieven en je invoer. Geen
+                  persoonlijk financieel advies —{" "}
+                  <Link href="/methodologie" className="text-brand hover:underline">
+                    lees onze rekenmethode
+                  </Link>
+                  .
+                </p>
               </div>
             )}
           </div>

@@ -1,10 +1,9 @@
 "use client";
 
-"use client";
-
 import Link from "next/link";
 import { ProductOffers } from "@/components/ProductOffers";
 import { ProductImage } from "@/components/ProductImage";
+import { RetailerBadges } from "@/components/RetailerBadges";
 import { useCompare } from "@/components/compare/CompareContext";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getDisplayPrice } from "@/lib/products";
@@ -46,7 +45,7 @@ export function ProductCard({
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
         <div className="flex items-start justify-between gap-2">
-          <div>
+          <div className="min-w-0 flex-1">
             <p className="text-xs font-medium uppercase tracking-wide text-ink-muted">
               {product.brand}
             </p>
@@ -55,6 +54,7 @@ export function ProductCard({
                 {product.name}
               </h3>
             </Link>
+            <RetailerBadges product={product} className="mt-2" />
           </div>
           <p className="shrink-0 text-sm font-medium text-ink">
             ★ {formatRating(product.rating)}

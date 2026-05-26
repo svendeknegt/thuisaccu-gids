@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
@@ -112,6 +113,15 @@ export function ComparePageClient() {
           <li>Prijzen zijn richtprijzen; controleer altijd bij de winkel</li>
           <li>Installatiekosten vallen buiten onze plug-and-play selectie</li>
         </ul>
+        <p className="mt-3">
+          <Link href="/methodologie" className="text-brand hover:underline">
+            Volledige methodologie →
+          </Link>
+          {" · "}
+          <Link href="/keuzehulp" className="text-brand hover:underline">
+            Nog geen idee welke maat? Keuzehulp →
+          </Link>
+        </p>
       </details>
 
       {showMatrix && ids.length > 0 && (

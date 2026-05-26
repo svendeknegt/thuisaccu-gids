@@ -1,5 +1,17 @@
 # Coolblue affiliate (Awin / Daisycon)
 
+## Status (mei 2026)
+
+**Awin-aanvraag afgewezen** — programma Coolblue NL (aid: 85161), publisher thuisaccu-gids (pid: 2906375).
+
+Reden van Coolblue: *"We currently do not yet offer these products"*.
+
+Dit is **geen afkeuring van je site**, maar van het **productassortiment**: Coolblue verkoopt via de webshop-affiliate geen (of nauwelijks) plug-and-play thuisaccu's / grote powerstations meer. Thuisbatterijen lopen via **Coolblue Energie** (installatie + energiecontract) — dat valt buiten het standaard Awin-programma.
+
+**Actie:** geen heraanvraag voor thuisaccu-vergelijking. Awin-account behouden voor andere adverteerders (Conrad, BCC, …).
+
+---
+
 Coolblue heeft geen eigen open affiliate-programma zoals Bol. Meestal via een **affiliate-netwerk**:
 
 | Netwerk | URL |
