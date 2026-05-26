@@ -67,6 +67,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-surface-border bg-surface-muted/30 py-10 sm:py-12">
+        <div className="container-page">
+          <h2 className="text-xl font-semibold text-ink sm:text-2xl">
+            Van oriëntatie naar aankoop in één avond
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-secondary sm:text-base">
+            Snel starten zonder onnodige stappen: eerst je maat bepalen, daarna
+            modellen vergelijken en pas dan naar een winkel. Zo is de kans op
+            miskoop kleiner.
+          </p>
+
+          <ol className="mt-6 grid gap-3 text-sm text-ink-secondary sm:grid-cols-2 lg:grid-cols-4">
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-semibold text-ink">1. Keuzehulp</p>
+              <p className="mt-1">Bepaal je richtcapaciteit in kWh.</p>
+            </li>
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-semibold text-ink">2. Vergelijk 3 modellen</p>
+              <p className="mt-1">Check vermogen, prijs per kWh en garantie.</p>
+            </li>
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-semibold text-ink">3. Controleer winkels</p>
+              <p className="mt-1">Bekijk beschikbaarheid en partnerstatus.</p>
+            </li>
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-semibold text-ink">4. Klik door</p>
+              <p className="mt-1">Ga via productpagina&apos;s naar de winkel.</p>
+            </li>
+          </ol>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/keuzehulp" className="btn-primary">
+              Start keuzehulp
+            </Link>
+            <Link href="/vergelijken" className="btn-secondary">
+              Vergelijk modellen
+            </Link>
+            <Link href="/winkels" className="btn-secondary">
+              Winkels &amp; beschikbaarheid
+            </Link>
+          </div>
+
+          <ul className="mt-6 grid gap-3 text-sm text-ink-secondary sm:grid-cols-3">
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-medium text-ink">Voor besparen</p>
+              <Link
+                href="/kennisbank/eigen-verbruik"
+                className="mt-1 inline-block text-brand hover:underline"
+              >
+                Eigen verbruik verhogen →
+              </Link>
+            </li>
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-medium text-ink">Voor dynamische tarieven</p>
+              <Link
+                href="/kennisbank/dynamisch"
+                className="mt-1 inline-block text-brand hover:underline"
+              >
+                Slim laden en ontladen →
+              </Link>
+            </li>
+            <li className="rounded-lg border border-surface-border bg-white p-4">
+              <p className="font-medium text-ink">Twijfel over installateur?</p>
+              <Link
+                href="/kennisbank/plug-and-play-vs-installateur"
+                className="mt-1 inline-block text-brand hover:underline"
+              >
+                Plug-and-play vs vast →
+              </Link>
+            </li>
+          </ul>
+
+          <p className="mt-4 text-xs text-ink-muted">
+            Let op: inkomsten via affiliate-links hangen af van verkeer, klikgedrag
+            en aankopen bij de winkel; er is geen gegarandeerde opbrengst per dag.
+          </p>
+        </div>
+      </section>
+
       <Finder compactTitle savingsExpandedDefault />
 
       <section className="py-14 sm:py-16">
