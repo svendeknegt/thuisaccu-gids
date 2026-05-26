@@ -31,10 +31,10 @@ export const retailerInfo: RetailerInfo[] = [
   },
   {
     id: "coolblue",
-    label: "Coolblue",
-    role: "Vaste thuisbatterij via Coolblue Energie (installatie)",
+    label: "Coolblue Energie / Hoppenbrouwers",
+    role: "Adviesroute voor vaste thuisbatterijen met installateur",
     affiliateStatus: "unavailable",
-    note: "Webshop-affiliate afgewezen: geen plug-and-play thuisaccu's in affiliate-assortiment. Wel informatie over installateur-route.",
+    note: "Geen webshop-affiliate voor onze plug-and-play modellen. Coolblue Energie-informatie blijft nuttig voor de installateur-route; controleer voor leadcampagnes de actuele Coolblue/Hoppenbrouwers voorwaarden.",
     signupUrl: "https://www.awin.com",
   },
 ];

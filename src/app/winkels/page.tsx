@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Winkels & beschikbaarheid",
   description:
-    "Waar je thuisaccu's kunt kopen: Bol.com, Amazon.nl en wanneer Coolblue Energie past. Transparant over affiliate en voorraad.",
+    "Waar je thuisaccu's kunt kopen: Bol.com, Amazon.nl en wanneer een installateur-route past. Transparant over affiliate en voorraad.",
   alternates: { canonical: `${site.url}/winkels` },
 };
 
@@ -33,8 +33,8 @@ export default function WinkelsPage() {
         <h1 className="section-title">Winkels &amp; beschikbaarheid</h1>
         <p className="section-lead mt-2">
           {site.name} helpt je kiezen vóór je koopt. Hier zie je per winkel wat
-          wij tonen, waar je affiliate-links actief zijn en hoe Coolblue past in
-          de klantreis.
+          wij tonen, waar affiliate-links actief zijn en wanneer een
+          installateur-route beter past dan een losse plug-and-play accu.
         </p>
 
         <ul className="mt-10 space-y-4">

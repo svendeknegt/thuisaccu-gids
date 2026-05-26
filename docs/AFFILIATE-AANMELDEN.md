@@ -4,12 +4,15 @@ Interne gids — **niet** bedoeld voor bezoekers van de site. Publieke disclosur
 
 ## Huidige status
 
+Zie `docs/AFFILIATE-ACTIEPLAN.md` voor het uitgebreide stappenplan, de
+concurrentievergelijking en welke partnergegevens nodig zijn voor implementatie.
+
 | Programma | Status | Actie |
 |-----------|--------|--------|
 | Amazon Associates NL | Actief | Tag in Vercel |
 | Bol Partner | Afgewezen — heraanvraag na site-verbetering | Zie `docs/BOL-HERAANVRAAG.md` |
 | Awin (account) | Actief | Coolblue + MediaMarkt Join |
-| Coolblue NL | **Afgewezen** — verkopen (nog) niet deze producten via affiliate | Geen heraanvraag; zie `docs/COOLBLUE-AWIN.md` |
+| Coolblue NL webshop | **Afgewezen** — plug-and-play assortiment past niet | Geen webshop-heraanvraag; energie/leadroute apart controleren |
 | MediaMarkt NL | Nog joinen | Awin → Join |
 | Conrad NL | Optioneel | Awin → Join |
 

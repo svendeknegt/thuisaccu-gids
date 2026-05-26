@@ -12,6 +12,33 @@ export const metadata = {
     "Vergelijk thuisaccu's en thuisbatterijen onafhankelijk. Keuzehulp, specificaties en links naar Bol, Coolblue en Amazon.",
 };
 
+const quickRoutes = [
+  {
+    title: "Vandaag direct vergelijken",
+    text: "Bekijk direct beschikbare plug-and-play modellen met winkelknoppen naar Bol.com en Amazon.nl waar beschikbaar.",
+    href: "/vergelijken",
+    cta: "Vergelijk modellen",
+  },
+  {
+    title: "Eerst zeker zijn van de maat",
+    text: "Gebruik drie vragen om een kWh-richting, besparingsindicatie en passende modellen te krijgen.",
+    href: "/keuzehulp",
+    cta: "Start keuzehulp",
+  },
+  {
+    title: "Toch een vaste thuisbatterij?",
+    text: "Lees wanneer een installateur-route logischer is dan een losse powerstation of plug-in batterij.",
+    href: "/kennisbank/plug-and-play-vs-installateur",
+    cta: "Lees keuzeverschil",
+  },
+];
+
+const trustChecks = [
+  "Prijs per kWh zichtbaar, zodat goedkoop niet misleidend wordt",
+  "Plug-and-play en installateur-route apart uitgelegd",
+  "Affiliate-links gemarkeerd zonder betaalde top-posities",
+];
+
 export default function HomePage() {
   const featured = getFeaturedProducts(3);
 
@@ -64,6 +91,64 @@ export default function HomePage() {
               disclaimer
             </Link>
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-surface-border bg-surface-muted/30 py-12">
+        <div className="container-page">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-brand">
+                Snelle route
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink">
+                Wil je vandaag al een keuze maken?
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-secondary">
+                Begin met de route die past bij je situatie. Zo voorkom je dat
+                je alleen op een aantrekkelijke prijs klikt terwijl capaciteit,
+                vermogen of installatievorm niet klopt.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                {quickRoutes.map((route) => (
+                  <Link
+                    key={route.title}
+                    href={route.href}
+                    className="card flex h-full flex-col p-4 text-sm transition hover:shadow-cardHover"
+                  >
+                    <span className="font-semibold text-ink">{route.title}</span>
+                    <span className="mt-2 flex-1 leading-relaxed text-ink-secondary">
+                      {route.text}
+                    </span>
+                    <span className="mt-4 font-semibold text-brand">
+                      {route.cta} →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <aside className="rounded-xl border border-brand/20 bg-white p-5">
+              <h3 className="font-semibold text-ink">
+                Wat deze gids toevoegt
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
+                Veel vergelijkers sturen snel naar een offerteformulier. Wij
+                houden de eerste keuze bewust klein: past een directe
+                plug-and-play accu, of heb je juist een installateur nodig?
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-ink-secondary">
+                {trustChecks.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="text-brand" aria-hidden>
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
         </div>
       </section>
 

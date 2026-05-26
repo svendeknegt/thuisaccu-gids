@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Affiliate-partners",
   description:
-    "Transparantie over Bol.com, Amazon.nl, Coolblue en affiliate-links op Thuisaccu-Gids.nl.",
+    "Transparantie over Bol.com, Amazon.nl, installateur-routes en affiliate-links op Thuisaccu-Gids.nl.",
   alternates: { canonical: `${site.url}/affiliate-partners` },
 };
 
@@ -30,9 +30,9 @@ const partners = [
     links: [{ href: "/winkels", label: "Welke modellen op Amazon" }],
   },
   {
-    name: "Coolblue",
-    status: "Geen webshop-affiliate voor onze modellen",
-    text: "Coolblue's affiliate-programma dekt geen plug-and-play powerstations in ons assortiment. Voor vaste thuisbatterijen verwijzen wij naar informatie van Coolblue Energie (installateur-route), zonder commissie.",
+    name: "Coolblue Energie / Hoppenbrouwers",
+    status: "Informatieve installateur-route",
+    text: "Coolblue's webshop-affiliate dekt geen plug-and-play powerstations in ons assortiment. Voor vaste thuisbatterijen verwijzen wij naar uitleg over de installateur-route; eventuele leadcampagnes worden pas toegevoegd na actuele goedkeuring en voorwaardencontrole.",
     links: [
       {
         href: "/kennisbank/plug-and-play-vs-installateur",

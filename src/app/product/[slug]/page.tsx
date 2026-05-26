@@ -135,8 +135,8 @@ export default async function ProductPage({ params }: PageProps) {
           <aside className="mt-8 max-w-3xl rounded-xl border border-surface-border bg-surface-muted/40 p-4 text-sm text-ink-secondary">
             <p className="font-medium text-ink">Vaste thuisbatterij nodig?</p>
             <p className="mt-1 leading-relaxed">
-              Dit plug-and-play model staat niet in Coolblue&apos;s webshop. Voor
-              een geïnstalleerde thuisbatterij via Coolblue Energie:{" "}
+              Dit plug-and-play model is iets anders dan een vaste batterij met
+              installateur. Twijfel je tussen zelf plaatsen en laten installeren?{" "}
               <Link
                 href="/kennisbank/plug-and-play-vs-installateur"
                 className="text-brand hover:underline"

@@ -1,5 +1,7 @@
 # Verdienen met Thuisaccu-Gids.nl
 
+Uitgebreid stappenplan: zie `docs/AFFILIATE-ACTIEPLAN.md`.
+
 ## Wat al werkt
 
 | Partner | Status | Actie |
