@@ -69,6 +69,49 @@ export default function HomePage() {
 
       <Finder compactTitle savingsExpandedDefault />
 
+      <section className="border-b border-surface-border bg-surface-muted/30 py-12 sm:py-14">
+        <div className="container-page">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div>
+              <h2 className="section-title">Wat kost een plug-and-play thuisaccu?</h2>
+              <p className="section-lead">
+                Op onze vergelijker liggen de prijzen (mei 2026) tussen ongeveer{" "}
+                <strong className="font-semibold text-ink">€ 270</strong> en{" "}
+                <strong className="font-semibold text-ink">€ 3.250</strong> —
+                afhankelijk van capaciteit en merk. Vaste thuisbatterijen achter
+                de meterkast kosten vaak € 4.000–€ 10.000 inclusief installatie;
+                dat is een andere route.
+              </p>
+              <Link href="/vergelijken" className="mt-4 inline-flex btn-secondary">
+                Bekijk alle prijzen →
+              </Link>
+            </div>
+            <div className="rounded-xl border border-surface-border bg-white p-5">
+              <h3 className="font-semibold text-ink">Welke route past bij jou?</h3>
+              <ul className="mt-4 space-y-3 text-sm text-ink-secondary">
+                <li>
+                  <strong className="text-ink">Plug-and-play</strong> — stopcontact
+                  of aparte groep, direct bestellen via Bol of Amazon.{" "}
+                  <Link href="/keuzehulp" className="text-brand hover:underline">
+                    Start keuzehulp
+                  </Link>
+                </li>
+                <li>
+                  <strong className="text-ink">Vaste thuisbatterij</strong> —
+                  installateur, meterkast, vaak 5–15 kWh.{" "}
+                  <Link
+                    href="/kennisbank/plug-and-play-vs-installateur"
+                    className="text-brand hover:underline"
+                  >
+                    Lees het verschil
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-14 sm:py-16">
         <div className="container-page">
           <h2 className="section-title">Hoogst beoordeeld</h2>

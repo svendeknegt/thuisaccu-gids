@@ -60,6 +60,8 @@ vercel
 
 Vervang placeholders in `src/lib/products.ts` (`affiliateUrl`) door je echte partnerlinks (Bol, Coolblue, Amazon Associates, etc.).
 
+**Uitgebreid stappenplan (aanmelden partners, verkeer, concurrenten):** `docs/STAPPENPLAN-GEBRUIKER.md`
+
 ## Oude site
 
 De vorige HTML-versie kun je naar `legacy/` verplaatsen of verwijderen zodra je volledig op Next.js zit.
