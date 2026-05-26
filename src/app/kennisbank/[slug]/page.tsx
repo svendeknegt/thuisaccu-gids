@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { ArticleProductRecommendations } from "@/components/ArticleProductRecommendations";
 import { ArticleBody } from "@/components/ArticleBody";
 import { JsonLd } from "@/components/JsonLd";
 import { articleBodies } from "@/lib/article-content";
@@ -71,6 +72,8 @@ export default async function ArticlePage({ params }: PageProps) {
         </p>
 
         <ArticleBody blocks={body} />
+
+        <ArticleProductRecommendations slug={slug} />
 
         <AffiliateDisclosure className="mt-10" />
 
