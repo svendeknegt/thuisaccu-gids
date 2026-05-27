@@ -1,0 +1,45 @@
+import { site } from "@/lib/site";
+
+type LogoMarkProps = {
+  size?: number;
+  className?: string;
+  title?: string;
+  "aria-hidden"?: boolean;
+};
+
+/** Thuisaccu-Gids merkbeeld: huis + batterij in brand-groen. */
+export function LogoMark({
+  size = 36,
+  className = "",
+  title = site.name,
+  "aria-hidden": ariaHidden,
+}: LogoMarkProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      role={ariaHidden ? "presentation" : "img"}
+      aria-hidden={ariaHidden}
+      aria-label={ariaHidden ? undefined : title}
+    >
+      {!ariaHidden ? <title>{title}</title> : null}
+      <rect width="36" height="36" rx="8" fill="#059669" />
+      <path
+        d="M18 7.5L27.5 15H24.5V17.5H27V28.5H9V17.5H11.5V15H8.5L18 7.5Z"
+        fill="white"
+      />
+      <rect x="13" y="19" width="10" height="7.5" rx="1.5" fill="#059669" />
+      <rect x="14.25" y="20.5" width="7.5" height="1.25" rx="0.5" fill="white" />
+      <rect x="14.25" y="22.5" width="7.5" height="1.25" rx="0.5" fill="white" />
+      <rect x="14.25" y="24.5" width="5" height="1.25" rx="0.5" fill="white" />
+      <path
+        d="M17.2 11.8L15.6 16.2H17.4L16.8 18.6L20.4 13.8H18.5L19.1 11.8H17.2Z"
+        fill="#059669"
+      />
+    </svg>
+  );
+}

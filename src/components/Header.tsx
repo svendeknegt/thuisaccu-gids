@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { site } from "@/lib/site";
+import { SiteLogo } from "@/components/SiteLogo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -19,19 +19,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-surface-border bg-white/95 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-semibold text-ink"
-          onClick={() => setOpen(false)}
-        >
-          <span
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-lg"
-            aria-hidden
-          >
-            ⚡
-          </span>
-          <span>{site.name}</span>
-        </Link>
+        <SiteLogo onNavigate={() => setOpen(false)} />
 
         <nav
           className={`${
