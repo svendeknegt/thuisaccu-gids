@@ -174,6 +174,13 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De Explorer 2000 Plus is Jackerys antwoord op EcoFlow DELTA 2 Max. Controleer op Bol.com of je de EU-versie en juiste kabels ontvangt.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.jackeryExplorer2000V2.url,
+      price: AMAZON_URLS.jackeryExplorer2000V2.price,
+      image: AMAZON_URLS.jackeryExplorer2000V2.image,
+      asin: AMAZON_URLS.jackeryExplorer2000V2.asin,
+      variantNote: "Amazon: Explorer 2000 v2 (Bol: 2000 Plus)",
+    },
   },
   {
     id: "ecoflow-delta-2-max",
@@ -319,6 +326,12 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De DELTA 2 is goedkoper dan de DELTA 2 Max maar start met 1 kWh. Op Bol.com staat de EU-uitvoering; controleer of extra batterijmodules apart verkrijgbaar zijn als je later wilt uitbreiden.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.ecoflowDelta2.url,
+      price: AMAZON_URLS.ecoflowDelta2.price,
+      image: AMAZON_URLS.ecoflowDelta2.image,
+      asin: AMAZON_URLS.ecoflowDelta2.asin,
+    },
   },
   {
     id: "ecoflow-delta-3-plus",
@@ -428,6 +441,12 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De Explorer 1000 V2 concurreert met Anker C1000 en EcoFlow DELTA 2. Vergelijk prijs per kWh en gewicht op Bol.com voordat je bestelt.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.jackeryExplorer1000V2.url,
+      price: AMAZON_URLS.jackeryExplorer1000V2.price,
+      image: AMAZON_URLS.jackeryExplorer1000V2.image,
+      asin: AMAZON_URLS.jackeryExplorer1000V2.asin,
+    },
   },
   {
     id: "anker-solix-c800x",

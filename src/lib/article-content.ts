@@ -3,7 +3,13 @@ export type ArticleBlock =
   | { type: "h3"; text: string }
   | { type: "p"; text: string }
   | { type: "ul"; items: string[] }
-  | { type: "callout"; title: string; text: string };
+  | { type: "callout"; title: string; text: string }
+  | {
+      type: "productPicks";
+      title: string;
+      description?: string;
+      productIds: string[];
+    };
 
 export const articleBodies: Record<string, ArticleBlock[]> = {
   salderen: [
@@ -299,6 +305,18 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       text: "Wij ontvangen soms commissie via affiliate-links (o.a. Bol). Dat verandert onze volgorde niet. Bol is niet verantwoordelijk voor deze site en wij zijn geen Bol-webshop.",
     },
     {
+      type: "productPicks",
+      title: "Populaire modellen — direct naar de winkel",
+      description:
+        "Klaar om te vergelijken op prijs? Kies Bol of Amazon; prijzen zijn indicatief.",
+      productIds: [
+        "ecoflow-delta-2-max",
+        "anker-solix-c1000",
+        "jackery-explorer-1000-v2",
+        "ecoflow-delta-2",
+      ],
+    },
+    {
       type: "h2",
       text: "Samenvatting",
     },
@@ -384,6 +402,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       text: "Vergelijk maximaal drie modellen naast elkaar op onze vergelijkpagina voordat je bestelt.",
     },
     {
+      type: "productPicks",
+      title: "Direct bestellen — populaire instappers",
+      description:
+        "Deze modellen passen vaak bij een eerste aankoop. Vergelijk Bol en Amazon op prijs.",
+      productIds: [
+        "ecoflow-delta-2",
+        "anker-solix-c1000",
+        "jackery-explorer-1000-v2",
+      ],
+    },
+    {
       type: "h2",
       text: "Samenvatting",
     },
@@ -453,6 +482,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
     {
       type: "p",
       text: "Of gebruik direct onze volledige keuzehulp op /keuzehulp — daar zie je ook een indicatie van jaarbesparing en terugverdientijd.",
+    },
+    {
+      type: "productPicks",
+      title: "Modellen per capaciteit — met winkelknoppen",
+      description:
+        "Op basis van veelgestelde vragen: deze modellen dekken instap (1 kWh), midden (2 kWh) en groter (2+ kWh).",
+      productIds: [
+        "anker-solix-c1000",
+        "ecoflow-delta-2-max",
+        "jackery-explorer-2000-plus",
+      ],
     },
     {
       type: "h2",

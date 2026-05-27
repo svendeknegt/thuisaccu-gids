@@ -16,7 +16,8 @@ export function AffiliateButton({
   className = "",
 }: AffiliateButtonProps) {
   const text =
-    label ?? (retailer ? `Bekijk op ${retailer}` : "Bekijk bij winkel");
+    label ??
+    (retailer ? `Bestel bij ${retailer}` : "Bestel bij winkel");
 
   return (
     <a
