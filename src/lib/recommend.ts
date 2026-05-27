@@ -1,3 +1,4 @@
+import { isAffiliateConfigured } from "@/lib/affiliate";
 import { products } from "@/lib/products";
 import type { FinderInput, FinderResult, Product } from "@/types/product";
 
@@ -104,7 +105,12 @@ function scoreProducts(
       let score = 100;
       score -= Math.abs(p.capacity - targetCapacity) * 15;
       if (p.bestFor === goal) score += 25;
-      if (p.retailer === "amazon" || p.amazonOffer) score += 15;
+      if (
+        isAffiliateConfigured(p.retailer) ||
+        (p.amazonOffer && isAffiliateConfigured("amazon"))
+      ) {
+        score += 10;
+      }
       score += (p.rating - 4) * 10;
       return { product: p, score };
     })
@@ -114,16 +120,13 @@ function scoreProducts(
 }
 
 export function getFeaturedProducts(count = 3): Product[] {
-  const amazonReady = products.filter(
-    (p) => p.retailer === "amazon" || p.amazonOffer,
-  );
-  return [...amazonReady]
-    .sort((a, b) => {
-      const aPrimary = a.retailer === "amazon" ? 1 : 0;
-      const bPrimary = b.retailer === "amazon" ? 1 : 0;
-      if (bPrimary !== aPrimary) return bPrimary - aPrimary;
-      return b.rating - a.rating;
-    })
+  return [...products]
+    .filter(
+      (p) =>
+        isAffiliateConfigured(p.retailer) ||
+        (p.amazonOffer && isAffiliateConfigured("amazon")),
+    )
+    .sort((a, b) => b.rating - a.rating)
     .slice(0, count);
 }
 
