@@ -14,7 +14,8 @@ Zonder ID's gaan bezoekers naar de `shopUrl` met UTM-parameters.
 |------------|---------|---------------------------|
 | 1 | [Bol Partner](https://partner.bol.com) | Bol.com |
 | 1 | [Amazon Associates NL](https://affiliate-program.amazon.nl) | Amazon.nl |
-| 1 | [Awin](https://www.awin.com) | Coolblue NL, MediaMarkt NL |
+| 1 | [Awin](https://www.awin.com) | Coolblue NL, Conrad (indien beschikbaar) |
+| 1 | [Tradedoubler](https://www.tradedoubler.com) | MediaMarkt NL — zie `docs/MEDIAMARKT-TRADEDOUBLER.md` |
 | 2 | Awin | Conrad NL, BCC NL |
 | 3 | [Daisycon](https://www.daisycon.com) | Backup-netwerk |
 | 3 | [TradeTracker](https://www.tradetracker.com) | Backup-netwerk |

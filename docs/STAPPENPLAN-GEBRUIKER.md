@@ -68,7 +68,7 @@ Dit document is jouw **praktische handleiding**: wat je vannacht en deze week ku
 | Partner | Status | Nut voor jouw site |
 |---------|--------|-------------------|
 | **Awin publisher** | Account actief | Hub voor meerdere winkels |
-| **MediaMarkt NL** | Nog joinen | Alleen zinvol als je concrete product-URL’s hebt die zij verkopen |
+| **MediaMarkt NL** | Nog joinen via **Tradedoubler** (niet Awin) | Zie `docs/MEDIAMARKT-TRADEDOUBLER.md` |
 | **Coolblue NL** | ❌ Afgewezen voor jullie assortiment | Geen heraanvraag; wel info-link Coolblue Energie |
 | **Conrad / BCC** | Optioneel | Laag — weinig overlap met huidige catalogus |
 
@@ -120,24 +120,23 @@ NEXT_PUBLIC_BOL_PARTNER_ID=1522053
 
 ---
 
-### Stap 3 — Awin + MediaMarkt (45 min)
+### Stap 3 — MediaMarkt via Tradedoubler (45 min)
 
-1. https://www.awin.com → Publisher → inloggen.  
-2. **Advertisers → Join programmes** → zoek **MediaMarkt Netherlands**.  
-3. Profiel consistent houden:
-   - Type: Content / Comparison  
-   - URL: `https://www.thuisaccu-gids.nl`  
-   - Beschrijving: onafhankelijke vergelijking plug-and-play thuisaccu’s  
-4. Na goedkeuring: **Toolbox → Link builder** → deeplink-template met `{url}`.  
-5. Zoek op MediaMarkt of zij dezelfde EcoFlow/Anker SKU’s hebben als jij. Geen link zonder echt product.
+MediaMarkt NL staat **niet** op Awin. Gebruik Tradedoubler:
+
+1. https://publisher.tradedoubler.com — publisher-account (of aanmaken).  
+2. Website toevoegen: `https://www.thuisaccu-gids.nl`  
+3. Programma **MediaMarkt** (ID **262336**, Nederland) → aanvragen.  
+4. Na goedkeuring: link generator → deeplink-template doorgeven.  
+5. Op mediamarkt.nl zoeken of zij jouw powerstations verkopen. Geen link zonder echt product.
+
+Volledige uitleg: `docs/MEDIAMARKT-TRADEDOUBLER.md`
 
 **Doorgeven:**
 
 ```env
-NEXT_PUBLIC_MEDIAMARKT_AFFILIATE_URL=https://www.awin1.com/cread.php?awinmid=XXXX&awinaffid=YYYY&ued={url}
+NEXT_PUBLIC_MEDIAMARKT_AFFILIATE_URL=...tradedoubler-deeplink-met-{url}...
 ```
-
-Vervang `XXXX` / `YYYY` door jouw echte waarden uit Awin.
 
 ---
 
@@ -207,7 +206,7 @@ Dan kan op de site:
 | Periode | Doel |
 |---------|------|
 | **Vannacht / dag 1** | Amazon testen, site delen, GSC check |
-| **Week 1** | MediaMarkt Awin join, 2–3 social posts, prijzen controleren |
+| **Week 1** | MediaMarkt Tradedoubler join, 2–3 social posts, prijzen controleren |
 | **Week 4–6** | Bol heraanvraag mailen |
 | **Maand 2–3** | Eerste organische clicks Amazon; Bol hopelijk goedgekeurd |
 | **Maand 3+** | Schalen content + eventueel MediaMarkt-producten toevoegen |
@@ -224,7 +223,7 @@ Dan kan op de site:
 - [x] Geen misleidende “beste”-claims  
 - [ ] Organisch verkeer (jouw taak)  
 - [ ] Bol heraanvraag verstuurd (jouw taak, week 4–6)  
-- [ ] MediaMarkt env in Vercel (na Awin-goedkeuring)  
+- [ ] MediaMarkt env in Vercel (na Tradedoubler-goedkeuring)  
 
 ---
 

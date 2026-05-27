@@ -42,10 +42,10 @@ export const partnerPrograms: PartnerProgramInfo[] = [
   {
     retailer: "mediamarkt",
     label: retailerLabels.mediamarkt,
-    signupUrl: "https://www.awin.com",
+    signupUrl: "https://publisher.tradedoubler.com",
     envKey: "NEXT_PUBLIC_MEDIAMARKT_AFFILIATE_URL",
     configured: isAffiliateConfigured("mediamarkt"),
-    note: "Awin → MediaMarkt NL joinen → deeplink-template met {url}.",
+    note: "MediaMarkt NL via Tradedoubler (programma 262336), niet Awin. Zie docs/MEDIAMARKT-TRADEDOUBLER.md.",
   },
   {
     retailer: "conrad",

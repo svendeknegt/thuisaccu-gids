@@ -8,9 +8,9 @@ Interne gids — **niet** bedoeld voor bezoekers van de site. Publieke disclosur
 |-----------|--------|--------|
 | Amazon Associates NL | Actief | Tag in Vercel |
 | Bol Partner | Afgewezen — heraanvraag na site-verbetering | Zie `docs/BOL-HERAANVRAAG.md` |
-| Awin (account) | Actief | Coolblue + MediaMarkt Join |
+| Awin (account) | Actief | Alleen winkels die op Awin staan (geen MediaMarkt NL) |
 | Coolblue NL | **Afgewezen** — verkopen (nog) niet deze producten via affiliate | Geen heraanvraag; zie `docs/COOLBLUE-AWIN.md` |
-| MediaMarkt NL | Nog joinen | Awin → Join |
+| MediaMarkt NL | Nog joinen | **Tradedoubler** — zie `docs/MEDIAMARKT-TRADEDOUBLER.md` |
 | Conrad NL | Optioneel | Awin → Join |
 
 ## Netwerken
@@ -24,7 +24,7 @@ Interne gids — **niet** bedoeld voor bezoekers van de site. Publieke disclosur
 
 - [awin.com](https://www.awin.com) — publisher account
 - Per winkel: Advertisers → zoeken → Join
-- Prioriteit: **Coolblue NL**, **MediaMarkt NL**, daarna Conrad/BCC
+- Prioriteit: **Coolblue NL**, daarna Conrad/BCC (MediaMarkt NL = **Tradedoubler**, niet Awin)
 
 ### Backup
 
