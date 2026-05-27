@@ -6,6 +6,7 @@ export const metadata = {
   title: "Thuisaccu's vergelijken",
   description:
     "Filter op merk en capaciteit, selecteer maximaal drie modellen en vergelijk specificaties naast elkaar.",
+  alternates: { canonical: `${site.url}/vergelijken` },
 };
 
 export default function VergelijkenPage() {

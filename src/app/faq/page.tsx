@@ -2,10 +2,12 @@ import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { faqs } from "@/lib/faq";
 import { faqPageJsonLd } from "@/lib/structured-data";
+import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Veelgestelde vragen",
   description: "Antwoorden op veelgestelde vragen over vergelijken en affiliate-links.",
+  alternates: { canonical: `${site.url}/faq` },
 };
 
 export default function FaqPage() {

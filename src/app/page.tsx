@@ -10,6 +10,7 @@ export const metadata = {
   title: "Thuisaccu vergelijken",
   description:
     "Vergelijk thuisaccu's en thuisbatterijen onafhankelijk. Keuzehulp, specificaties en links naar Bol, Coolblue en Amazon.",
+  alternates: { canonical: site.url },
 };
 
 export default function HomePage() {

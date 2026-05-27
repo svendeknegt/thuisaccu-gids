@@ -48,9 +48,6 @@ export const metadata: Metadata = {
     title: site.name,
     description: site.description,
   },
-  alternates: {
-    canonical: site.url,
-  },
   ...(googleVerification
     ? { verification: { google: googleVerification } }
     : {}),
