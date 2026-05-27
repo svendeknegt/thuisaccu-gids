@@ -51,6 +51,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       text: "Het gaat niet om minder zon — het gaat om verschuiven van verbruik naar het moment dat je opwekt, of opslaan voor later.",
     },
     {
+      type: "productPicks",
+      title: "Thuisaccu's voor meer eigen verbruik",
+      description:
+        "Modellen met 2+ kWh voor wie saldering afbouwt — vergelijk Bol en Amazon op prijs.",
+      productIds: [
+        "ecoflow-delta-2-max",
+        "jackery-explorer-2000-plus",
+        "ecoflow-delta-3-plus",
+      ],
+    },
+    {
       type: "h2",
       text: "Waarom een thuisaccu dan interessant wordt",
     },
@@ -198,7 +209,18 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
     },
     {
       type: "p",
-      text: "Begin met inzicht: een jaar lang je uurverbruik en zonne-opwek loggen. Kies een accu met LFP-cellen en duidelijke garantie (vaak 5 jaar). Vergelijk op onze site op prijs per kWh en bestemming (besparen vs. dynamisch handelen). Bij Bol en andere winkels kun je via onze links het actuele aanbod bekijken — wij zijn geen webshop en prijzen kunnen afwijken.",
+      text: "Begin met inzicht: een jaar lang je uurverbruik en zonne-opwek loggen. Kies een accu met LFP-cellen en duidelijke garantie (vaak 5 jaar). Vergelijk op onze site op prijs per kWh en bestemming (besparen vs. dynamisch handelen). Bij Bol en Amazon kun je via onze links het actuele aanbod bekijken — wij zijn geen webshop en prijzen kunnen afwijken.",
+    },
+    {
+      type: "productPicks",
+      title: "Modellen voor dynamisch gebruik",
+      description:
+        "Hoog vermogen en snelle laad/ontlaad — vergelijk Bol en Amazon op prijs.",
+      productIds: [
+        "ecoflow-delta-2-max",
+        "ecoflow-delta-3-plus",
+        "jackery-explorer-2000-plus",
+      ],
     },
     {
       type: "h2",
@@ -217,7 +239,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   bestekoop: [
     {
       type: "p",
-      text: "De 'beste' thuisaccu bestaat niet — wel de beste keuze voor jouw situatie. In deze koopgids vergelijken we EcoFlow, Bluetti en Anker op prijs per kWh, gebruiksgemak, vermogen en voor wie welk model logisch is. We verkopen zelf niets; je koopt via externe winkels zoals Bol.com, Coolblue of Amazon.",
+      text: "De 'beste' thuisaccu bestaat niet — wel de beste keuze voor jouw situatie. In deze koopgids vergelijken we EcoFlow, Bluetti en Anker op prijs per kWh, gebruiksgemak, vermogen en voor wie welk model logisch is. We verkopen zelf niets; je koopt via externe winkels zoals Bol.com of Amazon.nl.",
     },
     {
       type: "h2",
@@ -261,7 +283,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
     },
     {
       type: "p",
-      text: "Anker Solix C1000 is een lichte instapper: weinig kWh, laag gewicht, ideaal om te testen of opslag bij jouw verbruik past. De F3800-serie (vaak via Coolblue) richt zich op hoger vermogen en dynamisch gebruik. Vergelijk prijs per kWh: een goedkope kleine accu is niet automatisch de beste deal op lange termijn.",
+      text: "Anker Solix C1000 is een lichte instapper: weinig kWh, laag gewicht, ideaal om te testen of opslag bij jouw verbruik past. De F3800-serie richt zich op hoger vermogen en dynamisch gebruik. Vergelijk prijs per kWh: een goedkope kleine accu is niet automatisch de beste deal op lange termijn.",
     },
     {
       type: "h2",
@@ -333,7 +355,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   "thuisaccu-kopen": [
     {
       type: "p",
-      text: "Een thuisaccu (thuisbatterij) is een flinke investering. In 2026 kijken steeds meer huiseigenaren ernaar vanwege het einde van salderen en stijgende nettarieven. In dit stappenplan lees je hoe je van oriëntatie naar aankoop gaat — zonder verkooppraat, met links naar onze vergelijker en winkels zoals Bol.com, Coolblue en Amazon.",
+      text: "Een thuisaccu (thuisbatterij) is een flinke investering. In 2026 kijken steeds meer huiseigenaren ernaar vanwege het einde van salderen en stijgende nettarieven. In dit stappenplan lees je hoe je van oriëntatie naar aankoop gaat — zonder verkooppraat, met links naar onze vergelijker en winkels zoals Bol.com en Amazon.nl.",
     },
     {
       type: "h2",
@@ -374,9 +396,8 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
     {
       type: "ul",
       items: [
-        "Bol.com — breed assortiment EcoFlow en Anker (controleer productpagina, geen zoekresultaat).",
-        "Coolblue — vaak Anker en Bluetti met snelle levering.",
-        "Amazon.nl — modulaire Bluetti en andere merken.",
+        "Bol.com — breed assortiment EcoFlow, Anker en Jackery (controleer productpagina, geen zoekresultaat).",
+        "Amazon.nl — EcoFlow, Anker en Jackery met Prime-levering op veel modellen.",
       ],
     },
     {
@@ -548,6 +569,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       text: "Kies LFP tenzij je expliciet een compact, licht model nodig hebt en je de kortere levensduur accepteert.",
     },
     {
+      type: "productPicks",
+      title: "LFP-modellen in onze vergelijker",
+      description:
+        "Alle onderstaande modellen gebruiken LFP — met directe winkelknoppen.",
+      productIds: [
+        "ecoflow-delta-2",
+        "anker-solix-c1000",
+        "jackery-explorer-1000-v2",
+      ],
+    },
+    {
       type: "h2",
       text: "Samenvatting",
     },
@@ -593,6 +625,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
     {
       type: "p",
       text: "Naarmate salderen verdwijnt, daalt de financiële waarde van terugleveren. Eigen verbruik wordt relatief waardevoller. Dat maakt zowel gedrag (verschuiven) als opslag (accu) interessanter — maar alleen als je werkelijk overschot hebt.",
+    },
+    {
+      type: "productPicks",
+      title: "Accu's om overschot op te vangen",
+      description:
+        "Van instap tot 2 kWh — vergelijk prijs per kWh via Bol of Amazon.",
+      productIds: [
+        "ecoflow-delta-2",
+        "ecoflow-delta-2-max",
+        "anker-solix-c1000",
+      ],
     },
     {
       type: "h2",
@@ -653,6 +696,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       type: "callout",
       title: "Geen garantie",
       text: "Wij garanderen geen terugverdientijd. Vergelijk altijd meerdere modellen op prijs per kWh en lees voor- en nadelen.",
+    },
+    {
+      type: "productPicks",
+      title: "Instappers met lage drempel",
+      description:
+        "Budgetvriendelijke modellen om te starten — prijzen zijn indicatief.",
+      productIds: [
+        "ecoflow-delta-2",
+        "anker-solix-c1000",
+        "jackery-explorer-1000-v2",
+      ],
     },
     {
       type: "h2",
@@ -720,6 +774,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
         "Plug-and-play: budget, flexibiliteit, geen installateur — gebruik onze keuzehulp.",
         "Vaste batterij: grote capaciteit, meterkast, langetermijn woning — zoek installateur/Energie-partner.",
         "Twijfel: begin met onze vergelijker; schakel installateur in als 2 kWh niet genoeg is.",
+      ],
+    },
+    {
+      type: "productPicks",
+      title: "Plug-and-play — direct bestellen",
+      description:
+        "Onze vergelijking: powerstations via Bol.com en Amazon.nl.",
+      productIds: [
+        "ecoflow-delta-2-max",
+        "anker-solix-c1000",
+        "jackery-explorer-1000-v2",
       ],
     },
     {

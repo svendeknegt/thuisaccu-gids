@@ -7,12 +7,14 @@ type ShareButtonsProps = {
   path?: string;
   title?: string;
   text?: string;
+  hint?: string;
 };
 
 export function ShareButtons({
   path = "/keuzehulp",
   title = "Gratis keuzehulp thuisaccu",
   text = "Onafhankelijke keuzehulp voor plug-and-play thuisaccu's — geen webshop.",
+  hint = "Stuur deze pagina door via WhatsApp of kopieer de link.",
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const url = `${site.url}${path}`;
@@ -31,9 +33,7 @@ export function ShareButtons({
   return (
     <div className="mt-8 rounded-xl border border-surface-border bg-surface-muted/40 p-4">
       <p className="text-sm font-semibold text-ink">Deel deze pagina</p>
-      <p className="mt-1 text-sm text-ink-secondary">
-        Stuur de keuzehulp door via WhatsApp of kopieer de link.
-      </p>
+      <p className="mt-1 text-sm text-ink-secondary">{hint}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <a
           href={whatsappUrl}

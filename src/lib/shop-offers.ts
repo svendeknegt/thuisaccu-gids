@@ -1,4 +1,12 @@
+import { isAffiliateConfigured, type Retailer } from "@/lib/affiliate";
 import type { AmazonOffer, Product, ShopOffer } from "@/types/product";
+
+function affiliateSortPriority(retailer: Retailer): number {
+  if (!isAffiliateConfigured(retailer)) return 0;
+  if (retailer === "amazon") return 3;
+  if (retailer === "bol") return 2;
+  return 1;
+}
 
 function amazonToShopOffer(offer: AmazonOffer): ShopOffer {
   return {
@@ -28,7 +36,12 @@ export function getProductShopOffers(product: Product): ShopOffer[] {
     offers.push(extra);
   }
 
-  return offers.sort((a, b) => a.price - b.price);
+  return offers.sort((a, b) => {
+    const priorityDiff =
+      affiliateSortPriority(b.retailer) - affiliateSortPriority(a.retailer);
+    if (priorityDiff !== 0) return priorityDiff;
+    return a.price - b.price;
+  });
 }
 
 export function getLowestOffer(product: Product): ShopOffer {

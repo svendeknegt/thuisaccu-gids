@@ -1,5 +1,7 @@
 import { articles } from "@/lib/articles";
 import { faqs } from "@/lib/faq";
+import { getShopOfferAffiliateUrl } from "@/lib/products";
+import { getProductShopOffers } from "@/lib/shop-offers";
 import { site } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -68,21 +70,41 @@ export function articleJsonLd(slug: string) {
 }
 
 export function productJsonLd(product: Product) {
+  const offers = getProductShopOffers(product);
+  const image = product.image.startsWith("http")
+    ? product.image
+    : `${site.url}${product.image}`;
+
+  const offerNodes = offers.map((offer) => ({
+    "@type": "Offer" as const,
+    price: offer.price,
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: getShopOfferAffiliateUrl(product.id, offer),
+    seller: {
+      "@type": "Organization",
+      name: offer.retailer === "amazon" ? "Amazon.nl" : offer.retailer,
+    },
+  }));
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     brand: { "@type": "Brand", name: product.brand },
     description: product.description,
-    image: product.image.startsWith("http")
-      ? product.image
-      : `${site.url}${product.image}`,
-    offers: {
-      "@type": "Offer",
-      price: product.price,
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      url: `${site.url}/product/${product.id}`,
-    },
+    image,
+    ...(offers.length === 1
+      ? { offers: offerNodes[0] }
+      : {
+          offers: {
+            "@type": "AggregateOffer",
+            lowPrice: Math.min(...offers.map((o) => o.price)),
+            highPrice: Math.max(...offers.map((o) => o.price)),
+            priceCurrency: "EUR",
+            offerCount: offers.length,
+            offers: offerNodes,
+          },
+        }),
   };
 }
