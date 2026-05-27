@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Finder } from "@/components/Finder";
 import { JsonLd } from "@/components/JsonLd";
+import { ShareButtons } from "@/components/ShareButtons";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -46,6 +47,7 @@ export default function KeuzehulpPage() {
               <span className="font-medium text-ink">3.</span> Vergelijk max. 3 modellen
             </li>
           </ul>
+          <ShareButtons />
         </div>
       </div>
 
