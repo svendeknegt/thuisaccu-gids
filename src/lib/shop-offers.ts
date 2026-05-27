@@ -2,10 +2,7 @@ import { isAffiliateConfigured, type Retailer } from "@/lib/affiliate";
 import type { AmazonOffer, Product, ShopOffer } from "@/types/product";
 
 function affiliateSortPriority(retailer: Retailer): number {
-  if (!isAffiliateConfigured(retailer)) return 0;
-  if (retailer === "amazon") return 3;
-  if (retailer === "bol") return 2;
-  return 1;
+  return isAffiliateConfigured(retailer) ? 1 : 0;
 }
 
 function amazonToShopOffer(offer: AmazonOffer): ShopOffer {

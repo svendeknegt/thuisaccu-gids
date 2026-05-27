@@ -118,9 +118,8 @@ export default function HomePage() {
         <div className="container-page">
           <h2 className="section-title">Hoogst beoordeeld</h2>
           <p className="section-lead">
-            Een compacte selectie om te starten — met directe Amazon.nl-links
-            waar beschikbaar. Voor het volledige overzicht ga je naar de
-            vergelijker.
+            Een compacte selectie om te starten — met Bol.com- en Amazon.nl-links.
+            Voor het volledige overzicht ga je naar de vergelijker.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (

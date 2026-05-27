@@ -16,8 +16,8 @@ export const metadata = {
 const partners = [
   {
     name: "Bol.com",
-    status: "Partneraanvraag in behandeling",
-    text: "De meeste modellen op onze site linken naar concrete Bol-productpagina's. Wij zijn geen Bol-webshop. Commissie pas na goedkeuring door Bol Partner.",
+    status: "Actief (Bol Partner)",
+    text: `${countProductsWithRetailer("bol")} modellen met Bol-link op onze site. Wij zijn geen Bol-webshop; commissie loopt via partner.bol.com.`,
     links: [
       { href: "/winkels", label: "Beschikbaarheid per winkel" },
       { href: "/methodologie", label: "Onze methodologie" },
