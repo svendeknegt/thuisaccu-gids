@@ -1,4 +1,4 @@
-import { filterProducts, products } from "@/lib/products";
+import { products } from "@/lib/products";
 import type { FinderInput, FinderResult, Product } from "@/types/product";
 
 export function runFinder(input: FinderInput): FinderResult {
@@ -104,6 +104,7 @@ function scoreProducts(
       let score = 100;
       score -= Math.abs(p.capacity - targetCapacity) * 15;
       if (p.bestFor === goal) score += 25;
+      if (p.retailer === "amazon" || p.amazonOffer) score += 15;
       score += (p.rating - 4) * 10;
       return { product: p, score };
     })
@@ -113,5 +114,19 @@ function scoreProducts(
 }
 
 export function getFeaturedProducts(count = 3): Product[] {
-  return filterProducts({ sortBy: "rating_desc" }).slice(0, count);
+  const amazonReady = products.filter(
+    (p) => p.retailer === "amazon" || p.amazonOffer,
+  );
+  return [...amazonReady]
+    .sort((a, b) => {
+      const aPrimary = a.retailer === "amazon" ? 1 : 0;
+      const bPrimary = b.retailer === "amazon" ? 1 : 0;
+      if (bPrimary !== aPrimary) return bPrimary - aPrimary;
+      return b.rating - a.rating;
+    })
+    .slice(0, count);
+}
+
+export function getAmazonProducts(count = 6): Product[] {
+  return getFeaturedProducts(count);
 }

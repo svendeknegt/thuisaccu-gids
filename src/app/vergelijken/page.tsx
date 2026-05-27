@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Suspense } from "react";
 import { ComparePageClient } from "@/components/ComparePageClient";
+import { ShareButtons } from "@/components/ShareButtons";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -16,8 +18,20 @@ export default function VergelijkenPage() {
         <h1 className="section-title">Vergelijken</h1>
         <p className="section-lead">
           Kies filters, vink maximaal {site.maxCompare} accu&apos;s aan en open
-          de vergelijking wanneer jij daar klaar voor bent.
+          de vergelijking wanneer jij daar klaar voor bent. Niet zeker welke
+          maat?{" "}
+          <Link href="/keuzehulp" className="text-brand hover:underline">
+            Start de keuzehulp
+          </Link>
+          .
         </p>
+
+        <ShareButtons
+          path="/vergelijken"
+          title="Thuisaccu's vergelijken"
+          text="Onafhankelijke thuisaccu-vergelijker — specificaties en winkelknoppen."
+          hint="Deel de vergelijker via WhatsApp of kopieer de link."
+        />
 
         <Suspense
           fallback={

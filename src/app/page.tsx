@@ -3,18 +3,19 @@ import { Finder } from "@/components/Finder";
 import { ProductCard } from "@/components/ProductCard";
 import { articles } from "@/lib/articles";
 import { products } from "@/lib/products";
-import { getFeaturedProducts } from "@/lib/recommend";
+import { getAmazonProducts, getFeaturedProducts } from "@/lib/recommend";
 import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Thuisaccu vergelijken",
   description:
-    "Vergelijk thuisaccu's en thuisbatterijen onafhankelijk. Keuzehulp, specificaties en links naar Bol, Coolblue en Amazon.",
+    "Vergelijk thuisaccu's en thuisbatterijen onafhankelijk. Keuzehulp, specificaties en links naar Bol.com en Amazon.nl.",
   alternates: { canonical: site.url },
 };
 
 export default function HomePage() {
   const featured = getFeaturedProducts(3);
+  const amazonPicks = getAmazonProducts(6);
 
   return (
     <>
@@ -117,8 +118,9 @@ export default function HomePage() {
         <div className="container-page">
           <h2 className="section-title">Hoogst beoordeeld</h2>
           <p className="section-lead">
-            Een compacte selectie om te starten. Voor het volledige overzicht ga
-            je naar de vergelijker.
+            Een compacte selectie om te starten — met directe Amazon.nl-links
+            waar beschikbaar. Voor het volledige overzicht ga je naar de
+            vergelijker.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (
@@ -129,6 +131,21 @@ export default function HomePage() {
             <Link href="/vergelijken" className="btn-secondary">
               Bekijk alle {products.length} modellen →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-surface-border bg-white py-14 sm:py-16">
+        <div className="container-page">
+          <h2 className="section-title">Direct op Amazon.nl</h2>
+          <p className="section-lead">
+            Deze modellen hebben een bevestigde Amazon.nl-pagina — handig als je
+            daar al bestelt of Prime-levering wilt gebruiken.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {amazonPicks.map((p) => (
+              <ProductCard key={p.id} product={p} showCompare />
+            ))}
           </div>
         </div>
       </section>

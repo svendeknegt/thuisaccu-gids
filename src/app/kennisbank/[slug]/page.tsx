@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { ArticleBody } from "@/components/ArticleBody";
 import { JsonLd } from "@/components/JsonLd";
+import { ShareButtons } from "@/components/ShareButtons";
 import { articleBodies } from "@/lib/article-content";
 import { articles, getArticleBySlug } from "@/lib/articles";
 import { articleJsonLd } from "@/lib/structured-data";
@@ -70,12 +71,33 @@ export default async function ArticlePage({ params }: PageProps) {
           })}
         </p>
 
+        <div className="mt-6 rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
+          <p className="font-medium text-ink">Twijfel over capaciteit?</p>
+          <p className="mt-1">
+            Gebruik onze{" "}
+            <Link href="/keuzehulp" className="text-brand hover:underline">
+              keuzehulp
+            </Link>{" "}
+            voor een indicatie in kWh vóór je een model kiest.
+          </p>
+        </div>
+
         <ArticleBody blocks={body} />
 
         <AffiliateDisclosure className="mt-10" />
 
+        <ShareButtons
+          path={`/kennisbank/${slug}`}
+          title={article.title}
+          text={`${article.title} — ${site.name}`}
+          hint="Deel dit artikel via WhatsApp of kopieer de link."
+        />
+
         <div className="mt-10 flex flex-wrap gap-4 border-t border-surface-border pt-8 text-sm">
-          <Link href="/vergelijken" className="btn-primary">
+          <Link href="/keuzehulp" className="btn-primary">
+            Start keuzehulp
+          </Link>
+          <Link href="/vergelijken" className="btn-secondary">
             Vergelijk thuisaccu&apos;s
           </Link>
           <Link href="/kennisbank" className="btn-secondary">
