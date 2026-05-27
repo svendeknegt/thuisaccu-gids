@@ -1,4 +1,5 @@
 import type { ArticleBlock } from "@/lib/article-content";
+import { ArticleProductPicks } from "@/components/ArticleProductPicks";
 
 interface ArticleBodyProps {
   blocks: ArticleBlock[];
@@ -57,6 +58,15 @@ export function ArticleBody({ blocks }: ArticleBodyProps) {
                   {block.text}
                 </p>
               </aside>
+            );
+          case "productPicks":
+            return (
+              <ArticleProductPicks
+                key={i}
+                title={block.title}
+                description={block.description}
+                productIds={block.productIds}
+              />
             );
           default:
             return null;
