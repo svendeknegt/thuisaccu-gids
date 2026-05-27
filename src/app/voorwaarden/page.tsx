@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Servicevoorwaarden",
   description: `Gebruiksvoorwaarden van ${site.name}.`,
+  alternates: { canonical: `${site.url}/voorwaarden` },
 };
 
 export default function VoorwaardenPage() {

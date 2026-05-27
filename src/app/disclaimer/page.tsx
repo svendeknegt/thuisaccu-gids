@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Disclaimer",
   description: `Aansprakelijkheids- en informatiedisclaimer van ${site.name}.`,
+  alternates: { canonical: `${site.url}/disclaimer` },
 };
 
 export default function DisclaimerPage() {
