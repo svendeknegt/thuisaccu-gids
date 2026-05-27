@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AmazonAssociatesNotice } from "@/components/AmazonAssociatesNotice";
+import { LogoMark } from "@/components/LogoMark";
 import { PrivacyPreferencesButton } from "@/components/PrivacyPreferencesButton";
 import { site } from "@/lib/site";
 
@@ -17,7 +18,10 @@ export function Footer() {
     <footer className="mt-auto border-t border-surface-border bg-white">
       <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
-          <p className="font-semibold text-ink">{site.name}</p>
+          <div className="flex items-center gap-2.5">
+            <LogoMark size={32} aria-hidden />
+            <p className="font-semibold text-ink">{site.name}</p>
+          </div>
           <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
             {site.description}
           </p>
