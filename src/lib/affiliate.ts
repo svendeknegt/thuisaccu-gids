@@ -5,6 +5,7 @@ export type Retailer =
   | "bol"
   | "coolblue"
   | "amazon"
+  | "bluetti"
   | "mediamarkt"
   | "conrad"
   | "direct";
@@ -26,12 +27,15 @@ export const affiliateConfig = {
     process.env.NEXT_PUBLIC_MEDIAMARKT_AFFILIATE_URL?.trim() || "",
   conradTrackingTemplate:
     process.env.NEXT_PUBLIC_CONRAD_AFFILIATE_URL?.trim() || "",
+  bluettiTrackingTemplate:
+    process.env.NEXT_PUBLIC_BLUETTI_AFFILIATE_URL?.trim() || "",
 } as const;
 
 const awinTemplates: Partial<Record<Retailer, string>> = {
   coolblue: affiliateConfig.coolblueTrackingTemplate,
   mediamarkt: affiliateConfig.mediamarktTrackingTemplate,
   conrad: affiliateConfig.conradTrackingTemplate,
+  bluetti: affiliateConfig.bluettiTrackingTemplate,
 };
 
 export function isAffiliateConfigured(retailer: Retailer): boolean {
@@ -43,6 +47,7 @@ export function isAffiliateConfigured(retailer: Retailer): boolean {
     case "coolblue":
     case "mediamarkt":
     case "conrad":
+    case "bluetti":
       return Boolean(awinTemplates[retailer]);
     default:
       return false;
@@ -75,6 +80,7 @@ export const retailerLabels: Record<Retailer, string> = {
   bol: "Bol.com",
   coolblue: "Coolblue",
   amazon: "Amazon.nl",
+  bluetti: "Bluetti EU",
   mediamarkt: "MediaMarkt",
   conrad: "Conrad",
   direct: "Winkel",
@@ -119,7 +125,8 @@ export function buildAffiliateUrl(
       return buildAmazonLink(shopUrl);
     case "coolblue":
     case "mediamarkt":
-    case "conrad": {
+    case "conrad":
+    case "bluetti": {
       const template = awinTemplates[retailer];
       if (!template) return appendUtm(shopUrl, productId);
       return buildAwinTemplateLink(shopUrl, template);

@@ -26,6 +26,7 @@ const statusLabel = {
 export default function WinkelsPage() {
   const bolCount = countProductsWithRetailer("bol");
   const amazonCount = countProductsWithRetailer("amazon");
+  const bluettiCount = countProductsWithRetailer("bluetti");
 
   return (
     <div className="py-10 sm:py-14">
@@ -68,6 +69,11 @@ export default function WinkelsPage() {
               {r.id === "amazon" && (
                 <p className="mt-2 text-sm text-ink-muted">
                   {amazonCount} modellen (primair of als extra winkel).
+                </p>
+              )}
+              {r.id === "bluetti" && (
+                <p className="mt-2 text-sm text-ink-muted">
+                  {bluettiCount} modellen met Bluetti EU-link (naast Bol).
                 </p>
               )}
               {r.id === "coolblue" && (

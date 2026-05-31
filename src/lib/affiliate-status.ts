@@ -32,6 +32,14 @@ export const partnerPrograms: PartnerProgramInfo[] = [
     note: "Tracking-ID eindigt vaak op -21 (bijv. thuisaccugids-21).",
   },
   {
+    retailer: "bluetti",
+    label: retailerLabels.bluetti,
+    signupUrl: "https://ui.awin.com/merchant-profile/95479",
+    envKey: "NEXT_PUBLIC_BLUETTI_AFFILIATE_URL",
+    configured: isAffiliateConfigured("bluetti"),
+    note: "Bluetti EU (Awin 95479) — deeplink-template uit Link Builder na goedkeuring.",
+  },
+  {
     retailer: "coolblue",
     label: retailerLabels.coolblue,
     signupUrl: "https://www.awin.com",
