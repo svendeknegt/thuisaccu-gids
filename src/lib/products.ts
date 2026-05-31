@@ -434,6 +434,77 @@ export const products: Product[] = [
     ],
   },
   {
+    id: "ecoflow-delta-3-classic",
+    name: "EcoFlow DELTA 3 Classic",
+    brand: "EcoFlow",
+    capacity: 1.024,
+    power: 1800,
+    price: ECOFLOW_URLS.delta3Classic.price,
+    rating: 4.6,
+    image: ECOFLOW_URLS.delta3Classic.image,
+    retailer: "ecoflow",
+    shopUrl: ECOFLOW_URLS.delta3Classic.url,
+    pros: [
+      "1800 W output (3600 W piek)",
+      "0–80% in 45 min via stopcontact",
+      "Licht (12,1 kg) en compact",
+    ],
+    cons: [
+      "Geen uitbreidbare accu",
+      "Geen 12 V DC-uitgang",
+    ],
+    bestFor: "budget",
+    capacityCategory: "small",
+    type: "Plug & Play",
+    chemistry: "LFP (LiFePO4)",
+    cycles: "4000+",
+    warranty: "5 jaar",
+    weight: "12,1 kg",
+    description:
+      "Goedkoopste 1 kWh EcoFlow — snel laden, UPS in 10 ms, ideaal voor outdoor en lichte thuisback-up.",
+    suitableFor: [
+      "Budgetbewuste kopers via EcoFlow NL",
+      "Camping en buitenwerk",
+      "Eerste kennismaking met 1 kWh opslag",
+    ],
+    buyingGuide:
+      "De DELTA 3 Classic is de instap in de DELTA 3-serie: €599 bij EcoFlow NL (mei 2026). Vergelijk met DELTA 3 en DELTA 3 Plus als je uitbreidbaarheid of extra poorten nodig hebt.",
+  },
+  {
+    id: "ecoflow-delta-3",
+    name: "EcoFlow DELTA 3",
+    brand: "EcoFlow",
+    capacity: 1.024,
+    power: 1800,
+    price: ECOFLOW_URLS.delta3.price,
+    rating: 4.7,
+    image: ECOFLOW_URLS.delta3.image,
+    retailer: "ecoflow",
+    shopUrl: ECOFLOW_URLS.delta3.url,
+    pros: [
+      "Uitbreidbaar tot 5 kWh",
+      "13 aansluitingen (AC, USB-C, auto)",
+      "Stormbescherming via EcoFlow-app",
+    ],
+    cons: ["Duurder dan DELTA 3 Classic", "Niet voor zware inductie"],
+    bestFor: "budget",
+    capacityCategory: "small",
+    type: "Plug & Play",
+    chemistry: "LFP (LiFePO4)",
+    cycles: "4000+",
+    warranty: "5 jaar",
+    weight: "12,5 kg",
+    description:
+      "Middenmodel in de DELTA 3-lijn: 1 kWh met uitbreidingsmogelijkheid en rijke aansluitopties.",
+    suitableFor: [
+      "Wie later wil uitbreiden zonder nieuwe accu",
+      "Thuis én outdoor gebruik",
+      "Dynamisch tarief met app-sturing",
+    ],
+    buyingGuide:
+      "De DELTA 3 kost €749 bij EcoFlow NL — €150 meer dan de Classic, maar wel uitbreidbaar. Check of extra batterijmodules op voorraad zijn voordat je bestelt.",
+  },
+  {
     id: "anker-solix-c1000",
     name: "Anker Solix C1000",
     brand: "Anker",
@@ -591,6 +662,43 @@ export const products: Product[] = [
     ],
   },
   {
+    id: "ecoflow-river-3-plus",
+    name: "EcoFlow RIVER 3 Plus",
+    brand: "EcoFlow",
+    capacity: 0.286,
+    power: 600,
+    price: ECOFLOW_URLS.river3Plus.price,
+    rating: 4.5,
+    image: ECOFLOW_URLS.river3Plus.image,
+    retailer: "ecoflow",
+    shopUrl: ECOFLOW_URLS.river3Plus.url,
+    pros: [
+      "Zeer compact (4,7 kg)",
+      "600 W output (1200 W X-Boost)",
+      "Uitbreidbaar tot 858 Wh",
+    ],
+    cons: [
+      "286 Wh basiscapaciteit",
+      "Te klein als echte thuisaccu",
+    ],
+    bestFor: "budget",
+    capacityCategory: "small",
+    type: "Plug & Play",
+    chemistry: "LFP (LiFePO4)",
+    cycles: "3000+",
+    warranty: "5 jaar",
+    weight: "4,7 kg",
+    description:
+      "Goedkoopste model in onze vergelijker — compact noodstroomstation voor router, laptop en verlichting.",
+    suitableFor: [
+      "Minimaal budget via EcoFlow NL",
+      "Noodstroom voor modem en thuiskantoor",
+      "Camping en onderweg",
+    ],
+    buyingGuide:
+      "De RIVER 3 Plus start bij €299 bij EcoFlow NL. Ideaal als instap of tweede accu, niet als enige thuisbuffer bij saldering.",
+  },
+  {
     id: "anker-solix-c300",
     name: "Anker Solix C300",
     brand: "Anker",
@@ -651,6 +759,20 @@ export function getAmazonOfferUrl(product: Product): string | undefined {
 /** Laagste prijs over alle gekoppelde winkels */
 export function getDisplayPrice(product: Product): number {
   return getLowestOffer(product).price;
+}
+
+/** Min/max vanaf-prijs over het volledige catalogus */
+export function getCatalogPriceRange(): { min: number; max: number } {
+  const prices = products.map(getDisplayPrice);
+  return {
+    min: Math.min(...prices),
+    max: Math.max(...prices),
+  };
+}
+
+/** Producten gesorteerd op laagste winkelprijs */
+export function getProductsByPrice(): Product[] {
+  return [...products].sort((a, b) => getDisplayPrice(a) - getDisplayPrice(b));
 }
 
 export function getProductById(id: string): Product | undefined {

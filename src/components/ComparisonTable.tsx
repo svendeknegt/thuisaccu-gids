@@ -1,9 +1,11 @@
 "use client";
 
-import { ProductOffers } from "@/components/ProductOffers";
+import { CheapestOfferCTA, ShopPriceList } from "@/components/CheapestOfferCTA";
 import { ProductImage } from "@/components/ProductImage";
 import { formatPrice } from "@/lib/format";
+import { getRetailerLabel } from "@/lib/affiliate";
 import { getDisplayPrice, getProductById } from "@/lib/products";
+import { getCheapestOffer, getProductShopOffers } from "@/lib/shop-offers";
 
 interface ComparisonTableProps {
   ids: string[];
@@ -18,7 +20,16 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
   if (products.length === 0) return null;
 
   const rows: { label: string; values: (string | number)[] }[] = [
-    { label: "Prijs (vanaf)", values: products.map((p) => formatPrice(getDisplayPrice(p))) },
+    {
+      label: "Goedkoopst",
+      values: products.map((p) => {
+        const offer = getCheapestOffer(p);
+        const count = getProductShopOffers(p).length;
+        return count > 1
+          ? `${formatPrice(getDisplayPrice(p))} (${getRetailerLabel(offer.retailer)})`
+          : formatPrice(getDisplayPrice(p));
+      }),
+    },
     { label: "Capaciteit", values: products.map((p) => `${p.capacity} kWh`) },
     { label: "Vermogen", values: products.map((p) => `${p.power} W`) },
     { label: "Chemie", values: products.map((p) => p.chemistry) },
@@ -81,10 +92,11 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               </tr>
             ))}
             <tr>
-              <td className="p-4 font-medium text-ink-secondary">Deal</td>
+              <td className="p-4 align-top font-medium text-ink-secondary">Deal</td>
               {products.map((p) => (
-                <td key={p.id} className="p-4">
-                  <ProductOffers product={p} compact showPrices />
+                <td key={p.id} className="p-4 align-top">
+                  <CheapestOfferCTA product={p} compact className="mb-2" />
+                  <ShopPriceList product={p} />
                 </td>
               ))}
             </tr>

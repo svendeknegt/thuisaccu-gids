@@ -70,7 +70,7 @@ export const AMAZON_URLS = {
     asin: "B0BBLV8WJH",
     url: "https://www.amazon.nl/dp/B0BBLV8WJH",
     image: "https://m.media-amazon.com/images/I/61Qregf0EYL._AC_SX679_.jpg",
-    price: 659,
+    price: 599,
     rating: 4.6,
     reviewCount: 1262,
     capacityKwh: 1.024,

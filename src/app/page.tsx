@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Finder } from "@/components/Finder";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductPriceOverview } from "@/components/ProductPriceOverview";
 import { articles } from "@/lib/articles";
-import { products } from "@/lib/products";
+import { getCatalogPriceRange, products } from "@/lib/products";
 import { getAmazonProducts, getFeaturedProducts } from "@/lib/recommend";
+import { formatPrice } from "@/lib/format";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -16,6 +18,7 @@ export const metadata = {
 export default function HomePage() {
   const featured = getFeaturedProducts(3);
   const amazonPicks = getAmazonProducts(6);
+  const { min, max } = getCatalogPriceRange();
 
   return (
     <>
@@ -71,20 +74,22 @@ export default function HomePage() {
 
       <Finder compactTitle savingsExpandedDefault />
 
+      <ProductPriceOverview />
+
       <section className="border-b border-surface-border bg-surface-muted/30 py-12 sm:py-14">
         <div className="container-page">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <h2 className="section-title">Wat kost een plug-and-play thuisaccu?</h2>
               <p className="section-lead">
-                Op onze vergelijker liggen de prijzen (mei 2026) tussen ongeveer{" "}
-                <strong className="font-semibold text-ink">€ 270</strong> en{" "}
-                <strong className="font-semibold text-ink">€ 3.250</strong> —
+                Op onze vergelijker liggen de prijzen ({site.lastUpdated}) tussen{" "}
+                <strong className="font-semibold text-ink">{formatPrice(min)}</strong> en{" "}
+                <strong className="font-semibold text-ink">{formatPrice(max)}</strong> —
                 afhankelijk van capaciteit en merk. Vaste thuisbatterijen achter
                 de meterkast kosten vaak € 4.000–€ 10.000 inclusief installatie;
                 dat is een andere route.
               </p>
-              <Link href="/vergelijken" className="mt-4 inline-flex btn-secondary">
+              <Link href="/vergelijken?sort=price_asc" className="mt-4 inline-flex btn-secondary">
                 Bekijk alle prijzen →
               </Link>
             </div>

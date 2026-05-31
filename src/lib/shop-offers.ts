@@ -1,9 +1,5 @@
-import { isAffiliateConfigured, type Retailer } from "@/lib/affiliate";
+import { getRetailerLabel, isAffiliateConfigured, type Retailer } from "@/lib/affiliate";
 import type { AmazonOffer, Product, ShopOffer } from "@/types/product";
-
-function affiliateSortPriority(retailer: Retailer): number {
-  return isAffiliateConfigured(retailer) ? 1 : 0;
-}
 
 function amazonToShopOffer(offer: AmazonOffer): ShopOffer {
   return {
@@ -14,7 +10,7 @@ function amazonToShopOffer(offer: AmazonOffer): ShopOffer {
   };
 }
 
-/** Alle koopopties voor een product (primair + Amazon + extra winkels), op prijs. */
+/** Alle koopopties voor een product, gesorteerd op laagste prijs eerst. */
 export function getProductShopOffers(product: Product): ShopOffer[] {
   const offers: ShopOffer[] = [
     {
@@ -33,16 +29,40 @@ export function getProductShopOffers(product: Product): ShopOffer[] {
     offers.push(extra);
   }
 
-  return offers.sort((a, b) => {
-    const priorityDiff =
-      affiliateSortPriority(b.retailer) - affiliateSortPriority(a.retailer);
-    if (priorityDiff !== 0) return priorityDiff;
-    return a.price - b.price;
-  });
+  return offers.sort((a, b) => a.price - b.price);
+}
+
+export function getCheapestOffer(product: Product): ShopOffer {
+  return getProductShopOffers(product)[0];
+}
+
+export function getHighestOffer(product: Product): ShopOffer | undefined {
+  const offers = getProductShopOffers(product);
+  return offers.length > 0 ? offers[offers.length - 1] : undefined;
+}
+
+/** Verschil tussen duurste en goedkoopste winkel (0 bij één winkel). */
+export function getPriceSpread(product: Product): number {
+  const offers = getProductShopOffers(product);
+  if (offers.length < 2) return 0;
+  return offers[offers.length - 1].price - offers[0].price;
 }
 
 export function getLowestOffer(product: Product): ShopOffer {
-  return getProductShopOffers(product)[0];
+  return getCheapestOffer(product);
+}
+
+/** Label voor UI: "EcoFlow NL · €599" */
+export function formatCheapestOfferLabel(product: Product): string {
+  const offer = getCheapestOffer(product);
+  const label = getRetailerLabel(offer.retailer);
+  return `${label} · €${Math.round(offer.price).toLocaleString("nl-NL")}`;
+}
+
+export function countAffiliateOffers(product: Product): number {
+  return getProductShopOffers(product).filter((o) =>
+    isAffiliateConfigured(o.retailer),
+  ).length;
 }
 
 export type { ShopOffer };

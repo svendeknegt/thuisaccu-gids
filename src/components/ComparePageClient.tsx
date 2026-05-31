@@ -19,7 +19,7 @@ export function ComparePageClient() {
   const { ids, setSelection } = useCompare();
   const [brand, setBrand] = useState("all");
   const [capacity, setCapacity] = useState("all");
-  const [sortBy, setSortBy] = useState<SortOption>("rating_desc");
+  const [sortBy, setSortBy] = useState<SortOption>("price_asc");
   const [search, setSearch] = useState("");
   const [showMatrix, setShowMatrix] = useState(false);
 
@@ -34,6 +34,19 @@ export function ComparePageClient() {
     );
     setShowMatrix(true);
   }, [searchParams, setSelection]);
+
+  useEffect(() => {
+    const sort = searchParams.get("sort");
+    if (
+      sort === "price_asc" ||
+      sort === "price_desc" ||
+      sort === "price_per_kwh_asc" ||
+      sort === "capacity_desc" ||
+      sort === "rating_desc"
+    ) {
+      setSortBy(sort);
+    }
+  }, [searchParams]);
 
   const products = useMemo(
     () => filterProducts({ brand, capacity, sortBy, search }),
