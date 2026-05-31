@@ -30,6 +30,14 @@ export const retailerInfo: RetailerInfo[] = [
     signupUrl: "https://affiliate-program.amazon.nl",
   },
   {
+    id: "ecoflow",
+    label: "EcoFlow NL",
+    role: "Directe webshop — DELTA-serie & RIVER via Awin",
+    affiliateStatus: "active",
+    note: "Awin-programma 123332 goedgekeurd. Zes EcoFlow-modellen naast Bol/Amazon; commissie ~5% via nl.ecoflow.com na deeplink in Vercel.",
+    signupUrl: "https://ui.awin.com/merchant-profile/123332",
+  },
+  {
     id: "bluetti",
     label: "Bluetti EU",
     role: "Directe webshop — Elite 200 V2 & Elite 300 via Awin",

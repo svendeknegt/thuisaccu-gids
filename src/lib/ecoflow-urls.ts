@@ -1,0 +1,36 @@
+/**
+ * EcoFlow NL webshop (nl.ecoflow.com) — voor Awin deeplinks (programma 123332).
+ * Prijzen indicatief in centen → euro; controleer op nl.ecoflow.com.
+ */
+export const ECOFLOW_URLS = {
+  deltaPro3: {
+    url: "https://nl.ecoflow.com/products/delta-pro-3-portable-power-station",
+    price: 3299,
+    name: "EcoFlow DELTA Pro 3",
+  },
+  delta2Max: {
+    url: "https://nl.ecoflow.com/products/delta-2-max-portable-power-station",
+    price: 1199,
+    name: "EcoFlow DELTA 2 Max",
+  },
+  delta3Max: {
+    url: "https://nl.ecoflow.com/products/delta-3-max-series-portable-power-station?variant=51820094718228",
+    price: 1299,
+    name: "EcoFlow DELTA 3 Max",
+  },
+  delta2: {
+    url: "https://nl.ecoflow.com/products/delta-2-portable-power-station",
+    price: 599,
+    name: "EcoFlow DELTA 2",
+  },
+  delta3Plus: {
+    url: "https://nl.ecoflow.com/products/delta-3-series-portable-power-station?variant=51194415317268",
+    price: 849,
+    name: "EcoFlow DELTA 3 Plus",
+  },
+  river2Pro: {
+    url: "https://nl.ecoflow.com/products/river-2-pro-portable-power-station",
+    price: 549,
+    name: "EcoFlow RIVER 2 Pro",
+  },
+} as const;

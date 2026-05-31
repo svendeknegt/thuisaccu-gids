@@ -30,6 +30,18 @@ const partners = [
     links: [{ href: "/winkels", label: "Welke modellen op Amazon" }],
   },
   {
+    name: "EcoFlow NL",
+    status: "Actief (Awin 123332)",
+    text: `${countProductsWithRetailer("ecoflow")} EcoFlow-modellen met directe nl.ecoflow.com-link naast Bol/Amazon. Commissie ~5% via Awin — deeplink-template in Vercel voor tracking.`,
+    links: [
+      { href: "/product/ecoflow-delta-2-max", label: "DELTA 2 Max" },
+      { href: "/product/ecoflow-delta-pro-3", label: "DELTA Pro 3" },
+      { href: "/winkels", label: "Alle modellen per winkel" },
+    ],
+    external: "https://ui.awin.com/merchant-profile/123332",
+    externalLabel: "Awin EcoFlow NL",
+  },
+  {
     name: "Bluetti EU",
     status: "Awin — in behandeling (95479)",
     text: "Twee Bluetti-modellen op onze site met Bol én Bluetti EU-webshop. Na Awin-goedkeuring: commissie tot ~10% via bluettipower.eu.",

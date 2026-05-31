@@ -32,6 +32,14 @@ export const partnerPrograms: PartnerProgramInfo[] = [
     note: "Tracking-ID eindigt vaak op -21 (bijv. thuisaccugids-21).",
   },
   {
+    retailer: "ecoflow",
+    label: retailerLabels.ecoflow,
+    signupUrl: "https://ui.awin.com/merchant-profile/123332",
+    envKey: "NEXT_PUBLIC_ECOFLOW_AFFILIATE_URL",
+    configured: isAffiliateConfigured("ecoflow"),
+    note: "EcoFlow NL (Awin 123332) — deeplink-template uit Link Builder.",
+  },
+  {
     retailer: "bluetti",
     label: retailerLabels.bluetti,
     signupUrl: "https://ui.awin.com/merchant-profile/95479",

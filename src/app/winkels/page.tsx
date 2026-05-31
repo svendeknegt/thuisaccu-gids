@@ -26,6 +26,7 @@ const statusLabel = {
 export default function WinkelsPage() {
   const bolCount = countProductsWithRetailer("bol");
   const amazonCount = countProductsWithRetailer("amazon");
+  const ecoflowCount = countProductsWithRetailer("ecoflow");
   const bluettiCount = countProductsWithRetailer("bluetti");
 
   return (
@@ -69,6 +70,11 @@ export default function WinkelsPage() {
               {r.id === "amazon" && (
                 <p className="mt-2 text-sm text-ink-muted">
                   {amazonCount} modellen (primair of als extra winkel).
+                </p>
+              )}
+              {r.id === "ecoflow" && (
+                <p className="mt-2 text-sm text-ink-muted">
+                  {ecoflowCount} EcoFlow-modellen met EcoFlow NL-link (naast Bol/Amazon).
                 </p>
               )}
               {r.id === "bluetti" && (

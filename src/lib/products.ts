@@ -2,6 +2,7 @@ import { buildAffiliateUrl } from "@/lib/affiliate";
 import { AMAZON_URLS } from "@/lib/amazon-urls";
 import { BLUETTI_URLS } from "@/lib/bluetti-urls";
 import { BOL_URLS } from "@/lib/bol-urls";
+import { ECOFLOW_URLS } from "@/lib/ecoflow-urls";
 import { getLowestOffer } from "@/lib/shop-offers";
 import type { Product, ProductFilters, ShopOffer } from "@/types/product";
 
@@ -39,6 +40,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De DELTA Pro is een zwaargewicht in de thuisbatterij-markt: 3600 W continu betekent dat je inductie, waterkoker of zelfs een kleine warmtepomp kunt voeden zolang de accu voldoende geladen is. Op Bol.com vind je regelmatig acties; vergelijk altijd de exacte modelcode en meegeleverde kabels.",
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.deltaPro3.url,
+        price: ECOFLOW_URLS.deltaPro3.price,
+        variantNote: "EcoFlow NL: DELTA Pro 3 (opvolger, nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "ecoflow-delta-pro-3",
@@ -73,6 +82,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De DELTA Pro 3 is de opvolger van de DELTA Pro met meer ingebouwde capaciteit en vermogen. Controleer op Bol.com of je de EU-uitvoering bestelt en welke aansluitkabels standaard meeleveren.",
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.deltaPro3.url,
+        price: ECOFLOW_URLS.deltaPro3.price,
+        variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "anker-solix-f3800",
@@ -226,13 +243,21 @@ export const products: Product[] = [
       "Bol.com-klanten die EcoFlow willen vergelijken",
     ],
     buyingGuide:
-      "De DELTA 2 Max is de middenmoot: 2 kWh is niet genoeg voor een hele avond grote lasten, wel voor basiscomfort. Vergelijk Bol- en Amazon-prijs via beide knoppen.",
+      "De DELTA 2 Max is de middenmoot: 2 kWh is niet genoeg voor een hele avond grote lasten, wel voor basiscomfort. Vergelijk Bol-, Amazon- en EcoFlow NL-prijs via de knoppen.",
     amazonOffer: {
       shopUrl: AMAZON_URLS.ecoflowDelta2Max.url,
       price: AMAZON_URLS.ecoflowDelta2Max.price,
       image: AMAZON_URLS.ecoflowDelta2Max.image,
       asin: AMAZON_URLS.ecoflowDelta2Max.asin,
     },
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.delta2Max.url,
+        price: ECOFLOW_URLS.delta2Max.price,
+        variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "ecoflow-delta-3-max",
@@ -267,6 +292,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De DELTA 3 Max zit tussen DELTA 2 Max en grotere modellen in. Vergelijk op Bol.com specificaties en levertijd met de DELTA 2 Max als budgetalternatief.",
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.delta3Max.url,
+        price: ECOFLOW_URLS.delta3Max.price,
+        variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "bluetti-elite-200-v2",
@@ -349,6 +382,14 @@ export const products: Product[] = [
       image: AMAZON_URLS.ecoflowDelta2.image,
       asin: AMAZON_URLS.ecoflowDelta2.asin,
     },
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.delta2.url,
+        price: ECOFLOW_URLS.delta2.price,
+        variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "ecoflow-delta-3-plus",
@@ -383,6 +424,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De DELTA 3 Plus op Amazon.nl (ASIN B0DFPW2Y2C) is een compact 1024 Wh model. Controleer of je de EU-versie bestelt en welke kabels inbegrepen zijn.",
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.delta3Plus.url,
+        price: ECOFLOW_URLS.delta3Plus.price,
+        variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "anker-solix-c1000",
@@ -532,6 +581,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De RIVER 2 Pro (ASIN B0BFQD5RMJ) is geen vervanger voor een 2 kWh thuisaccu, wel een goedkoop instapmodel. Controleer EU-voltage en meegeleverde kabels op Amazon.",
+    extraOffers: [
+      {
+        retailer: "ecoflow",
+        shopUrl: ECOFLOW_URLS.river2Pro.url,
+        price: ECOFLOW_URLS.river2Pro.price,
+        variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
+      },
+    ],
   },
   {
     id: "anker-solix-c300",
