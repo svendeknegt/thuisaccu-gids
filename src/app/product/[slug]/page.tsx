@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
-import { CheapestOfferCTA, ShopPriceList } from "@/components/CheapestOfferCTA";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductImage } from "@/components/ProductImage";
 import { ProductOffers } from "@/components/ProductOffers";
@@ -123,8 +122,6 @@ export default async function ProductPage({ params }: PageProps) {
               {offers.length > 1 && ` · ${offers.length} winkels`}
             </p>
             <div id="product-buy-trigger">
-              <CheapestOfferCTA product={product} className="mt-4" />
-              <ShopPriceList product={product} className="mt-3" maxItems={5} />
               <ProductOffers product={product} className="mt-4" />
             </div>
             {product.shopLinkHint && (

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CheapestOfferCTA } from "@/components/CheapestOfferCTA";
 import { formatPrice, formatPricePerKwh } from "@/lib/format";
 import { getRetailerLabel } from "@/lib/affiliate";
 import {
@@ -27,8 +26,7 @@ export function ProductPriceOverview() {
             <p className="section-lead">
               Vanaf {formatPrice(min)} tot {formatPrice(max)} —{" "}
               {sorted.length} modellen, {multiShopCount} met meerdere winkels (
-              {site.lastUpdated}). Klik op de goedkoopste deal om direct naar de
-              winkel te gaan.
+              {site.lastUpdated}). ✓ = laagste prijs bij dat model.
             </p>
           </div>
           <Link href="/vergelijken?sort=price_asc" className="btn-secondary shrink-0">
@@ -42,25 +40,22 @@ export function ProductPriceOverview() {
               <tr className="border-b border-surface-border bg-surface-muted/60 text-left">
                 <th className="p-3 font-medium text-ink-muted">Model</th>
                 <th className="p-3 font-medium text-ink-muted">Capaciteit</th>
-                <th className="p-3 font-medium text-ink-muted">Goedkoopst</th>
-                <th className="p-3 font-medium text-ink-muted">Winkel</th>
+                <th className="p-3 font-medium text-ink-muted">Vanaf</th>
+                <th className="p-3 font-medium text-ink-muted">Winkel ✓</th>
                 <th className="p-3 font-medium text-ink-muted">€/kWh</th>
                 <th className="p-3 font-medium text-ink-muted sr-only">Actie</th>
               </tr>
             </thead>
             <tbody>
-              {sorted.map((product, index) => {
+              {sorted.map((product) => {
                 const cheapest = getCheapestOffer(product);
                 const offerCount = getComparableShopOffers(product).length;
                 const totalOffers = getProductShopOffers(product).length;
-                const isLowest = index === 0;
 
                 return (
                   <tr
                     key={product.id}
-                    className={`border-b border-surface-border last:border-0 ${
-                      isLowest ? "bg-emerald-50/60" : "hover:bg-surface-muted/30"
-                    }`}
+                    className="border-b border-surface-border last:border-0 hover:bg-surface-muted/30"
                   >
                     <td className="p-3">
                       <Link
@@ -69,14 +64,9 @@ export function ProductPriceOverview() {
                       >
                         {product.name}
                       </Link>
-                      {isLowest && (
-                        <span className="ml-2 rounded bg-emerald-100 px-1.5 py-0.5 text-xs font-semibold text-emerald-800">
-                          Laagste prijs
-                        </span>
-                      )}
                     </td>
                     <td className="p-3 text-ink-secondary">{product.capacity} kWh</td>
-                    <td className="p-3 font-bold text-ink">
+                    <td className="p-3 font-semibold text-ink">
                       {formatPrice(getDisplayPrice(product))}
                       {offerCount > 1 && (
                         <span className="ml-1 text-xs font-normal text-ink-muted">
@@ -90,7 +80,7 @@ export function ProductPriceOverview() {
                       )}
                     </td>
                     <td className="p-3 text-ink-secondary">
-                      {getRetailerLabel(cheapest.retailer)}
+                      {getRetailerLabel(cheapest.retailer)} ✓
                     </td>
                     <td className="p-3 text-ink-muted">
                       {formatPricePerKwh(getDisplayPrice(product), product.capacity)}
@@ -100,7 +90,7 @@ export function ProductPriceOverview() {
                         href={`/product/${product.id}#product-buy-trigger`}
                         className="text-xs font-medium text-brand hover:underline"
                       >
-                        Vergelijk →
+                        Alle winkels →
                       </Link>
                     </td>
                   </tr>
@@ -108,12 +98,6 @@ export function ProductPriceOverview() {
               })}
             </tbody>
           </table>
-        </div>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sorted.slice(0, 3).map((product) => (
-            <CheapestOfferCTA key={product.id} product={product} compact />
-          ))}
         </div>
 
         <p className="mt-4 text-xs text-ink-muted">

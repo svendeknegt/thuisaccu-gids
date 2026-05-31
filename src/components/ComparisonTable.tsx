@@ -1,6 +1,6 @@
 "use client";
 
-import { CheapestOfferCTA, ShopPriceList } from "@/components/CheapestOfferCTA";
+import { ProductOffers } from "@/components/ProductOffers";
 import { ProductImage } from "@/components/ProductImage";
 import { formatPrice } from "@/lib/format";
 import { getRetailerLabel } from "@/lib/affiliate";
@@ -21,12 +21,12 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
 
   const rows: { label: string; values: (string | number)[] }[] = [
     {
-      label: "Goedkoopst",
+      label: "Prijs (vanaf)",
       values: products.map((p) => {
         const offer = getCheapestOffer(p);
         const count = getProductShopOffers(p).length;
         return count > 1
-          ? `${formatPrice(getDisplayPrice(p))} (${getRetailerLabel(offer.retailer)})`
+          ? `${formatPrice(getDisplayPrice(p))} (${getRetailerLabel(offer.retailer)} ✓)`
           : formatPrice(getDisplayPrice(p));
       }),
     },
@@ -92,11 +92,10 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               </tr>
             ))}
             <tr>
-              <td className="p-4 align-top font-medium text-ink-secondary">Deal</td>
+              <td className="p-4 align-top font-medium text-ink-secondary">Winkels</td>
               {products.map((p) => (
                 <td key={p.id} className="p-4 align-top">
-                  <CheapestOfferCTA product={p} compact className="mb-2" />
-                  <ShopPriceList product={p} />
+                  <ProductOffers product={p} compact showPrices />
                 </td>
               ))}
             </tr>

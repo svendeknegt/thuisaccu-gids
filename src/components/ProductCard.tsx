@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { CheapestOfferCTA, ShopPriceList } from "@/components/CheapestOfferCTA";
+import { ProductOffers } from "@/components/ProductOffers";
 import { ProductImage } from "@/components/ProductImage";
 import { RetailerBadges } from "@/components/RetailerBadges";
+import { ShopPriceList } from "@/components/ShopPriceList";
 import { useCompare } from "@/components/compare/CompareContext";
-import { formatRating } from "@/lib/format";
+import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
+import { getDisplayPrice } from "@/lib/products";
+import { getProductShopOffers } from "@/lib/shop-offers";
 import { site } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -23,6 +26,8 @@ export function ProductCard({
   const { toggle, isSelected, canAdd } = useCompare();
   const selected = isSelected(product.id);
   const atLimit = !canAdd && !selected;
+  const displayPrice = getDisplayPrice(product);
+  const offerCount = getProductShopOffers(product).length;
 
   return (
     <article className="card flex flex-col overflow-hidden transition hover:shadow-cardHover">
@@ -97,15 +102,21 @@ export function ProductCard({
             </label>
           )}
 
-          <div className="flex flex-col gap-3">
-            <CheapestOfferCTA product={product} compact />
-            <ShopPriceList product={product} maxItems={3} />
-            <Link
-              href={`/product/${product.id}`}
-              className="text-center text-xs font-medium text-brand hover:underline"
-            >
-              Alle specificaties →
-            </Link>
+          <div className="flex flex-col gap-2">
+            <div>
+              <p className="text-xs text-ink-muted">
+                Vanaf{offerCount > 1 ? ` · ${offerCount} winkels` : ""}
+              </p>
+              <p className="text-lg font-bold text-ink">{formatPrice(displayPrice)}</p>
+              <p className="text-xs text-ink-muted">
+                {formatPricePerKwh(displayPrice, product.capacity)} / kWh
+              </p>
+            </div>
+            {offerCount > 1 ? (
+              <ShopPriceList product={product} maxItems={4} />
+            ) : (
+              <ProductOffers product={product} compact showPrices={false} />
+            )}
           </div>
         </div>
       </div>
