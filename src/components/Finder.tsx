@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ProductOffers } from "@/components/ProductOffers";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import { formatPrice } from "@/lib/format";
 import { getDisplayPrice } from "@/lib/products";
 import { runFinder } from "@/lib/recommend";
@@ -200,7 +200,7 @@ export function Finder({
                       {p.capacity} kWh · vanaf {formatPrice(getDisplayPrice(p))}
                     </p>
                   </div>
-                  <ProductOffers product={p} compact showPrices={false} className="shrink-0" />
+                  <ProductShopLinks product={p} size="xs" className="shrink-0" />
                 </li>
               ))}
             </ul>

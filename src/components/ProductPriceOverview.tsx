@@ -1,21 +1,17 @@
 import Link from "next/link";
 import { formatPrice, formatPricePerKwh } from "@/lib/format";
-import { getRetailerLabel } from "@/lib/affiliate";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import {
   getCatalogPriceRange,
   getDisplayPrice,
   getProductsByPrice,
 } from "@/lib/products";
-import { getCheapestOffer, getComparableShopOffers, getProductShopOffers } from "@/lib/shop-offers";
 import { site } from "@/lib/site";
 
-/** Prijsoverzicht voor homepage — laagste winkel per model, gesorteerd op prijs. */
+/** Prijsoverzicht voor homepage — zelfde winkellinks als op productkaarten. */
 export function ProductPriceOverview() {
   const sorted = getProductsByPrice();
   const { min, max } = getCatalogPriceRange();
-  const multiShopCount = sorted.filter(
-    (p) => getComparableShopOffers(p).length > 1,
-  ).length;
 
   return (
     <section className="border-b border-surface-border bg-white py-12 sm:py-14">
@@ -24,9 +20,8 @@ export function ProductPriceOverview() {
           <div>
             <h2 className="section-title">Prijzen per model</h2>
             <p className="section-lead">
-              Vanaf {formatPrice(min)} tot {formatPrice(max)} —{" "}
-              {sorted.length} modellen, {multiShopCount} met meerdere winkels (
-              {site.lastUpdated}). ✓ = laagste prijs bij dat model.
+              {sorted.length} modellen tussen {formatPrice(min)} en {formatPrice(max)} (
+              {site.lastUpdated}). ✓ = goedkoopste winkel bij dat model.
             </p>
           </div>
           <Link href="/vergelijken?sort=price_asc" className="btn-secondary shrink-0">
@@ -35,74 +30,46 @@ export function ProductPriceOverview() {
         </div>
 
         <div className="mt-8 overflow-x-auto rounded-xl border border-surface-border">
-          <table className="w-full min-w-[640px] text-sm">
+          <table className="w-full min-w-[720px] text-sm">
             <thead>
               <tr className="border-b border-surface-border bg-surface-muted/60 text-left">
                 <th className="p-3 font-medium text-ink-muted">Model</th>
-                <th className="p-3 font-medium text-ink-muted">Capaciteit</th>
-                <th className="p-3 font-medium text-ink-muted">Vanaf</th>
-                <th className="p-3 font-medium text-ink-muted">Winkel ✓</th>
-                <th className="p-3 font-medium text-ink-muted">€/kWh</th>
-                <th className="p-3 font-medium text-ink-muted sr-only">Actie</th>
+                <th className="p-3 w-24 font-medium text-ink-muted">Capaciteit</th>
+                <th className="p-3 w-28 font-medium text-ink-muted">€/kWh</th>
+                <th className="p-3 font-medium text-ink-muted">Winkels</th>
               </tr>
             </thead>
             <tbody>
-              {sorted.map((product) => {
-                const cheapest = getCheapestOffer(product);
-                const offerCount = getComparableShopOffers(product).length;
-                const totalOffers = getProductShopOffers(product).length;
-
-                return (
-                  <tr
-                    key={product.id}
-                    className="border-b border-surface-border last:border-0 hover:bg-surface-muted/30"
-                  >
-                    <td className="p-3">
-                      <Link
-                        href={`/product/${product.id}`}
-                        className="font-medium text-ink hover:text-brand hover:underline"
-                      >
-                        {product.name}
-                      </Link>
-                    </td>
-                    <td className="p-3 text-ink-secondary">{product.capacity} kWh</td>
-                    <td className="p-3 font-semibold text-ink">
-                      {formatPrice(getDisplayPrice(product))}
-                      {offerCount > 1 && (
-                        <span className="ml-1 text-xs font-normal text-ink-muted">
-                          ({offerCount} winkels)
-                        </span>
-                      )}
-                      {totalOffers > offerCount && (
-                        <span className="ml-1 text-xs font-normal text-ink-muted">
-                          +{totalOffers - offerCount} apart
-                        </span>
-                      )}
-                    </td>
-                    <td className="p-3 text-ink-secondary">
-                      {getRetailerLabel(cheapest.retailer)} ✓
-                    </td>
-                    <td className="p-3 text-ink-muted">
-                      {formatPricePerKwh(getDisplayPrice(product), product.capacity)}
-                    </td>
-                    <td className="p-3">
-                      <Link
-                        href={`/product/${product.id}#product-buy-trigger`}
-                        className="text-xs font-medium text-brand hover:underline"
-                      >
-                        Alle winkels →
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })}
+              {sorted.map((product) => (
+                <tr
+                  key={product.id}
+                  className="border-b border-surface-border last:border-0 hover:bg-surface-muted/20"
+                >
+                  <td className="p-3 align-top">
+                    <Link
+                      href={`/product/${product.id}`}
+                      className="font-medium text-ink hover:text-brand hover:underline"
+                    >
+                      {product.name}
+                    </Link>
+                  </td>
+                  <td className="p-3 align-top text-ink-secondary">
+                    {product.capacity} kWh
+                  </td>
+                  <td className="p-3 align-top tabular-nums text-ink-muted">
+                    {formatPricePerKwh(getDisplayPrice(product), product.capacity)}
+                  </td>
+                  <td className="min-w-[200px] p-3 align-top">
+                    <ProductShopLinks product={product} size="xs" maxItems={4} />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
         <p className="mt-4 text-xs text-ink-muted">
-          Prijzen zijn indicatief en kunnen per winkel verschillen. Affiliate-links
-          zijn gemarkeerd op de productpagina.
+          Prijzen zijn indicatief. Klik op een winkel om naar de productpagina te gaan.
         </p>
       </div>
     </section>

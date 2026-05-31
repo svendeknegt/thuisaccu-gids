@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductOffers } from "@/components/ProductOffers";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import { formatPrice } from "@/lib/format";
 import { getDisplayPrice, getProductById } from "@/lib/products";
 
@@ -50,12 +50,7 @@ export function ArticleProductPicks({
                   {formatPrice(getDisplayPrice(product))}
                 </p>
               </div>
-              <ProductOffers
-                product={product}
-                compact
-                showPrices
-                className="shrink-0"
-              />
+              <ProductShopLinks product={product} size="xs" className="shrink-0 min-w-[140px]" />
             </div>
           </li>
         ))}

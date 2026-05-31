@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductImage } from "@/components/ProductImage";
-import { ProductOffers } from "@/components/ProductOffers";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import { RetailerBadges } from "@/components/RetailerBadges";
 import { AmazonAssociatesNotice } from "@/components/AmazonAssociatesNotice";
 import { StickyProductBuyBar } from "@/components/StickyProductBuyBar";
@@ -119,10 +119,9 @@ export default async function ProductPage({ params }: PageProps) {
             </p>
             <p className="text-sm text-ink-muted">
               {formatPricePerKwh(displayPrice, product.capacity)} per kWh capaciteit
-              {offers.length > 1 && ` · ${offers.length} winkels`}
             </p>
-            <div id="product-buy-trigger">
-              <ProductOffers product={product} className="mt-4" />
+            <div id="product-buy-trigger" className="mt-4">
+              <ProductShopLinks product={product} size="sm" maxItems={6} />
             </div>
             {product.shopLinkHint && (
               <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
@@ -231,7 +230,7 @@ export default async function ProductPage({ params }: PageProps) {
             Vergelijk {offers.length > 1 ? `${offers.length} winkels` : "de winkel"} —
             prijzen zijn indicatief, controleer altijd bij de verkoper.
           </p>
-          <ProductOffers product={product} className="mt-4" showPrices />
+          <ProductShopLinks product={product} className="mt-4" size="sm" />
           <AffiliateDisclosure className="mt-4" compact />
         </section>
       </div>

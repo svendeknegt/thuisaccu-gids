@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ProductOffers } from "@/components/ProductOffers";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import { formatPrice } from "@/lib/format";
 import { getDisplayPrice } from "@/lib/products";
-import { getProductShopOffers } from "@/lib/shop-offers";
 import type { Product } from "@/types/product";
 
 interface StickyProductBuyBarProps {
@@ -30,19 +29,15 @@ export function StickyProductBuyBar({ product }: StickyProductBuyBarProps) {
   if (!visible) return null;
 
   const displayPrice = getDisplayPrice(product);
-  const offerCount = getProductShopOffers(product).length;
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-surface-border bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:px-6">
-      <div className="container-page flex flex-wrap items-center justify-between gap-3">
-        <div className="min-w-0">
+      <div className="container-page flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0 shrink-0">
           <p className="truncate text-sm font-semibold text-ink">{product.name}</p>
-          <p className="text-xs text-ink-muted">
-            Vanaf {formatPrice(displayPrice)}
-            {offerCount > 1 ? ` · ${offerCount} winkels` : ""}
-          </p>
+          <p className="text-xs text-ink-muted">Vanaf {formatPrice(displayPrice)}</p>
         </div>
-        <ProductOffers product={product} showPrices className="shrink-0" />
+        <ProductShopLinks product={product} size="xs" inline className="sm:justify-end" />
       </div>
     </div>
   );

@@ -1,11 +1,9 @@
 "use client";
 
-import { ProductOffers } from "@/components/ProductOffers";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import { ProductImage } from "@/components/ProductImage";
 import { formatPrice } from "@/lib/format";
-import { getRetailerLabel } from "@/lib/affiliate";
 import { getDisplayPrice, getProductById } from "@/lib/products";
-import { getCheapestOffer, getProductShopOffers } from "@/lib/shop-offers";
 
 interface ComparisonTableProps {
   ids: string[];
@@ -22,13 +20,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
   const rows: { label: string; values: (string | number)[] }[] = [
     {
       label: "Prijs (vanaf)",
-      values: products.map((p) => {
-        const offer = getCheapestOffer(p);
-        const count = getProductShopOffers(p).length;
-        return count > 1
-          ? `${formatPrice(getDisplayPrice(p))} (${getRetailerLabel(offer.retailer)} ✓)`
-          : formatPrice(getDisplayPrice(p));
-      }),
+      values: products.map((p) => formatPrice(getDisplayPrice(p))),
     },
     { label: "Capaciteit", values: products.map((p) => `${p.capacity} kWh`) },
     { label: "Vermogen", values: products.map((p) => `${p.power} W`) },
@@ -57,17 +49,13 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
         <table className="w-full min-w-[640px] text-sm">
           <thead>
             <tr className="border-b border-surface-border bg-surface-muted/50">
-              <th className="p-4 text-left font-medium text-ink-muted w-32">
+              <th className="w-32 p-4 text-left font-medium text-ink-muted">
                 Specificatie
               </th>
               {products.map((p) => (
                 <th key={p.id} className="p-4 text-left align-top">
                   <div className="relative mb-2 h-16 w-20 overflow-hidden rounded-lg bg-surface-muted">
-                    <ProductImage
-                      src={p.image}
-                      alt={p.name}
-                      sizes="80px"
-                    />
+                    <ProductImage src={p.image} alt={p.name} sizes="80px" />
                   </div>
                   <p className="text-xs text-ink-muted">{p.brand}</p>
                   <p className="font-semibold text-ink">{p.name}</p>
@@ -81,9 +69,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
                 key={row.label}
                 className="border-b border-surface-border last:border-0"
               >
-                <td className="p-4 font-medium text-ink-secondary">
-                  {row.label}
-                </td>
+                <td className="p-4 font-medium text-ink-secondary">{row.label}</td>
                 {row.values.map((val, i) => (
                   <td key={i} className="p-4 text-ink">
                     {val}
@@ -95,7 +81,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
               <td className="p-4 align-top font-medium text-ink-secondary">Winkels</td>
               {products.map((p) => (
                 <td key={p.id} className="p-4 align-top">
-                  <ProductOffers product={p} compact showPrices />
+                  <ProductShopLinks product={p} size="xs" maxItems={4} />
                 </td>
               ))}
             </tr>

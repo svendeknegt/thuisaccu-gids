@@ -1,14 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { ProductOffers } from "@/components/ProductOffers";
 import { ProductImage } from "@/components/ProductImage";
 import { RetailerBadges } from "@/components/RetailerBadges";
-import { ShopPriceList } from "@/components/ShopPriceList";
+import { ProductShopLinks } from "@/components/ShopPriceList";
 import { useCompare } from "@/components/compare/CompareContext";
 import { formatPrice, formatPricePerKwh, formatRating } from "@/lib/format";
 import { getDisplayPrice } from "@/lib/products";
-import { getProductShopOffers } from "@/lib/shop-offers";
 import { site } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -27,7 +25,6 @@ export function ProductCard({
   const selected = isSelected(product.id);
   const atLimit = !canAdd && !selected;
   const displayPrice = getDisplayPrice(product);
-  const offerCount = getProductShopOffers(product).length;
 
   return (
     <article className="card flex flex-col overflow-hidden transition hover:shadow-cardHover">
@@ -102,21 +99,15 @@ export function ProductCard({
             </label>
           )}
 
-          <div className="flex flex-col gap-2">
+          <div className="flex min-h-[7.5rem] flex-col gap-2">
             <div>
-              <p className="text-xs text-ink-muted">
-                Vanaf{offerCount > 1 ? ` · ${offerCount} winkels` : ""}
-              </p>
+              <p className="text-xs text-ink-muted">Vanaf</p>
               <p className="text-lg font-bold text-ink">{formatPrice(displayPrice)}</p>
               <p className="text-xs text-ink-muted">
                 {formatPricePerKwh(displayPrice, product.capacity)} / kWh
               </p>
             </div>
-            {offerCount > 1 ? (
-              <ShopPriceList product={product} maxItems={4} />
-            ) : (
-              <ProductOffers product={product} compact showPrices={false} />
-            )}
+            <ProductShopLinks product={product} size="xs" maxItems={4} className="mt-auto" />
           </div>
         </div>
       </div>
