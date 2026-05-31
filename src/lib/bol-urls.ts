@@ -1,4 +1,4 @@
-/** Directe Bol-productpagina's, afbeeldingen en prijzen (media.s-bol.com). Laatst gecontroleerd: mei 2026. */
+/** Directe Bol-productpagina's, afbeeldingen en prijzen (media.s-bol.com). Laatst gecontroleerd: 27 mei 2026. */
 export const BOL_URLS = {
   ecoflowDeltaPro: {
     url: "https://www.bol.com/nl/nl/p/ecoflow-delta-pro-power-station-home-solar-back-up-generator/9300000080532823/",
@@ -13,7 +13,7 @@ export const BOL_URLS = {
   ecoflowDelta2: {
     url: "https://www.bol.com/nl/nl/p/ecoflow-delta-2-portable-power-station-5-jaar-garantie-powerbank-1024-wh-eu-uitvoering/9300000126404056/",
     image: "https://media.s-bol.com/R7o5xBzW71Ez/lZz7Yj/1159x1200.jpg",
-    price: 649,
+    price: 899,
   },
   ecoflowDelta3Max: {
     url: "https://www.bol.com/nl/nl/p/ecoflow-delta-3-max-power-station/9300000243824362/",

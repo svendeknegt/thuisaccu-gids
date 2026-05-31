@@ -5,6 +5,7 @@ import { formatPrice } from "@/lib/format";
 import { getShopOfferAffiliateUrl } from "@/lib/products";
 import {
   getCheapestOffer,
+  getComparableShopOffers,
   getPriceSpread,
   getProductShopOffers,
 } from "@/lib/shop-offers";
@@ -22,7 +23,8 @@ export function CheapestOfferCTA({
   className = "",
   compact = false,
 }: CheapestOfferCTAProps) {
-  const offers = getProductShopOffers(product);
+  const offers = getComparableShopOffers(product);
+  const allOffers = getProductShopOffers(product);
   const cheapest = getCheapestOffer(product);
   const spread = getPriceSpread(product);
   const label = getRetailerLabel(cheapest.retailer);
@@ -58,6 +60,8 @@ export function CheapestOfferCTA({
           {offers.length > 1 && (
             <p className="mt-1 text-xs text-ink-muted">
               {offers.length} winkels vergeleken · prijzen indicatief
+              {allOffers.length > offers.length &&
+                ` · ${allOffers.length - offers.length} andere listing(s) apart vermeld`}
             </p>
           )}
         </>

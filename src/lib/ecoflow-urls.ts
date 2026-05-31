@@ -1,6 +1,6 @@
 /**
  * EcoFlow NL webshop (nl.ecoflow.com) — voor Awin deeplinks (programma 123332).
- * Prijzen indicatief in centen → euro; controleer op nl.ecoflow.com.
+ * Prijzen via Shopify JSON (nl.ecoflow.com). Laatst gecontroleerd: 27 mei 2026.
  */
 export const ECOFLOW_URLS = {
   deltaPro3: {

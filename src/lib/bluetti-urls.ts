@@ -1,6 +1,6 @@
 /**
  * Bluetti EU webshop (bluettipower.eu) — voor Awin deeplinks na goedkeuring.
- * Prijzen indicatief; controleer op bluettipower.eu.
+ * Prijzen via Shopify JSON (bluettipower.eu). Laatst gecontroleerd: 27 mei 2026.
  */
 export const BLUETTI_URLS = {
   elite200V2: {

@@ -7,7 +7,7 @@ import {
   getDisplayPrice,
   getProductsByPrice,
 } from "@/lib/products";
-import { getCheapestOffer, getProductShopOffers } from "@/lib/shop-offers";
+import { getCheapestOffer, getComparableShopOffers, getProductShopOffers } from "@/lib/shop-offers";
 import { site } from "@/lib/site";
 
 /** Prijsoverzicht voor homepage — laagste winkel per model, gesorteerd op prijs. */
@@ -15,7 +15,7 @@ export function ProductPriceOverview() {
   const sorted = getProductsByPrice();
   const { min, max } = getCatalogPriceRange();
   const multiShopCount = sorted.filter(
-    (p) => getProductShopOffers(p).length > 1,
+    (p) => getComparableShopOffers(p).length > 1,
   ).length;
 
   return (
@@ -51,7 +51,8 @@ export function ProductPriceOverview() {
             <tbody>
               {sorted.map((product, index) => {
                 const cheapest = getCheapestOffer(product);
-                const offerCount = getProductShopOffers(product).length;
+                const offerCount = getComparableShopOffers(product).length;
+                const totalOffers = getProductShopOffers(product).length;
                 const isLowest = index === 0;
 
                 return (
@@ -80,6 +81,11 @@ export function ProductPriceOverview() {
                       {offerCount > 1 && (
                         <span className="ml-1 text-xs font-normal text-ink-muted">
                           ({offerCount} winkels)
+                        </span>
+                      )}
+                      {totalOffers > offerCount && (
+                        <span className="ml-1 text-xs font-normal text-ink-muted">
+                          +{totalOffers - offerCount} apart
                         </span>
                       )}
                     </td>

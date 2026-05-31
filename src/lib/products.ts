@@ -39,15 +39,7 @@ export const products: Product[] = [
       "Wie later wil uitbreiden zonder nieuwe accu te kopen",
     ],
     buyingGuide:
-      "De DELTA Pro is een zwaargewicht in de thuisbatterij-markt: 3600 W continu betekent dat je inductie, waterkoker of zelfs een kleine warmtepomp kunt voeden zolang de accu voldoende geladen is. Op Bol.com vind je regelmatig acties; vergelijk altijd de exacte modelcode en meegeleverde kabels.",
-    extraOffers: [
-      {
-        retailer: "ecoflow",
-        shopUrl: ECOFLOW_URLS.deltaPro3.url,
-        price: ECOFLOW_URLS.deltaPro3.price,
-        variantNote: "EcoFlow NL: DELTA Pro 3 (opvolger, nl.ecoflow.com)",
-      },
-    ],
+      "De DELTA Pro is een zwaargewicht in de thuisbatterij-markt: 3600 W continu betekent dat je inductie, waterkoker of zelfs een kleine warmtepomp kunt voeden zolang de accu voldoende geladen is. Op Bol.com vind je regelmatig acties; vergelijk altijd de exacte modelcode en meegeleverde kabels. De opvolger DELTA Pro 3 staat apart in onze vergelijker.",
   },
   {
     id: "ecoflow-delta-pro-3",
@@ -199,14 +191,7 @@ export const products: Product[] = [
       "Back-up voor koelkast, verlichting en media",
     ],
     buyingGuide:
-      "De Explorer 2000 Plus is Jackerys antwoord op EcoFlow DELTA 2 Max. Controleer op Bol.com of je de EU-versie en juiste kabels ontvangt.",
-    amazonOffer: {
-      shopUrl: AMAZON_URLS.jackeryExplorer2000V2.url,
-      price: AMAZON_URLS.jackeryExplorer2000V2.price,
-      image: AMAZON_URLS.jackeryExplorer2000V2.image,
-      asin: AMAZON_URLS.jackeryExplorer2000V2.asin,
-      variantNote: "Amazon: Explorer 2000 v2 (Bol: 2000 Plus)",
-    },
+      "De Explorer 2000 Plus is Jackerys antwoord op EcoFlow DELTA 2 Max. Controleer op Bol.com of je de EU-versie en juiste kabels ontvangt. Op Amazon.nl staat een andere generatie (Explorer 2000 v2) — vergelijk daarom via onze aparte productpagina's.",
   },
   {
     id: "ecoflow-delta-2-max",
@@ -375,7 +360,7 @@ export const products: Product[] = [
       "Appartement met beperkt zonne-overschot",
     ],
     buyingGuide:
-      "De DELTA 2 is goedkoper dan de DELTA 2 Max maar start met 1 kWh. Op Bol.com staat de EU-uitvoering; controleer of extra batterijmodules apart verkrijgbaar zijn als je later wilt uitbreiden.",
+      "De DELTA 2 is goedkoper dan de DELTA 2 Max maar start met 1 kWh. EcoFlow NL en Amazon.nl liggen rond €599; Bol.com is vaak duurder (check actuele Bol-prijs). Controleer of extra batterijmodules apart verkrijgbaar zijn als je later wilt uitbreiden.",
     amazonOffer: {
       shopUrl: AMAZON_URLS.ecoflowDelta2.url,
       price: AMAZON_URLS.ecoflowDelta2.price,
@@ -468,7 +453,13 @@ export const products: Product[] = [
       "Eerste kennismaking met 1 kWh opslag",
     ],
     buyingGuide:
-      "De DELTA 3 Classic is de instap in de DELTA 3-serie: €599 bij EcoFlow NL (mei 2026). Vergelijk met DELTA 3 en DELTA 3 Plus als je uitbreidbaarheid of extra poorten nodig hebt.",
+      "De DELTA 3 Classic is de instap in de DELTA 3-serie: €599 bij EcoFlow NL en Amazon.nl (mei 2026). Vergelijk met DELTA 3 en DELTA 3 Plus als je uitbreidbaarheid of extra poorten nodig hebt.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.ecoflowDelta3Classic.url,
+      price: AMAZON_URLS.ecoflowDelta3Classic.price,
+      image: AMAZON_URLS.ecoflowDelta3Classic.image,
+      asin: AMAZON_URLS.ecoflowDelta3Classic.asin,
+    },
   },
   {
     id: "ecoflow-delta-3",
@@ -502,7 +493,13 @@ export const products: Product[] = [
       "Dynamisch tarief met app-sturing",
     ],
     buyingGuide:
-      "De DELTA 3 kost €749 bij EcoFlow NL — €150 meer dan de Classic, maar wel uitbreidbaar. Check of extra batterijmodules op voorraad zijn voordat je bestelt.",
+      "De DELTA 3 kost €749 bij EcoFlow NL en Amazon.nl — €150 meer dan de Classic, maar wel uitbreidbaar. Check of extra batterijmodules op voorraad zijn voordat je bestelt.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.ecoflowDelta3.url,
+      price: AMAZON_URLS.ecoflowDelta3.price,
+      image: AMAZON_URLS.ecoflowDelta3.image,
+      asin: AMAZON_URLS.ecoflowDelta3.asin,
+    },
   },
   {
     id: "anker-solix-c1000",
@@ -543,6 +540,7 @@ export const products: Product[] = [
       image: AMAZON_URLS.ankerSolixC1000.image,
       asin: AMAZON_URLS.ankerSolixC1000.asin,
       variantNote: "Amazon: Anker SOLIX C1000 (Bol: C1000X)",
+      excludeFromPriceCompare: true,
     },
   },
   {

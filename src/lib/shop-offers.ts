@@ -7,7 +7,12 @@ function amazonToShopOffer(offer: AmazonOffer): ShopOffer {
     shopUrl: offer.shopUrl,
     price: offer.price,
     variantNote: offer.variantNote,
+    excludeFromPriceCompare: offer.excludeFromPriceCompare,
   };
+}
+
+function isComparableOffer(offer: ShopOffer): boolean {
+  return !offer.excludeFromPriceCompare;
 }
 
 /** Alle koopopties voor een product, gesorteerd op laagste prijs eerst. */
@@ -32,7 +37,14 @@ export function getProductShopOffers(product: Product): ShopOffer[] {
   return offers.sort((a, b) => a.price - b.price);
 }
 
+/** Alleen vergelijkbare offers (zelfde model) voor vanaf-prijs. */
+export function getComparableShopOffers(product: Product): ShopOffer[] {
+  return getProductShopOffers(product).filter(isComparableOffer);
+}
+
 export function getCheapestOffer(product: Product): ShopOffer {
+  const comparable = getComparableShopOffers(product);
+  if (comparable.length > 0) return comparable[0];
   return getProductShopOffers(product)[0];
 }
 
@@ -43,7 +55,7 @@ export function getHighestOffer(product: Product): ShopOffer | undefined {
 
 /** Verschil tussen duurste en goedkoopste winkel (0 bij één winkel). */
 export function getPriceSpread(product: Product): number {
-  const offers = getProductShopOffers(product);
+  const offers = getComparableShopOffers(product);
   if (offers.length < 2) return 0;
   return offers[offers.length - 1].price - offers[0].price;
 }

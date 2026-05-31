@@ -11,6 +11,8 @@ export interface AmazonOffer {
   asin: string;
   /** Korte noot bij afwijkende Amazon-versie */
   variantNote?: string;
+  /** Geen prijsvergelijking (ander model / niet vergelijkbaar) */
+  excludeFromPriceCompare?: boolean;
 }
 
 /** Koopoptie bij een andere winkel (zelfde of vergelijkbaar model) */
@@ -19,6 +21,8 @@ export interface ShopOffer {
   shopUrl: string;
   price: number;
   variantNote?: string;
+  /** Geen prijsvergelijking (ander model / niet vergelijkbaar) */
+  excludeFromPriceCompare?: boolean;
 }
 
 export interface Product {

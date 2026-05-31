@@ -1,7 +1,7 @@
 /**
  * Directe Amazon.nl-productpagina's (ASIN).
  * Prijzen handmatig bijgewerkt — controleer periodiek op Amazon.
- * Laatst gecontroleerd: mei 2026.
+ * Laatst gecontroleerd: 27 mei 2026 (priceAmount op productpagina).
  */
 export const AMAZON_URLS = {
   ecoflowDelta2Max: {
@@ -58,7 +58,7 @@ export const AMAZON_URLS = {
     asin: "B0D62GMQ3F",
     url: "https://www.amazon.nl/dp/B0D62GMQ3F",
     image: "https://m.media-amazon.com/images/I/719Cax9utKL._AC_SX679_.jpg",
-    price: 269.99,
+    price: 229,
     rating: 4.6,
     reviewCount: 85,
     capacityKwh: 0.288,
@@ -67,9 +67,9 @@ export const AMAZON_URLS = {
     name: "Anker Solix C300",
   },
   ecoflowDelta2: {
-    asin: "B0BBLV8WJH",
-    url: "https://www.amazon.nl/dp/B0BBLV8WJH",
-    image: "https://m.media-amazon.com/images/I/61Qregf0EYL._AC_SX679_.jpg",
+    asin: "B0CKN74TLD",
+    url: "https://www.amazon.nl/dp/B0CKN74TLD",
+    image: "https://m.media-amazon.com/images/I/51flNVzTtWL._AC_SL1500_.jpg",
     price: 599,
     rating: 4.6,
     reviewCount: 1262,
@@ -78,11 +78,35 @@ export const AMAZON_URLS = {
     weight: "12 kg",
     name: "EcoFlow DELTA 2",
   },
+  ecoflowDelta3Classic: {
+    asin: "B0GMCHYHQR",
+    url: "https://www.amazon.nl/dp/B0GMCHYHQR",
+    image: "https://m.media-amazon.com/images/I/6188xsKjUmL._AC_SL1500_.jpg",
+    price: 599,
+    rating: 4.6,
+    reviewCount: 45,
+    capacityKwh: 1.024,
+    powerW: 1800,
+    weight: "12,1 kg",
+    name: "EcoFlow DELTA 3 Classic",
+  },
+  ecoflowDelta3: {
+    asin: "B0DFPTTXYY",
+    url: "https://www.amazon.nl/dp/B0DFPTTXYY",
+    image: "https://m.media-amazon.com/images/I/51o6Ji27QDL._AC_SL1500_.jpg",
+    price: 749,
+    rating: 4.7,
+    reviewCount: 80,
+    capacityKwh: 1.024,
+    powerW: 1800,
+    weight: "12,5 kg",
+    name: "EcoFlow DELTA 3",
+  },
   jackeryExplorer1000V2: {
     asin: "B0DB1T34X5",
     url: "https://www.amazon.nl/dp/B0DB1T34X5",
     image: "https://m.media-amazon.com/images/I/71YxZqJqHQL._AC_SX679_.jpg",
-    price: 449,
+    price: 559,
     rating: 4.6,
     reviewCount: 293,
     capacityKwh: 1.07,
@@ -94,7 +118,7 @@ export const AMAZON_URLS = {
     asin: "B0DSK8DN8N",
     url: "https://www.amazon.nl/dp/B0DSK8DN8N",
     image: "https://m.media-amazon.com/images/I/71kH8xJqHQL._AC_SX679_.jpg",
-    price: 1299,
+    price: 949,
     rating: 4.6,
     reviewCount: 120,
     capacityKwh: 2.042,
