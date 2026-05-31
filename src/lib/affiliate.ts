@@ -31,7 +31,8 @@ export const affiliateConfig = {
   bluettiTrackingTemplate:
     process.env.NEXT_PUBLIC_BLUETTI_AFFILIATE_URL?.trim() || "",
   ecoflowTrackingTemplate:
-    process.env.NEXT_PUBLIC_ECOFLOW_AFFILIATE_URL?.trim() || "",
+    process.env.NEXT_PUBLIC_ECOFLOW_AFFILIATE_URL?.trim() ||
+    "https://www.awin1.com/cread.php?awinmid=123332&awinaffid=2906375&ued={url}",
 } as const;
 
 const awinTemplates: Partial<Record<Retailer, string>> = {
