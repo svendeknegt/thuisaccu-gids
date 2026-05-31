@@ -14,7 +14,7 @@ export function ProductPriceOverview() {
   const { min, max } = getCatalogPriceRange();
 
   return (
-    <section className="border-b border-surface-border bg-white py-12 sm:py-14">
+    <section className="border-t border-surface-border bg-surface-muted/30 py-12 sm:py-14">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -69,7 +69,7 @@ export function ProductPriceOverview() {
         </div>
 
         <p className="mt-4 text-xs text-ink-muted">
-          Prijzen zijn indicatief. Klik op een winkel om naar de productpagina te gaan.
+          Prijzen zijn indicatief. Klik op een winkel om naar de webshop te gaan ↗
         </p>
       </div>
     </section>

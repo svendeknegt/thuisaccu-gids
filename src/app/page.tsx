@@ -74,8 +74,6 @@ export default function HomePage() {
 
       <Finder compactTitle savingsExpandedDefault />
 
-      <ProductPriceOverview />
-
       <section className="border-b border-surface-border bg-surface-muted/30 py-12 sm:py-14">
         <div className="container-page">
           <div className="grid gap-8 lg:grid-cols-2">
@@ -230,6 +228,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ProductPriceOverview />
     </>
   );
 }
