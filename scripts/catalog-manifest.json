@@ -1,0 +1,229 @@
+{
+  "$schema": "./catalog-manifest.schema.json",
+  "description": "Bronnen voor scripts/sync-catalog.mjs — koppel productId + retailer aan een fetch-bron.",
+  "offers": [
+    {
+      "productId": "ecoflow-delta-pro",
+      "retailer": "bol",
+      "source": { "type": "manual", "note": "Bol blokkeert bots (403) — handmatig in bol-urls.ts" }
+    },
+    {
+      "productId": "ecoflow-delta-pro-3",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-delta-pro-3",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-pro-3-portable-power-station"
+      }
+    },
+    {
+      "productId": "anker-solix-f3800",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "bluetti-elite-300",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "bluetti-elite-300",
+      "retailer": "bluetti",
+      "source": {
+        "type": "shopify",
+        "base": "https://www.bluettipower.eu/products",
+        "slug": "elite-300-portable-power-station"
+      }
+    },
+    {
+      "productId": "jackery-explorer-2000-plus",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-delta-2-max",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-delta-2-max",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0C4F83WTX" }
+    },
+    {
+      "productId": "ecoflow-delta-2-max",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-2-max-portable-power-station"
+      }
+    },
+    {
+      "productId": "ecoflow-delta-3-max",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-delta-3-max",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-3-max-series-portable-power-station",
+        "variantId": "51820094718228"
+      }
+    },
+    {
+      "productId": "bluetti-elite-200-v2",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "bluetti-elite-200-v2",
+      "retailer": "bluetti",
+      "source": {
+        "type": "shopify",
+        "base": "https://www.bluettipower.eu/products",
+        "slug": "elite-200-v2-portable-power-station"
+      }
+    },
+    {
+      "productId": "ecoflow-delta-2",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-delta-2",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0CKN74TLD" }
+    },
+    {
+      "productId": "ecoflow-delta-2",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-2-portable-power-station"
+      }
+    },
+    {
+      "productId": "ecoflow-delta-3-plus",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-delta-3-plus",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0DFPW2Y2C" }
+    },
+    {
+      "productId": "ecoflow-delta-3-plus",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-3-series-portable-power-station",
+        "variantId": "51194415317268"
+      }
+    },
+    {
+      "productId": "ecoflow-delta-3-classic",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0GMCHYHQR" }
+    },
+    {
+      "productId": "ecoflow-delta-3-classic",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-3-classic-portable-power-station"
+      }
+    },
+    {
+      "productId": "ecoflow-delta-3",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0DFPTTXYY" }
+    },
+    {
+      "productId": "ecoflow-delta-3",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "delta-3-series-portable-power-station",
+        "variantId": "51194415120660"
+      }
+    },
+    {
+      "productId": "anker-solix-c1000",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "anker-solix-c1000",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0CGQZ7XSB" }
+    },
+    {
+      "productId": "jackery-explorer-1000-v2",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "jackery-explorer-1000-v2",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0DB1T34X5" }
+    },
+    {
+      "productId": "anker-solix-c800x",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "ecoflow-river-2-pro",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0BFQD5RMJ" }
+    },
+    {
+      "productId": "ecoflow-river-2-pro",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "river-2-pro-portable-power-station"
+      }
+    },
+    {
+      "productId": "ecoflow-river-3-plus",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0FLWBXSKK" }
+    },
+    {
+      "productId": "ecoflow-river-3-plus",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "river-3-plus-portable-power-station",
+        "variantId": "51194421510420"
+      }
+    },
+    {
+      "productId": "anker-solix-c300",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "anker-solix-c300",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0D62GMQ3F" }
+    }
+  ]
+}

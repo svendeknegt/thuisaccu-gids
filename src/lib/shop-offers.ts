@@ -1,11 +1,12 @@
 import { getRetailerLabel, isAffiliateConfigured, type Retailer } from "@/lib/affiliate";
+import { isOfferUnavailable, resolveLivePrice } from "@/lib/live-catalog";
 import type { AmazonOffer, Product, ShopOffer } from "@/types/product";
 
-function amazonToShopOffer(offer: AmazonOffer): ShopOffer {
+function amazonToShopOffer(productId: string, offer: AmazonOffer): ShopOffer {
   return {
     retailer: "amazon",
     shopUrl: offer.shopUrl,
-    price: offer.price,
+    price: resolveLivePrice(productId, "amazon", offer.price),
     variantNote: offer.variantNote,
     excludeFromPriceCompare: offer.excludeFromPriceCompare,
   };
@@ -13,6 +14,14 @@ function amazonToShopOffer(offer: AmazonOffer): ShopOffer {
 
 function isComparableOffer(offer: ShopOffer): boolean {
   return !offer.excludeFromPriceCompare;
+}
+
+function applyLiveOffer(productId: string, offer: ShopOffer): ShopOffer | null {
+  if (isOfferUnavailable(productId, offer.retailer)) return null;
+  return {
+    ...offer,
+    price: resolveLivePrice(productId, offer.retailer, offer.price),
+  };
 }
 
 /** Alle koopopties voor een product, gesorteerd op laagste prijs eerst. */
@@ -26,7 +35,7 @@ export function getProductShopOffers(product: Product): ShopOffer[] {
   ];
 
   if (product.amazonOffer && product.retailer !== "amazon") {
-    offers.push(amazonToShopOffer(product.amazonOffer));
+    offers.push(amazonToShopOffer(product.id, product.amazonOffer));
   }
 
   for (const extra of product.extraOffers ?? []) {
@@ -34,7 +43,10 @@ export function getProductShopOffers(product: Product): ShopOffer[] {
     offers.push(extra);
   }
 
-  return offers.sort((a, b) => a.price - b.price);
+  return offers
+    .map((o) => applyLiveOffer(product.id, o))
+    .filter((o): o is ShopOffer => o !== null)
+    .sort((a, b) => a.price - b.price);
 }
 
 /** Alleen vergelijkbare offers (zelfde model) voor vanaf-prijs. */

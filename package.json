@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update:shop-data": "node scripts/update-shop-data.mjs"
+    "update:shop-data": "node scripts/update-shop-data.mjs",
+    "sync:catalog": "node scripts/sync-catalog.mjs",
+    "sync:catalog:dry": "node scripts/sync-catalog.mjs --dry-run"
   },
   "dependencies": {
     "next": "^15.1.0",

@@ -1,0 +1,38 @@
+name: Sync catalog prices
+
+on:
+  schedule:
+    # Dagelijks 06:00 UTC (07:00/08:00 NL afhankelijk van zomertijd)
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync prijzen van platformen
+        run: node scripts/sync-catalog.mjs
+
+      - name: Commit bij wijzigingen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet data/live-catalog.json data/sync-report.md; then
+            echo "Geen prijswijzigingen."
+            exit 0
+          fi
+          git add data/live-catalog.json data/sync-report.md
+          git commit -m "chore: automatische prijssync $(date -u +%Y-%m-%d)"
+          git push
