@@ -1,5 +1,6 @@
 import { buildAffiliateUrl } from "@/lib/affiliate";
 import { AMAZON_URLS } from "@/lib/amazon-urls";
+import { BLUETTI_URLS } from "@/lib/bluetti-urls";
 import { BOL_URLS } from "@/lib/bol-urls";
 import { getLowestOffer } from "@/lib/shop-offers";
 import type { Product, ProductFilters, ShopOffer } from "@/types/product";
@@ -140,6 +141,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De Elite 300 combineert hoge capaciteit met een redelijk formaat. Vergelijk op Bol.com de exacte specificaties met EcoFlow DELTA Pro als alternatief in dezelfde prijsklasse.",
+    extraOffers: [
+      {
+        retailer: "bluetti",
+        shopUrl: BLUETTI_URLS.elite300.url,
+        price: BLUETTI_URLS.elite300.price,
+        variantNote: "Bluetti EU-webshop (bluettipower.eu)",
+      },
+    ],
   },
   {
     id: "jackery-explorer-2000-plus",
@@ -292,6 +301,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De Elite 200 V2 concurreert met EcoFlow DELTA 2 Max op capaciteit. Let op gewicht en of je zonnepaneel-aansluiting nodig hebt — check specificaties op Bol.com.",
+    extraOffers: [
+      {
+        retailer: "bluetti",
+        shopUrl: BLUETTI_URLS.elite200V2.url,
+        price: BLUETTI_URLS.elite200V2.price,
+        variantNote: "Bluetti EU-webshop (bluettipower.eu)",
+      },
+    ],
   },
   {
     id: "ecoflow-delta-2",

@@ -30,6 +30,17 @@ const partners = [
     links: [{ href: "/winkels", label: "Welke modellen op Amazon" }],
   },
   {
+    name: "Bluetti EU",
+    status: "Awin — in behandeling (95479)",
+    text: "Twee Bluetti-modellen op onze site met Bol én Bluetti EU-webshop. Na Awin-goedkeuring: commissie tot ~10% via bluettipower.eu.",
+    links: [
+      { href: "/product/bluetti-elite-300", label: "Bluetti Elite 300" },
+      { href: "/product/bluetti-elite-200-v2", label: "Bluetti Elite 200 V2" },
+    ],
+    external: "https://ui.awin.com/merchant-profile/95479",
+    externalLabel: "Awin Bluetti EU",
+  },
+  {
     name: "Coolblue",
     status: "Geen webshop-affiliate voor onze modellen",
     text: "Coolblue's affiliate-programma dekt geen plug-and-play powerstations in ons assortiment. Voor vaste thuisbatterijen verwijzen wij naar informatie van Coolblue Energie (installateur-route), zonder commissie.",

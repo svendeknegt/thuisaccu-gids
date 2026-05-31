@@ -30,6 +30,14 @@ export const retailerInfo: RetailerInfo[] = [
     signupUrl: "https://affiliate-program.amazon.nl",
   },
   {
+    id: "bluetti",
+    label: "Bluetti EU",
+    role: "Directe webshop — Elite 200 V2 & Elite 300 via Awin",
+    affiliateStatus: "pending",
+    note: "Awin-programma 95479 — aanvraag in behandeling. Na goedkeuring: tot ~10% commissie via bluettipower.eu.",
+    signupUrl: "https://ui.awin.com/merchant-profile/95479",
+  },
+  {
     id: "coolblue",
     label: "Coolblue",
     role: "Vaste thuisbatterij via Coolblue Energie (installatie)",
