@@ -45,7 +45,7 @@ export const partnerPrograms: PartnerProgramInfo[] = [
     signupUrl: "https://ui.awin.com/merchant-profile/95479",
     envKey: "NEXT_PUBLIC_BLUETTI_AFFILIATE_URL",
     configured: isAffiliateConfigured("bluetti"),
-    note: "Bluetti EU (Awin 95479) — deeplink-template uit Link Builder na goedkeuring.",
+    note: "Bluetti EU (Awin 95479) — deeplink actief via Awin.",
   },
   {
     retailer: "coolblue",

@@ -416,6 +416,12 @@ export const products: Product[] = [
         price: ECOFLOW_URLS.delta3Plus.price,
         variantNote: "EcoFlow NL-webshop (nl.ecoflow.com)",
       },
+      {
+        retailer: "bol",
+        shopUrl: BOL_URLS.ecoflowDelta3Plus.url,
+        price: BOL_URLS.ecoflowDelta3Plus.price,
+        variantNote: "Bol.com",
+      },
     ],
   },
   {
@@ -695,6 +701,12 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De RIVER 3 Plus start bij €299 bij EcoFlow NL. Ideaal als instap of tweede accu, niet als enige thuisbuffer bij saldering.",
+    amazonOffer: {
+      shopUrl: AMAZON_URLS.ecoflowRiver3Plus.url,
+      price: AMAZON_URLS.ecoflowRiver3Plus.price,
+      image: AMAZON_URLS.ecoflowRiver3Plus.image,
+      asin: AMAZON_URLS.ecoflowRiver3Plus.asin,
+    },
   },
   {
     id: "anker-solix-c300",
@@ -729,6 +741,14 @@ export const products: Product[] = [
     ],
     buyingGuide:
       "De C300 (ASIN B0D62GMQ3F) is bewust mini. Gebruik het om gedrag te testen, niet als enige thuisaccu bij saldering-afbouw.",
+    extraOffers: [
+      {
+        retailer: "bol",
+        shopUrl: BOL_URLS.ankerSolixC300.url,
+        price: BOL_URLS.ankerSolixC300.price,
+        variantNote: "Bol: Anker SOLIX C300X DC (zelfde 288 Wh)",
+      },
+    ],
   },
 ];
 

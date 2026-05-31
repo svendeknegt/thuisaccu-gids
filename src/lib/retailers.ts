@@ -41,8 +41,8 @@ export const retailerInfo: RetailerInfo[] = [
     id: "bluetti",
     label: "Bluetti EU",
     role: "Directe webshop — Elite 200 V2 & Elite 300 via Awin",
-    affiliateStatus: "pending",
-    note: "Awin-programma 95479 — aanvraag in behandeling. Na goedkeuring: tot ~10% commissie via bluettipower.eu.",
+    affiliateStatus: "active",
+    note: "Awin-programma 95479 — deeplink actief via Awin. Tot ~10% commissie via bluettipower.eu.",
     signupUrl: "https://ui.awin.com/merchant-profile/95479",
   },
   {

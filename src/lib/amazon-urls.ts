@@ -1,7 +1,7 @@
 /**
  * Directe Amazon.nl-productpagina's (ASIN).
  * Prijzen handmatig bijgewerkt — controleer periodiek op Amazon.
- * Laatst gecontroleerd: 27 mei 2026 (priceAmount op productpagina).
+ * Laatst gecontroleerd: 31 mei 2026 (priceAmount op productpagina).
  */
 export const AMAZON_URLS = {
   ecoflowDelta2Max: {
@@ -105,7 +105,7 @@ export const AMAZON_URLS = {
   jackeryExplorer1000V2: {
     asin: "B0DB1T34X5",
     url: "https://www.amazon.nl/dp/B0DB1T34X5",
-    image: "https://m.media-amazon.com/images/I/71YxZqJqHQL._AC_SX679_.jpg",
+    image: "https://m.media-amazon.com/images/I/61uB1kQXCML._AC_SL1500_.jpg",
     price: 559,
     rating: 4.6,
     reviewCount: 293,
@@ -113,6 +113,18 @@ export const AMAZON_URLS = {
     powerW: 1500,
     weight: "10,8 kg",
     name: "Jackery Explorer 1000 V2",
+  },
+  ecoflowRiver3Plus: {
+    asin: "B0FLWBXSKK",
+    url: "https://www.amazon.nl/dp/B0FLWBXSKK",
+    image: "https://m.media-amazon.com/images/I/51GP8+vE8pL._AC_SL1000_.jpg",
+    price: 299,
+    rating: 4.5,
+    reviewCount: 12,
+    capacityKwh: 0.286,
+    powerW: 600,
+    weight: "4,7 kg",
+    name: "EcoFlow RIVER 3 Plus",
   },
   jackeryExplorer2000V2: {
     asin: "B0DSK8DN8N",

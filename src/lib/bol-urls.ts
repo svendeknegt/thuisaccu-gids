@@ -1,4 +1,4 @@
-/** Directe Bol-productpagina's, afbeeldingen en prijzen (media.s-bol.com). Laatst gecontroleerd: 27 mei 2026. */
+/** Directe Bol-productpagina's, afbeeldingen en prijzen (media.s-bol.com). Laatst gecontroleerd: 31 mei 2026. */
 export const BOL_URLS = {
   ecoflowDeltaPro: {
     url: "https://www.bol.com/nl/nl/p/ecoflow-delta-pro-power-station-home-solar-back-up-generator/9300000080532823/",
@@ -20,6 +20,11 @@ export const BOL_URLS = {
     image: "https://media.s-bol.com/G0vjkrjrjQqr/76x13BO/868x1200.jpg",
     price: 1249,
   },
+  ecoflowDelta3Plus: {
+    url: "https://www.bol.com/nl/nl/p/ecoflow-delta-3-plus-power-station/9300000192701864/",
+    image: "https://media.s-bol.com/G0vjkrjrjQqr/76x13BO/868x1200.jpg",
+    price: 789,
+  },
   ecoflowDeltaPro3: {
     url: "https://www.bol.com/nl/nl/p/ecoflow-delta-pro-3-power-station/9300000189105943/",
     image: "https://media.s-bol.com/BGqRwKXW83MY/DkW3GwY/991x1200.jpg",
@@ -39,6 +44,11 @@ export const BOL_URLS = {
     url: "https://www.bol.com/nl/nl/p/anker-solix-c800x-768wh/9300000179190073/",
     image: "https://media.s-bol.com/gjm88ArNynN9/zmK75wY/1000x1200.jpg",
     price: 498,
+  },
+  ankerSolixC300: {
+    url: "https://www.bol.com/nl/nl/p/anker-solix-c300x-dc-288wh/9300000197061154/",
+    image: "https://media.s-bol.com/gjm8QMo3nx16/r0Rm5BL/550x750.jpg",
+    price: 249,
   },
   jackeryExplorer1000V2: {
     url: "https://www.bol.com/nl/nl/p/jackery-explorer-1000-v2-portable-powerstation-1070-wh-1-500w/9300000222663672/",

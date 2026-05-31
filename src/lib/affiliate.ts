@@ -29,7 +29,8 @@ export const affiliateConfig = {
   conradTrackingTemplate:
     process.env.NEXT_PUBLIC_CONRAD_AFFILIATE_URL?.trim() || "",
   bluettiTrackingTemplate:
-    process.env.NEXT_PUBLIC_BLUETTI_AFFILIATE_URL?.trim() || "",
+    process.env.NEXT_PUBLIC_BLUETTI_AFFILIATE_URL?.trim() ||
+    "https://www.awin1.com/cread.php?awinmid=95479&awinaffid=2906375&ued={url}",
   ecoflowTrackingTemplate:
     process.env.NEXT_PUBLIC_ECOFLOW_AFFILIATE_URL?.trim() ||
     "https://www.awin1.com/cread.php?awinmid=123332&awinaffid=2906375&ued={url}",
