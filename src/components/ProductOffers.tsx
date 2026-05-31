@@ -6,12 +6,10 @@ import type { Product } from "@/types/product";
 interface ProductOffersProps {
   product: Product;
   className?: string;
-  /** @deprecated */
   showPrices?: boolean;
   compact?: boolean;
   inline?: boolean;
-  /** combined = prijslijst + bestel-knoppen (productpagina) */
-  variant?: "list" | "buttons" | "combined";
+  variant?: "list" | "buttons";
 }
 
 export function ProductOffers({

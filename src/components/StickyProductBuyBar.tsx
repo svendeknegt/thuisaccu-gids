@@ -1,9 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ProductShopLinks } from "@/components/ShopPriceList";
+import { AffiliateButton } from "@/components/AffiliateButton";
+import { getRetailerLabel } from "@/lib/affiliate";
 import { formatPrice } from "@/lib/format";
-import { getDisplayPrice } from "@/lib/products";
+import { getShopOfferAffiliateUrl, getDisplayPrice } from "@/lib/products";
+import { getCheapestOffer } from "@/lib/shop-offers";
 import type { Product } from "@/types/product";
 
 interface StickyProductBuyBarProps {
@@ -28,16 +31,31 @@ export function StickyProductBuyBar({ product }: StickyProductBuyBarProps) {
 
   if (!visible) return null;
 
-  const displayPrice = getDisplayPrice(product);
+  const cheapest = getCheapestOffer(product);
+  const label = getRetailerLabel(cheapest.retailer);
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-surface-border bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:px-6">
-      <div className="container-page flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <div className="min-w-0 shrink-0">
+      <div className="container-page flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-ink">{product.name}</p>
-          <p className="text-xs text-ink-muted">Vanaf {formatPrice(displayPrice)}</p>
+          <p className="text-xs text-ink-muted">Vanaf {formatPrice(getDisplayPrice(product))}</p>
         </div>
-        <ProductShopLinks product={product} size="xs" inline className="sm:justify-end" />
+        <div className="flex shrink-0 items-center gap-2">
+          <AffiliateButton
+            href={getShopOfferAffiliateUrl(product.id, cheapest)}
+            retailer={`${label} ✓`}
+            price={cheapest.price}
+            fullWidth={false}
+            className="!w-auto text-sm !py-2"
+          />
+          <Link
+            href="#product-buy-trigger"
+            className="hidden text-xs font-medium text-brand hover:underline sm:inline"
+          >
+            Alle winkels
+          </Link>
+        </div>
       </div>
     </div>
   );

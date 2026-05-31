@@ -120,8 +120,13 @@ export default async function ProductPage({ params }: PageProps) {
             <p className="text-sm text-ink-muted">
               {formatPricePerKwh(displayPrice, product.capacity)} per kWh capaciteit
             </p>
-            <div id="product-buy-trigger" className="mt-4">
-              <ProductShopLinks product={product} variant="combined" size="sm" maxItems={6} />
+            <div id="product-buy-trigger" className="mt-6">
+              {offers.length > 1 && (
+                <p className="mb-2 text-xs font-medium text-ink-muted">
+                  {offers.length} winkels · goedkoopste gemarkeerd met ✓
+                </p>
+              )}
+              <ProductShopLinks product={product} variant="buttons" size="sm" maxItems={6} />
             </div>
             {product.shopLinkHint && (
               <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
@@ -223,16 +228,6 @@ export default async function ProductPage({ params }: PageProps) {
             </ul>
           </section>
         )}
-
-        <section className="mt-12 rounded-xl border border-brand/20 bg-brand-light/30 p-6">
-          <h2 className="text-lg font-semibold text-ink">Klaar om te bestellen?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Vergelijk {offers.length > 1 ? `${offers.length} winkels` : "de winkel"} —
-            prijzen zijn indicatief, controleer altijd bij de verkoper.
-          </p>
-          <ProductShopLinks product={product} className="mt-4" variant="buttons" size="sm" />
-          <AffiliateDisclosure className="mt-4" compact />
-        </section>
       </div>
       <StickyProductBuyBar product={product} />
     </div>
