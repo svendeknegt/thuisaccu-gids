@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: PageProps) {
               {formatPricePerKwh(displayPrice, product.capacity)} per kWh capaciteit
             </p>
             <div id="product-buy-trigger" className="mt-4">
-              <ProductShopLinks product={product} size="sm" maxItems={6} />
+              <ProductShopLinks product={product} variant="combined" size="sm" maxItems={6} />
             </div>
             {product.shopLinkHint && (
               <p className="mt-2 text-xs text-ink-muted">{product.shopLinkHint}</p>
@@ -230,7 +230,7 @@ export default async function ProductPage({ params }: PageProps) {
             Vergelijk {offers.length > 1 ? `${offers.length} winkels` : "de winkel"} —
             prijzen zijn indicatief, controleer altijd bij de verkoper.
           </p>
-          <ProductShopLinks product={product} className="mt-4" size="sm" />
+          <ProductShopLinks product={product} className="mt-4" variant="buttons" size="sm" />
           <AffiliateDisclosure className="mt-4" compact />
         </section>
       </div>

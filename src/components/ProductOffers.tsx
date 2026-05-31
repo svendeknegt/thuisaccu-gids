@@ -6,18 +6,20 @@ import type { Product } from "@/types/product";
 interface ProductOffersProps {
   product: Product;
   className?: string;
-  /** @deprecated Prijzen staan altijd in de linklijst */
+  /** @deprecated */
   showPrices?: boolean;
   compact?: boolean;
   inline?: boolean;
+  /** combined = prijslijst + bestel-knoppen (productpagina) */
+  variant?: "list" | "buttons" | "combined";
 }
 
-/** Winkellinks voor product — delegeert naar ProductShopLinks. */
 export function ProductOffers({
   product,
   className = "",
   compact = false,
   inline = false,
+  variant = "list",
 }: ProductOffersProps) {
   return (
     <ProductShopLinks
@@ -25,6 +27,7 @@ export function ProductOffers({
       className={className}
       size={compact ? "xs" : "sm"}
       inline={inline}
+      variant={variant}
     />
   );
 }

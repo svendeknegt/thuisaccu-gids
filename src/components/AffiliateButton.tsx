@@ -6,6 +6,8 @@ interface AffiliateButtonProps {
   label?: string;
   retailer?: string;
   className?: string;
+  variant?: "primary" | "secondary";
+  fullWidth?: boolean;
 }
 
 export function AffiliateButton({
@@ -14,17 +16,22 @@ export function AffiliateButton({
   label,
   retailer,
   className = "",
+  variant = "primary",
+  fullWidth = true,
 }: AffiliateButtonProps) {
   const text =
     label ??
     (retailer ? `Bestel bij ${retailer}` : "Bestel bij winkel");
+
+  const variantClass =
+    variant === "secondary" ? "btn-secondary" : "btn-primary";
 
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer sponsored"
-      className={`btn-primary w-full sm:w-auto ${className}`}
+      className={`${variantClass} ${fullWidth ? "w-full" : "sm:w-auto"} ${className}`}
     >
       {text}
       {price != null && (
