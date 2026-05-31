@@ -17,7 +17,11 @@ interface ProductShopLinksProps {
   inline?: boolean;
 }
 
-/** Uniforme winkellinks — goedkoopste licht gemarkeerd met ✓, geen grote knoppen. */
+function externalLabel(retailer: string): string {
+  return `Bekijk bij ${retailer} (opent in nieuw tabblad)`;
+}
+
+/** Uniforme winkellinks — hele rij klikbaar, ↗ als externe link. */
 export function ProductShopLinks({
   product,
   className = "",
@@ -39,6 +43,7 @@ export function ProductShopLinks({
       >
         {offers.map((offer, index) => {
           const isCheapest = multi && offer.retailer === cheapest.retailer;
+          const label = getRetailerLabel(offer.retailer);
           return (
             <span key={offer.retailer} className="inline-flex items-center gap-2">
               {index > 0 && (
@@ -50,15 +55,22 @@ export function ProductShopLinks({
                 href={getShopOfferAffiliateUrl(product.id, offer)}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className={`whitespace-nowrap hover:underline ${
+                title={externalLabel(label)}
+                className={`group inline-flex items-center gap-1 whitespace-nowrap underline decoration-brand/30 underline-offset-2 transition hover:decoration-brand ${
                   isCheapest
                     ? "font-medium text-brand"
                     : "text-ink-secondary hover:text-brand"
                 }`}
               >
-                {getRetailerLabel(offer.retailer)}
+                {label}
                 {isCheapest && " ✓"}
-                <span className="ml-1 tabular-nums">{formatPrice(offer.price)}</span>
+                <span className="tabular-nums">{formatPrice(offer.price)}</span>
+                <span
+                  className="text-[10px] opacity-60 transition group-hover:opacity-100"
+                  aria-hidden
+                >
+                  ↗
+                </span>
               </a>
             </span>
           );
@@ -68,36 +80,49 @@ export function ProductShopLinks({
   }
 
   return (
-    <ul className={`space-y-0.5 ${textSize} ${className}`}>
+    <ul className={`space-y-1 ${textSize} ${className}`} role="list">
       {offers.map((offer) => {
         const isCheapest = multi && offer.retailer === cheapest.retailer;
+        const label = getRetailerLabel(offer.retailer);
         return (
-          <li
-            key={offer.retailer}
-            className={
-              isCheapest
-                ? "flex items-center justify-between gap-2 rounded-md border border-surface-border bg-surface-muted/50 px-2 py-1.5"
-                : "flex items-center justify-between gap-2 px-2 py-1"
-            }
-          >
+          <li key={offer.retailer}>
             <a
               href={getShopOfferAffiliateUrl(product.id, offer)}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className={`min-w-0 truncate hover:text-brand hover:underline ${
-                isCheapest ? "font-medium text-brand" : "text-ink-secondary"
+              title={externalLabel(label)}
+              className={`group flex items-center justify-between gap-2 rounded-md px-2 py-1.5 transition ${
+                isCheapest
+                  ? "border border-surface-border bg-surface-muted/50 hover:border-brand/30 hover:bg-surface-muted"
+                  : "border border-transparent hover:border-surface-border hover:bg-surface-muted/40"
               }`}
             >
-              {getRetailerLabel(offer.retailer)}
-              {isCheapest && " ✓"}
+              <span
+                className={`min-w-0 truncate underline decoration-brand/25 underline-offset-2 transition group-hover:decoration-brand ${
+                  isCheapest ? "font-medium text-brand" : "text-ink-secondary group-hover:text-brand"
+                }`}
+              >
+                {label}
+                {isCheapest && " ✓"}
+              </span>
+              <span className="flex shrink-0 items-center gap-1.5 tabular-nums">
+                <span
+                  className={isCheapest ? "font-semibold text-ink" : "text-ink-muted"}
+                >
+                  {formatPrice(offer.price)}
+                </span>
+                <span
+                  className={`text-[10px] leading-none transition ${
+                    isCheapest
+                      ? "text-brand opacity-70 group-hover:opacity-100"
+                      : "text-ink-muted opacity-50 group-hover:text-brand group-hover:opacity-100"
+                  }`}
+                  aria-hidden
+                >
+                  ↗
+                </span>
+              </span>
             </a>
-            <span
-              className={`shrink-0 tabular-nums ${
-                isCheapest ? "font-semibold text-ink" : "text-ink-muted"
-              }`}
-            >
-              {formatPrice(offer.price)}
-            </span>
           </li>
         );
       })}
