@@ -17,6 +17,7 @@ const SHOPIFY_STORES = [
       ["delta3Plus", "delta-3-series-portable-power-station", "51194415317268"],
       ["delta3Max", "delta-3-max-series-portable-power-station", "51820094718228"],
       ["river2Pro", "river-2-pro-portable-power-station"],
+      ["river2Max", "river-2-max-portable-power-station"],
       ["river3Plus", "river-3-plus-portable-power-station", "51194421510420"],
       ["deltaPro3", "delta-pro-3-portable-power-station"],
     ],
