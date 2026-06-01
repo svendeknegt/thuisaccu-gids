@@ -18,6 +18,9 @@ const productArticleMap: Record<string, string[]> = {
   "bluetti-elite-300": ["salderen", "kwh-berekenen", "bestekoop"],
   "jackery-explorer-1000-v2": ["thuisaccu-kopen", "kwh-berekenen"],
   "jackery-explorer-2000-plus": ["bestekoop", "kwh-berekenen", "thuisaccu-kopen"],
+  "ecoflow-river-2-max": ["thuisaccu-kopen", "kwh-berekenen"],
+  "jackery-explorer-500-v2": ["thuisaccu-kopen", "kwh-berekenen"],
+  "anker-solix-f1500": ["thuisaccu-kopen", "kwh-berekenen", "bestekoop"],
 };
 
 export function getRelatedArticleSlugs(productId: string): string[] {

@@ -224,6 +224,40 @@
       "productId": "anker-solix-c300",
       "retailer": "amazon",
       "source": { "type": "amazon", "asin": "B0D62GMQ3F" }
+    },
+    {
+      "productId": "ecoflow-river-2-max",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0BFQB86ZL" }
+    },
+    {
+      "productId": "ecoflow-river-2-max",
+      "retailer": "ecoflow",
+      "source": {
+        "type": "shopify",
+        "base": "https://nl.ecoflow.com/products",
+        "slug": "river-2-max-portable-power-station"
+      }
+    },
+    {
+      "productId": "jackery-explorer-500-v2",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "jackery-explorer-500-v2",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0FL2J6Y8M" }
+    },
+    {
+      "productId": "anker-solix-f1500",
+      "retailer": "bol",
+      "source": { "type": "manual" }
+    },
+    {
+      "productId": "anker-solix-f1500",
+      "retailer": "amazon",
+      "source": { "type": "amazon", "asin": "B0DLLBRMBP" }
     }
   ]
 }

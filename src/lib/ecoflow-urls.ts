@@ -45,6 +45,13 @@ export const ECOFLOW_URLS = {
     image:
       "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/products_ecoflow-river-2-pro-portable-power-station-42466006433956.png?v=1755573108&width=800",
   },
+  river2Max: {
+    url: "https://nl.ecoflow.com/products/river-2-max-portable-power-station",
+    price: 349,
+    name: "EcoFlow RIVER 2 Max",
+    image:
+      "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/products_ecoflow-river-2-max-portable-power-station-42462847041700.png?v=1755573108&width=800",
+  },
   delta3Classic: {
     url: "https://nl.ecoflow.com/products/delta-3-classic-portable-power-station",
     price: 599,

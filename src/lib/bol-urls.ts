@@ -70,4 +70,14 @@ export const BOL_URLS = {
     image: "https://media.s-bol.com/359jvBW2NZKO/qYVoYxy/1200x1022.jpg",
     price: 1499,
   },
+  jackeryExplorer500V2: {
+    url: "https://www.bol.com/nl/nl/p/jackery-explorer-500-v2-portable-powerstation/9300000258254239/",
+    image: "https://m.media-amazon.com/images/I/61-agGvyrDL._AC_SL1500_.jpg",
+    price: 329,
+  },
+  ankerSolixF1500: {
+    url: "https://www.bol.com/nl/nl/p/anker-solix-f1500-1536wh/9300000181380728/",
+    image: "https://m.media-amazon.com/images/I/81UhegqDlDL._AC_SL1500_.jpg",
+    price: 1049,
+  },
 } as const;
