@@ -21,11 +21,12 @@ export function organizationJsonLd() {
 }
 
 export function websiteJsonLd() {
+  const homeUrl = `${site.url}/`;
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: site.name,
-    url: site.url,
+    url: homeUrl,
     description: site.description,
     potentialAction: {
       "@type": "SearchAction",

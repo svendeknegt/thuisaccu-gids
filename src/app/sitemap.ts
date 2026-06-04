@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    "",
+    "/",
     "/vergelijken",
     "/kennisbank",
     "/faq",
