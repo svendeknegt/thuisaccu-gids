@@ -9,10 +9,16 @@ import { formatPrice } from "@/lib/format";
 import { site } from "@/lib/site";
 
 export const metadata = {
-  title: "Thuisaccu vergelijken",
+  title: "Thuisaccu & thuisbatterij vergelijken (2026)",
   description:
-    "Vergelijk thuisaccu's en thuisbatterijen onafhankelijk. Keuzehulp, specificaties en links naar Bol.com en Amazon.nl.",
+    "Vergelijk plug-and-play thuisaccu's (EcoFlow, Anker, Jackery, Bluetti). Prijzen Bol & Amazon, keuzehulp en kWh-berekenen — onafhankelijk, zonder verkooppraat.",
   alternates: { canonical: site.url },
+  openGraph: {
+    title: "Thuisaccu vergelijken — onafhankelijk",
+    description:
+      "Keuzehulp, vergelijker en koopgidsen. EcoFlow, Jackery, Anker — prijzen bij Bol.com en Amazon.nl.",
+    url: site.url,
+  },
 };
 
 export default function HomePage() {
@@ -108,7 +114,7 @@ export default function HomePage() {
                     href="/kennisbank/plug-and-play-vs-installateur"
                     className="text-brand hover:underline"
                   >
-                    Lees het verschil
+                    Coolblue thuisbatterij vs plug-and-play
                   </Link>
                 </li>
               </ul>

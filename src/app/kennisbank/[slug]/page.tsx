@@ -4,9 +4,11 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { ArticleBody } from "@/components/ArticleBody";
 import { JsonLd } from "@/components/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
+import { ArticleLeadCta } from "@/components/ArticleLeadCta";
 import { articleBodies } from "@/lib/article-content";
 import { articles, getArticleBySlug } from "@/lib/articles";
-import { articleJsonLd } from "@/lib/structured-data";
+import { buildArticleMetadata } from "@/lib/seo";
+import { articleBreadcrumbJsonLd, articleJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 
 interface PageProps {
@@ -19,18 +21,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
-  if (!article) return { title: "Niet gevonden" };
-  return {
-    title: article.title,
-    description: article.excerpt,
-    alternates: { canonical: `${site.url}/kennisbank/${slug}` },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      url: `${site.url}/kennisbank/${slug}`,
-    },
-  };
+  return buildArticleMetadata(slug) ?? { title: "Niet gevonden" };
 }
 
 export default async function ArticlePage({ params }: PageProps) {
@@ -41,10 +32,12 @@ export default async function ArticlePage({ params }: PageProps) {
   if (!article || !body) notFound();
 
   const jsonLd = articleJsonLd(slug);
+  const breadcrumbLd = articleBreadcrumbJsonLd(slug);
 
   return (
     <div className="py-10 sm:py-14">
       {jsonLd && <JsonLd data={jsonLd} />}
+      {breadcrumbLd && <JsonLd data={breadcrumbLd} />}
       <article className="container-page max-w-3xl">
         <Link
           href="/kennisbank"
@@ -70,6 +63,8 @@ export default async function ArticlePage({ params }: PageProps) {
             year: "numeric",
           })}
         </p>
+
+        <ArticleLeadCta slug={slug} />
 
         <div className="mt-6 rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
           <p className="font-medium text-ink">Twijfel over capaciteit?</p>

@@ -5,10 +5,16 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { site } from "@/lib/site";
 
 export const metadata = {
-  title: "Thuisaccu's vergelijken",
+  title: "Thuisaccu vergelijken — prijzen & specificaties",
   description:
-    "Filter op merk en capaciteit, selecteer maximaal drie modellen en vergelijk specificaties naast elkaar.",
+    "Vergelijk tot 3 thuisaccu's naast elkaar. Filter op merk en kWh, zie laagste prijs bij Bol, Amazon of fabriekswinkel. EcoFlow, Anker, Jackery, Bluetti.",
   alternates: { canonical: `${site.url}/vergelijken` },
+  openGraph: {
+    title: "Thuisaccu's vergelijken",
+    description:
+      "Onafhankelijke vergelijker met prijzen per winkel en specificaties.",
+    url: `${site.url}/vergelijken`,
+  },
 };
 
 export default function VergelijkenPage() {

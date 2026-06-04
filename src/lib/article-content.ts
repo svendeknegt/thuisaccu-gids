@@ -724,7 +724,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   "plug-and-play-vs-installateur": [
     {
       type: "p",
-      text: "Niet elke thuisaccu koop je als powerstation op Bol.com of Amazon.nl. Sommige huishoudens hebben een vaste thuisbatterij achter de meterkast nodig — vaak via een installateur en energieleverancier. In dit artikel leg je het verschil uit, zodat je de juiste route kiest vóór je bestelt.",
+      text: "Zoek je naar een Coolblue thuisbatterij of een plug-and-play thuisaccu? Niet elke thuisaccu koop je als powerstation op Bol.com of Amazon.nl. Sommige huishoudens hebben een vaste thuisbatterij achter de meterkast nodig — vaak via een installateur en energieleverancier. In dit artikel leg je het verschil uit, zodat je de juiste route kiest vóór je bestelt.",
     },
     {
       type: "h2",

@@ -2,9 +2,9 @@ import { KennisbankClient } from "@/components/KennisbankClient";
 import { site } from "@/lib/site";
 
 export const metadata = {
-  title: "Kennisbank thuisaccu",
+  title: "Thuisaccu kennisbank — kWh, terugverdientijd & kopen",
   description:
-    "Gidsen over thuisaccu kopen, kWh berekenen, salderen, dynamische tarieven en de beste koop.",
+    "Artikelen over thuisaccu kopen, kilowattuur berekenen, terugverdientijd, salderen en Coolblue vs plug-and-play. Gratis keuzehulp.",
   alternates: { canonical: `${site.url}/kennisbank` },
 };
 

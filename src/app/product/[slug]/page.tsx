@@ -12,6 +12,7 @@ import { getArticleBySlug } from "@/lib/articles";
 import { getRelatedArticleSlugs } from "@/lib/product-articles";
 import { getDisplayPrice, getProductById, products } from "@/lib/products";
 import { getProductShopOffers } from "@/lib/shop-offers";
+import { buildProductMetadata } from "@/lib/seo";
 import { productJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 
@@ -25,18 +26,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const product = getProductById(slug);
-  if (!product) return { title: "Niet gevonden" };
-  return {
-    title: product.name,
-    description: product.description,
-    alternates: { canonical: `${site.url}/product/${slug}` },
-    openGraph: {
-      title: product.name,
-      description: product.description,
-      url: `${site.url}/product/${slug}`,
-    },
-  };
+  return buildProductMetadata(slug) ?? { title: "Niet gevonden" };
 }
 
 export default async function ProductPage({ params }: PageProps) {

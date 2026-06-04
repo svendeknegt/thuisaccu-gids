@@ -1,4 +1,8 @@
 import { articles } from "@/lib/articles";
+import {
+  getArticleSeoDescription,
+  getArticleSeoTitle,
+} from "@/lib/seo";
 import { faqs } from "@/lib/faq";
 import { getShopOfferAffiliateUrl } from "@/lib/products";
 import { getProductShopOffers } from "@/lib/shop-offers";
@@ -50,12 +54,15 @@ export function articleJsonLd(slug: string) {
   const article = articles.find((a) => a.slug === slug);
   if (!article) return null;
 
+  const pageUrl = `${site.url}/kennisbank/${article.slug}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
-    description: article.excerpt,
+    description: getArticleSeoDescription(article),
     datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
     author: {
       "@type": "Organization",
       name: site.name,
@@ -65,7 +72,43 @@ export function articleJsonLd(slug: string) {
       name: site.name,
       url: site.url,
     },
-    mainEntityOfPage: `${site.url}/kennisbank/${article.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+    url: pageUrl,
+  };
+}
+
+export function articleBreadcrumbJsonLd(slug: string) {
+  const article = articles.find((a) => a.slug === slug);
+  if (!article) return null;
+
+  const pageUrl = `${site.url}/kennisbank/${article.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: site.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Kennisbank",
+        item: `${site.url}/kennisbank`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: getArticleSeoTitle(article),
+        item: pageUrl,
+      },
+    ],
   };
 }
 

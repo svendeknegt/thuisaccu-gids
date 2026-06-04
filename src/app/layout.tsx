@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     "thuisbatterij",
     "thuisaccu vergelijken",
     "thuisaccu kopen",
+    "coolblue thuisbatterij",
+    "kilowattuur berekenen",
+    "terugverdientijd thuisaccu",
+    "ecoflow delta pro",
     "zonnepanelen batterij",
   ],
   openGraph: {
