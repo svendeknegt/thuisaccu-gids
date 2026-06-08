@@ -1,10 +1,10 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-06-07T09:25:48.139Z
+Gegenereerd: 2026-06-08T11:09:30.363Z
 
-- OK: 25
+- OK: 24
 - Handmatig (Bol): 16
-- Fouten: 0
+- Fouten: 1
 
 ## Actuele prijzen (auto)
 
@@ -17,13 +17,15 @@ Gegenereerd: 2026-06-07T09:25:48.139Z
 | bluetti-elite-200-v2 | bluetti | €999 | ja |
 | ecoflow-delta-2 | ecoflow | €599 | ja |
 | ecoflow-delta-3-plus | ecoflow | €849 | ja |
-| ecoflow-delta-3-classic | ecoflow | €549 | ja |
 | ecoflow-delta-3 | ecoflow | €749 | ja |
 | jackery-explorer-1000-v2 | amazon | €529 | ja |
 | ecoflow-river-2-pro | ecoflow | €459 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
-| ecoflow-river-2-max | amazon | €399 | ja |
 | ecoflow-river-2-max | ecoflow | €349 | ja |
+
+## Fouten
+
+- **ecoflow-delta-3-classic** / ecoflow: HTTP 503
 
 ## Bol.com
 
