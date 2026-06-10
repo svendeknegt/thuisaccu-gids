@@ -239,7 +239,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   bestekoop: [
     {
       type: "p",
-      text: "De 'beste' thuisaccu bestaat niet — wel de beste keuze voor jouw situatie. In deze koopgids vergelijken we EcoFlow, Bluetti en Anker op prijs per kWh, gebruiksgemak, vermogen en voor wie welk model logisch is. We verkopen zelf niets; je koopt via externe winkels zoals Bol.com of Amazon.nl.",
+      text: "Welke thuisaccu is de beste koop in 2026? De 'beste' accu bestaat niet — wel de beste keuze voor jouw situatie. In deze koopgids vergelijken we EcoFlow, Jackery, Bluetti en Anker op prijs per kWh, gebruiksgemak, vermogen en voor wie welk model logisch is. We verkopen zelf niets; je koopt via externe winkels zoals Bol.com of Amazon.nl.",
     },
     {
       type: "h2",
@@ -450,7 +450,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   "kwh-berekenen": [
     {
       type: "p",
-      text: "Hoeveel kilowattuur (kWh) capaciteit heb je nodig in een thuisaccu? Er is geen enkel magic number — het hangt af van je zonnepanelen, jaarverbruik, verbruiksmomenten en budget. Met onderstaande vuistregels en onze keuzehulp kom je in de buurt van een realistische maat.",
+      text: "Hoe bereken je kWh voor een thuisaccu? Hoeveel kilowattuur capaciteit je nodig hebt, hangt af van je zonnepanelen, jaarverbruik, verbruiksmomenten en budget — er is geen enkel magic number. Met onderstaande vuistregels (ongeveer 1–1,5 kWh per kWp) en onze keuzehulp kom je in de buurt van een realistische maat.",
     },
     {
       type: "h2",
@@ -653,7 +653,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   terugverdientijd: [
     {
       type: "p",
-      text: "Fabrikanten en winkels roepen soms korte terugverdientijden. Realistisch rekenen vraagt om je eigen verbruik, tarief, accuprijs en hoe lang je in hetzelfde huis woont. Dit artikel legt de formule uit — en waarom onze keuzehulp slechts een indicatie geeft.",
+      text: "Wat is de terugverdientijd van een thuisaccu? Fabrikanten en winkels roepen soms korte termijnen; realistisch berekenen vraagt om je eigen verbruik, tarief, accuprijs en hoe lang je in hetzelfde huis woont. Dit artikel legt de formule uit — en waarom onze keuzehulp slechts een indicatie geeft.",
     },
     {
       type: "h2",
@@ -724,7 +724,7 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
   "plug-and-play-vs-installateur": [
     {
       type: "p",
-      text: "Zoek je naar een Coolblue thuisbatterij of een plug-and-play thuisaccu? Niet elke thuisaccu koop je als powerstation op Bol.com of Amazon.nl. Sommige huishoudens hebben een vaste thuisbatterij achter de meterkast nodig — vaak via een installateur en energieleverancier. In dit artikel leg je het verschil uit, zodat je de juiste route kiest vóór je bestelt.",
+      text: "Zoek je een Coolblue thuisbatterij, Coolblue thuisaccu of plug-and-play powerstation? Niet elke thuisaccu koop je los op Bol.com of Amazon.nl. Sommige huishoudens hebben een vaste thuisbatterij achter de meterkast nodig — vaak via een installateur en energieleverancier. In dit artikel leg je het verschil uit, zodat je de juiste route kiest vóór je bestelt.",
     },
     {
       type: "h2",

@@ -50,6 +50,9 @@ export const articles: Article[] = [
     category: "advies",
     categoryLabel: "Aankoopadvies",
     title: "Welke thuisaccu is de beste koop?",
+    seoTitle: "Beste thuisaccu 2026 — EcoFlow, Jackery, Anker",
+    seoDescription:
+      "Welke thuisaccu is de beste koop? Vergelijk op prijs per kWh, vermogen en levensduur — objectief, met links naar Bol en Amazon.",
     excerpt:
       "EcoFlow, Bluetti en Anker vergeleken op prijs per kWh, levensduur en gebruiksgemak.",
     readMinutes: 10,
@@ -75,9 +78,9 @@ export const articles: Article[] = [
     category: "advies",
     categoryLabel: "Berekenen",
     title: "Kilowattuur berekenen: hoeveel kWh thuisaccu heb je nodig?",
-    seoTitle: "Kilowattuur berekenen thuisaccu (kWh)",
+    seoTitle: "kWh berekenen thuisaccu — hoeveel heb je nodig?",
     seoDescription:
-      "Bereken hoeveel kilowattuur (kWh) je thuisaccu nodig heeft. Vuistregels voor panelen en verbruik + gratis keuzehulp op Thuisaccu-Gids.",
+      "Hoe bereken je kWh voor een thuisaccu? Vuistregels per kWp en verbruik, met gratis keuzehulp en modelvergelijking.",
     excerpt:
       "Bereken je benodigde capaciteit op basis van zonnepanelen, verbruik en wat je wilt opslaan.",
     readMinutes: 9,
@@ -110,10 +113,10 @@ export const articles: Article[] = [
     slug: "terugverdientijd",
     category: "advies",
     categoryLabel: "Berekenen",
-    title: "Terugverdientijd thuisaccu: realistisch rekenen",
-    seoTitle: "Terugverdientijd thuisaccu berekenen",
+    title: "Terugverdientijd thuisaccu: realistisch berekenen",
+    seoTitle: "Terugverdientijd thuisaccu 2026 — realistisch berekenen",
     seoDescription:
-      "Hoe lang tot break-even? Formule, rekenvoorbeeld en valkuilen — realistische terugverdientijd voor een thuisaccu in 2026.",
+      "Terugverdientijd thuisaccu: hoe lang tot break-even? Formule, rekenvoorbeeld en valkuilen — zonder verkooppraat.",
     excerpt:
       "Hoe lang duurt het voordat een thuisaccu zich terugverdient? Factoren, valkuilen en een voorbeeld.",
     readMinutes: 10,
@@ -127,7 +130,7 @@ export const articles: Article[] = [
     title: "Coolblue thuisbatterij vs plug-and-play thuisaccu",
     seoTitle: "Coolblue thuisbatterij of plug-and-play?",
     seoDescription:
-      "Coolblue thuisbatterij via installateur vs powerstation (Bol/Amazon). Objectief verschil, kosten en welke route past — met vergelijker.",
+      "Coolblue thuisbatterij of thuisaccu? Installateur-route vs plug-and-play (Bol/Amazon). Objectief verschil, kosten en welke route past.",
     excerpt:
       "Wanneer kies je een powerstation via Bol/Amazon — en wanneer een installateur via Coolblue Energie?",
     readMinutes: 9,

@@ -73,6 +73,16 @@ const productSeoOverrides: Record<
     description:
       "Anker F1500 1536 Wh / 1800 W: prijzen bij Bol.com en Amazon.nl naast elkaar. Koopgids en specificaties.",
   },
+  "anker-solix-c1000": {
+    title: "Anker Solix C1000 prijs — Bol vs Amazon vergelijken",
+    description:
+      "Anker Solix C1000 (1056 Wh, 1800 W): vergelijk actuele prijzen Bol.com en Amazon.nl. Specificaties en koopgids 2026.",
+  },
+  "jackery-explorer-2000-plus": {
+    title: "Jackery Explorer 2000 Plus prijs vergelijken",
+    description:
+      "Jackery Explorer 2000 Plus (2042 Wh): prijzen Bol.com en Amazon.nl. Portable powerstation — koopgids 2026.",
+  },
 };
 
 export function buildProductMetadata(productId: string): Metadata | null {
