@@ -27,8 +27,16 @@ const ARTICLE_CTAS: Record<string, CtaConfig> = {
     secondaryLabel: "Bekijk modellen",
   },
   terugverdientijd: {
-    title: "Vergelijk prijs per kWh",
-    body: "Terugverdientijd hangt sterk af van je accuprijs — vergelijk modellen voordat je bestelt.",
+    title: "Bereken je terugverdientijd-indicatie",
+    body: "Vul panelen en verbruik in — de keuzehulp geeft een richting voor jaarbesparing en break-even.",
+    primaryHref: "/keuzehulp",
+    primaryLabel: "Open keuzehulp",
+    secondaryHref: "/vergelijken",
+    secondaryLabel: "Vergelijk prijs per kWh",
+  },
+  bestekoop: {
+    title: "Direct modellen naast elkaar",
+    body: "Vergelijk EcoFlow, Jackery, Anker en Bluetti op prijs per kWh — met actuele links naar Bol en Amazon.",
     primaryHref: "/vergelijken",
     primaryLabel: "Naar vergelijker",
     secondaryHref: "/keuzehulp",
