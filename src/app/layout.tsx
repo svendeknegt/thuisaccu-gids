@@ -74,7 +74,7 @@ export default function RootLayout({
           <Footer />
           <CompareBar />
           <SiteConsent />
-          <div className="h-16 md:h-0" aria-hidden />
+          <div className="h-20 md:h-0" aria-hidden />
         </CompareProvider>
       </body>
     </html>

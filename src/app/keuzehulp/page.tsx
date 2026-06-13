@@ -83,7 +83,7 @@ export default function KeuzehulpPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="mobile-btn-row mt-6 md:flex md:flex-row md:flex-wrap md:gap-3">
             <Link href="/vergelijken" className="btn-primary">
               Alle modellen vergelijken
             </Link>

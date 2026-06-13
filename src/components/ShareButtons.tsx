@@ -34,7 +34,7 @@ export function ShareButtons({
     <div className="mt-8 rounded-xl border border-surface-border bg-surface-muted/40 p-4">
       <p className="text-sm font-semibold text-ink">Deel deze pagina</p>
       <p className="mt-1 text-sm text-ink-secondary">{hint}</p>
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mt-3 mobile-btn-row md:flex md:flex-row md:flex-wrap md:gap-2">
         <a
           href={whatsappUrl}
           target="_blank"

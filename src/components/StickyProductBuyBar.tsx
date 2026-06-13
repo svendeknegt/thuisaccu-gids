@@ -35,23 +35,29 @@ export function StickyProductBuyBar({ product }: StickyProductBuyBarProps) {
   const label = getRetailerLabel(cheapest.retailer);
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-surface-border bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:px-6">
-      <div className="container-page flex flex-wrap items-center justify-between gap-3">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-surface-border bg-white/95 px-4 py-3 shadow-lg backdrop-blur safe-area-bottom sm:px-6">
+      <div className="container-page flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:justify-between">
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-ink">{product.name}</p>
           <p className="text-xs text-ink-muted">Vanaf {formatPrice(getDisplayPrice(product))}</p>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex w-full flex-col gap-2 md:w-auto md:flex-row md:shrink-0 md:items-center">
           <AffiliateButton
             href={getShopOfferAffiliateUrl(product.id, cheapest)}
             retailer={`${label} ✓`}
             price={cheapest.price}
-            fullWidth={false}
-            className="!w-auto text-sm !py-2"
+            fullWidth
+            className="!w-full text-sm !py-2.5 md:!w-auto md:!py-2"
           />
           <Link
             href="#product-buy-trigger"
-            className="hidden text-xs font-medium text-brand hover:underline sm:inline"
+            className="btn-secondary w-full justify-center text-center text-xs md:hidden"
+          >
+            Alle winkels
+          </Link>
+          <Link
+            href="#product-buy-trigger"
+            className="hidden text-xs font-medium text-brand hover:underline md:inline"
           >
             Alle winkels
           </Link>

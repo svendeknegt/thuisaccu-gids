@@ -68,8 +68,8 @@ export function ComparePageClient() {
         resultLabel={products.length === 1 ? "model" : "modellen"}
       />
 
-      <div className="card mt-4 flex flex-wrap items-end gap-4 p-4">
-        <div>
+      <div className="card mt-4 flex flex-col gap-4 p-4 max-md:gap-3 md:flex-row md:flex-wrap md:items-end">
+        <div className="w-full md:w-auto">
           <label htmlFor="filter-brand" className="text-xs font-medium text-ink-muted">
             Merk
           </label>
@@ -77,7 +77,7 @@ export function ComparePageClient() {
             id="filter-brand"
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
-            className="mt-1 block w-full min-w-[140px] rounded-lg border border-surface-border bg-white px-3 py-2 text-sm"
+            className="mt-1 block w-full min-h-[44px] rounded-lg border border-surface-border bg-white px-3 py-2 text-base md:min-h-0 md:min-w-[140px] md:text-sm"
           >
             <option value="all">Alle merken</option>
             {brands.map((b) => (
@@ -88,7 +88,7 @@ export function ComparePageClient() {
           </select>
         </div>
 
-        <div>
+        <div className="w-full md:w-auto">
           <label htmlFor="filter-capacity" className="text-xs font-medium text-ink-muted">
             Capaciteit
           </label>
@@ -96,7 +96,7 @@ export function ComparePageClient() {
             id="filter-capacity"
             value={capacity}
             onChange={(e) => setCapacity(e.target.value)}
-            className="mt-1 block w-full min-w-[160px] rounded-lg border border-surface-border bg-white px-3 py-2 text-sm"
+            className="mt-1 block w-full min-h-[44px] rounded-lg border border-surface-border bg-white px-3 py-2 text-base md:min-h-0 md:min-w-[160px] md:text-sm"
           >
             <option value="all">Alle maten</option>
             <option value="small">Compact (&lt; 2 kWh)</option>

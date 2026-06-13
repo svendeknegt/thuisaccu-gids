@@ -37,7 +37,7 @@ export default async function ArticlePage({ params }: PageProps) {
   const hasLeadCta = ARTICLE_LEAD_CTA_SLUGS.has(slug);
 
   return (
-    <div className="py-10 sm:py-14">
+    <div className="py-8 max-md:pb-20 sm:py-14">
       {jsonLd && <JsonLd data={jsonLd} />}
       {breadcrumbLd && <JsonLd data={breadcrumbLd} />}
       {faqLd && <JsonLd data={faqLd} />}
@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }: PageProps) {
         <p className="mt-6 text-xs font-medium uppercase tracking-wide text-brand">
           {article.categoryLabel}
         </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+        <h1 className="mt-2 text-[1.625rem] font-bold leading-tight tracking-tight text-ink sm:text-4xl">
           {article.title}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-ink-secondary">
@@ -93,7 +93,7 @@ export default async function ArticlePage({ params }: PageProps) {
           hint="Deel dit artikel via WhatsApp of kopieer de link."
         />
 
-        <div className="mt-10 flex flex-wrap gap-4 border-t border-surface-border pt-8 text-sm">
+        <div className="mt-10 mobile-btn-row border-t border-surface-border pt-8 text-sm md:flex md:flex-row md:flex-wrap md:gap-4">
           <Link href="/keuzehulp" className="btn-primary">
             Start keuzehulp
           </Link>

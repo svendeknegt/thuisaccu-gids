@@ -138,7 +138,7 @@ export function Finder({
 
             {expanded && (
               <div className="space-y-3">
-                <div className="grid grid-cols-3 gap-3 rounded-xl border border-surface-border bg-surface-muted p-4 text-center text-sm">
+                <div className="grid grid-cols-1 gap-3 rounded-xl border border-surface-border bg-surface-muted p-4 text-center text-sm max-md:text-left md:grid-cols-3">
                   <div>
                     <p className="text-ink-muted">Geschatte besparing</p>
                     <p className="font-semibold text-ink">
@@ -192,22 +192,27 @@ export function Finder({
               {result.topProducts.map((p) => (
                 <li
                   key={p.id}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-surface-border bg-surface-muted/50 px-3 py-3"
+                  className="flex flex-col gap-3 rounded-lg border border-surface-border bg-surface-muted/50 px-3 py-3 max-md:items-stretch md:flex-row md:flex-wrap md:items-center md:justify-between"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-medium text-ink">{p.name}</p>
                     <p className="text-xs text-ink-muted">
                       {p.capacity} kWh · vanaf {formatPrice(getDisplayPrice(p))}
                     </p>
                   </div>
-                  <ProductShopLinks product={p} size="xs" className="shrink-0" />
+                  <ProductShopLinks
+                    product={p}
+                    size="xs"
+                    variant="buttons"
+                    className="w-full md:w-auto md:shrink-0"
+                  />
                 </li>
               ))}
             </ul>
 
             <Link
               href="/vergelijken"
-              className="btn-secondary mt-6 inline-flex w-full justify-center sm:w-auto"
+              className="btn-secondary mt-6 inline-flex w-full justify-center md:w-auto"
             >
               Alle modellen vergelijken
             </Link>
