@@ -34,8 +34,8 @@ export function ArticleProductPicks({
             key={product.id}
             className="rounded-lg border border-surface-border bg-white p-4"
           >
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div className="min-w-0">
+            <div className="flex flex-col gap-3 max-md:items-stretch md:flex-row md:flex-wrap md:items-start md:justify-between">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs font-medium uppercase tracking-wide text-ink-muted">
                   {product.brand}
                 </p>
@@ -50,7 +50,12 @@ export function ArticleProductPicks({
                   {formatPrice(getDisplayPrice(product))}
                 </p>
               </div>
-              <ProductShopLinks product={product} size="xs" className="shrink-0 min-w-[140px]" />
+              <ProductShopLinks
+                product={product}
+                size="xs"
+                variant="buttons"
+                className="w-full shrink-0 max-md:min-w-0 md:min-w-[140px]"
+              />
             </div>
           </li>
         ))}

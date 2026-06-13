@@ -27,8 +27,8 @@ export function SearchSortBar({
   resultLabel = "resultaten",
 }: SearchSortBarProps) {
   return (
-    <div className="card mt-8 p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div className="card mt-8 p-4 max-md:mt-6">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center">
         <label className="relative flex-1">
           <span className="sr-only">Zoeken</span>
           <span
@@ -45,11 +45,11 @@ export function SearchSortBar({
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder={searchPlaceholder}
-            className="w-full rounded-lg border border-surface-border bg-white py-2.5 pl-10 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+            className="w-full rounded-lg border border-surface-border bg-white py-3 pl-10 pr-3 text-base text-ink placeholder:text-ink-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 md:py-2.5 md:text-sm"
           />
         </label>
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex w-full items-center gap-2 md:w-auto md:shrink-0">
           <label htmlFor="sort-select" className="text-sm font-medium text-ink-secondary whitespace-nowrap">
             Sorteer
           </label>
@@ -57,7 +57,7 @@ export function SearchSortBar({
             id="sort-select"
             value={sortBy}
             onChange={(e) => onSortChange(e.target.value)}
-            className="min-w-[11rem] rounded-lg border border-surface-border bg-white px-3 py-2.5 text-sm font-medium text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+            className="min-h-[44px] flex-1 rounded-lg border border-surface-border bg-white px-3 py-2.5 text-base font-medium text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 md:min-h-0 md:min-w-[11rem] md:flex-none md:text-sm"
           >
             {sortOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>

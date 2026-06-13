@@ -31,19 +31,19 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="border-b border-surface-border bg-white py-14 sm:py-20">
+      <section className="border-b border-surface-border bg-white py-10 max-md:py-12 sm:py-20">
         <div className="container-page">
           <p className="inline-flex rounded-full bg-brand-light px-3 py-1 text-xs font-medium text-brand-dark">
             Onafhankelijk · {site.lastUpdated}
           </p>
-          <h1 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
+          <h1 className="mt-4 max-w-2xl text-[1.75rem] font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
             Vergelijk thuisaccu&apos;s zonder ruis
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-ink-secondary leading-relaxed">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-secondary sm:text-lg">
             {site.tagline}. Heldere specificaties, eerlijke voor- en nadelen, en
             directe links naar winkels — zodat je rustig een goede keuze kunt maken.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mobile-btn-row mt-8 md:flex md:flex-row md:flex-wrap md:gap-3">
             <Link href="/keuzehulp" className="btn-primary">
               Start keuzehulp
             </Link>

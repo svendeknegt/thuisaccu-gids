@@ -15,22 +15,22 @@ export function CompareBar() {
       role="region"
       aria-label="Vergelijking"
     >
-      <div className="container-page flex flex-wrap items-center justify-between gap-3 py-3">
+      <div className="container-page flex flex-col gap-3 py-3 safe-area-bottom md:flex-row md:flex-wrap md:items-center md:justify-between">
         <p className="text-sm text-ink-secondary">
           <span className="font-semibold text-ink">{ids.length}</span> van max.{" "}
           {site.maxCompare} geselecteerd
         </p>
-        <div className="flex gap-2">
+        <div className="mobile-btn-row md:flex md:flex-row md:gap-2">
           <button
             type="button"
             onClick={clear}
-            className="btn-secondary py-2 text-sm"
+            className="btn-secondary py-2 text-sm md:py-2"
           >
             Wis selectie
           </button>
           <Link
             href={`/vergelijken?compare=${ids.join(",")}`}
-            className="btn-primary py-2 text-sm"
+            className="btn-primary py-2 text-sm md:py-2"
           >
             Vergelijk nu
           </Link>

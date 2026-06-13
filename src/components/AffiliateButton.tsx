@@ -31,7 +31,7 @@ export function AffiliateButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer sponsored"
-      className={`${variantClass} ${fullWidth ? "w-full" : "sm:w-auto"} ${className}`}
+      className={`${variantClass} ${fullWidth ? "w-full" : "w-full md:w-auto"} ${className}`}
     >
       {text}
       {price != null && (

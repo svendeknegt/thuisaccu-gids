@@ -38,14 +38,50 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
           <button
             type="button"
             onClick={onClose}
-            className="text-sm text-ink-muted hover:text-ink"
+            className="min-h-[44px] min-w-[44px] rounded-lg px-3 text-sm text-ink-muted hover:bg-surface-muted hover:text-ink md:min-h-0 md:min-w-0 md:p-0"
           >
             Sluiten
           </button>
         )}
       </div>
 
-      <div className="overflow-x-auto">
+      {/* Mobiel: kaarten i.p.v. horizontale scroll-tabel */}
+      <div className="divide-y divide-surface-border md:hidden">
+        {products.map((p) => (
+          <div key={p.id} className="p-4">
+            <div className="flex gap-4">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-surface-border bg-surface-muted">
+                <ProductImage src={p.image} alt={p.name} sizes="80px" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs text-ink-muted">{p.brand}</p>
+                <p className="font-semibold text-ink leading-snug">{p.name}</p>
+                <p className="mt-1 text-lg font-bold text-ink">
+                  {formatPrice(getDisplayPrice(p))}
+                </p>
+              </div>
+            </div>
+            <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+              {rows.slice(1).map((row) => {
+                const idx = products.indexOf(p);
+                return (
+                  <div key={row.label}>
+                    <dt className="text-xs text-ink-muted">{row.label}</dt>
+                    <dd className="font-medium text-ink">{row.values[idx]}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+            <div className="mt-4">
+              <p className="mb-2 text-xs font-medium text-ink-muted">Winkels</p>
+              <ProductShopLinks product={p} size="xs" maxItems={4} variant="buttons" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: bestaande tabel */}
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full min-w-[640px] text-sm">
           <thead>
             <tr className="border-b border-surface-border bg-surface-muted/50">

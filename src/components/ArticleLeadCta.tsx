@@ -80,7 +80,7 @@ export function ArticleLeadCta({ slug }: ArticleLeadCtaProps) {
     <div className="mt-6 rounded-xl border-2 border-brand/30 bg-brand-light/50 p-5 text-sm text-ink-secondary shadow-sm">
       <p className="text-base font-semibold text-ink">{cta.title}</p>
       <p className="mt-2 leading-relaxed">{cta.body}</p>
-      <div className="mt-4 flex flex-wrap gap-3">
+      <div className="mt-4 mobile-btn-row md:flex md:flex-row md:flex-wrap md:gap-3">
         <Link href={cta.primaryHref} className="btn-primary text-sm">
           {cta.primaryLabel}
         </Link>

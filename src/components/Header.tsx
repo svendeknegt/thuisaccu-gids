@@ -18,13 +18,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-surface-border bg-white/95 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
-        <SiteLogo onNavigate={() => setOpen(false)} />
+      <div className="container-page flex h-14 items-center justify-between gap-3 md:h-16 md:gap-4">
+        <SiteLogo onNavigate={() => setOpen(false)} className="min-w-0 max-md:text-sm" />
 
         <nav
           className={`${
             open
-              ? "absolute left-0 right-0 top-16 flex flex-col gap-1 border-b border-surface-border bg-white p-4 shadow-card md:static md:flex md:flex-row md:items-center md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+              ? "absolute left-0 right-0 top-14 flex flex-col gap-1 border-b border-surface-border bg-white p-3 shadow-card md:static md:top-16 md:flex md:flex-row md:items-center md:border-0 md:bg-transparent md:p-0 md:shadow-none"
               : "hidden md:flex md:flex-row md:items-center md:gap-1"
           }`}
         >
@@ -38,7 +38,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                className={`rounded-lg px-4 py-3 text-base font-medium transition md:px-3 md:py-2 md:text-sm ${
                   active
                     ? "bg-brand-light text-brand-dark"
                     : "text-ink-secondary hover:bg-surface-muted hover:text-ink"
@@ -51,7 +51,7 @@ export function Header() {
           <Link
             href="/keuzehulp"
             onClick={() => setOpen(false)}
-            className="btn-primary mt-2 md:mt-0 md:ml-2"
+            className="btn-primary mt-1 w-full justify-center md:mt-0 md:ml-2 md:w-auto"
           >
             Start keuzehulp
           </Link>
@@ -59,7 +59,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-lg border border-surface-border p-2 md:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-surface-border md:hidden"
           aria-expanded={open}
           aria-label={open ? "Menu sluiten" : "Menu openen"}
           onClick={() => setOpen(!open)}

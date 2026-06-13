@@ -48,4 +48,61 @@
   .section-lead {
     @apply mt-2 max-w-2xl text-ink-secondary text-base leading-relaxed;
   }
+
+  /* Alleen mobiel (<768px) — desktop blijft identiek */
+  @media (max-width: 767px) {
+    .container-page {
+      @apply px-4;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      @apply min-h-[44px] px-4 py-3 text-base;
+    }
+
+    .chip {
+      @apply min-h-[44px] min-w-[44px] px-4 py-2.5 text-sm;
+    }
+
+    .section-title {
+      @apply text-2xl leading-tight;
+    }
+
+    .section-lead {
+      @apply text-[15px] leading-relaxed;
+    }
+
+    .mobile-btn-row {
+      @apply flex w-full flex-col gap-2.5;
+    }
+
+    .mobile-btn-row .btn-primary,
+    .mobile-btn-row .btn-secondary,
+    .mobile-btn-row a.btn-primary,
+    .mobile-btn-row a.btn-secondary {
+      @apply w-full justify-center;
+    }
+
+    .prose-article h2 {
+      @apply text-lg;
+    }
+
+    .prose-article p,
+    .prose-article li {
+      @apply text-[15px] leading-relaxed;
+    }
+
+    /* Voorkom iOS zoom bij focus op inputs */
+    input[type="search"],
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      @apply text-base;
+    }
+
+    .safe-area-bottom {
+      padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+  }
 }

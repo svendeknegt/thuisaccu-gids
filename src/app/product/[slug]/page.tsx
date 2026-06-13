@@ -42,7 +42,7 @@ export default async function ProductPage({ params }: PageProps) {
   const offers = getProductShopOffers(product);
 
   return (
-    <div className="py-10 sm:py-14">
+    <div className="py-8 max-md:pb-24 sm:py-14">
       <JsonLd data={productJsonLd(product)} />
       <div className="container-page">
         <Link
@@ -64,7 +64,7 @@ export default async function ProductPage({ params }: PageProps) {
         </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
-          <div className="relative aspect-square max-h-[420px] overflow-hidden rounded-xl border border-surface-border bg-surface-muted">
+          <div className="relative aspect-square max-h-[min(72vw,320px)] overflow-hidden rounded-xl border border-surface-border bg-surface-muted md:max-h-[420px]">
             <ProductImage
               src={product.image}
               alt={product.name}
@@ -75,7 +75,7 @@ export default async function ProductPage({ params }: PageProps) {
 
           <div>
             <p className="text-sm font-medium text-ink-muted">{product.brand}</p>
-            <h1 className="mt-1 text-3xl font-bold text-ink">{product.name}</h1>
+            <h1 className="mt-1 text-2xl font-bold leading-tight text-ink md:text-3xl">{product.name}</h1>
             <RetailerBadges product={product} className="mt-2" />
             <p className="mt-2 text-ink-secondary">
               ★ {formatRating(product.rating)} · {product.type}
