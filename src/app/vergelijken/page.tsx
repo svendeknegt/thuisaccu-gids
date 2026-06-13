@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function VergelijkenPage() {
   return (
-    <div className="py-10 sm:py-14">
+    <div className="py-10 max-md:py-14 sm:py-14">
       <div className="container-page">
         <h1 className="section-title">Vergelijken</h1>
         <p className="section-lead">

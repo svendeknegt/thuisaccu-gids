@@ -31,19 +31,19 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="border-b border-surface-border bg-white py-10 max-md:py-12 sm:py-20">
+      <section className="border-b border-surface-border bg-white py-12 max-md:py-16 sm:py-20">
         <div className="container-page">
           <p className="inline-flex rounded-full bg-brand-light px-3 py-1 text-xs font-medium text-brand-dark">
             Onafhankelijk · {site.lastUpdated}
           </p>
-          <h1 className="mt-4 max-w-2xl text-[1.75rem] font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
+          <h1 className="mt-5 max-w-2xl text-[1.75rem] font-bold leading-tight tracking-tight text-ink max-md:leading-snug sm:text-4xl lg:text-5xl">
             Vergelijk thuisaccu&apos;s zonder ruis
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-secondary sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-secondary max-md:leading-[1.7] sm:text-lg">
             {site.tagline}. Heldere specificaties, eerlijke voor- en nadelen, en
             directe links naar winkels — zodat je rustig een goede keuze kunt maken.
           </p>
-          <div className="mobile-btn-row mt-8 md:flex md:flex-row md:flex-wrap md:gap-3">
+          <div className="mobile-btn-row mt-10 md:mt-8 md:flex md:flex-row md:flex-wrap md:gap-3">
             <Link href="/keuzehulp" className="btn-primary">
               Start keuzehulp
             </Link>
@@ -52,7 +52,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <ul className="mt-10 grid gap-4 sm:grid-cols-3 text-sm text-ink-secondary">
+          <ul className="mt-10 hidden gap-4 sm:grid sm:grid-cols-3 text-sm text-ink-secondary">
             <li className="flex gap-2 rounded-lg border border-surface-border bg-surface-muted/50 p-4">
               <span className="text-brand" aria-hidden>
                 ✓
@@ -83,7 +83,7 @@ export default function HomePage() {
 
       <Finder compactTitle savingsExpandedDefault />
 
-      <section className="border-b border-surface-border bg-surface-muted/30 py-12 sm:py-14">
+      <section className="mobile-section border-b border-surface-border bg-surface-muted/30 py-12 sm:py-14">
         <div className="container-page">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
@@ -126,14 +126,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-16">
+      <section className="mobile-section py-14 sm:py-16">
         <div className="container-page">
           <h2 className="section-title">Hoogst beoordeeld</h2>
           <p className="section-lead">
             Een compacte selectie om te starten — met Bol.com- en Amazon.nl-links.
             Voor het volledige overzicht ga je naar de vergelijker.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 max-md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (
               <ProductCard key={p.id} product={p} showCompare />
             ))}
@@ -146,14 +146,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-surface-border bg-white py-14 sm:py-16">
+      <section className="mobile-section border-t border-surface-border bg-white py-14 sm:py-16">
         <div className="container-page">
           <h2 className="section-title">Direct op Amazon.nl</h2>
-          <p className="section-lead">
+          <p className="section-lead max-md:hidden">
             Deze modellen hebben een bevestigde Amazon.nl-pagina — handig als je
             daar al bestelt of Prime-levering wilt gebruiken.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 max-md:mt-10 max-md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {amazonPicks.map((p) => (
               <ProductCard key={p.id} product={p} showCompare />
             ))}
@@ -161,9 +161,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-surface-border bg-surface-muted/30 py-14">
+      <section className="mobile-section border-t border-surface-border bg-surface-muted/30 py-14">
         <div className="container-page">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-8 max-md:gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="section-title">Eerst kiezen, dan kopen</h2>
               <p className="section-lead">
@@ -180,7 +180,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <ul className="grid gap-3 text-sm text-ink-secondary">
+            <ul className="grid gap-3 max-md:gap-4 text-sm text-ink-secondary">
               {[
                 "Capaciteitsadvies op basis van panelen en verbruik",
                 "Indicatie besparing en terugverdientijd",
@@ -189,7 +189,7 @@ export default function HomePage() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex gap-2 rounded-lg border border-surface-border bg-white p-3"
+                  className="flex gap-2 rounded-lg border border-surface-border bg-white p-3 max-md:p-4"
                 >
                   <span className="text-brand" aria-hidden>
                     ✓
@@ -202,32 +202,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-surface-border bg-white py-14">
+      <section className="mobile-section border-t border-surface-border bg-white py-14">
         <div className="container-page">
           <h2 className="section-title">Kennisbank</h2>
           <p className="section-lead">
             Achtergrond bij salderen, dynamische tarieven en aankoop — zonder
             verkooppraat.
           </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-10 grid gap-3 max-md:gap-5 sm:grid-cols-2">
             {articles.slice(0, 4).map((a) => (
               <li key={a.slug}>
                 <Link
                   href={`/kennisbank/${a.slug}`}
-                  className="card block p-4 transition hover:shadow-cardHover"
+                  className="card block p-4 max-md:p-5 transition hover:shadow-cardHover"
                 >
                   <p className="text-xs font-medium uppercase tracking-wide text-brand">
                     {a.categoryLabel}
                   </p>
-                  <p className="mt-1 font-semibold text-ink">{a.title}</p>
-                  <p className="mt-1 text-sm text-ink-secondary line-clamp-2">
+                  <p className="mt-2 font-semibold text-ink">{a.title}</p>
+                  <p className="mt-2 text-sm text-ink-secondary line-clamp-2 max-md:hidden">
                     {a.excerpt}
                   </p>
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 max-md:flex-col">
             <Link href="/kennisbank" className="btn-secondary inline-flex">
               Alle artikelen
             </Link>

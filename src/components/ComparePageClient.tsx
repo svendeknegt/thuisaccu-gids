@@ -68,7 +68,7 @@ export function ComparePageClient() {
         resultLabel={products.length === 1 ? "model" : "modellen"}
       />
 
-      <div className="card mt-4 flex flex-col gap-4 p-4 max-md:gap-3 md:flex-row md:flex-wrap md:items-end">
+      <div className="card mt-6 flex flex-col gap-4 p-4 max-md:mt-8 max-md:gap-5 max-md:p-5 md:flex-row md:flex-wrap md:items-end">
         <div className="w-full md:w-auto">
           <label htmlFor="filter-brand" className="text-xs font-medium text-ink-muted">
             Merk
@@ -143,7 +143,7 @@ export function ComparePageClient() {
         </div>
       )}
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 max-md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {products.length === 0 ? (
           <p className="col-span-full text-center text-ink-secondary py-12">
             Geen modellen gevonden. Pas zoekterm of filters aan.

@@ -31,7 +31,7 @@ export function ShareButtons({
   }
 
   return (
-    <div className="mt-8 rounded-xl border border-surface-border bg-surface-muted/40 p-4">
+    <div className="mt-8 hidden rounded-xl border border-surface-border bg-surface-muted/40 p-4 md:block">
       <p className="text-sm font-semibold text-ink">Deel deze pagina</p>
       <p className="mt-1 text-sm text-ink-secondary">{hint}</p>
       <div className="mt-3 mobile-btn-row md:flex md:flex-row md:flex-wrap md:gap-2">

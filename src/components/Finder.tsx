@@ -41,7 +41,7 @@ export function Finder({
   return (
     <section
       id="keuzehulp"
-      className="scroll-mt-24 border-y border-surface-border bg-white py-14 sm:py-16"
+      className="mobile-section scroll-mt-24 border-y border-surface-border bg-white py-14 sm:py-16"
     >
       <div className="container-page">
         <h2 className="section-title">
@@ -53,8 +53,8 @@ export function Finder({
             : "Vul je situatie in en ontvang een capaciteitsadvies in kWh, een indicatie van besparing en passende modellen — vóór je naar een winkel gaat."}
         </p>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-6">
+        <div className="mt-10 grid gap-8 max-md:gap-10 lg:grid-cols-2">
+          <div className="space-y-8 max-md:space-y-10">
             <fieldset>
               <legend className="text-sm font-semibold text-ink">
                 1. Zonnepanelen
@@ -174,7 +174,7 @@ export function Finder({
             )}
           </div>
 
-          <div className="card p-6">
+          <div className="card p-6 max-md:p-7">
             <p className="text-sm font-medium text-ink-muted">
               Advies capaciteit
             </p>

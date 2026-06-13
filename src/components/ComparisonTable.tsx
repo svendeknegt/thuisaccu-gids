@@ -48,7 +48,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
       {/* Mobiel: kaarten i.p.v. horizontale scroll-tabel */}
       <div className="divide-y divide-surface-border md:hidden">
         {products.map((p) => (
-          <div key={p.id} className="p-4">
+          <div key={p.id} className="p-5 max-md:p-6">
             <div className="flex gap-4">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-surface-border bg-surface-muted">
                 <ProductImage src={p.image} alt={p.name} sizes="80px" />
@@ -61,7 +61,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
                 </p>
               </div>
             </div>
-            <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+            <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
               {rows.slice(1).map((row) => {
                 const idx = products.indexOf(p);
                 return (
