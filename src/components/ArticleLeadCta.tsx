@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { formatPrice } from "@/lib/format";
+import { getCatalogPriceRange } from "@/lib/products";
 
 interface CtaConfig {
   title: string;
@@ -9,55 +11,69 @@ interface CtaConfig {
   secondaryLabel?: string;
 }
 
-const ARTICLE_CTAS: Record<string, CtaConfig> = {
-  "plug-and-play-vs-installateur": {
-    title: "Liever zelf een powerstation kiezen?",
-    body: "Vergelijk EcoFlow, Jackery, Anker en Bluetti op prijs per kWh — met links naar Bol.com en Amazon.nl.",
-    primaryHref: "/vergelijken",
-    primaryLabel: "Vergelijk thuisaccu's",
-    secondaryHref: "/keuzehulp",
-    secondaryLabel: "Start keuzehulp",
-  },
-  "kwh-berekenen": {
-    title: "Direct je kWh-indicatie",
-    body: "Vul panelen en verbruik in — de keuzehulp geeft een capaciteitsadvies en passende modellen.",
-    primaryHref: "/keuzehulp",
-    primaryLabel: "Open keuzehulp",
-    secondaryHref: "/vergelijken",
-    secondaryLabel: "Bekijk modellen",
-  },
-  terugverdientijd: {
-    title: "Bereken je terugverdientijd-indicatie",
-    body: "Vul panelen en verbruik in — de keuzehulp geeft een richting voor jaarbesparing en break-even.",
-    primaryHref: "/keuzehulp",
-    primaryLabel: "Open keuzehulp",
-    secondaryHref: "/vergelijken",
-    secondaryLabel: "Vergelijk prijs per kWh",
-  },
-  bestekoop: {
-    title: "Direct modellen naast elkaar",
-    body: "Vergelijk EcoFlow, Jackery, Anker en Bluetti op prijs per kWh — met actuele links naar Bol en Amazon.",
-    primaryHref: "/vergelijken",
-    primaryLabel: "Naar vergelijker",
-    secondaryHref: "/keuzehulp",
-    secondaryLabel: "Keuzehulp",
-  },
-  "thuisaccu-kopen": {
-    title: "Klaar om modellen te vergelijken?",
-    body: "Filter op merk en capaciteit en vergelijk maximaal drie accu's naast elkaar.",
-    primaryHref: "/vergelijken",
-    primaryLabel: "Vergelijken",
-    secondaryHref: "/keuzehulp",
-    secondaryLabel: "Keuzehulp",
-  },
-};
+function buildCtas(): Record<string, CtaConfig> {
+  const { min } = getCatalogPriceRange();
+  const from = formatPrice(min);
+
+  return {
+    "plug-and-play-vs-installateur": {
+      title: `Plug-and-play thuisaccu vanaf ${from}`,
+      body: "Coolblue = installateur-route. Vergelijk 21 powerstations (EcoFlow, Jackery, Anker) op prijs per kWh — direct naar Bol.com en Amazon.nl.",
+      primaryHref: "/vergelijken",
+      primaryLabel: "Gratis vergelijken",
+      secondaryHref: "/keuzehulp",
+      secondaryLabel: "Keuzehulp starten",
+    },
+    "kwh-berekenen": {
+      title: "Direct je kWh-indicatie",
+      body: "Vul panelen en verbruik in — de keuzehulp geeft een capaciteitsadvies en passende modellen.",
+      primaryHref: "/keuzehulp",
+      primaryLabel: "Open keuzehulp",
+      secondaryHref: "/vergelijken",
+      secondaryLabel: "Bekijk modellen",
+    },
+    terugverdientijd: {
+      title: "Bereken je terugverdientijd-indicatie",
+      body: "Vul panelen en verbruik in — de keuzehulp geeft een richting voor jaarbesparing en break-even.",
+      primaryHref: "/keuzehulp",
+      primaryLabel: "Open keuzehulp",
+      secondaryHref: "/vergelijken",
+      secondaryLabel: "Vergelijk prijs per kWh",
+    },
+    bestekoop: {
+      title: `Vergelijk thuisaccu's vanaf ${from}`,
+      body: "EcoFlow, Jackery, Anker en Bluetti naast elkaar — prijs per kWh en directe winkellinks.",
+      primaryHref: "/vergelijken",
+      primaryLabel: "Naar vergelijker",
+      secondaryHref: "/keuzehulp",
+      secondaryLabel: "Keuzehulp",
+    },
+    "thuisaccu-kopen": {
+      title: "Klaar om modellen te vergelijken?",
+      body: "Filter op merk en capaciteit en vergelijk maximaal drie accu's naast elkaar.",
+      primaryHref: "/vergelijken",
+      primaryLabel: "Vergelijken",
+      secondaryHref: "/keuzehulp",
+      secondaryLabel: "Keuzehulp",
+    },
+  };
+}
+
+/** Slugs met een prominente lead-CTA (geen dubbele keuzehulp-box eronder) */
+export const ARTICLE_LEAD_CTA_SLUGS = new Set([
+  "plug-and-play-vs-installateur",
+  "kwh-berekenen",
+  "terugverdientijd",
+  "bestekoop",
+  "thuisaccu-kopen",
+]);
 
 interface ArticleLeadCtaProps {
   slug: string;
 }
 
 export function ArticleLeadCta({ slug }: ArticleLeadCtaProps) {
-  const cta = ARTICLE_CTAS[slug];
+  const cta = buildCtas()[slug];
   if (!cta) return null;
 
   return (
