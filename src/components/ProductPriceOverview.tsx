@@ -24,7 +24,7 @@ export function ProductPriceOverview() {
               {site.lastUpdated}). ✓ = goedkoopste winkel bij dat model.
             </p>
           </div>
-          <Link href="/vergelijken?sort=price_asc" className="btn-secondary shrink-0 max-md:w-full max-md:justify-center">
+          <Link href="/vergelijken?sort=price_asc" className="btn-secondary shrink-0 max-md:w-auto max-md:justify-center">
             Volledige vergelijker →
           </Link>
         </div>

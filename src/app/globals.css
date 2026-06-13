@@ -57,11 +57,11 @@
 
     .btn-primary,
     .btn-secondary {
-      @apply min-h-[48px] px-5 py-3.5 text-base;
+      @apply min-h-[40px] px-4 py-2 text-sm;
     }
 
     .chip {
-      @apply min-h-[44px] min-w-[44px] px-4 py-2.5 text-sm;
+      @apply px-3 py-2 text-sm;
     }
 
     .card {
@@ -81,14 +81,21 @@
     }
 
     .mobile-btn-row {
-      @apply flex w-full flex-col gap-3;
+      @apply grid w-full grid-cols-1 gap-2;
+    }
+
+    /* Twee knoppen naast elkaar — compacter dan full-width stapel */
+    .mobile-btn-row:has(> :nth-child(2):last-child) {
+      @apply grid-cols-2;
     }
 
     .mobile-btn-row .btn-primary,
     .mobile-btn-row .btn-secondary,
     .mobile-btn-row a.btn-primary,
-    .mobile-btn-row a.btn-secondary {
-      @apply w-full justify-center;
+    .mobile-btn-row a.btn-secondary,
+    .mobile-btn-row button.btn-primary,
+    .mobile-btn-row button.btn-secondary {
+      @apply w-full min-w-0 justify-center;
     }
 
     .prose-article {

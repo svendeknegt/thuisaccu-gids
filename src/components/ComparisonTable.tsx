@@ -38,7 +38,7 @@ export function ComparisonTable({ ids, onClose }: ComparisonTableProps) {
           <button
             type="button"
             onClick={onClose}
-            className="min-h-[44px] min-w-[44px] rounded-lg px-3 text-sm text-ink-muted hover:bg-surface-muted hover:text-ink md:min-h-0 md:min-w-0 md:p-0"
+            className="min-h-[40px] min-w-[40px] rounded-lg px-3 text-sm text-ink-muted hover:bg-surface-muted hover:text-ink md:min-h-0 md:min-w-0 md:p-0"
           >
             Sluiten
           </button>

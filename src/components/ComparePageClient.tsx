@@ -77,7 +77,7 @@ export function ComparePageClient() {
             id="filter-brand"
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
-            className="mt-1 block w-full min-h-[44px] rounded-lg border border-surface-border bg-white px-3 py-2 text-base md:min-h-0 md:min-w-[140px] md:text-sm"
+            className="mt-1 block w-full min-h-[40px] rounded-lg border border-surface-border bg-white px-3 py-2 text-base md:min-h-0 md:min-w-[140px] md:text-sm"
           >
             <option value="all">Alle merken</option>
             {brands.map((b) => (
@@ -96,7 +96,7 @@ export function ComparePageClient() {
             id="filter-capacity"
             value={capacity}
             onChange={(e) => setCapacity(e.target.value)}
-            className="mt-1 block w-full min-h-[44px] rounded-lg border border-surface-border bg-white px-3 py-2 text-base md:min-h-0 md:min-w-[160px] md:text-sm"
+            className="mt-1 block w-full min-h-[40px] rounded-lg border border-surface-border bg-white px-3 py-2 text-base md:min-h-0 md:min-w-[160px] md:text-sm"
           >
             <option value="all">Alle maten</option>
             <option value="small">Compact (&lt; 2 kWh)</option>

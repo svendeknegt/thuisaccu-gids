@@ -227,7 +227,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-wrap gap-3 max-md:flex-col">
+          <div className="mt-8 flex flex-wrap gap-2 max-md:gap-2 md:gap-3">
             <Link href="/kennisbank" className="btn-secondary inline-flex">
               Alle artikelen
             </Link>

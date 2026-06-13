@@ -99,7 +99,7 @@ export function Finder({
                 <button
                   type="button"
                   onClick={() => setGoal("savings")}
-                  className={`rounded-xl border p-4 text-left transition ${
+                  className={`rounded-xl border p-3 text-left transition max-md:p-3 md:p-4 ${
                     goal === "savings"
                       ? "border-brand bg-brand-light"
                       : "border-surface-border bg-white hover:border-brand/30"
@@ -113,7 +113,7 @@ export function Finder({
                 <button
                   type="button"
                   onClick={() => setGoal("trading")}
-                  className={`rounded-xl border p-4 text-left transition ${
+                  className={`rounded-xl border p-3 text-left transition max-md:p-3 md:p-4 ${
                     goal === "trading"
                       ? "border-brand bg-brand-light"
                       : "border-surface-border bg-white hover:border-brand/30"
