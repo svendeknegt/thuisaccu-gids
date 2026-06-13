@@ -1,4 +1,5 @@
 import { articles } from "@/lib/articles";
+import { getArticleFaqs } from "@/lib/article-faqs";
 import {
   getArticleSeoDescription,
   getArticleSeoTitle,
@@ -60,7 +61,7 @@ export function articleJsonLd(slug: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: article.title,
+    headline: getArticleSeoTitle(article),
     description: getArticleSeoDescription(article),
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
@@ -110,6 +111,24 @@ export function articleBreadcrumbJsonLd(slug: string) {
         item: pageUrl,
       },
     ],
+  };
+}
+
+export function articleFaqJsonLd(slug: string) {
+  const faqs = getArticleFaqs(slug);
+  if (faqs.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
   };
 }
 

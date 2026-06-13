@@ -2,12 +2,17 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { ComparePageClient } from "@/components/ComparePageClient";
 import { ShareButtons } from "@/components/ShareButtons";
+import { formatPrice } from "@/lib/format";
+import { getCatalogPriceRange } from "@/lib/products";
+import { absoluteSerpTitle } from "@/lib/serp";
 import { site } from "@/lib/site";
 
+const { min: catalogMin } = getCatalogPriceRange();
+const fromPrice = formatPrice(catalogMin);
+
 export const metadata = {
-  title: "Thuisaccu vergelijken — prijzen & specificaties",
-  description:
-    "Vergelijk tot 3 thuisaccu's naast elkaar. Filter op merk en kWh, zie laagste prijs bij Bol, Amazon of fabriekswinkel. EcoFlow, Anker, Jackery, Bluetti.",
+  title: absoluteSerpTitle(`Thuisaccu vergelijken — vanaf ${fromPrice}`),
+  description: `Vergelijk 21 thuisaccu's side-by-side. Filter op merk en kWh — vanaf ${fromPrice} bij Bol, Amazon of fabriekswinkel. EcoFlow, Anker, Jackery, Bluetti.`,
   alternates: { canonical: `${site.url}/vergelijken` },
   openGraph: {
     title: "Thuisaccu's vergelijken",

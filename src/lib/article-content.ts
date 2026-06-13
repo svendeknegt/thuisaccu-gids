@@ -727,6 +727,11 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
       text: "Zoek je een Coolblue thuisbatterij, Coolblue thuisaccu of plug-and-play powerstation? Niet elke thuisaccu koop je los op Bol.com of Amazon.nl. Sommige huishoudens hebben een vaste thuisbatterij achter de meterkast nodig — vaak via een installateur en energieleverancier. In dit artikel leg je het verschil uit, zodat je de juiste route kiest vóór je bestelt.",
     },
     {
+      type: "callout",
+      title: "Snel antwoord",
+      text: "Coolblue verkoopt geen plug-and-play thuisaccu in de webshop — alleen vaste thuisbatterijen via Coolblue Energie (installateur, Enphase/Growatt). Wil je zelf kopen en plaatsen? Vergelijk powerstations vanaf enkele honderden euro's bij Bol.com en Amazon.nl.",
+    },
+    {
       type: "h2",
       text: "Plug-and-play (onze vergelijking)",
     },
@@ -741,6 +746,17 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
         "Ideaal om te testen of opslag bij jouw verbruik past",
         "Beperkt vermogen vs. vaste systemen (vaak 1,5–4 kW)",
         "Geen officiële saldering-koppeling aan meterkast",
+      ],
+    },
+    {
+      type: "productPicks",
+      title: "Plug-and-play — direct vergelijken & bestellen",
+      description:
+        "Populaire alternatieven voor een Coolblue thuisbatterij — prijzen bij Bol.com en Amazon.nl.",
+      productIds: [
+        "ecoflow-delta-2-max",
+        "anker-solix-c1000",
+        "jackery-explorer-1000-v2",
       ],
     },
     {
@@ -774,17 +790,6 @@ export const articleBodies: Record<string, ArticleBlock[]> = {
         "Plug-and-play: budget, flexibiliteit, geen installateur — gebruik onze keuzehulp.",
         "Vaste batterij: grote capaciteit, meterkast, langetermijn woning — zoek installateur/Energie-partner.",
         "Twijfel: begin met onze vergelijker; schakel installateur in als 2 kWh niet genoeg is.",
-      ],
-    },
-    {
-      type: "productPicks",
-      title: "Plug-and-play — direct bestellen",
-      description:
-        "Onze vergelijking: powerstations via Bol.com en Amazon.nl.",
-      productIds: [
-        "ecoflow-delta-2-max",
-        "anker-solix-c1000",
-        "jackery-explorer-1000-v2",
       ],
     },
     {

@@ -4,11 +4,11 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { ArticleBody } from "@/components/ArticleBody";
 import { JsonLd } from "@/components/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
-import { ArticleLeadCta } from "@/components/ArticleLeadCta";
+import { ArticleLeadCta, ARTICLE_LEAD_CTA_SLUGS } from "@/components/ArticleLeadCta";
 import { articleBodies } from "@/lib/article-content";
 import { articles, getArticleBySlug } from "@/lib/articles";
 import { buildArticleMetadata } from "@/lib/seo";
-import { articleBreadcrumbJsonLd, articleJsonLd } from "@/lib/structured-data";
+import { articleBreadcrumbJsonLd, articleFaqJsonLd, articleJsonLd } from "@/lib/structured-data";
 import { site } from "@/lib/site";
 
 interface PageProps {
@@ -33,11 +33,14 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const jsonLd = articleJsonLd(slug);
   const breadcrumbLd = articleBreadcrumbJsonLd(slug);
+  const faqLd = articleFaqJsonLd(slug);
+  const hasLeadCta = ARTICLE_LEAD_CTA_SLUGS.has(slug);
 
   return (
     <div className="py-10 sm:py-14">
       {jsonLd && <JsonLd data={jsonLd} />}
       {breadcrumbLd && <JsonLd data={breadcrumbLd} />}
+      {faqLd && <JsonLd data={faqLd} />}
       <article className="container-page max-w-3xl">
         <Link
           href="/kennisbank"
@@ -66,16 +69,18 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <ArticleLeadCta slug={slug} />
 
-        <div className="mt-6 rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
-          <p className="font-medium text-ink">Twijfel over capaciteit?</p>
-          <p className="mt-1">
-            Gebruik onze{" "}
-            <Link href="/keuzehulp" className="text-brand hover:underline">
-              keuzehulp
-            </Link>{" "}
-            voor een indicatie in kWh vóór je een model kiest.
-          </p>
-        </div>
+        {!hasLeadCta && (
+          <div className="mt-6 rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
+            <p className="font-medium text-ink">Twijfel over capaciteit?</p>
+            <p className="mt-1">
+              Gebruik onze{" "}
+              <Link href="/keuzehulp" className="text-brand hover:underline">
+                keuzehulp
+              </Link>{" "}
+              voor een indicatie in kWh vóór je een model kiest.
+            </p>
+          </div>
+        )}
 
         <ArticleBody blocks={body} />
 

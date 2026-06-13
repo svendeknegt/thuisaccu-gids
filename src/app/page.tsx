@@ -6,12 +6,15 @@ import { articles } from "@/lib/articles";
 import { getCatalogPriceRange, products } from "@/lib/products";
 import { getAmazonProducts, getFeaturedProducts } from "@/lib/recommend";
 import { formatPrice } from "@/lib/format";
+import { absoluteSerpTitle } from "@/lib/serp";
 import { site } from "@/lib/site";
 
+const { min: catalogMin } = getCatalogPriceRange();
+const fromPrice = formatPrice(catalogMin);
+
 export const metadata = {
-  title: "Thuisaccu & thuisbatterij vergelijken (2026)",
-  description:
-    "Vergelijk plug-and-play thuisaccu's (EcoFlow, Anker, Jackery, Bluetti). Prijzen Bol & Amazon, keuzehulp en kWh-berekenen — onafhankelijk, zonder verkooppraat.",
+  title: absoluteSerpTitle("Thuisaccu & thuisbatterij vergelijken (2026)"),
+  description: `Vergelijk plug-and-play thuisaccu's vanaf ${fromPrice}. EcoFlow, Anker, Jackery — prijzen Bol & Amazon, keuzehulp en kWh-berekenen. Onafhankelijk.`,
   alternates: { canonical: `${site.url}/` },
   openGraph: {
     title: "Thuisaccu vergelijken — onafhankelijk",
