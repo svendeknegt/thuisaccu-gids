@@ -37,8 +37,7 @@ export default async function ArticlePage({ params }: PageProps) {
   const hasLeadCta = ARTICLE_LEAD_CTA_SLUGS.has(slug);
 
   return (
-    <div className="py-8 max-md:pb-20 sm:py-14">
-      {jsonLd && <JsonLd data={jsonLd} />}
+    <div className="py-10 max-md:pb-20 max-md:py-14 sm:py-14">
       {breadcrumbLd && <JsonLd data={breadcrumbLd} />}
       {faqLd && <JsonLd data={faqLd} />}
       <article className="container-page max-w-3xl">
@@ -49,16 +48,16 @@ export default async function ArticlePage({ params }: PageProps) {
           ← Terug naar kennisbank
         </Link>
 
-        <p className="mt-6 text-xs font-medium uppercase tracking-wide text-brand">
+        <p className="mt-8 text-xs font-medium uppercase tracking-wide text-brand">
           {article.categoryLabel}
         </p>
-        <h1 className="mt-2 text-[1.625rem] font-bold leading-tight tracking-tight text-ink sm:text-4xl">
+        <h1 className="mt-3 text-[1.625rem] font-bold leading-tight tracking-tight text-ink max-md:leading-snug sm:text-4xl">
           {article.title}
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-ink-secondary">
+        <p className="mt-5 text-base leading-relaxed text-ink-secondary max-md:leading-[1.7]">
           {article.excerpt}
         </p>
-        <p className="mt-3 text-xs text-ink-muted">
+        <p className="mt-4 text-xs text-ink-muted">
           {article.readMinutes} min leestijd ·{" "}
           {new Date(article.publishedAt).toLocaleDateString("nl-NL", {
             day: "numeric",
@@ -93,7 +92,7 @@ export default async function ArticlePage({ params }: PageProps) {
           hint="Deel dit artikel via WhatsApp of kopieer de link."
         />
 
-        <div className="mt-10 mobile-btn-row border-t border-surface-border pt-8 text-sm md:flex md:flex-row md:flex-wrap md:gap-4">
+        <div className="mt-10 mobile-btn-row border-t border-surface-border pt-10 max-md:pt-12 text-sm md:flex md:flex-row md:flex-wrap md:gap-4">
           <Link href="/keuzehulp" className="btn-primary">
             Start keuzehulp
           </Link>

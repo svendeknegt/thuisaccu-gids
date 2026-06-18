@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export function TrustStrip() {
   return (
     <div
-      className="border-b border-surface-border bg-white"
+      className="hidden border-b border-surface-border bg-white md:block"
       role="status"
       aria-label="Onafhankelijkheidsvermelding"
     >

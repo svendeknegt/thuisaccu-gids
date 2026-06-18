@@ -14,7 +14,7 @@ export function ProductPriceOverview() {
   const { min, max } = getCatalogPriceRange();
 
   return (
-    <section className="border-t border-surface-border bg-surface-muted/30 py-12 sm:py-14">
+    <section className="mobile-section border-t border-surface-border bg-surface-muted/30 py-12 sm:py-14">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -24,12 +24,19 @@ export function ProductPriceOverview() {
               {site.lastUpdated}). ✓ = goedkoopste winkel bij dat model.
             </p>
           </div>
-          <Link href="/vergelijken?sort=price_asc" className="btn-secondary shrink-0">
+          <Link href="/vergelijken?sort=price_asc" className="btn-secondary shrink-0 max-md:w-auto max-md:justify-center">
             Volledige vergelijker →
           </Link>
         </div>
 
-        <div className="mt-8 overflow-x-auto rounded-xl border border-surface-border">
+        <div className="mt-8 md:hidden">
+          <p className="text-sm leading-relaxed text-ink-secondary">
+            Op je telefoon is de volledige prijstabel het overzichtelijkst in de
+            vergelijker — daar filter je op merk en capaciteit.
+          </p>
+        </div>
+
+        <div className="mt-8 hidden overflow-x-auto rounded-xl border border-surface-border md:block">
           <table className="w-full min-w-[720px] text-sm">
             <thead>
               <tr className="border-b border-surface-border bg-surface-muted/60 text-left">
@@ -68,7 +75,7 @@ export function ProductPriceOverview() {
           </table>
         </div>
 
-        <p className="mt-4 text-xs text-ink-muted">
+        <p className="mt-4 hidden text-xs text-ink-muted md:block">
           Prijzen zijn indicatief. Klik op een winkel om naar de webshop te gaan ↗
         </p>
       </div>

@@ -7,7 +7,7 @@ interface ArticleBodyProps {
 
 export function ArticleBody({ blocks }: ArticleBodyProps) {
   return (
-    <div className="prose-article mt-8 space-y-5">
+    <div className="prose-article mt-10 max-md:mt-12 space-y-5">
       {blocks.map((block, i) => {
         switch (block.type) {
           case "h2":

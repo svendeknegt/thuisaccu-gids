@@ -35,31 +35,31 @@ export function ProductCard({
             alt={product.name}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
-          <span className="absolute left-3 top-3 rounded-md bg-white/95 px-2 py-1 text-xs font-medium text-ink-secondary">
+          <span className="absolute left-3 top-3 hidden rounded-md bg-white/95 px-2 py-1 text-xs font-medium text-ink-secondary md:inline">
             {product.type}
           </span>
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <div className="flex items-start justify-between gap-2">
+      <div className="flex flex-1 flex-col p-5 max-md:p-6 sm:p-5">
+        <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium uppercase tracking-wide text-ink-muted">
               {product.brand}
             </p>
             <Link href={`/product/${product.id}`}>
-              <h3 className="mt-0.5 font-semibold text-ink hover:text-brand">
+              <h3 className="mt-1 font-semibold text-ink hover:text-brand">
                 {product.name}
               </h3>
             </Link>
-            <RetailerBadges product={product} className="mt-2" />
+            <RetailerBadges product={product} className="mt-2 max-md:hidden" />
           </div>
-          <p className="shrink-0 text-sm font-medium text-ink">
+          <p className="hidden shrink-0 text-sm font-medium text-ink md:block">
             ★ {formatRating(product.rating)}
           </p>
         </div>
 
-        <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
+        <dl className="mt-5 grid grid-cols-2 gap-3 max-md:gap-4 text-sm">
           <div>
             <dt className="text-ink-muted">Capaciteit</dt>
             <dd className="font-semibold text-ink">{product.capacity} kWh</dd>
@@ -71,7 +71,7 @@ export function ProductCard({
         </dl>
 
         {!compact && (
-          <ul className="mt-4 space-y-1 text-sm text-ink-secondary">
+          <ul className="mt-4 hidden space-y-1 text-sm text-ink-secondary md:block">
             {product.pros.slice(0, 2).map((pro) => (
               <li key={pro} className="flex gap-2">
                 <span className="text-brand" aria-hidden>
@@ -83,7 +83,7 @@ export function ProductCard({
           </ul>
         )}
 
-        <div className="mt-auto flex flex-col gap-3 pt-5">
+        <div className="mt-auto flex flex-col gap-4 pt-6 max-md:pt-8">
           {showCompare && (
             <label className="flex cursor-pointer items-center gap-2 text-sm text-ink-secondary">
               <input
@@ -99,7 +99,7 @@ export function ProductCard({
             </label>
           )}
 
-          <div className="flex min-h-[7.5rem] flex-col gap-2">
+          <div className="flex min-h-0 flex-col gap-3 md:min-h-[7.5rem] md:gap-2">
             <div>
               <p className="text-xs text-ink-muted">Vanaf</p>
               <p className="text-lg font-bold text-ink">{formatPrice(displayPrice)}</p>

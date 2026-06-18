@@ -21,18 +21,18 @@ export function ArticleProductPicks({
   if (products.length === 0) return null;
 
   return (
-    <aside className="rounded-xl border border-brand/25 bg-brand-light/30 p-5">
+    <aside className="rounded-xl border border-brand/25 bg-brand-light/30 p-5 max-md:p-6">
       <h2 className="text-lg font-semibold text-ink">{title}</h2>
       {description && (
-        <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
+        <p className="mt-3 text-sm leading-relaxed text-ink-secondary max-md:leading-[1.7]">
           {description}
         </p>
       )}
-      <ul className="mt-4 space-y-3">
+      <ul className="mt-5 space-y-4 max-md:space-y-5">
         {products.map((product) => (
           <li
             key={product.id}
-            className="rounded-lg border border-surface-border bg-white p-4"
+            className="rounded-lg border border-surface-border bg-white p-4 max-md:p-5"
           >
             <div className="flex flex-col gap-3 max-md:items-stretch md:flex-row md:flex-wrap md:items-start md:justify-between">
               <div className="min-w-0 flex-1">

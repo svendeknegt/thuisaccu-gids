@@ -47,11 +47,11 @@ export function StickyProductBuyBar({ product }: StickyProductBuyBarProps) {
             retailer={`${label} ✓`}
             price={cheapest.price}
             fullWidth
-            className="!w-full text-sm !py-2.5 md:!w-auto md:!py-2"
+            className="!w-full text-sm !py-2 md:!w-auto md:!py-2"
           />
           <Link
             href="#product-buy-trigger"
-            className="btn-secondary w-full justify-center text-center text-xs md:hidden"
+            className="btn-secondary w-full justify-center py-2 text-center text-xs md:hidden"
           >
             Alle winkels
           </Link>

@@ -77,10 +77,10 @@ export function ArticleLeadCta({ slug }: ArticleLeadCtaProps) {
   if (!cta) return null;
 
   return (
-    <div className="mt-6 rounded-xl border-2 border-brand/30 bg-brand-light/50 p-5 text-sm text-ink-secondary shadow-sm">
+    <div className="mt-8 max-md:mt-10 rounded-xl border-2 border-brand/30 bg-brand-light/50 p-5 max-md:p-6 text-sm text-ink-secondary shadow-sm">
       <p className="text-base font-semibold text-ink">{cta.title}</p>
-      <p className="mt-2 leading-relaxed">{cta.body}</p>
-      <div className="mt-4 mobile-btn-row md:flex md:flex-row md:flex-wrap md:gap-3">
+      <p className="mt-3 leading-relaxed max-md:leading-[1.7]">{cta.body}</p>
+      <div className="mt-5 mobile-btn-row md:mt-4 md:flex md:flex-row md:flex-wrap md:gap-3">
         <Link href={cta.primaryHref} className="btn-primary text-sm">
           {cta.primaryLabel}
         </Link>
