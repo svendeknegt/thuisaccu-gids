@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-06-21T09:59:06.817Z
+Gegenereerd: 2026-06-22T12:16:22.853Z
 
 - OK: 25
 - Handmatig (Bol): 16
@@ -16,12 +16,13 @@ Gegenereerd: 2026-06-21T09:59:06.817Z
 | ecoflow-delta-3-max | ecoflow | €1299 | ja |
 | bluetti-elite-200-v2 | bluetti | €899 | ja |
 | ecoflow-delta-2 | ecoflow | €599 | ja |
-| ecoflow-delta-3-plus | amazon | €849 | ja |
 | ecoflow-delta-3-plus | ecoflow | €849 | ja |
 | ecoflow-delta-3-classic | ecoflow | €549 | ja |
 | ecoflow-delta-3 | ecoflow | €749 | ja |
 | ecoflow-river-2-pro | ecoflow | €459 | ja |
+| ecoflow-river-3-plus | amazon | €377.06 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
+| ecoflow-river-2-max | amazon | €399 | ja |
 | ecoflow-river-2-max | ecoflow | €349 | ja |
 
 ## Bol.com
