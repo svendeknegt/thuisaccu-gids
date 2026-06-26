@@ -1,17 +1,17 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-06-25T09:34:16.788Z
+Gegenereerd: 2026-06-26T09:39:21.468Z
 
-- OK: 25
+- OK: 24
 - Handmatig (Bol): 16
-- Fouten: 0
+- Fouten: 1
 
 ## Actuele prijzen (auto)
 
 | Product | Winkel | Prijs | Beschikbaar |
 |---------|--------|-------|-------------|
 | ecoflow-delta-pro-3 | ecoflow | €3299 | ja |
-| bluetti-elite-300 | bluetti | €1399 | ja |
+| ecoflow-delta-2-max | amazon | €1199 | ja |
 | ecoflow-delta-2-max | ecoflow | €999 | ja |
 | ecoflow-delta-3-max | ecoflow | €1299 | ja |
 | bluetti-elite-200-v2 | bluetti | €899 | ja |
@@ -24,6 +24,10 @@ Gegenereerd: 2026-06-25T09:34:16.788Z
 | ecoflow-river-3-plus | amazon | €362.7 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
 | ecoflow-river-2-max | ecoflow | €349 | ja |
+
+## Fouten
+
+- **bluetti-elite-300** / bluetti: HTTP 502
 
 ## Bol.com
 
