@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-07-04T08:46:05.396Z
+Gegenereerd: 2026-07-05T09:14:32.811Z
 
 - OK: 25
 - Handmatig (Bol): 16
@@ -15,12 +15,10 @@ Gegenereerd: 2026-07-04T08:46:05.396Z
 | ecoflow-delta-2-max | ecoflow | €1199 | ja |
 | ecoflow-delta-3-max | ecoflow | €1299 | ja |
 | bluetti-elite-200-v2 | bluetti | €1299 | ja |
-| ecoflow-delta-2 | amazon | €569 | ja |
 | ecoflow-delta-2 | ecoflow | €599 | ja |
 | ecoflow-delta-3-plus | ecoflow | €849 | ja |
 | ecoflow-delta-3-classic | ecoflow | €599 | ja |
 | ecoflow-delta-3 | ecoflow | €749 | ja |
-| anker-solix-c1000 | amazon | €639.99 | ja |
 | ecoflow-river-2-pro | ecoflow | €549 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
 | ecoflow-river-2-max | ecoflow | €399 | ja |
