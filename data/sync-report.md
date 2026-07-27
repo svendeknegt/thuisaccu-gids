@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-07-26T08:34:30.834Z
+Gegenereerd: 2026-07-27T10:01:53.695Z
 
 - OK: 25
 - Handmatig (Bol): 16
