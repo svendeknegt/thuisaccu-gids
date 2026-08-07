@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-08-06T08:46:27.249Z
+Gegenereerd: 2026-08-07T07:25:09.239Z
 
 - OK: 25
 - Handmatig (Bol): 16
@@ -17,13 +17,13 @@ Gegenereerd: 2026-08-06T08:46:27.249Z
 | bluetti-elite-200-v2 | bluetti | €1149 | ja |
 | ecoflow-delta-2 | ecoflow | €599 | ja |
 | ecoflow-delta-3-plus | ecoflow | €849 | ja |
-| ecoflow-delta-3-classic | amazon | €599 | ja |
 | ecoflow-delta-3-classic | ecoflow | €599 | ja |
 | ecoflow-delta-3 | ecoflow | €749 | ja |
+| anker-solix-c1000 | amazon | €639.99 | ja |
 | ecoflow-river-2-pro | ecoflow | €549 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
+| ecoflow-river-2-max | amazon | €399 | ja |
 | ecoflow-river-2-max | ecoflow | €399 | ja |
-| jackery-explorer-500-v2 | amazon | €359 | ja |
 
 ## Bol.com
 
