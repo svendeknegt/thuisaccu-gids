@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-08-07T07:25:09.239Z
+Gegenereerd: 2026-08-08T07:02:40.756Z
 
 - OK: 25
 - Handmatig (Bol): 16
@@ -19,10 +19,9 @@ Gegenereerd: 2026-08-07T07:25:09.239Z
 | ecoflow-delta-3-plus | ecoflow | €849 | ja |
 | ecoflow-delta-3-classic | ecoflow | €599 | ja |
 | ecoflow-delta-3 | ecoflow | €749 | ja |
-| anker-solix-c1000 | amazon | €639.99 | ja |
+| ecoflow-river-2-pro | amazon | €549 | ja |
 | ecoflow-river-2-pro | ecoflow | €549 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
-| ecoflow-river-2-max | amazon | €399 | ja |
 | ecoflow-river-2-max | ecoflow | €399 | ja |
 
 ## Bol.com
