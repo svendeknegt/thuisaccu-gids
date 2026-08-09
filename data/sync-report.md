@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-08-08T07:02:40.756Z
+Gegenereerd: 2026-08-09T07:04:52.231Z
 
 - OK: 25
 - Handmatig (Bol): 16
@@ -19,7 +19,6 @@ Gegenereerd: 2026-08-08T07:02:40.756Z
 | ecoflow-delta-3-plus | ecoflow | €849 | ja |
 | ecoflow-delta-3-classic | ecoflow | €599 | ja |
 | ecoflow-delta-3 | ecoflow | €749 | ja |
-| ecoflow-river-2-pro | amazon | €549 | ja |
 | ecoflow-river-2-pro | ecoflow | €549 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
 | ecoflow-river-2-max | ecoflow | €399 | ja |
