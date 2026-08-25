@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T07:09:08.998Z",
+  "generatedAt": "2026-08-25T06:57:12.877Z",
   "offers": {
     "ecoflow-delta-pro": {
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:28.060Z",
+        "checkedAt": "2026-08-25T06:56:34.223Z",
         "note": "Bol blokkeert bots (403) — handmatig in bol-urls.ts"
       }
     },
@@ -14,14 +14,14 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:28.061Z",
+        "checkedAt": "2026-08-25T06:56:34.223Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "ecoflow": {
         "price": 3299,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:28.061Z",
+        "checkedAt": "2026-08-25T06:56:34.223Z",
         "source": "shopify",
         "title": "DELTA Pro 3",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-pro-3-portable-power-station-58715243872599.png"
@@ -31,7 +31,7 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:28.332Z",
+        "checkedAt": "2026-08-25T06:56:34.534Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       }
     },
@@ -39,14 +39,14 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:28.332Z",
+        "checkedAt": "2026-08-25T06:56:34.534Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "bluetti": {
         "price": 1649,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:28.332Z",
+        "checkedAt": "2026-08-25T06:56:34.534Z",
         "source": "shopify",
         "title": "Elite 300 | 2.400W 3.014,4Wh Power Station",
         "image": "https://cdn.shopify.com/s/files/1/0566/6396/5893/files/Elite300-de-new.webp"
@@ -56,7 +56,7 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:29.911Z",
+        "checkedAt": "2026-08-25T06:56:36.126Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       }
     },
@@ -64,20 +64,20 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:29.911Z",
+        "checkedAt": "2026-08-25T06:56:36.126Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:29.911Z",
+        "checkedAt": "2026-08-25T06:56:36.126Z",
         "source": "amazon"
       },
       "ecoflow": {
         "price": 949,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:32.653Z",
+        "checkedAt": "2026-08-25T06:56:38.798Z",
         "source": "shopify",
         "title": "DELTA 2 Max",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png"
@@ -87,14 +87,14 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:32.842Z",
+        "checkedAt": "2026-08-25T06:56:39.015Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "ecoflow": {
         "price": 1299,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:32.842Z",
+        "checkedAt": "2026-08-25T06:56:39.015Z",
         "source": "shopify",
         "title": "DELTA 3 Max (2048Wh) / Geen accessoire",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-3-max-series-portable-power-station-1197150547.png"
@@ -104,14 +104,14 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:32.965Z",
+        "checkedAt": "2026-08-25T06:56:39.170Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "bluetti": {
         "price": 1299,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:32.965Z",
+        "checkedAt": "2026-08-25T06:56:39.170Z",
         "source": "shopify",
         "title": "Elite 200 V2 | 2.600W 2.073,6Wh Power Station",
         "image": "https://cdn.shopify.com/s/files/1/0566/6396/5893/files/Elite-200-v2-IFA-2025.webp"
@@ -121,20 +121,20 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:33.971Z",
+        "checkedAt": "2026-08-25T06:56:40.205Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:33.971Z",
+        "checkedAt": "2026-08-25T06:56:40.205Z",
         "source": "amazon"
       },
       "ecoflow": {
         "price": 599,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:36.624Z",
+        "checkedAt": "2026-08-25T06:56:42.851Z",
         "source": "shopify",
         "title": "DELTA 2",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-2-portable-power-station-52097645347159.png"
@@ -144,20 +144,20 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:36.731Z",
+        "checkedAt": "2026-08-25T06:56:42.999Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:36.731Z",
+        "checkedAt": "2026-08-25T06:56:42.999Z",
         "source": "amazon"
       },
       "ecoflow": {
         "price": 849,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:39.379Z",
+        "checkedAt": "2026-08-25T06:56:45.643Z",
         "source": "shopify",
         "title": "DELTA 3 Plus / Geen accessoire",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-3-series-portable-power-station-60905350299991.png"
@@ -167,14 +167,14 @@
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:39.523Z",
+        "checkedAt": "2026-08-25T06:56:45.759Z",
         "source": "amazon"
       },
       "ecoflow": {
         "price": 549,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:42.170Z",
+        "checkedAt": "2026-08-25T06:56:48.402Z",
         "source": "shopify",
         "title": "DELTA 3 Classic",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/DELTA3Classic.png"
@@ -184,14 +184,14 @@
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:42.307Z",
+        "checkedAt": "2026-08-25T06:56:48.575Z",
         "source": "amazon"
       },
       "ecoflow": {
         "price": 749,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:44.953Z",
+        "checkedAt": "2026-08-25T06:56:51.217Z",
         "source": "shopify",
         "title": "DELTA 3 / Geen accessoire",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-3-series-portable-power-station-60905350299991.png"
@@ -201,13 +201,13 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:45.046Z",
+        "checkedAt": "2026-08-25T06:56:51.329Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:45.046Z",
+        "checkedAt": "2026-08-25T06:56:51.329Z",
         "source": "amazon"
       }
     },
@@ -215,13 +215,13 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:47.703Z",
+        "checkedAt": "2026-08-25T06:56:53.971Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:47.703Z",
+        "checkedAt": "2026-08-25T06:56:53.971Z",
         "source": "amazon"
       }
     },
@@ -229,25 +229,22 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:50.349Z",
+        "checkedAt": "2026-08-25T06:56:56.615Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       }
     },
     "ecoflow-river-2-pro": {
       "amazon": {
-        "price": 599,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:50.349Z",
-        "source": "amazon",
-        "title": "ECOFLOW Portable Power Station RIVER 2 Pro, LiFeP04-batterij van 768 Wh, snel opladen in 70 minuten, 3x AC-uitgangen van 800 W, zonnegenerator voor kamperen/campers/gebruik in huis",
-        "image": "https://m.media-amazon.com/images/I/5196yGqksNL._AC_SL1500_.jpg"
+        "checkedAt": "2026-08-25T06:56:56.615Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 549,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:53.735Z",
+        "checkedAt": "2026-08-25T06:56:59.256Z",
         "source": "shopify",
         "title": "RIVER 2 Pro (Member Price)",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-river-2-pro-portable-power-station-1243140885.png"
@@ -255,18 +252,16 @@
     },
     "ecoflow-river-3-plus": {
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:53.849Z",
-        "source": "amazon",
-        "title": "EcoFlow Draagbare Stroomstation RIVER 3 Plus",
-        "image": "https://m.media-amazon.com/images/I/51GP8+vE8pL._AC_SL1000_.jpg"
+        "checkedAt": "2026-08-25T06:56:59.407Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 299,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:57.379Z",
+        "checkedAt": "2026-08-25T06:57:02.048Z",
         "source": "shopify",
         "title": "RIVER 3 Plus / /",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-river-3-plus-portable-power-station-1146556335.png"
@@ -276,30 +271,28 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:08:57.485Z",
+        "checkedAt": "2026-08-25T06:57:02.180Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:08:57.485Z",
-        "source": "amazon",
-        "title": "Anker SOLIX C300 Portable Power Station, voor buiten, 288 Wh LiFePO₄-accu, 300W (piek: 600 W) zonnegenerator, 140 W snelladen in 2 richtingen, voor kamperen/reizen/noodgevallen (zonnepaneel optioneel)",
-        "image": "https://m.media-amazon.com/images/I/719Cax9utKL._AC_SL1500_.jpg"
+        "checkedAt": "2026-08-25T06:57:02.181Z",
+        "source": "amazon"
       }
     },
     "ecoflow-river-2-max": {
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:09:00.903Z",
+        "checkedAt": "2026-08-25T06:57:04.824Z",
         "source": "amazon"
       },
       "ecoflow": {
         "price": 399,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:09:03.554Z",
+        "checkedAt": "2026-08-25T06:57:07.464Z",
         "source": "shopify",
         "title": "RIVER 2 Max",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-river-2-max-portable-power-station-1243140886.png"
@@ -309,13 +302,13 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:09:03.685Z",
+        "checkedAt": "2026-08-25T06:57:07.591Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:09:03.685Z",
+        "checkedAt": "2026-08-25T06:57:07.591Z",
         "source": "amazon"
       }
     },
@@ -323,13 +316,13 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-08-24T07:09:06.344Z",
+        "checkedAt": "2026-08-25T06:57:10.235Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
         "status": "ok",
-        "checkedAt": "2026-08-24T07:09:06.344Z",
+        "checkedAt": "2026-08-25T06:57:10.235Z",
         "source": "amazon"
       }
     }
