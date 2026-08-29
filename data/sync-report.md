@@ -1,6 +1,6 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-08-28T18:27:36.605Z
+Gegenereerd: 2026-08-29T12:33:57.069Z
 
 - OK: 25
 - Handmatig (Bol): 16
@@ -22,7 +22,6 @@ Gegenereerd: 2026-08-28T18:27:36.605Z
 | ecoflow-river-2-pro | ecoflow | €549 | ja |
 | ecoflow-river-3-plus | ecoflow | €299 | ja |
 | ecoflow-river-2-max | ecoflow | €399 | ja |
-| jackery-explorer-500-v2 | amazon | €299 | ja |
 
 ## Bol.com
 
