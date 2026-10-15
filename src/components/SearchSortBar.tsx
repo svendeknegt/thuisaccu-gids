@@ -45,7 +45,7 @@ export function SearchSortBar({
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder={searchPlaceholder}
-            className="w-full rounded-lg border border-surface-border bg-white py-3 pl-10 pr-3 text-base text-ink placeholder:text-ink-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 md:py-2.5 md:text-sm"
+            className="w-full rounded-lg border border-surface-border bg-white py-2.5 pl-10 pr-3 text-base text-ink placeholder:text-ink-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 md:py-2.5 md:text-sm"
           />
         </label>
 
@@ -57,7 +57,7 @@ export function SearchSortBar({
             id="sort-select"
             value={sortBy}
             onChange={(e) => onSortChange(e.target.value)}
-            className="min-h-[44px] flex-1 rounded-lg border border-surface-border bg-white px-3 py-2.5 text-base font-medium text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 md:min-h-0 md:min-w-[11rem] md:flex-none md:text-sm"
+            className="min-h-[40px] flex-1 rounded-lg border border-surface-border bg-white px-3 py-2 text-base font-medium text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 md:min-h-0 md:min-w-[11rem] md:flex-none md:py-2.5 md:text-sm"
           >
             {sortOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>

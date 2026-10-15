@@ -38,7 +38,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-lg px-4 py-3 text-base font-medium transition md:px-3 md:py-2 md:text-sm ${
+                className={`rounded-lg px-3 py-2.5 text-sm font-medium transition md:px-3 md:py-2 md:text-sm ${
                   active
                     ? "bg-brand-light text-brand-dark"
                     : "text-ink-secondary hover:bg-surface-muted hover:text-ink"
@@ -51,7 +51,7 @@ export function Header() {
           <Link
             href="/keuzehulp"
             onClick={() => setOpen(false)}
-            className="btn-primary mt-1 w-full justify-center md:mt-0 md:ml-2 md:w-auto"
+            className="btn-primary mt-1 w-full justify-center text-sm md:mt-0 md:ml-2 md:w-auto"
           >
             Start keuzehulp
           </Link>

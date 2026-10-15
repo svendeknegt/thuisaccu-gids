@@ -52,44 +52,71 @@
   /* Alleen mobiel (<768px) — desktop blijft identiek */
   @media (max-width: 767px) {
     .container-page {
-      @apply px-4;
+      @apply px-5;
     }
 
     .btn-primary,
     .btn-secondary {
-      @apply min-h-[44px] px-4 py-3 text-base;
+      @apply min-h-[40px] px-4 py-2 text-sm;
     }
 
     .chip {
-      @apply min-h-[44px] min-w-[44px] px-4 py-2.5 text-sm;
+      @apply px-3 py-2 text-sm;
+    }
+
+    .card {
+      @apply shadow-none;
     }
 
     .section-title {
-      @apply text-2xl leading-tight;
+      @apply text-[1.625rem] leading-snug;
     }
 
     .section-lead {
-      @apply text-[15px] leading-relaxed;
+      @apply mt-3 text-[15px] leading-relaxed;
+    }
+
+    .mobile-section {
+      @apply py-16;
     }
 
     .mobile-btn-row {
-      @apply flex w-full flex-col gap-2.5;
+      @apply grid w-full grid-cols-1 gap-2;
+    }
+
+    /* Twee knoppen naast elkaar — compacter dan full-width stapel */
+    .mobile-btn-row:has(> :nth-child(2):last-child) {
+      @apply grid-cols-2;
     }
 
     .mobile-btn-row .btn-primary,
     .mobile-btn-row .btn-secondary,
     .mobile-btn-row a.btn-primary,
-    .mobile-btn-row a.btn-secondary {
-      @apply w-full justify-center;
+    .mobile-btn-row a.btn-secondary,
+    .mobile-btn-row button.btn-primary,
+    .mobile-btn-row button.btn-secondary {
+      @apply w-full min-w-0 justify-center;
+    }
+
+    .prose-article {
+      @apply space-y-7;
     }
 
     .prose-article h2 {
-      @apply text-lg;
+      @apply pt-6 text-lg first:pt-0;
+    }
+
+    .prose-article h3 {
+      @apply pt-4;
     }
 
     .prose-article p,
     .prose-article li {
-      @apply text-[15px] leading-relaxed;
+      @apply text-[15px] leading-[1.7];
+    }
+
+    .prose-article ul {
+      @apply space-y-2.5;
     }
 
     /* Voorkom iOS zoom bij focus op inputs */

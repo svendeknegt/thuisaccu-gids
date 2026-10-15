@@ -42,7 +42,7 @@ export default async function ProductPage({ params }: PageProps) {
   const offers = getProductShopOffers(product);
 
   return (
-    <div className="py-8 max-md:pb-24 sm:py-14">
+    <div className="py-10 max-md:pb-24 max-md:py-14 sm:py-14">
       <JsonLd data={productJsonLd(product)} />
       <div className="container-page">
         <Link
@@ -52,7 +52,7 @@ export default async function ProductPage({ params }: PageProps) {
           ← Terug naar vergelijker
         </Link>
 
-        <div className="mt-4 rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
+        <div className="mt-6 max-md:hidden rounded-xl border border-brand/20 bg-brand-light/40 p-4 text-sm text-ink-secondary">
           <p className="font-medium text-ink">Twijfel over de maat?</p>
           <p className="mt-1">
             Gebruik onze{" "}
@@ -63,7 +63,7 @@ export default async function ProductPage({ params }: PageProps) {
           </p>
         </div>
 
-        <div className="mt-6 grid gap-10 lg:grid-cols-2">
+        <div className="mt-8 grid gap-10 max-md:gap-12 lg:grid-cols-2">
           <div className="relative aspect-square max-h-[min(72vw,320px)] overflow-hidden rounded-xl border border-surface-border bg-surface-muted md:max-h-[420px]">
             <ProductImage
               src={product.image}
@@ -76,15 +76,15 @@ export default async function ProductPage({ params }: PageProps) {
           <div>
             <p className="text-sm font-medium text-ink-muted">{product.brand}</p>
             <h1 className="mt-1 text-2xl font-bold leading-tight text-ink md:text-3xl">{product.name}</h1>
-            <RetailerBadges product={product} className="mt-2" />
-            <p className="mt-2 text-ink-secondary">
+            <RetailerBadges product={product} className="mt-2 max-md:hidden" />
+            <p className="mt-3 text-ink-secondary max-md:mt-2">
               ★ {formatRating(product.rating)} · {product.type}
             </p>
-            <p className="mt-4 leading-relaxed text-ink-secondary">
+            <p className="mt-5 leading-relaxed text-ink-secondary max-md:leading-[1.7]">
               {product.description}
             </p>
 
-            <dl className="mt-6 grid grid-cols-2 gap-4 text-sm sm:grid-cols-3">
+            <dl className="mt-8 grid grid-cols-2 gap-4 max-md:gap-5 text-sm sm:grid-cols-3">
               {[
                 ["Capaciteit", `${product.capacity} kWh`],
                 ["Vermogen", `${product.power} W`],
@@ -173,8 +173,8 @@ export default async function ProductPage({ params }: PageProps) {
           </section>
         )}
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2">
-          <div className="card p-6">
+        <div className="mt-14 grid gap-8 max-md:gap-10 sm:grid-cols-2">
+          <div className="card p-6 max-md:p-7">
             <h2 className="font-semibold text-ink">Voordelen</h2>
             <ul className="mt-4 space-y-2 text-sm text-ink-secondary">
               {product.pros.map((item) => (
@@ -185,7 +185,7 @@ export default async function ProductPage({ params }: PageProps) {
               ))}
             </ul>
           </div>
-          <div className="card p-6">
+          <div className="card p-6 max-md:p-7">
             <h2 className="font-semibold text-ink">Nadelen</h2>
             <ul className="mt-4 space-y-2 text-sm text-ink-secondary">
               {product.cons.map((item) => (
