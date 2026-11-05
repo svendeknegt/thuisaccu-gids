@@ -1,10 +1,10 @@
 # Catalog sync rapport
 
-Gegenereerd: 2026-11-04T14:09:16.179Z
+Gegenereerd: 2026-11-05T14:27:05.824Z
 
-- OK: 22
+- OK: 23
 - Handmatig (Bol): 16
-- Fouten: 3
+- Fouten: 2
 
 ## Actuele prijzen (auto)
 
@@ -24,7 +24,6 @@ Gegenereerd: 2026-11-04T14:09:16.179Z
 ## Fouten
 
 - **bluetti-elite-300** / bluetti: fetch failed
-- **ecoflow-delta-2-max** / amazon: HTTP 404
 - **bluetti-elite-200-v2** / bluetti: fetch failed
 
 ## Bol.com
