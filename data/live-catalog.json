@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-15T13:47:03.408Z",
+  "generatedAt": "2026-11-16T15:24:15.930Z",
   "offers": {
     "ecoflow-delta-pro": {
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:38.381Z",
+        "checkedAt": "2026-11-16T15:23:06.623Z",
         "note": "Bol blokkeert bots (403) — handmatig in bol-urls.ts"
       }
     },
@@ -14,14 +14,14 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:38.381Z",
+        "checkedAt": "2026-11-16T15:23:06.623Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "ecoflow": {
         "price": 2799,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:45:38.381Z",
+        "checkedAt": "2026-11-16T15:23:06.623Z",
         "source": "shopify",
         "title": "DELTA Pro 3",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-pro-3-portable-power-station-58715243872599.png"
@@ -31,7 +31,7 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:38.531Z",
+        "checkedAt": "2026-11-16T15:23:06.878Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       }
     },
@@ -39,13 +39,13 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:38.531Z",
+        "checkedAt": "2026-11-16T15:23:06.878Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "bluetti": {
         "available": null,
         "status": "error",
-        "checkedAt": "2026-11-15T13:45:38.531Z",
+        "checkedAt": "2026-11-16T15:23:06.878Z",
         "error": "fetch failed"
       }
     },
@@ -53,7 +53,7 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:55.941Z",
+        "checkedAt": "2026-11-16T15:23:23.592Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       }
     },
@@ -61,20 +61,20 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:55.941Z",
+        "checkedAt": "2026-11-16T15:23:23.592Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "available": null,
-        "status": "error",
-        "checkedAt": "2026-11-15T13:45:55.941Z",
-        "error": "HTTP 404"
+        "status": "ok",
+        "checkedAt": "2026-11-16T15:23:23.592Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 1199,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:45:58.719Z",
+        "checkedAt": "2026-11-16T15:23:26.365Z",
         "source": "shopify",
         "title": "DELTA 2 Max",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png"
@@ -84,14 +84,14 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:58.836Z",
+        "checkedAt": "2026-11-16T15:23:26.525Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "ecoflow": {
         "price": 999,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:45:58.836Z",
+        "checkedAt": "2026-11-16T15:23:26.525Z",
         "source": "shopify",
         "title": "DELTA 3 Max (2048Wh) / Geen accessoire",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-3-max-series-portable-power-station-1197150547.png"
@@ -101,13 +101,13 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:45:58.921Z",
+        "checkedAt": "2026-11-16T15:23:26.627Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "bluetti": {
         "available": null,
         "status": "error",
-        "checkedAt": "2026-11-15T13:45:58.922Z",
+        "checkedAt": "2026-11-16T15:23:26.627Z",
         "error": "fetch failed"
       }
     },
@@ -115,23 +115,20 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:14.039Z",
+        "checkedAt": "2026-11-16T15:23:42.196Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "price": 599,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:14.039Z",
-        "source": "amazon",
-        "title": "EcoFlow DELTA 2 draagbaar elektrisch station met schaalbare capaciteit van 1-3 kWh, LFP-batterij, slechts enkele kleine gebreken in de verpakking, het product is niet gebruikt (gereviseerd)",
-        "image": "https://m.media-amazon.com/images/I/51flNVzTtWL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:23:42.196Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 599,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:18.147Z",
+        "checkedAt": "2026-11-16T15:23:44.922Z",
         "source": "shopify",
         "title": "DELTA 2",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-2-portable-power-station-52097645347159.png"
@@ -141,23 +138,20 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:18.255Z",
+        "checkedAt": "2026-11-16T15:23:45.140Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "price": 849,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:18.255Z",
-        "source": "amazon",
-        "title": "ECOFLOW Draagbaar Energiestation DELTA 3 Plus, LiFePO₄-accu van 1024 Wh, in 56 min. volledig opgeladen, 1800 W (3600 W piek), zonnegenerator voor noodstroom thuis, stroomuitval en kamperen.",
-        "image": "https://m.media-amazon.com/images/I/61zFEkVvTzL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:23:45.140Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 799,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:22.237Z",
+        "checkedAt": "2026-11-16T15:23:47.792Z",
         "source": "shopify",
         "title": "DELTA 3 Plus / Geen accessoire",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-3-series-portable-power-station-60905350299991.png"
@@ -165,19 +159,16 @@
     },
     "ecoflow-delta-3-classic": {
       "amazon": {
-        "price": 857,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:22.543Z",
-        "source": "amazon",
-        "title": "ECOFLOW DELTA 3 Classic draagbare powerstation met 2 x 100W flexibele zonnepanelen, 1024Wh LiFePO4-batterij, 1800W AC-uitgang (3600W piek), 100W USB-C, 1 uur snel opladen, zonnegenerator voor kamperen",
-        "image": "https://m.media-amazon.com/images/I/61+sC9QApsL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:23:47.902Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 499,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:26.473Z",
+        "checkedAt": "2026-11-16T15:23:50.544Z",
         "source": "shopify",
         "title": "DELTA 3 Classic",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/DELTA3Classic.png"
@@ -185,19 +176,16 @@
     },
     "ecoflow-delta-3": {
       "amazon": {
-        "price": 749,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:26.560Z",
-        "source": "amazon",
-        "title": "ECOFLOW DELTA 3 Draagbaar energiestation, 1024 Wh, zonnegenerator, LiFePO₄-accu, in 30 min. van 0 tot 70% snelladen, uitbreidbaar tot 5 kWh, noodstroom met UPS voor thuis, kamperen en campers",
-        "image": "https://m.media-amazon.com/images/I/51Uce1MKJzL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:23:50.725Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 799,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:30.624Z",
+        "checkedAt": "2026-11-16T15:23:53.380Z",
         "source": "shopify",
         "title": "DELTA 3 / Geen accessoire",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-delta-3-series-portable-power-station-60905350299991.png"
@@ -207,30 +195,28 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:30.725Z",
+        "checkedAt": "2026-11-16T15:23:53.475Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:30.725Z",
-        "source": "amazon",
-        "title": "Anker SOLIX C1000 Portable Power Station, 1800W-zonnegenerator, volledig opgeladen in 58 minuten met supersnel opladen, LiFePO₄-energiecentrale voor kamperen en noodstroom (optioneel zonnepaneel)",
-        "image": "https://m.media-amazon.com/images/I/61c9mHiU6VL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:23:53.475Z",
+        "source": "amazon"
       }
     },
     "jackery-explorer-1000-v2": {
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:34.728Z",
+        "checkedAt": "2026-11-16T15:23:56.189Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
         "price": 529,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:34.728Z",
+        "checkedAt": "2026-11-16T15:23:56.189Z",
         "source": "amazon",
         "title": "Jackery Explorer 1000 v2 Draagbaar Powerstation 1024Wh/1500W",
         "image": "https://m.media-amazon.com/images/I/71YOnMPE8vL._AC_SL1500_.jpg"
@@ -240,24 +226,22 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:38.837Z",
+        "checkedAt": "2026-11-16T15:23:59.419Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       }
     },
     "ecoflow-river-2-pro": {
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:38.837Z",
-        "source": "amazon",
-        "title": "ECOFLOW Portable Power Station RIVER 2 Pro, LiFeP04-batterij van 768 Wh, snel opladen in 70 minuten, 3x AC-uitgangen van 800 W, zonnegenerator voor kamperen/campers/gebruik in huis",
-        "image": "https://m.media-amazon.com/images/I/5196yGqksNL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:23:59.419Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 549,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:42.802Z",
+        "checkedAt": "2026-11-16T15:24:02.073Z",
         "source": "shopify",
         "title": "RIVER 2 Pro (Member Price)",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/products_ecoflow-river-2-pro-portable-power-station-42466006433956.png"
@@ -265,18 +249,16 @@
     },
     "ecoflow-river-3-plus": {
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:42.909Z",
-        "source": "amazon",
-        "title": "EcoFlow Draagbare Stroomstation RIVER 3 Plus",
-        "image": "https://m.media-amazon.com/images/I/51GP8+vE8pL._AC_SL1000_.jpg"
+        "checkedAt": "2026-11-16T15:24:02.282Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 299,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:46.974Z",
+        "checkedAt": "2026-11-16T15:24:04.951Z",
         "source": "shopify",
         "title": "RIVER 3 Plus / /",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/ecoflow-river-3-plus-portable-power-station-1146556335.png"
@@ -286,33 +268,28 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:47.094Z",
+        "checkedAt": "2026-11-16T15:24:05.060Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:47.094Z",
-        "source": "amazon",
-        "title": "Anker SOLIX C300 Portable Power Station, voor buiten, 288 Wh LiFePO₄-accu, 300W (piek: 600 W) zonnegenerator, 140 W snelladen in 2 richtingen, voor kamperen/reizen/noodgevallen (zonnepaneel optioneel)",
-        "image": "https://m.media-amazon.com/images/I/719Cax9utKL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:24:05.060Z",
+        "source": "amazon"
       }
     },
     "ecoflow-river-2-max": {
       "amazon": {
-        "price": 399,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:51.201Z",
-        "source": "amazon",
-        "title": "EcoFlow Portable Power Station RIVER 2 MAX, LiFeP04-batterij van 512Wh, snel opladen in 1 uur, uitgangsvermogen van maximaal 1000 W, zonnegenerator voor kamperen/campers/gebruik in huis",
-        "image": "https://m.media-amazon.com/images/I/51PKOOp-eWL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:24:07.707Z",
+        "source": "amazon"
       },
       "ecoflow": {
         "price": 399,
         "available": true,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:55.293Z",
+        "checkedAt": "2026-11-16T15:24:10.382Z",
         "source": "shopify",
         "title": "RIVER 2 Max",
         "image": "https://cdn.shopify.com/s/files/1/0963/3965/6980/files/products_ecoflow-river-2-max-portable-power-station-42462847271076.png"
@@ -322,33 +299,28 @@
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:55.401Z",
+        "checkedAt": "2026-11-16T15:24:10.546Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "price": 269,
-        "available": true,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:55.401Z",
-        "source": "amazon",
-        "title": "Jackery Explorer 500v2 Draagbare Powerstation, 512Wh/500W LFP-accu",
-        "image": "https://m.media-amazon.com/images/I/61-agGvyrDL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:24:10.546Z",
+        "source": "amazon"
       }
     },
     "anker-solix-f1500": {
       "bol": {
         "available": null,
         "status": "manual",
-        "checkedAt": "2026-11-15T13:46:59.364Z",
+        "checkedAt": "2026-11-16T15:24:13.229Z",
         "note": "Handmatig bijgewerkt in bol-urls.ts"
       },
       "amazon": {
-        "available": false,
+        "available": null,
         "status": "ok",
-        "checkedAt": "2026-11-15T13:46:59.364Z",
-        "source": "amazon",
-        "title": "Anker SOLIX F1500 Power Station (Powerhouse 1500Wh)",
-        "image": "https://m.media-amazon.com/images/I/81UhegqDlDL._AC_SL1500_.jpg"
+        "checkedAt": "2026-11-16T15:24:13.229Z",
+        "source": "amazon"
       }
     }
   }
